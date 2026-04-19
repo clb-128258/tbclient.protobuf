@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "ThreadDrawPrize.proto";
+
+message ThreadDrawInfo {
+    uint64 draw_id = 1;
+    repeated ThreadDrawPrize draw_prize = 2;
+    uint32 audit_status = 3;
+    uint32 join_status = 4;
+    uint32 open_status = 5;
+    uint64 open_time = 6;
+    uint32 lottery_type = 7;
+}

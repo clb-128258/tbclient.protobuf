@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "AdMixFloor.proto";
 import "BannerList.proto";
+import "FeedKV.proto";
 import "ThreadInfo.proto";
 import "ThreadList/PageData.proto";
 import "User.proto";
@@ -16,4 +17,5 @@ message DataRes {
     int32 ad_show_select = 7;
     string ad_sample_map_key = 8;
     PageData page_data = 9;
+    repeated FeedKV log_param = 10;
 }

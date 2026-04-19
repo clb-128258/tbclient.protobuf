@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentResource.proto";
+
+message FeedTextHeadComponent {
+    FeedContentIcon left_icon = 1;
+    FeedContentIcon right_icon = 2;
+    repeated FeedContentResource left_rich_text = 3;
+    repeated FeedContentResource right_rich_text = 4;
+    string right_schema = 5;
+}

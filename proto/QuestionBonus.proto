@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message QuestionBonus {
+    uint32 tmoney = 1;
+    uint32 tmoney_plus = 2;
+    uint32 status = 3;
+    string guide_url = 4;
+    string paid_out_text = 5;
+    string inputbox_text = 6;
+    string card_type = 7;
+}

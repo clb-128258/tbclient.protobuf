@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+
+message SidewayListSeeMore {
+    string before_text = 1;
+    string after_text = 2;
+    FeedContentIcon icon = 3;
+    string schema = 4;
+}

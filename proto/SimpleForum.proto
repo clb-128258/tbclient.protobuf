@@ -6,6 +6,7 @@ import "FrsTabInfo.proto";
 import "MultiForumPerm.proto";
 import "SpritePBGuide.proto";
 import "ThemeColorInfo.proto";
+import "ThreadRecommendTag.proto";
 
 message SimpleForum {
     int64 id = 1;
@@ -32,4 +33,14 @@ message SimpleForum {
     ForumShowInfo show_info = 22;
     SpritePBGuide sprite_pb_guide = 23;
     string scheme = 24;
+    string desc = 25;
+    string slogan = 26;
+    int32 thread_num = 27;
+    repeated ThreadRecommendTag forum_tags = 28;
+    string official_icon = 29;
+    string official_text = 30;
+    int32 is_official_forum = 31;
+    uint64 update_thread_num = 32;
+    uint64 forum_ctime = 33;
+    bool is_hub = 34;
 }

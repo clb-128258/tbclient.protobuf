@@ -5,4 +5,6 @@ message FeedContentIcon {
     string night_url = 2;
     int32 width = 3;
     int32 height = 4;
+    string margin_right = 5;
+    string margin_left = 6;
 }

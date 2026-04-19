@@ -5,6 +5,7 @@ import "Anti.proto";
 import "BannerList.proto";
 import "DiscoverHotForum.proto";
 import "FavoritePanel.proto";
+import "FeedKV.proto";
 import "Personalized/AgeSexModule.proto";
 import "Personalized/CardForum.proto";
 import "Personalized/CardGod.proto";
@@ -12,9 +13,12 @@ import "Personalized/CardTopic.proto";
 import "Personalized/FloatInfo.proto";
 import "Personalized/HeaderCard.proto";
 import "Personalized/HotCard.proto";
+import "Personalized/IndexGuideCardInfo.proto";
+import "Personalized/InterestClass.proto";
 import "Personalized/LiveAnswer.proto";
 import "Personalized/NovelCard.proto";
 import "Personalized/PageData.proto";
+import "Personalized/PrefetchInfo.proto";
 import "Personalized/RecomPostTopic.proto";
 import "Personalized/Resource.proto";
 import "Personalized/TagStruct.proto";
@@ -23,6 +27,7 @@ import "Personalized/UserFollowLive.proto";
 import "SimpleForum.proto";
 import "TagInfo.proto";
 import "ThreadInfo.proto";
+import "UserReadStyle.proto";
 
 message DataRes {
     repeated TagInfo tag_list = 1;
@@ -55,4 +60,17 @@ message DataRes {
     HotCard hot_card = 28;
     NovelCard novel_card = 30;
     int32 is_need_live_ununiq = 31;
+    DiscoverHotForum hot_recomforum_top = 34;
+    repeated FeedKV log_param = 35;
+    InterestClass interest_class = 36;
+    string show_frequency = 37;
+    int32 ad_show_select = 38;
+    IndexGuideCardInfo guide_card = 39;
+    repeated PrefetchInfo prefetch_info = 40;
+    int32 hit_double_column_user_exp = 41;
+    string loading_text = 42;
+    string send_thread_button_scheme = 43;
+    int32 need_post_cdn = 44;
+    int32 is_shoubai_ugc_agree_new_style = 45;
+    UserReadStyle user_read_style = 46;
 }

@@ -3,6 +3,7 @@ syntax = "proto3";
 import "App.proto";
 import "BannerUserStory.proto";
 import "DiscoverHotForum.proto";
+import "FeedKV.proto";
 import "Userlike/BannerFollowLive.proto";
 import "Userlike/ConcernData.proto";
 import "Userlike/PageData.proto";
@@ -26,4 +27,5 @@ message DataRes {
     repeated App app_list = 16;
     UserFollowLive user_follow_live = 17;
     PageData page_data = 19;
+    repeated FeedKV log_param = 21;
 }

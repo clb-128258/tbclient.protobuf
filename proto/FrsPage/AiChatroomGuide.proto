@@ -12,4 +12,8 @@ message AiChatroomGuide {
     repeated AiChatBotInfo bot_list = 7;
     string h5_url = 8;
     AiChatBotInfo default_bot_info = 9;
+    string bot_type = 10;
+    string button_content = 11;
+    string button_icon = 12;
+    string jump_type = 13;
 }

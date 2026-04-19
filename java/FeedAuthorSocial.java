@@ -4,118 +4,145 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+
 public final class FeedAuthorSocial extends Message {
-    @ProtoField(tag = 3)
-    public final Agree agree;
-    @ProtoField(tag = 4, type = Message.Datatype.INT32)
-    public final Integer comment_num;
-    @ProtoField(tag = 7, type = Message.Datatype.UINT64)
-    public final Long fid;
-    @ProtoField(tag = 1)
-    public final FeedHeadImg image_data;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2)
-    public final List<FeedHeadSymbol> main_data;
-    @ProtoField(label = Message.Label.REPEATED, tag = 8)
-    public final List<LayoutManageInfo> manage_list;
-    @ProtoField(tag = 5, type = Message.Datatype.INT32)
-    public final Integer share_num;
-    @ProtoField(tag = 6, type = Message.Datatype.UINT64)
-    public final Long tid;
-    public static final List<FeedHeadSymbol> DEFAULT_MAIN_DATA = Collections.emptyList();
-    public static final Integer DEFAULT_COMMENT_NUM = 0;
-    public static final Integer DEFAULT_SHARE_NUM = 0;
-    public static final Long DEFAULT_TID = 0L;
-    public static final Long DEFAULT_FID = 0L;
-    public static final List<LayoutManageInfo> DEFAULT_MANAGE_LIST = Collections.emptyList();
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FeedAuthorSocial> {
-        public Agree agree;
-        public Integer comment_num;
-        public Long fid;
-        public FeedHeadImg image_data;
-        public List<FeedHeadSymbol> main_data;
-        public List<LayoutManageInfo> manage_list;
-        public Integer share_num;
-        public Long tid;
-
-        public Builder() {
-        }
-
-        public Builder(FeedAuthorSocial feedAuthorSocial) {
-            super(feedAuthorSocial);
-            if (feedAuthorSocial == null) {
-                return;
-            }
-            this.image_data = feedAuthorSocial.image_data;
-            this.main_data = Message.copyOf(feedAuthorSocial.main_data);
-            this.agree = feedAuthorSocial.agree;
-            this.comment_num = feedAuthorSocial.comment_num;
-            this.share_num = feedAuthorSocial.share_num;
-            this.tid = feedAuthorSocial.tid;
-            this.fid = feedAuthorSocial.fid;
-            this.manage_list = Message.copyOf(feedAuthorSocial.manage_list);
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FeedAuthorSocial build(boolean z) {
-            return new FeedAuthorSocial(this, z);
-        }
+  public static final Integer DEFAULT_COMMENT_NUM;
+  
+  public static final Long DEFAULT_FID;
+  
+  public static final List<FeedHeadSymbol> DEFAULT_MAIN_DATA = Collections.emptyList();
+  
+  public static final List<LayoutManageInfo> DEFAULT_MANAGE_LIST;
+  
+  public static final Integer DEFAULT_SHARE_NUM;
+  
+  public static final Long DEFAULT_TID;
+  
+  @ProtoField(tag = 3)
+  public final Agree agree;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.INT32)
+  public final Integer comment_num;
+  
+  @ProtoField(tag = 7, type = Message.Datatype.UINT64)
+  public final Long fid;
+  
+  @ProtoField(tag = 1)
+  public final FeedHeadImg image_data;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 2)
+  public final List<FeedHeadSymbol> main_data;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 8)
+  public final List<LayoutManageInfo> manage_list;
+  
+  @ProtoField(tag = 5, type = Message.Datatype.INT32)
+  public final Integer share_num;
+  
+  @ProtoField(tag = 6, type = Message.Datatype.UINT64)
+  public final Long tid;
+  
+  static {
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_COMMENT_NUM = integer;
+    DEFAULT_SHARE_NUM = integer;
+    Long long_ = Long.valueOf(0L);
+    DEFAULT_TID = long_;
+    DEFAULT_FID = long_;
+    DEFAULT_MANAGE_LIST = Collections.emptyList();
+  }
+  
+  public FeedAuthorSocial(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    List<LayoutManageInfo> list;
+    if (paramBoolean == true) {
+      this.image_data = paramBuilder.image_data;
+      List<FeedHeadSymbol> list1 = paramBuilder.main_data;
+      if (list1 == null) {
+        this.main_data = DEFAULT_MAIN_DATA;
+      } else {
+        this.main_data = Message.immutableCopyOf(list1);
+      } 
+      this.agree = paramBuilder.agree;
+      Integer integer = paramBuilder.comment_num;
+      if (integer == null) {
+        this.comment_num = DEFAULT_COMMENT_NUM;
+      } else {
+        this.comment_num = integer;
+      } 
+      integer = paramBuilder.share_num;
+      if (integer == null) {
+        this.share_num = DEFAULT_SHARE_NUM;
+      } else {
+        this.share_num = integer;
+      } 
+      Long long_ = paramBuilder.tid;
+      if (long_ == null) {
+        this.tid = DEFAULT_TID;
+      } else {
+        this.tid = long_;
+      } 
+      long_ = paramBuilder.fid;
+      if (long_ == null) {
+        this.fid = DEFAULT_FID;
+      } else {
+        this.fid = long_;
+      } 
+      list = paramBuilder.manage_list;
+      if (list == null) {
+        this.manage_list = DEFAULT_MANAGE_LIST;
+      } else {
+        this.manage_list = Message.immutableCopyOf(list);
+      } 
+    } else {
+      this.image_data = ((Builder)list).image_data;
+      this.main_data = Message.immutableCopyOf(((Builder)list).main_data);
+      this.agree = ((Builder)list).agree;
+      this.comment_num = ((Builder)list).comment_num;
+      this.share_num = ((Builder)list).share_num;
+      this.tid = ((Builder)list).tid;
+      this.fid = ((Builder)list).fid;
+      this.manage_list = Message.immutableCopyOf(((Builder)list).manage_list);
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeedAuthorSocial> {
+    public Agree agree;
+    
+    public Integer comment_num;
+    
+    public Long fid;
+    
+    public FeedHeadImg image_data;
+    
+    public List<FeedHeadSymbol> main_data;
+    
+    public List<LayoutManageInfo> manage_list;
+    
+    public Integer share_num;
+    
+    public Long tid;
+    
+    public Builder() {}
+    
+    public Builder(FeedAuthorSocial param1FeedAuthorSocial) {
+      super(param1FeedAuthorSocial);
+      if (param1FeedAuthorSocial == null)
+        return; 
+      this.image_data = param1FeedAuthorSocial.image_data;
+      this.main_data = Message.copyOf(param1FeedAuthorSocial.main_data);
+      this.agree = param1FeedAuthorSocial.agree;
+      this.comment_num = param1FeedAuthorSocial.comment_num;
+      this.share_num = param1FeedAuthorSocial.share_num;
+      this.tid = param1FeedAuthorSocial.tid;
+      this.fid = param1FeedAuthorSocial.fid;
+      this.manage_list = Message.copyOf(param1FeedAuthorSocial.manage_list);
     }
-
-    public FeedAuthorSocial(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.image_data = builder.image_data;
-            List<FeedHeadSymbol> list = builder.main_data;
-            if (list == null) {
-                this.main_data = DEFAULT_MAIN_DATA;
-            } else {
-                this.main_data = Message.immutableCopyOf(list);
-            }
-            this.agree = builder.agree;
-            Integer num = builder.comment_num;
-            if (num == null) {
-                this.comment_num = DEFAULT_COMMENT_NUM;
-            } else {
-                this.comment_num = num;
-            }
-            Integer num2 = builder.share_num;
-            if (num2 == null) {
-                this.share_num = DEFAULT_SHARE_NUM;
-            } else {
-                this.share_num = num2;
-            }
-            Long l = builder.tid;
-            if (l == null) {
-                this.tid = DEFAULT_TID;
-            } else {
-                this.tid = l;
-            }
-            Long l2 = builder.fid;
-            if (l2 == null) {
-                this.fid = DEFAULT_FID;
-            } else {
-                this.fid = l2;
-            }
-            List<LayoutManageInfo> list2 = builder.manage_list;
-            if (list2 == null) {
-                this.manage_list = DEFAULT_MANAGE_LIST;
-                return;
-            } else {
-                this.manage_list = Message.immutableCopyOf(list2);
-                return;
-            }
-        }
-        this.image_data = builder.image_data;
-        this.main_data = Message.immutableCopyOf(builder.main_data);
-        this.agree = builder.agree;
-        this.comment_num = builder.comment_num;
-        this.share_num = builder.share_num;
-        this.tid = builder.tid;
-        this.fid = builder.fid;
-        this.manage_list = Message.immutableCopyOf(builder.manage_list);
+    
+    public FeedAuthorSocial build(boolean param1Boolean) {
+      return new FeedAuthorSocial(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

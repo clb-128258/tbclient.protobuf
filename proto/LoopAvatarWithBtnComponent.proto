@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FeedButton.proto";
+
+message LoopAvatarWithBtnComponent {
+    repeated string img_urls = 1;
+    string content = 2;
+    FeedButton button = 3;
+}

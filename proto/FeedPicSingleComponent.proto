@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "PicDecoration.proto";
+
+message FeedPicSingleComponent {
+    string pic_url = 1;
+    uint32 width = 2;
+    uint32 height = 3;
+    uint32 is_long_pic = 4;
+    double crop_point_width_ratio = 5;
+    double crop_point_height_ratio = 6;
+    repeated PicDecoration decoration = 7;
+}

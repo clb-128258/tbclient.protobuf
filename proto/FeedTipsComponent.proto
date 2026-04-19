@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentResource.proto";
+
+message FeedTipsComponent {
+    repeated FeedContentResource data = 1;
+    FeedContentIcon icon_data = 2;
+    string font_size = 3;
+    int32 max_lines = 4;
+    string schema = 5;
+}

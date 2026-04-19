@@ -2,70 +2,81 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class CardFreq extends Message {
-    @ProtoField(tag = 2, type = Message.Datatype.INT64)
-    public final Long end_time;
-    @ProtoField(tag = 3, type = Message.Datatype.INT64)
-    public final Long show_times;
-    @ProtoField(tag = 1, type = Message.Datatype.INT64)
-    public final Long start_time;
-    public static final Long DEFAULT_START_TIME = 0L;
-    public static final Long DEFAULT_END_TIME = 0L;
-    public static final Long DEFAULT_SHOW_TIMES = 0L;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<CardFreq> {
-        public Long end_time;
-        public Long show_times;
-        public Long start_time;
-
-        public Builder() {
-        }
-
-        public Builder(CardFreq cardFreq) {
-            super(cardFreq);
-            if (cardFreq == null) {
-                return;
-            }
-            this.start_time = cardFreq.start_time;
-            this.end_time = cardFreq.end_time;
-            this.show_times = cardFreq.show_times;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public CardFreq build(boolean z) {
-            return new CardFreq(this, z);
-        }
+  public static final Long DEFAULT_END_TIME;
+  
+  public static final Long DEFAULT_SHOW_TIMES;
+  
+  public static final Long DEFAULT_START_TIME;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.INT64)
+  public final Long end_time;
+  
+  @ProtoField(tag = 3, type = Message.Datatype.INT64)
+  public final Long show_times;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.INT64)
+  public final Long start_time;
+  
+  static {
+    Long long_ = Long.valueOf(0L);
+    DEFAULT_START_TIME = long_;
+    DEFAULT_END_TIME = long_;
+    DEFAULT_SHOW_TIMES = long_;
+  }
+  
+  public CardFreq(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    Long long_;
+    if (paramBoolean == true) {
+      Long long_1 = paramBuilder.start_time;
+      if (long_1 == null) {
+        this.start_time = DEFAULT_START_TIME;
+      } else {
+        this.start_time = long_1;
+      } 
+      long_1 = paramBuilder.end_time;
+      if (long_1 == null) {
+        this.end_time = DEFAULT_END_TIME;
+      } else {
+        this.end_time = long_1;
+      } 
+      long_ = paramBuilder.show_times;
+      if (long_ == null) {
+        this.show_times = DEFAULT_SHOW_TIMES;
+      } else {
+        this.show_times = long_;
+      } 
+    } else {
+      this.start_time = ((Builder)long_).start_time;
+      this.end_time = ((Builder)long_).end_time;
+      this.show_times = ((Builder)long_).show_times;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<CardFreq> {
+    public Long end_time;
+    
+    public Long show_times;
+    
+    public Long start_time;
+    
+    public Builder() {}
+    
+    public Builder(CardFreq param1CardFreq) {
+      super(param1CardFreq);
+      if (param1CardFreq == null)
+        return; 
+      this.start_time = param1CardFreq.start_time;
+      this.end_time = param1CardFreq.end_time;
+      this.show_times = param1CardFreq.show_times;
     }
-
-    public CardFreq(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            Long l = builder.start_time;
-            if (l == null) {
-                this.start_time = DEFAULT_START_TIME;
-            } else {
-                this.start_time = l;
-            }
-            Long l2 = builder.end_time;
-            if (l2 == null) {
-                this.end_time = DEFAULT_END_TIME;
-            } else {
-                this.end_time = l2;
-            }
-            Long l3 = builder.show_times;
-            if (l3 == null) {
-                this.show_times = DEFAULT_SHOW_TIMES;
-                return;
-            } else {
-                this.show_times = l3;
-                return;
-            }
-        }
-        this.start_time = builder.start_time;
-        this.end_time = builder.end_time;
-        this.show_times = builder.show_times;
+    
+    public CardFreq build(boolean param1Boolean) {
+      return new CardFreq(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

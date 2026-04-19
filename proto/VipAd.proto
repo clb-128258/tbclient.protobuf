@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "AdCloseInfo.proto";
+import "Media.proto";
+import "Post.proto";
+
+message VipAd {
+    string background_img = 1;
+    string background_img_dark = 2;
+    string avatar = 3;
+    string user_name = 4;
+    string create_time = 5;
+    string title = 6;
+    repeated Media image = 7;
+    repeated Media image_dark = 8;
+    repeated Post comments = 9;
+    AdCloseInfo close_info = 10;
+}

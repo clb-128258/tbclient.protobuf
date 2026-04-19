@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "SidewayListSeeMore.proto";
+import "SidewayRecomComponent.proto";
+
+message SidewayListComponent {
+    int32 screen_max_num = 1;
+    repeated SidewayRecomComponent content = 2;
+    string title = 3;
+    string title_background = 4;
+    string background = 5;
+    SidewayListSeeMore see_more = 6;
+    uint32 is_swipe = 7;
+    string indicator = 8;
+}

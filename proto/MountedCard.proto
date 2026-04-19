@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentText.proto";
+
+message MountedCard {
+    FeedContentText content = 1;
+    FeedContentText normal_button = 2;
+    FeedContentText enable_button = 3;
+    string button_schema = 4;
+    FeedContentIcon icon = 5;
+}

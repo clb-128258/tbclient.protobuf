@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PbList/DataReq.proto";
+
+message PbListReqIdl {
+    DataReq data = 1;
+}

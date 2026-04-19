@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message ListingReason {
+    string text = 1;
+    repeated string img_list = 2;
+    string sub_title = 3;
+}

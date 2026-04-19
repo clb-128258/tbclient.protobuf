@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "BorderInfo.proto";
+import "FeedContentColor.proto";
+import "FeedContentIcon.proto";
+import "FeedContentText.proto";
+import "FeedKV.proto";
+
+message FeedButton {
+    FeedContentColor background_color = 1;
+    FeedContentIcon icon = 2;
+    FeedContentText text = 3;
+    int32 style = 4;
+    BorderInfo border_info = 5;
+    string schema = 6;
+    repeated FeedKV business_info = 7;
+}

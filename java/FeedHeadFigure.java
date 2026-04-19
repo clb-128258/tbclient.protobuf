@@ -2,82 +2,89 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class FeedHeadFigure extends Message {
-    public static final String DEFAULT_BG_TYPE = "";
-    public static final String DEFAULT_BG_VALUE = "";
-    public static final String DEFAULT_CORNER_URL = "";
-    public static final String DEFAULT_IMG_URL = "";
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String bg_type;
-    @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String bg_value;
-    @ProtoField(tag = 4, type = Message.Datatype.STRING)
-    public final String corner_url;
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String img_url;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FeedHeadFigure> {
-        public String bg_type;
-        public String bg_value;
-        public String corner_url;
-        public String img_url;
-
-        public Builder() {
-        }
-
-        public Builder(FeedHeadFigure feedHeadFigure) {
-            super(feedHeadFigure);
-            if (feedHeadFigure == null) {
-                return;
-            }
-            this.img_url = feedHeadFigure.img_url;
-            this.bg_type = feedHeadFigure.bg_type;
-            this.bg_value = feedHeadFigure.bg_value;
-            this.corner_url = feedHeadFigure.corner_url;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FeedHeadFigure build(boolean z) {
-            return new FeedHeadFigure(this, z);
-        }
+  public static final String DEFAULT_BG_TYPE = "";
+  
+  public static final String DEFAULT_BG_VALUE = "";
+  
+  public static final String DEFAULT_CORNER_URL = "";
+  
+  public static final String DEFAULT_IMG_URL = "";
+  
+  @ProtoField(tag = 2, type = Message.Datatype.STRING)
+  public final String bg_type;
+  
+  @ProtoField(tag = 3, type = Message.Datatype.STRING)
+  public final String bg_value;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.STRING)
+  public final String corner_url;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.STRING)
+  public final String img_url;
+  
+  public FeedHeadFigure(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    String str;
+    if (paramBoolean == true) {
+      String str1 = paramBuilder.img_url;
+      if (str1 == null) {
+        this.img_url = "";
+      } else {
+        this.img_url = str1;
+      } 
+      str1 = paramBuilder.bg_type;
+      if (str1 == null) {
+        this.bg_type = "";
+      } else {
+        this.bg_type = str1;
+      } 
+      str1 = paramBuilder.bg_value;
+      if (str1 == null) {
+        this.bg_value = "";
+      } else {
+        this.bg_value = str1;
+      } 
+      str = paramBuilder.corner_url;
+      if (str == null) {
+        this.corner_url = "";
+      } else {
+        this.corner_url = str;
+      } 
+    } else {
+      this.img_url = ((Builder)str).img_url;
+      this.bg_type = ((Builder)str).bg_type;
+      this.bg_value = ((Builder)str).bg_value;
+      this.corner_url = ((Builder)str).corner_url;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeedHeadFigure> {
+    public String bg_type;
+    
+    public String bg_value;
+    
+    public String corner_url;
+    
+    public String img_url;
+    
+    public Builder() {}
+    
+    public Builder(FeedHeadFigure param1FeedHeadFigure) {
+      super(param1FeedHeadFigure);
+      if (param1FeedHeadFigure == null)
+        return; 
+      this.img_url = param1FeedHeadFigure.img_url;
+      this.bg_type = param1FeedHeadFigure.bg_type;
+      this.bg_value = param1FeedHeadFigure.bg_value;
+      this.corner_url = param1FeedHeadFigure.corner_url;
     }
-
-    public FeedHeadFigure(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            String str = builder.img_url;
-            if (str == null) {
-                this.img_url = "";
-            } else {
-                this.img_url = str;
-            }
-            String str2 = builder.bg_type;
-            if (str2 == null) {
-                this.bg_type = "";
-            } else {
-                this.bg_type = str2;
-            }
-            String str3 = builder.bg_value;
-            if (str3 == null) {
-                this.bg_value = "";
-            } else {
-                this.bg_value = str3;
-            }
-            String str4 = builder.corner_url;
-            if (str4 == null) {
-                this.corner_url = "";
-                return;
-            } else {
-                this.corner_url = str4;
-                return;
-            }
-        }
-        this.img_url = builder.img_url;
-        this.bg_type = builder.bg_type;
-        this.bg_value = builder.bg_value;
-        this.corner_url = builder.corner_url;
+    
+    public FeedHeadFigure build(boolean param1Boolean) {
+      return new FeedHeadFigure(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

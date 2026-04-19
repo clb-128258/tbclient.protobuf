@@ -4,58 +4,59 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+
 public final class FeedOriginPic extends Message {
-    public static final List<PicInfo> DEFAULT_PICS = Collections.emptyList();
-    public static final String DEFAULT_SCHEMA = "";
-    @ProtoField(label = Message.Label.REPEATED, tag = 1)
-    public final List<PicInfo> pics;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String schema;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FeedOriginPic> {
-        public List<PicInfo> pics;
-        public String schema;
-
-        public Builder() {
-        }
-
-        public Builder(FeedOriginPic feedOriginPic) {
-            super(feedOriginPic);
-            if (feedOriginPic == null) {
-                return;
-            }
-            this.pics = Message.copyOf(feedOriginPic.pics);
-            this.schema = feedOriginPic.schema;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FeedOriginPic build(boolean z) {
-            return new FeedOriginPic(this, z);
-        }
+  public static final List<PicInfo> DEFAULT_PICS = Collections.emptyList();
+  
+  public static final String DEFAULT_SCHEMA = "";
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 1)
+  public final List<PicInfo> pics;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.STRING)
+  public final String schema;
+  
+  public FeedOriginPic(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    String str;
+    if (paramBoolean == true) {
+      List<PicInfo> list = paramBuilder.pics;
+      if (list == null) {
+        this.pics = DEFAULT_PICS;
+      } else {
+        this.pics = Message.immutableCopyOf(list);
+      } 
+      str = paramBuilder.schema;
+      if (str == null) {
+        this.schema = "";
+      } else {
+        this.schema = str;
+      } 
+    } else {
+      this.pics = Message.immutableCopyOf(((Builder)str).pics);
+      this.schema = ((Builder)str).schema;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeedOriginPic> {
+    public List<PicInfo> pics;
+    
+    public String schema;
+    
+    public Builder() {}
+    
+    public Builder(FeedOriginPic param1FeedOriginPic) {
+      super(param1FeedOriginPic);
+      if (param1FeedOriginPic == null)
+        return; 
+      this.pics = Message.copyOf(param1FeedOriginPic.pics);
+      this.schema = param1FeedOriginPic.schema;
     }
-
-    public FeedOriginPic(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            List<PicInfo> list = builder.pics;
-            if (list == null) {
-                this.pics = DEFAULT_PICS;
-            } else {
-                this.pics = Message.immutableCopyOf(list);
-            }
-            String str = builder.schema;
-            if (str == null) {
-                this.schema = "";
-                return;
-            } else {
-                this.schema = str;
-                return;
-            }
-        }
-        this.pics = Message.immutableCopyOf(builder.pics);
-        this.schema = builder.schema;
+    
+    public FeedOriginPic build(boolean param1Boolean) {
+      return new FeedOriginPic(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "FeedButton.proto";
+import "FeedContentIcon.proto";
+import "FeedContentResource.proto";
+import "FeedHeadImg.proto";
+
+message FeedGuideCardComponent {
+    FeedHeadImg img = 1;
+    repeated FeedContentResource title = 2;
+    repeated FeedContentResource sub_title = 3;
+    FeedButton button = 4;
+    FeedContentIcon background_url = 5;
+}

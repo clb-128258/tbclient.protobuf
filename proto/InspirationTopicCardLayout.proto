@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "ComponentFactory.proto";
+import "FeedKV.proto";
+
+message InspirationTopicCardLayout {
+    repeated ComponentFactory components = 1;
+    repeated FeedKV business_info = 2;
+    repeated FeedKV log_param = 3;
+    string schema = 4;
+    repeated string prefetch_schema = 5;
+}

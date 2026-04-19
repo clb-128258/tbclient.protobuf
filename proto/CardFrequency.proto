@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message CardFrequency {
+    string key = 1;
+    int32 max_count = 2;
+    int32 is_remove_duplicate = 3;
+    int64 end_time = 4;
+}

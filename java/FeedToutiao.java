@@ -4,46 +4,44 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+
 public final class FeedToutiao extends Message {
-    public static final List<FeedKV> DEFAULT_BUSINESS_INFO = Collections.emptyList();
-    @ProtoField(label = Message.Label.REPEATED, tag = 1)
-    public final List<FeedKV> business_info;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FeedToutiao> {
-        public List<FeedKV> business_info;
-
-        public Builder() {
-        }
-
-        public Builder(FeedToutiao feedToutiao) {
-            super(feedToutiao);
-            if (feedToutiao == null) {
-                return;
-            }
-            this.business_info = Message.copyOf(feedToutiao.business_info);
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FeedToutiao build(boolean z) {
-            return new FeedToutiao(this, z);
-        }
+  public static final List<FeedKV> DEFAULT_BUSINESS_INFO = Collections.emptyList();
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 1)
+  public final List<FeedKV> business_info;
+  
+  public FeedToutiao(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    List<FeedKV> list;
+    if (paramBoolean == true) {
+      list = paramBuilder.business_info;
+      if (list == null) {
+        this.business_info = DEFAULT_BUSINESS_INFO;
+      } else {
+        this.business_info = Message.immutableCopyOf(list);
+      } 
+    } else {
+      this.business_info = Message.immutableCopyOf(((Builder)list).business_info);
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeedToutiao> {
+    public List<FeedKV> business_info;
+    
+    public Builder() {}
+    
+    public Builder(FeedToutiao param1FeedToutiao) {
+      super(param1FeedToutiao);
+      if (param1FeedToutiao == null)
+        return; 
+      this.business_info = Message.copyOf(param1FeedToutiao.business_info);
     }
-
-    public FeedToutiao(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            List<FeedKV> list = builder.business_info;
-            if (list == null) {
-                this.business_info = DEFAULT_BUSINESS_INFO;
-                return;
-            } else {
-                this.business_info = Message.immutableCopyOf(list);
-                return;
-            }
-        }
-        this.business_info = Message.immutableCopyOf(builder.business_info);
+    
+    public FeedToutiao build(boolean param1Boolean) {
+      return new FeedToutiao(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

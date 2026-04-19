@@ -2,46 +2,59 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class FeedContentEmoji extends Message {
-    public static final String DEFAULT_NAME = "";
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String name;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FeedContentEmoji> {
-        public String name;
-
-        public Builder() {
-        }
-
-        public Builder(FeedContentEmoji feedContentEmoji) {
-            super(feedContentEmoji);
-            if (feedContentEmoji == null) {
-                return;
-            }
-            this.name = feedContentEmoji.name;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FeedContentEmoji build(boolean z) {
-            return new FeedContentEmoji(this, z);
-        }
+  public static final String DEFAULT_C = "";
+  
+  public static final String DEFAULT_NAME = "";
+  
+  @ProtoField(tag = 2, type = Message.Datatype.STRING)
+  public final String c;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.STRING)
+  public final String name;
+  
+  public FeedContentEmoji(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    String str;
+    if (paramBoolean == true) {
+      String str1 = paramBuilder.name;
+      if (str1 == null) {
+        this.name = "";
+      } else {
+        this.name = str1;
+      } 
+      str = paramBuilder.c;
+      if (str == null) {
+        this.c = "";
+      } else {
+        this.c = str;
+      } 
+    } else {
+      this.name = ((Builder)str).name;
+      this.c = ((Builder)str).c;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeedContentEmoji> {
+    public String c;
+    
+    public String name;
+    
+    public Builder() {}
+    
+    public Builder(FeedContentEmoji param1FeedContentEmoji) {
+      super(param1FeedContentEmoji);
+      if (param1FeedContentEmoji == null)
+        return; 
+      this.name = param1FeedContentEmoji.name;
+      this.c = param1FeedContentEmoji.c;
     }
-
-    public FeedContentEmoji(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            String str = builder.name;
-            if (str == null) {
-                this.name = "";
-                return;
-            } else {
-                this.name = str;
-                return;
-            }
-        }
-        this.name = builder.name;
+    
+    public FeedContentEmoji build(boolean param1Boolean) {
+      return new FeedContentEmoji(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

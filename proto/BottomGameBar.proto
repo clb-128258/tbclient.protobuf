@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentResource.proto";
+import "FeedHeadButton.proto";
+import "FeedKV.proto";
+
+message BottomGameBar {
+    repeated FeedContentResource desc = 1;
+    repeated FeedContentResource sub_desc = 2;
+    repeated FeedContentResource title = 3;
+    FeedHeadButton button = 4;
+    string schema = 5;
+    FeedContentIcon icon = 6;
+    repeated FeedKV log_param = 7;
+}

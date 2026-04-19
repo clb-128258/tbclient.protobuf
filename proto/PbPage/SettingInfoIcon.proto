@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "IconUrlInfo.proto";
+import "ThemeElement.proto";
+
+message SettingInfoIcon {
+    string id = 1;
+    ThemeElement name = 2;
+    ThemeElement name_toggle = 3;
+    IconUrlInfo icon = 4;
+    IconUrlInfo icon_toggle = 5;
+    string schema = 6;
+    string schema_toggle = 7;
+}

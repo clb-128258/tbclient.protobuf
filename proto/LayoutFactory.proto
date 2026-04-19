@@ -1,8 +1,23 @@
 syntax = "proto3";
 
+import "BannerCardLayout.proto";
+import "CardFrequency.proto";
+import "DiscussLayout.proto";
+import "FeedKV.proto";
 import "FeedLayout.proto";
+import "FeedStaggerLayout.proto";
+import "FeedbackCardLayout.proto";
+import "FrsOfficialRecomLayout.proto";
 import "FrsTopThreadCardLayout.proto";
+import "GuideCardLayout.proto";
 import "HeadcardLayout.proto";
+import "HotCardLayout.proto";
+import "HotTopicCardLayout.proto";
+import "InspirationTopicCardLayout.proto";
+import "MultiThreadCardLayout.proto";
+import "PlaceholderLayout.proto";
+import "QuestionCard.proto";
+import "SideWayFeedLayout.proto";
 import "SidewayLayout.proto";
 import "VideoDoubleRowLayout.proto";
 
@@ -13,4 +28,24 @@ message LayoutFactory {
     HeadcardLayout headcard = 4;
     FrsTopThreadCardLayout frs_top_thread_card = 5;
     VideoDoubleRowLayout double_row_video = 6;
+    PlaceholderLayout template_stub_hot_card = 7;
+    PlaceholderLayout template_stub_recommend_forums = 8;
+    CardFrequency card_expose_frequency = 9;
+    CardFrequency card_click_frequency = 10;
+    HotCardLayout hot_card = 11;
+    MultiThreadCardLayout multi_thread_card = 12;
+    PlaceholderLayout template_stub_hot_forum_group = 13;
+    PlaceholderLayout template_stub_interest_card = 14;
+    SidewayLayout sideway_vertical = 15;
+    repeated FeedKV freq_info = 16;
+    HotTopicCardLayout hot_topic_card = 17;
+    InspirationTopicCardLayout inspiration_topic_card = 18;
+    BannerCardLayout banner_card = 19;
+    GuideCardLayout guide_card = 20;
+    FeedbackCardLayout bawu_feedback_card = 21;
+    QuestionCard question_card = 22;
+    FeedStaggerLayout feed_stagger_layout = 23;
+    DiscussLayout discuss_card = 24;
+    FrsOfficialRecomLayout frs_official_recom_card = 25;
+    SideWayFeedLayout sideway_feed = 26;
 }

@@ -6,4 +6,9 @@ message BusinessMix {
     string scheme = 3;
     int32 jump_type = 4;
     string package_name = 5;
+    double ecpm = 6;
+    int32 touch_level = 7;
+    string touch_type = 8;
+    int32 can_show_second_floor = 9;
+    double ctr = 10;
 }

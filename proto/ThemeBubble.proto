@@ -1,7 +1,10 @@
 syntax = "proto3";
 
+import "BubbleV2.proto";
+
 message ThemeBubble {
     int32 props_id = 1;
     int32 package_id = 2;
     string jump_url = 3;
+    BubbleV2 bubble_v2 = 4;
 }

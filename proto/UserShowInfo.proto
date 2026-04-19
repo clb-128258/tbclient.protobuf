@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "FeedHeadComponent.proto";
+
+message UserShowInfo {
+    FeedHeadComponent feed_head = 1;
+}

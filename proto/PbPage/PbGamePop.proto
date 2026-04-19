@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "GameDetail.proto";
+import "PbPage/CommentSimple.proto";
+
+message PbGamePop {
+    GameDetail game_detail = 1;
+    int32 alter_times = 2;
+    int32 alter_seconds = 3;
+    string alter_url = 4;
+    repeated CommentSimple comment = 5;
+    string scheme_type = 6;
+}

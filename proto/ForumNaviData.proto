@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ForumNaviIcon.proto";
+
+message ForumNaviData {
+    string forum_navi_text = 1;
+    ForumNaviIcon forum_navi_icon = 2;
+}

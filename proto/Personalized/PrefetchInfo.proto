@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message PrefetchInfo {
+    uint64 thread_id = 1;
+    string prefetch_schema = 2;
+}

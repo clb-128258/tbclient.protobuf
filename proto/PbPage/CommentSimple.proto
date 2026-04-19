@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message CommentSimple {
+    string user_name = 1;
+    string content = 2;
+}

@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "AddPost/DrawThreadPopUp.proto";
+import "AddPost/PostScoreInfo.proto";
 import "Advertisement.proto";
 import "Anti.proto";
 import "ContriInfo.proto";
@@ -32,4 +34,9 @@ message DataRes {
     VcodeInfo anti = 17;
     string ext_msg = 18;
     Toast toast = 19;
+    repeated string hotmemes_hit = 20;
+    PostScoreInfo score_info = 21;
+    DrawThreadPopUp draw_thread_popup = 22;
+    int32 draw_thread_has_reply = 23;
+    repeated int64 vaild_task_ids = 24;
 }

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+import "MiniGame.proto";
+import "Profile/Game.proto";
+import "Profile/Link.proto";
+
+message ProfileGameInfo {
+    repeated Game game = 1;
+    repeated FeedKV log_param = 2;
+    repeated Game banner = 3;
+    repeated MiniGame mini_game = 4;
+    Link module_link = 5;
+}

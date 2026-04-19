@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "PushFeedBackButton.proto";
+import "PushFeedbackStrategy.proto";
+
+message PushFeedbackInfo {
+    string title = 1;
+    repeated PushFeedBackButton button_list = 2;
+    int32 _switch = 3;
+    string feedback_url = 4;
+    repeated PushFeedbackStrategy show_strategy = 5;
+    int32 display_delay_time = 6;
+    int32 disappear_delay_time = 7;
+}

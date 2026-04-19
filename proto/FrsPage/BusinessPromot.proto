@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "AppDownloadInfo.proto";
+import "BusinessPromotBannerMedia.proto";
 import "FrsPage/BusinessPromotCommentList.proto";
 
 message BusinessPromot {
@@ -34,4 +36,20 @@ message BusinessPromot {
     string video_url = 29;
     int32 ban_dialog = 30;
     string download_effect = 31;
+    uint32 pop_type = 32;
+    uint32 pop_num = 33;
+    uint32 nofocus_pop = 34;
+    uint32 nosign_pop = 35;
+    uint32 is_expand = 36;
+    uint32 is_shield_banner = 37;
+    uint32 start_time = 38;
+    uint32 end_time = 39;
+    BusinessPromotBannerMedia banner_media = 40;
+    string lighthouse_url = 41;
+    uint32 pop_close_second = 42;
+    uint32 banner_wait_interval = 43;
+    string popup_jump_url = 44;
+    string popup_scheme = 45;
+    string popup_package_name = 46;
+    AppDownloadInfo download_info = 47;
 }

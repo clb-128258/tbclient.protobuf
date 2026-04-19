@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedContentGradiantColor.proto";
+import "FeedContentResource.proto";
+
+message ConfigurableHeadTitle {
+    repeated FeedContentResource data = 1;
+    string font_size = 2;
+    FeedContentGradiantColor background = 3;
+}

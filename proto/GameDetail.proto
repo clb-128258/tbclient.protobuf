@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+import "GameBookedToast.proto";
+import "Media.proto";
+import "PkgInfo.proto";
+import "SidebarInfo.proto";
+
+message GameDetail {
+    string game_id = 1;
+    string game_name = 2;
+    string game_icon = 3;
+    repeated string game_tags = 4;
+    string label = 5;
+    int32 type = 6;
+    string booked_num = 7;
+    string button_name = 8;
+    string company = 9;
+    int32 user_is_booked = 10;
+    string jump_url = 11;
+    PkgInfo pkg_info = 12;
+    string cid = 13;
+    string desc = 14;
+    Media head_img = 15;
+    string download_num = 16;
+    repeated FeedKV log_param = 17;
+    GameBookedToast booked_toast = 18;
+    int32 is_show_button = 19;
+    SidebarInfo sidebar_info = 20;
+    int32 card_type = 21;
+    string rec_txt = 22;
+    string schema = 23;
+}

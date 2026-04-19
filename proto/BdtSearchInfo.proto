@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message BdtSearchInfo {
+    int32 bdt_thread_num = 1;
+    string bdt_think_content = 2;
+    string bdt_result_content = 3;
+    int32 bdt_result_status = 4;
+    string bdt_schema = 5;
+}

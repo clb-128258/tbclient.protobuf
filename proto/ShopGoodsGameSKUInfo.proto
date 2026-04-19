@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message ShopGoodsGameSKUInfo {
+    uint32 id = 1;
+    string content = 2;
+    string version_tab = 3;
+    uint32 stock = 4;
+    uint32 price = 5;
+}

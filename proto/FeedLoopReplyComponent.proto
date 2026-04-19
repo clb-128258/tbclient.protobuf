@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FeedInnerReplyComponent.proto";
+
+message FeedLoopReplyComponent {
+    repeated FeedInnerReplyComponent reply_list = 1;
+    int32 loop_duration = 2;
+}

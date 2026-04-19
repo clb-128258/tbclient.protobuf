@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ComponentFactory.proto";
+
+message FeedFlipPage {
+    int32 show_num_per_page = 1;
+    repeated ComponentFactory feed_page_content = 2;
+}

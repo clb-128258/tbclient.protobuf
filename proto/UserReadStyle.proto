@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message UserReadStyle {
+    string style_name = 1;
+    int32 current_style = 2;
+    int32 is_slide = 3;
+}

@@ -2,70 +2,96 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class FeedbackReason extends Message {
-    public static final String DEFAULT_EXTRA = "";
-    public static final Integer DEFAULT_ID = 0;
-    public static final String DEFAULT_REASON = "";
-    @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String extra;
-    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer id;
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String reason;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FeedbackReason> {
-        public String extra;
-        public Integer id;
-        public String reason;
-
-        public Builder() {
-        }
-
-        public Builder(FeedbackReason feedbackReason) {
-            super(feedbackReason);
-            if (feedbackReason == null) {
-                return;
-            }
-            this.reason = feedbackReason.reason;
-            this.id = feedbackReason.id;
-            this.extra = feedbackReason.extra;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FeedbackReason build(boolean z) {
-            return new FeedbackReason(this, z);
-        }
+  public static final String DEFAULT_EXTRA = "";
+  
+  public static final Integer DEFAULT_ID = Integer.valueOf(0);
+  
+  public static final String DEFAULT_REASON = "";
+  
+  public static final String DEFAULT_SCHEMA = "";
+  
+  @ProtoField(tag = 3, type = Message.Datatype.STRING)
+  public final String extra;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+  public final Integer id;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.STRING)
+  public final String reason;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.STRING)
+  public final String schema;
+  
+  @ProtoField(tag = 5)
+  public final Toast toast;
+  
+  public FeedbackReason(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    if (paramBoolean == true) {
+      String str2 = paramBuilder.reason;
+      if (str2 == null) {
+        this.reason = "";
+      } else {
+        this.reason = str2;
+      } 
+      Integer integer = paramBuilder.id;
+      if (integer == null) {
+        this.id = DEFAULT_ID;
+      } else {
+        this.id = integer;
+      } 
+      String str1 = paramBuilder.extra;
+      if (str1 == null) {
+        this.extra = "";
+      } else {
+        this.extra = str1;
+      } 
+      str1 = paramBuilder.schema;
+      if (str1 == null) {
+        this.schema = "";
+      } else {
+        this.schema = str1;
+      } 
+      this.toast = paramBuilder.toast;
+    } else {
+      this.reason = paramBuilder.reason;
+      this.id = paramBuilder.id;
+      this.extra = paramBuilder.extra;
+      this.schema = paramBuilder.schema;
+      this.toast = paramBuilder.toast;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FeedbackReason> {
+    public String extra;
+    
+    public Integer id;
+    
+    public String reason;
+    
+    public String schema;
+    
+    public Toast toast;
+    
+    public Builder() {}
+    
+    public Builder(FeedbackReason param1FeedbackReason) {
+      super(param1FeedbackReason);
+      if (param1FeedbackReason == null)
+        return; 
+      this.reason = param1FeedbackReason.reason;
+      this.id = param1FeedbackReason.id;
+      this.extra = param1FeedbackReason.extra;
+      this.schema = param1FeedbackReason.schema;
+      this.toast = param1FeedbackReason.toast;
     }
-
-    public FeedbackReason(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            String str = builder.reason;
-            if (str == null) {
-                this.reason = "";
-            } else {
-                this.reason = str;
-            }
-            Integer num = builder.id;
-            if (num == null) {
-                this.id = DEFAULT_ID;
-            } else {
-                this.id = num;
-            }
-            String str2 = builder.extra;
-            if (str2 == null) {
-                this.extra = "";
-                return;
-            } else {
-                this.extra = str2;
-                return;
-            }
-        }
-        this.reason = builder.reason;
-        this.id = builder.id;
-        this.extra = builder.extra;
+    
+    public FeedbackReason build(boolean param1Boolean) {
+      return new FeedbackReason(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

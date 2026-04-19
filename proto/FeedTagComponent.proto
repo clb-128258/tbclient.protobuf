@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+
+message FeedTagComponent {
+    repeated FeedContentResource tag = 1;
+    string schema = 2;
+    repeated FeedContentResource suffix = 3;
+}

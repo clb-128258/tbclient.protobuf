@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+import "FeedScoreItem.proto";
+
+message FeedScoreComponent {
+    repeated FeedScoreItem item = 1;
+    uint32 limit_count = 2;
+    FeedContentResource desc = 3;
+    string schema = 4;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FeedHeadSymbol.proto";
+import "LayoutManageInfo.proto";
+
+message ThreadExtShowComponent {
+    repeated string img_urls = 1;
+    string text_info = 2;
+    FeedHeadSymbol extra_data = 3;
+    repeated LayoutManageInfo manage_list = 4;
+    bool is_pic_thread = 5;
+}

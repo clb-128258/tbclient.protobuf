@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PbContent.proto";
+
+message NewRuleContent {
+    repeated PbContent content = 1;
+}

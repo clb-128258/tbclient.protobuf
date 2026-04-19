@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedContentJumpInfo.proto";
+import "FeedContentText.proto";
+
+message FeedDiscussComponent {
+    FeedContentText positive_text = 1;
+    FeedContentText negative_text = 2;
+    FeedContentJumpInfo positive_info = 3;
+    FeedContentJumpInfo negative_info = 4;
+}

@@ -4,4 +4,5 @@ import "CommonReq.proto";
 
 message DataReq {
     int32 props_id = 1;
+    CommonReq common = 2;
 }

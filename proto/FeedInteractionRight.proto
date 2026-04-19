@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedInteractionRightData.proto";
+
+message FeedInteractionRight {
+    string schema = 1;
+    FeedContentIcon icon_data = 2;
+    FeedInteractionRightData data = 4;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "ScoreIcon.proto";
+
+message ScoreFeedbackComponent {
+    repeated ScoreIcon score_icon_list = 1;
+}

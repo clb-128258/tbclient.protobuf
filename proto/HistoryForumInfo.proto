@@ -29,4 +29,6 @@ message HistoryForumInfo {
     int32 day_thread_num = 24;
     int32 thread_num = 25;
     int32 post_num = 26;
+    uint32 is_forbidden = 27;
+    int32 is_official_forum = 28;
 }

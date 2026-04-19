@@ -3,6 +3,7 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
+    CommonReq common = 1;
     string authsid = 2;
     string sig = 3;
     string tbs = 4;
@@ -88,4 +89,12 @@ message DataReq {
     int32 is_xiuxiu_thread = 86;
     int32 is_show_bless = 87;
     string bot_conf = 88;
+    string private_chat_robot_uk = 89;
+    uint64 private_chat_page_height = 90;
+    string private_chat_img = 91;
+    string private_chat_msgkeys = 92;
+    uint64 private_chat_page_width = 93;
+    int64 activity_product_id = 94;
+    int64 activity_business_id = 95;
+    string ext = 96;
 }

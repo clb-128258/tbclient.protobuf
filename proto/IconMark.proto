@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message IconMark {
+    string type = 1;
+    ThemeColorInfo icon = 2;
+}

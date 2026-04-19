@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+import "Profile/Commerce.proto";
+
+message CommerceInfo {
+    repeated Commerce commerce = 1;
+    repeated FeedKV log_param = 2;
+}

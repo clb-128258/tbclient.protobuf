@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "SortButton.proto";
+
+message PartitionMenu {
+    string text = 1;
+    int64 source_id = 2;
+    repeated SortButton sub_menu = 3;
+}

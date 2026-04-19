@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "Profile/VipBannerThemeColorInfo.proto";
+
 message VipBanner {
     string title = 1;
     string sub_title = 2;
@@ -7,4 +9,15 @@ message VipBanner {
     string bubble = 4;
     string url = 5;
     string button_url = 6;
+    repeated string sub_title_list = 7;
+    string button_pic = 8;
+    string banner_pic = 9;
+    string background_day = 10;
+    int32 topic_mode = 11;
+    int32 vip_status = 12;
+    VipBannerThemeColorInfo theme_color_info = 13;
+    string vip_icon = 14;
+    string background_night = 15;
+    string ios_banner_background = 16;
+    string ios_banner_emoji = 17;
 }

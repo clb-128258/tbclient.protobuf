@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentResource.proto";
+
+message FeedRecomtagStaggeredComponent {
+    FeedContentIcon icon_data = 1;
+    repeated FeedContentResource text = 2;
+    FeedContentIcon right_icon = 3;
+    string schema = 4;
+}

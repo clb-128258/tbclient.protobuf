@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+
+message MiniGame {
+    int64 app_id = 1;
+    string app_name = 2;
+    int32 app_type = 3;
+    string icon = 4;
+    string resource_key = 5;
+    int32 source = 6;
+    int32 is_recommend = 7;
+    string show_tag = 9;
+    string jump_url = 10;
+    repeated FeedKV log_param = 11;
+}

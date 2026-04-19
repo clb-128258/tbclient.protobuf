@@ -6,4 +6,7 @@ message FeedContentText {
     string text = 1;
     FeedContentColor color = 2;
     FeedContentColor bg_color = 3;
+    string margin_left = 4;
+    string margin_right = 5;
+    int32 font_weight = 6;
 }

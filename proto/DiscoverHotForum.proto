@@ -1,8 +1,13 @@
 syntax = "proto3";
 
 import "DiscoverTabCard.proto";
+import "FeedKV.proto";
 
 message DiscoverHotForum {
     repeated DiscoverTabCard tab_list = 1;
     int32 floor = 2;
+    int32 screen_max_num = 3;
+    string show_frequency = 4;
+    bool is_hit_new_style = 5;
+    repeated FeedKV business_info = 6;
 }

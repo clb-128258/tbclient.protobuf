@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "ComponentFactory.proto";
+import "FeedContentColor.proto";
+import "FeedFeedback.proto";
+import "FeedKV.proto";
+
+message SideWayFeedLayout {
+    FeedContentColor bottom_bacground_color = 1;
+    uint32 is_full_screen = 2;
+    repeated ComponentFactory components = 3;
+    repeated FeedKV business_info = 4;
+    repeated FeedKV log_param = 5;
+    repeated FeedKV log_info = 6;
+    FeedFeedback feedback = 8;
+}

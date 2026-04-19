@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "ForumNaviData.proto";
+
+message PageGuidTips {
+    ForumNaviData forum_navi_data = 1;
+    string prefix_text = 2;
+    string suffix_text = 3;
+    string suffix_icon = 4;
+    string schema = 5;
+}

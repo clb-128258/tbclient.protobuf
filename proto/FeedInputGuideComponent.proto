@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "FeedContentColor.proto";
+import "FeedContentIcon.proto";
+import "FeedContentResource.proto";
+import "LayoutManageInfo.proto";
+
+message FeedInputGuideComponent {
+    FeedContentIcon left_icon = 1;
+    repeated FeedContentResource left_text = 2;
+    FeedContentIcon strip = 3;
+    repeated FeedContentResource mid_text = 4;
+    FeedContentIcon right_icon = 5;
+    repeated FeedContentResource right_text = 6;
+    FeedContentColor background = 7;
+    string scheme = 8;
+    repeated LayoutManageInfo manage_list = 9;
+}

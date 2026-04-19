@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "ShopGoodsPlatformInfo.proto";
+
+message ShopGoodsGameInfo {
+    string game_name = 1;
+    repeated ShopGoodsPlatformInfo platform = 2;
+    repeated string category = 3;
+    repeated string video_url = 4;
+    repeated string img_url = 5;
+    string game_name_en = 6;
+    string desc = 7;
+    string app_id = 8;
+    string game_type = 9;
+    string vertical_msg = 10;
+}

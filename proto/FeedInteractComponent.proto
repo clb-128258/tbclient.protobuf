@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "AgreeData.proto";
+import "FeedKV.proto";
+import "InteractItem.proto";
+
+message FeedInteractComponent {
+    InteractItem repost = 1;
+    InteractItem collect = 2;
+    InteractItem comment = 3;
+    AgreeData agree = 4;
+    repeated FeedKV business_info = 5;
+}

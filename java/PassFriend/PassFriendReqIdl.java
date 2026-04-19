@@ -2,39 +2,36 @@ package tbclient.PassFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class PassFriendReqIdl extends Message {
-    @ProtoField(tag = 1)
-    public final ReqData data;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<PassFriendReqIdl> {
-        public ReqData data;
-
-        public Builder() {
-        }
-
-        public Builder(PassFriendReqIdl passFriendReqIdl) {
-            super(passFriendReqIdl);
-            if (passFriendReqIdl == null) {
-                return;
-            }
-            this.data = passFriendReqIdl.data;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public PassFriendReqIdl build(boolean z) {
-            return new PassFriendReqIdl(this, z);
-        }
+  @ProtoField(tag = 1)
+  public final ReqData data;
+  
+  public PassFriendReqIdl(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    if (paramBoolean == true) {
+      this.data = paramBuilder.data;
+    } else {
+      this.data = paramBuilder.data;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<PassFriendReqIdl> {
+    public ReqData data;
+    
+    public Builder() {}
+    
+    public Builder(PassFriendReqIdl param1PassFriendReqIdl) {
+      super(param1PassFriendReqIdl);
+      if (param1PassFriendReqIdl == null)
+        return; 
+      this.data = param1PassFriendReqIdl.data;
     }
-
-    public PassFriendReqIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-        } else {
-            this.data = builder.data;
-        }
+    
+    public PassFriendReqIdl build(boolean param1Boolean) {
+      return new PassFriendReqIdl(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

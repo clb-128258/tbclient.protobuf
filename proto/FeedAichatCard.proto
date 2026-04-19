@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "BotUser.proto";
+import "ChatContent.proto";
+import "FeedKV.proto";
+import "User.proto";
+
+message FeedAichatCard {
+    User bot_info = 1;
+    string content = 2;
+    ChatContent chat_button = 3;
+    string target_scheme = 4;
+    BotUser bot_user_info = 5;
+    repeated FeedKV business_info = 6;
+}

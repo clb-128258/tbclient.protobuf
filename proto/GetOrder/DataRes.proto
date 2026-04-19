@@ -27,4 +27,14 @@ message DataRes {
     string pay_url = 22;
     string call_type = 23;
     string pay_channel = 24;
+    string authorize_data = 25;
+    string sign_channel = 26;
+    string period_type = 27;
+    string period = 28;
+    string execute_time = 29;
+    string single_amount = 30;
+    string customer_uid = 31;
+    string req_data = 32;
+    string return_url = 33;
+    string fail_url = 34;
 }

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message BrandAward {
+    int32 index = 1;
+    string award_name = 2;
+    string award_icon = 3;
+}

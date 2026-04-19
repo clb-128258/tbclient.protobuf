@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message PushInfo {
+    string task_id = 1;
+    string service_id = 2;
+    string target_url = 3;
+    int32 push_time = 4;
+    string ext = 5;
+}

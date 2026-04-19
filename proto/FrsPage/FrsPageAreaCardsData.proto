@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FrsPage/FrsPageCardData.proto";
+
+message FrsPageAreaCardsData {
+    string card_type = 1;
+    FrsPageCardData data = 2;
+}

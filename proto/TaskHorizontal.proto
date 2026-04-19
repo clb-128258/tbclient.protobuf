@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message TaskHorizontal {
+    string content = 1;
+    string scheme = 2;
+    string second_scheme = 3;
+    string second_content = 4;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ComponentFactory.proto";
+import "FeedKV.proto";
+
+message FeedbackCardLayout {
+    repeated ComponentFactory components = 1;
+    repeated FeedKV business_info = 2;
+    repeated FeedKV log_param = 3;
+}

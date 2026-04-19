@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message FeedUserFold {
+    string text = 1;
+    repeated int64 fold_tid_list = 2;
+    int32 expand_num = 3;
+}

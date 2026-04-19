@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "NamoaixudEntry.proto";
+import "Profile/AuxiliaryFunc.proto";
+import "Profile/CommerceInfo.proto";
+import "Profile/CommonFuncInfo.proto";
+import "Profile/ProfileBanner.proto";
+import "Profile/ProfileGameInfo.proto";
+
+message ZoneInfo {
+    string type = 1;
+    CommonFuncInfo common_func = 2;
+    CommerceInfo commerce = 3;
+    ProfileBanner banner = 4;
+    AuxiliaryFunc auxiliary_func = 5;
+    ProfileGameInfo game = 6;
+    NamoaixudEntry namoaixud_entry = 7;
+}

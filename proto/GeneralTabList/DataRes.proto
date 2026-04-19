@@ -1,7 +1,10 @@
 syntax = "proto3";
 
+import "AdAuditInfo.proto";
 import "AdMixFloor.proto";
 import "App.proto";
+import "FeedKV.proto";
+import "ForumLikeGuide.proto";
 import "GeneralTabList/PageData.proto";
 import "ItemInfo.proto";
 import "SortOption.proto";
@@ -9,6 +12,7 @@ import "SportPageHeadInfo.proto";
 import "SportScheduleInfo.proto";
 import "ThreadInfo.proto";
 import "User.proto";
+import "UserReadStyle.proto";
 
 message DataRes {
     repeated ThreadInfo general_list = 1;
@@ -25,4 +29,9 @@ message DataRes {
     repeated AdMixFloor ad_mix_list = 12;
     string ad_sample_map_key = 13;
     PageData page_data = 14;
+    repeated FeedKV log_param = 15;
+    ForumLikeGuide forum_like_guide = 16;
+    int32 need_post_cdn = 17;
+    UserReadStyle user_read_style = 18;
+    AdAuditInfo ad_audit_info = 21;
 }

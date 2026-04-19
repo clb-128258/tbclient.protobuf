@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedHeadImg.proto";
+import "FeedHeadSymbol.proto";
+
+message FeedInteractionLeft {
+    FeedHeadImg image_data = 1;
+    repeated FeedHeadSymbol main_data = 2;
+    string schema = 3;
+}

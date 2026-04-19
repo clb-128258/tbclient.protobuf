@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "FrsBottomActivity.proto";
+import "FrsPage/AiChatroomGuide.proto";
+import "FrsPage/FrsBannerHeader.proto";
+import "FrsPage/LiveFuseForumData.proto";
+import "FrsPage/LiveModuleList.proto";
+import "FrsPage/TopLiveData.proto";
+
+message FrsPageCardData {
+    repeated LiveModuleList live_module_list = 1;
+    TopLiveData top_live_data = 2;
+    repeated LiveFuseForumData live_fuse_forum = 3;
+    AiChatroomGuide ai_chatroom_guide = 4;
+    FrsBottomActivity frs_activity = 5;
+    FrsBannerHeader frs_banner_header = 6;
+}

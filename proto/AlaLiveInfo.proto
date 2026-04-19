@@ -65,4 +65,6 @@ message AlaLiveInfo {
     string scheme = 55;
     WidthHeight player_size = 56;
     WidthHeight container_size = 57;
+    string ctr_fea = 58;
+    string yy_source = 59;
 }

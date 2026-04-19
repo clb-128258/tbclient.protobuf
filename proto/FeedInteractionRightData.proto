@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "Agree.proto";
+import "Comment.proto";
+import "FeedContentResource.proto";
+
+message FeedInteractionRightData {
+    uint32 type = 1;
+    Agree agree = 2;
+    repeated FeedContentResource text = 3;
+    Comment comment = 4;
+}

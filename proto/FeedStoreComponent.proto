@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+import "FeedContentText.proto";
+
+message FeedStoreComponent {
+    string img_url = 1;
+    FeedContentText price = 2;
+    FeedContentText price_prefix = 3;
+    FeedContentText recommend_tips = 4;
+    string scheme = 5;
+    repeated FeedContentResource text_info = 6;
+}

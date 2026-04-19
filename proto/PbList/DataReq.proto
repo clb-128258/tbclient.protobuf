@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+import "AppTransmitData.proto";
+import "CommonReq.proto";
+import "PbList/AdParam.proto";
+import "PushInfo.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    int64 kz = 2;
+    int32 pn = 3;
+    int64 last_pid = 4;
+    int32 r = 5;
+    int32 back = 6;
+    int32 lz = 7;
+    int32 mark_type = 8;
+    string tab_type = 9;
+    uint64 tab_id = 10;
+    int64 top_pid = 11;
+    string st_type = 12;
+    string up_schema = 13;
+    string log_params = 14;
+    string yuelaou_locate = 15;
+    string query_word = 16;
+    string da_idfa = 17;
+    AdParam ad_param = 18;
+    string ad_context_list = 19;
+    string ad_ext_params = 20;
+    AppTransmitData app_transmit_data = 21;
+    string ad_bear_pb_banner = 22;
+    string ad_bear_pb_comment = 23;
+    string ad_external_banner_info = 24;
+    string ad_external_info = 25;
+    string game_id = 26;
+    string cid = 27;
+    int32 position = 28;
+    string game_fid = 29;
+    string game_fname = 30;
+    string search_query = 31;
+    PushInfo push_info = 32;
+    int64 topic_id = 33;
+    int64 topic_fid = 34;
+    string mount_bot_uk = 35;
+    int32 request_times = 36;
+    int64 broadcast_id = 37;
+    string fr = 38;
+    int32 session_request_times = 39;
+    string shoubai_cuid = 40;
+    uint32 from_forum_id = 41;
+}

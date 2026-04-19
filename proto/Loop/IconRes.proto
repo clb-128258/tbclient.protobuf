@@ -4,4 +4,6 @@ import "Loop/IconPop.proto";
 
 message IconRes {
     IconPop pop = 1;
+    string pop_key = 2;
+    string pop_value = 3;
 }

@@ -3,4 +3,11 @@ syntax = "proto3";
 message ThreadAblum {
     int32 id = 1;
     int64 tab_id = 2;
+    string title = 3;
+    string source = 4;
+    string thread_sort_text = 5;
+    string sub_source = 6;
+    string url = 7;
+    int32 type = 8;
+    int64 tid = 9;
 }

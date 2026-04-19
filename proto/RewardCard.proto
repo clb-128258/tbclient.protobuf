@@ -17,4 +17,5 @@ message RewardCard {
     repeated string head_imgs = 13;
     string join_succ_text = 14;
     string banner_jump_url = 15;
+    int32 type = 16;
 }

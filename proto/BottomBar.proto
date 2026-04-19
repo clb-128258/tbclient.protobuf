@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ButtonConf.proto";
+
+message BottomBar {
+    string icon = 1;
+    string title = 2;
+    ButtonConf button = 3;
+    string scheme = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FeedContentColor.proto";
+
+message FeedContentGradiantColorSymbol {
+    FeedContentColor color = 1;
+    string gradiant = 2;
+}

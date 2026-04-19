@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AlaLiveInfo.proto";
+import "BusinessMix.proto";
+
+message LiveAdData {
+    AlaLiveInfo recom_ala_info = 1;
+    BusinessMix business_mix = 2;
+}

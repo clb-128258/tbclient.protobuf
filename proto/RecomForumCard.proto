@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+import "PubCardFreq.proto";
+import "RecommendForumInfo.proto";
+import "ThemeColorInfo.proto";
+
+message RecomForumCard {
+    string title = 1;
+    ThemeColorInfo avatar = 3;
+    int32 card_offset = 4;
+    PubCardFreq freq = 5;
+    repeated RecommendForumInfo forum_list = 6;
+    int32 screen_max_num = 7;
+    bool is_hit_new_style = 8;
+    repeated FeedKV business_info = 9;
+}

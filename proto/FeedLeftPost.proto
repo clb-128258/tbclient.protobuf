@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "IconUrlInfo.proto";
+
+message FeedLeftPost {
+    int32 comment_num = 1;
+    string scheme = 2;
+    IconUrlInfo icon = 3;
+}

@@ -11,4 +11,5 @@ message FrsTopThreadComponent {
     FeedAuthorSocial author_social = 3;
     repeated FeedKV business_info = 4;
     string scheme = 5;
+    repeated FeedKV log_info = 6;
 }

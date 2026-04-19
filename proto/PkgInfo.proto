@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message PkgInfo {
+    string url = 1;
+    string version = 2;
+    string size = 3;
+    string version_code = 4;
+    string pkg_name = 5;
+    int32 pkg_source = 6;
+    string privacy = 7;
+    string power = 8;
+    string company = 9;
+    string ability = 10;
+}

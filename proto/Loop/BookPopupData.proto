@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "BookPopupExt.proto";
+
+message BookPopupData {
+    string title = 1;
+    string desc = 2;
+    string btn_text = 3;
+    int32 jump_type = 4;
+    string jump_url = 5;
+    int32 frequency = 6;
+    int32 source = 7;
+    BookPopupExt ext = 8;
+    string desc_wifi = 9;
+    string btn_text_wifi = 10;
+}

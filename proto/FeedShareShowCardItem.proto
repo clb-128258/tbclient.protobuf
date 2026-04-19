@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message FeedShareShowCardItem {
+    uint64 post_id = 1;
+    string image = 2;
+    string image_size = 3;
+    string text = 4;
+}

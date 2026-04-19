@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+import "FeedKV.proto";
+import "PicInfo.proto";
+
+message FeedSidewayItem {
+    PicInfo image = 1;
+    repeated FeedContentResource main_data = 2;
+    repeated FeedContentResource extra_data = 3;
+    string schema = 4;
+    repeated FeedKV business_info = 5;
+}

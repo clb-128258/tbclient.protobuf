@@ -3,10 +3,15 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
+    CommonReq common = 1;
     string token = 2;
     string da_locate = 3;
     int32 da_from = 4;
     string extra_param = 5;
     string order_id = 6;
     string da_type = 7;
+    string channel = 8;
+    string business_type = 9;
+    string ad_info = 10;
+    string ad_ext = 11;
 }

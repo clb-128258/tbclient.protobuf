@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "PicInfo.proto";
+import "SidewayListSeeMore.proto";
+
+message FeedMultiComponent {
+    repeated PicInfo pics = 1;
+    string schema = 2;
+    SidewayListSeeMore see_more = 3;
+}

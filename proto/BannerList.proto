@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AdAuditInfo.proto";
 import "App.proto";
 import "FeedForumInfo.proto";
 import "RecomTopicInfo.proto";
@@ -11,4 +12,7 @@ message BannerList {
     string applist = 4;
     App pb_banner_ad = 5;
     repeated App video_recommend_ad = 6;
+    repeated App comment_game_ad = 7;
+    AdAuditInfo ad_audit_info = 8;
+    AdAuditInfo pb_banner_ad_audit_info = 9;
 }

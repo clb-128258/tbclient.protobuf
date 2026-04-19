@@ -1,8 +1,11 @@
 syntax = "proto3";
 
+import "FeedKV.proto";
 import "VideoField.proto";
 
 message FeedVideoComponent {
     VideoField video_info = 1;
     string schema = 2;
+    repeated FeedKV business_info = 3;
+    int32 preload = 5;
 }

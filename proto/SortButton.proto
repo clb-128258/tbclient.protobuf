@@ -1,6 +1,10 @@
 syntax = "proto3";
 
+import "FrsTabInfo.proto";
+
 message SortButton {
     string text = 1;
     int32 source_id = 2;
+    FrsTabInfo tab_info = 3;
+    int32 is_selected = 4;
 }

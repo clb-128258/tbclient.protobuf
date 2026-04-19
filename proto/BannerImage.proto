@@ -1,7 +1,10 @@
 syntax = "proto3";
 
+import "ThemeColorInfo.proto";
+
 message BannerImage {
     string img_url = 1;
     string ahead_url = 2;
     string title = 3;
+    ThemeColorInfo theme_color_info = 4;
 }

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message GuideWordList {
+    string guide_word = 1;
+    string key_word = 2;
+}

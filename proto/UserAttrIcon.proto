@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "UserIconExtAttr.proto";
+
+message UserAttrIcon {
+    string type = 1;
+    string sub_type = 2;
+    string comment = 3;
+    string img_src = 4;
+    string link_url = 5;
+    int32 height = 6;
+    int32 width = 7;
+    repeated UserIconExtAttr ext_attr = 8;
+    uint32 show_type = 9;
+    string degrade_img_src = 11;
+    int32 degrade_height = 12;
+    int32 degrade_width = 13;
+    string prefix_img_src = 14;
+    int32 prefix_height = 15;
+    int32 prefix_width = 16;
+    string text = 17;
+}

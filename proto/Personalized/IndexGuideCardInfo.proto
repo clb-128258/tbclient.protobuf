@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+
+message IndexGuideCardInfo {
+    string icon_url = 1;
+    string title = 2;
+    string sub_title = 3;
+    string bg_url = 4;
+    string button_scheme = 5;
+    repeated FeedKV freq_info = 6;
+    string button_text = 7;
+    string bg_url_dark = 8;
+}

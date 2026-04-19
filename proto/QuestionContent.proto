@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentText.proto";
+
+message QuestionContent {
+    FeedContentText user_name = 1;
+    FeedContentText mid_text = 2;
+    FeedContentIcon award_icon = 3;
+    FeedContentText award_content = 4;
+}

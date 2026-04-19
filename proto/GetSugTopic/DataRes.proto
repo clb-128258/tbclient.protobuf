@@ -7,4 +7,6 @@ message DataRes {
     TopicListModule bang_topic = 2;
     TopicListModule sug_topic = 3;
     TopicListModule video_topic = 5;
+    TopicListModule inspiration_topic = 6;
+    TopicListModule hot_topic = 7;
 }

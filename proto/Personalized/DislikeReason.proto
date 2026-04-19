@@ -1,7 +1,11 @@
 syntax = "proto3";
 
+import "Toast.proto";
+
 message DislikeReason {
     string dislike_reason = 1;
     uint32 dislike_id = 2;
     string extra = 3;
+    string schema = 4;
+    Toast toast = 5;
 }

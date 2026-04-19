@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+import "ListingReason.proto";
+import "ShopGoodsChannelInfo.proto";
+import "ShopGoodsCommentInfo.proto";
+import "ShopGoodsGameInfo.proto";
+import "ShopGoodsRecommendInfo.proto";
+import "ThemeColorInfo.proto";
+
+message ShopGoodsInfo {
+    string goods_name = 1;
+    uint32 price = 2;
+    int64 sales = 3;
+    ShopGoodsRecommendInfo recommend_info = 4;
+    uint32 card_style = 5;
+    ShopGoodsChannelInfo channel_info = 6;
+    string cover_img = 7;
+    string url = 8;
+    uint64 thread_id = 9;
+    ListingReason listing_reason = 10;
+    ShopGoodsCommentInfo comment_info = 11;
+    string scheme = 12;
+    string goods_desc = 13;
+    uint32 goods_id = 14;
+    uint32 estimated_earnings = 15;
+    string audit_reason = 16;
+    repeated string img_list = 17;
+    uint64 forum_id = 18;
+    uint32 goods_status = 19;
+    string source_url = 20;
+    ShopGoodsCommentInfo view_info = 21;
+    uint64 agree_count = 22;
+    string forum_name = 23;
+    string forum_avatar = 24;
+    string shop_desc = 25;
+    uint32 discount_type = 26;
+    string pv = 27;
+    string need_notice = 28;
+    string goods_label = 29;
+    uint32 preferential_price = 30;
+    string second_scheme = 31;
+    uint32 coupon_type = 32;
+    repeated ThemeColorInfo tag_list = 33;
+    uint64 post_id = 34;
+    ShopGoodsGameInfo game_info = 35;
+    uint32 discount_price = 36;
+    uint32 has_order = 37;
+    uint32 goods_type = 38;
+}

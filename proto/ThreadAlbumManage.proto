@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message ThreadAlbumManage {
+    int32 can_add = 1;
+    string url = 2;
+    string toast = 3;
+}

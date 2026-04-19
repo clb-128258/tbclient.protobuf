@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "QueryInfo.proto";
+
+message SuggestQuery {
+    QueryInfo sub_querys = 1;
+    QueryInfo rela_querys = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "JumpText.proto";
+
+message FeedPrivateInfoComponent {
+    JumpText main_text = 1;
+    repeated JumpText suffix_list = 2;
+}

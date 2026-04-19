@@ -5,4 +5,5 @@ import "PbContent.proto";
 message NewFloorInfo {
     repeated PbContent content = 1;
     int32 is_floor = 2;
+    int32 is_del = 3;
 }

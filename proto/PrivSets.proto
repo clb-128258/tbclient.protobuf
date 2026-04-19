@@ -10,4 +10,5 @@ message PrivSets {
     int32 reply = 7;
     int32 bazhu_show_inside = 8;
     int32 bazhu_show_outside = 9;
+    int32 follow = 10;
 }

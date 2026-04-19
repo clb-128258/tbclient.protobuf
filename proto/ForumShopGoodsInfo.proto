@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ForumShopRoleInfo.proto";
+import "ShopGoodsInfo.proto";
+
+message ForumShopGoodsInfo {
+    ShopGoodsInfo goods_info = 1;
+    ForumShopRoleInfo role_info = 2;
+}

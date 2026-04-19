@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "InputHintContent.proto";
+
+message InputHintItem {
+    string type = 1;
+    repeated InputHintContent content = 2;
+}

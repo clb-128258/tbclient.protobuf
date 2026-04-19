@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "ComponentFactory.proto";
+import "FeedContentIcon.proto";
+import "FeedKV.proto";
+
+message HotCardLayout {
+    repeated ComponentFactory components = 1;
+    string schema = 2;
+    repeated FeedKV business_info = 3;
+    repeated FeedKV log_param = 4;
+    FeedContentIcon background = 5;
+    repeated string prefetch_schema = 6;
+    repeated FeedKV log_info = 8;
+}

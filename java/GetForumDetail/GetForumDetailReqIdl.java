@@ -2,39 +2,36 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class GetForumDetailReqIdl extends Message {
-    @ProtoField(tag = 1)
-    public final DataReq data;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<GetForumDetailReqIdl> {
-        public DataReq data;
-
-        public Builder() {
-        }
-
-        public Builder(GetForumDetailReqIdl getForumDetailReqIdl) {
-            super(getForumDetailReqIdl);
-            if (getForumDetailReqIdl == null) {
-                return;
-            }
-            this.data = getForumDetailReqIdl.data;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public GetForumDetailReqIdl build(boolean z) {
-            return new GetForumDetailReqIdl(this, z);
-        }
+  @ProtoField(tag = 1)
+  public final DataReq data;
+  
+  public GetForumDetailReqIdl(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    if (paramBoolean == true) {
+      this.data = paramBuilder.data;
+    } else {
+      this.data = paramBuilder.data;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<GetForumDetailReqIdl> {
+    public DataReq data;
+    
+    public Builder() {}
+    
+    public Builder(GetForumDetailReqIdl param1GetForumDetailReqIdl) {
+      super(param1GetForumDetailReqIdl);
+      if (param1GetForumDetailReqIdl == null)
+        return; 
+      this.data = param1GetForumDetailReqIdl.data;
     }
-
-    public GetForumDetailReqIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-        } else {
-            this.data = builder.data;
-        }
+    
+    public GetForumDetailReqIdl build(boolean param1Boolean) {
+      return new GetForumDetailReqIdl(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

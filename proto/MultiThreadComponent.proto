@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+import "FeedContentText.proto";
+import "FeedKV.proto";
+import "PicInfo.proto";
+
+message MultiThreadComponent {
+    repeated FeedContentResource title = 1;
+    repeated FeedContentResource topic = 2;
+    PicInfo image = 3;
+    FeedContentText left_desc = 4;
+    FeedContentText right_desc = 5;
+    string schema = 6;
+    repeated FeedKV log_param = 7;
+}

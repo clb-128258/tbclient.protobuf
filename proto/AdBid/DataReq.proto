@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+import "AppTransmitData.proto";
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    AppTransmitData app_transmit_data = 2;
+    string ad_external_info = 3;
+    string ad_external_banner_info = 4;
+    string call_from = 5;
+    string ad_ext_params = 6;
+    string ad_context_list = 7;
+    int64 kz = 8;
+    int64 pid = 9;
+    int64 forum_id = 10;
+    int32 pn = 11;
+    int32 rn = 12;
+    int32 lz = 13;
+    int32 r = 14;
+    int32 with_floor = 15;
+    int64 floor_rn = 16;
+    int32 is_comm_reverse = 17;
+    string obj_source = 18;
+    string obj_locate = 19;
+    string obj_param1 = 20;
+    uint64 fid = 21;
+    int64 last_pid = 22;
+    int32 back = 23;
+    int32 issdk = 24;
+    string cid = 25;
+    string game_id = 26;
+    int32 page_from = 27;
+    int32 position = 28;
+    string game_fid = 29;
+    int32 is_fold_comment_req = 30;
+    uint64 tab_id = 31;
+    string request_times = 32;
+    int32 biz_type = 33;
+}

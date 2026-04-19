@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message BookPopupExt {
+    string game_id = 1;
+    string item_id = 2;
+    string app_name = 3;
+    string app_icon = 4;
+    string ios_link = 5;
+    string apk_url = 6;
+    string apk_name = 7;
+    string pkg_source = 8;
+    string developer = 9;
+    string package_version = 10;
+    string authority_url = 11;
+    string private_url = 12;
+    string package_size = 13;
+    string package_version_code = 14;
+}

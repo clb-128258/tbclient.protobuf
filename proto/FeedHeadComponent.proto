@@ -10,4 +10,5 @@ message FeedHeadComponent {
     repeated FeedHeadSymbol extra_data = 3;
     string schema = 4;
     FeedHeadButton button = 5;
+    repeated FeedHeadSymbol alt_extra_data = 6;
 }

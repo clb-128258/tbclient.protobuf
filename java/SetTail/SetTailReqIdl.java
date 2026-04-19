@@ -2,39 +2,36 @@ package tbclient.SetTail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class SetTailReqIdl extends Message {
-    @ProtoField(tag = 1)
-    public final ReqData data;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<SetTailReqIdl> {
-        public ReqData data;
-
-        public Builder() {
-        }
-
-        public Builder(SetTailReqIdl setTailReqIdl) {
-            super(setTailReqIdl);
-            if (setTailReqIdl == null) {
-                return;
-            }
-            this.data = setTailReqIdl.data;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public SetTailReqIdl build(boolean z) {
-            return new SetTailReqIdl(this, z);
-        }
+  @ProtoField(tag = 1)
+  public final ReqData data;
+  
+  public SetTailReqIdl(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    if (paramBoolean == true) {
+      this.data = paramBuilder.data;
+    } else {
+      this.data = paramBuilder.data;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<SetTailReqIdl> {
+    public ReqData data;
+    
+    public Builder() {}
+    
+    public Builder(SetTailReqIdl param1SetTailReqIdl) {
+      super(param1SetTailReqIdl);
+      if (param1SetTailReqIdl == null)
+        return; 
+      this.data = param1SetTailReqIdl.data;
     }
-
-    public SetTailReqIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-        } else {
-            this.data = builder.data;
-        }
+    
+    public SetTailReqIdl build(boolean param1Boolean) {
+      return new SetTailReqIdl(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

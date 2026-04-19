@@ -9,4 +9,9 @@ message ThemeElement {
     int64 pattern_image_height = 6;
     int64 pattern_image_width = 7;
     string pattern_text = 8;
+    int32 type = 9;
+    int32 pattern_num = 10;
+    string pattern_image_select = 11;
+    string pattern_image_not_selected = 12;
+    int32 cover_type = 13;
 }

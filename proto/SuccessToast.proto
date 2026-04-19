@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message SuccessToast {
+    string title = 1;
+    string content = 2;
+    string button_text = 3;
+    string button_schema = 4;
+}

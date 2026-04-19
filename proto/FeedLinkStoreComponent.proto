@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+
+message FeedLinkStoreComponent {
+    string img_url = 1;
+    repeated FeedContentResource title = 4;
+    string schema = 5;
+    repeated FeedContentResource desc = 6;
+    int32 sort = 7;
+}

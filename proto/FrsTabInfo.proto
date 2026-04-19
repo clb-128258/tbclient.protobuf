@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "PartitionMenu.proto";
 import "SortButton.proto";
 import "TabMenu.proto";
 import "TabPic.proto";
@@ -25,4 +26,8 @@ message FrsTabInfo {
     int32 net_tab_type = 18;
     repeated SortButton sort_menu = 19;
     repeated TabMenu sub_tab_list = 20;
+    repeated PartitionMenu partition_menu = 21;
+    int32 show_style_switch = 22;
+    int32 no_can_post = 23;
+    int32 no_can_refresh = 24;
 }

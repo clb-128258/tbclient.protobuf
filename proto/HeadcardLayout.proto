@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FeedKV.proto";
 import "PubHeadCardCover.proto";
 import "QuizCard.proto";
 import "ThemeColorInfo.proto";
@@ -11,4 +12,6 @@ message HeadcardLayout {
     ThemeColorInfo card_background = 3;
     PubHeadCardCover cover = 4;
     QuizCard quiz_card = 5;
+    repeated FeedKV log_param = 6;
+    repeated string prefetch_schema = 7;
 }

@@ -37,4 +37,9 @@ message ReplyList {
     repeated NewFloorInfo new_floor_info = 28;
     int32 has_agree = 29;
     string target_scheme = 30;
+    string display_text = 31;
+    int32 is_filter = 32;
+    string first_scheme = 33;
+    string second_scheme = 34;
+    string third_scheme = 35;
 }

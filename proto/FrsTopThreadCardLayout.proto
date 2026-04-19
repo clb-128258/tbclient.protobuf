@@ -1,7 +1,11 @@
 syntax = "proto3";
 
 import "ComponentFactory.proto";
+import "FeedKV.proto";
 
 message FrsTopThreadCardLayout {
     repeated ComponentFactory components = 1;
+    repeated FeedKV log_param = 2;
+    repeated string prefetch_schema = 3;
+    int32 init_state = 4;
 }

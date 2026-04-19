@@ -12,4 +12,6 @@ message FeedHeadSymbol {
     string schema = 4;
     repeated FeedKV log_info = 5;
     FeedContentCustom custom = 6;
+    FeedHeadIcon prefix_icon = 7;
+    repeated FeedKV business_info = 8;
 }

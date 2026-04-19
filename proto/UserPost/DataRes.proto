@@ -1,6 +1,8 @@
 syntax = "proto3";
 
+import "FeedKV.proto";
 import "PostInfoList.proto";
+import "User.proto";
 
 message DataRes {
     repeated PostInfoList post_list = 1;
@@ -11,4 +13,6 @@ message DataRes {
     int32 mask_type = 6;
     int32 view_card_num = 7;
     int32 reddot_deleted_thread = 8;
+    User author = 10;
+    repeated FeedKV log_param = 11;
 }

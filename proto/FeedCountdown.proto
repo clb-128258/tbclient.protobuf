@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message FeedCountdown {
+    ThemeColorInfo color = 1;
+    uint64 endtime = 2;
+    string endtime_type = 3;
+    string endtime_tail = 4;
+}

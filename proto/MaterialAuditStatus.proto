@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message MaterialAuditStatus {
+    string source = 1;
+    string id = 2;
+    string sid = 3;
+    int32 audit_status = 4;
+    string reject_reason = 5;
+    int64 audit_time = 6;
+}

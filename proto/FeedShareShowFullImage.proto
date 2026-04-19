@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FeedShareShowFullImageData.proto";
+
+message FeedShareShowFullImage {
+    uint64 tid = 1;
+    repeated FeedShareShowFullImageData data = 2;
+}

@@ -5,6 +5,7 @@ import "AppTransmitData.proto";
 import "CommonReq.proto";
 
 message DataReq {
+    CommonReq common = 1;
     uint32 tag_code = 2;
     uint32 need_tags = 3;
     uint32 load_type = 4;
@@ -41,4 +42,13 @@ message DataReq {
     AppTransmitData app_transmit_data = 38;
     int64 push_tid = 39;
     int32 is_newfeed = 40;
+    string ad_bear_context = 43;
+    uint32 is_new_user = 44;
+    string ad_external_info = 45;
+    uint32 cache_column_style = 46;
+    uint64 fake_thread_id = 47;
+    uint64 fake_forum_id = 48;
+    uint32 first_refresh = 49;
+    string feed_style = 51;
+    int32 is_cloud_log = 52;
 }

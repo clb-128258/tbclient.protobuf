@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message JumpText {
+    string text = 1;
+    string schema = 2;
+    ThemeColorInfo button_color = 3;
+    ThemeColorInfo text_color = 4;
+}

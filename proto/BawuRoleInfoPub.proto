@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "BaijiahaoInfo.proto";
+import "UserAttrIcon.proto";
 
 message BawuRoleInfoPub {
     uint64 forum_id = 1;
@@ -15,4 +16,5 @@ message BawuRoleInfoPub {
     BaijiahaoInfo baijiahao_info = 10;
     string avatar_url = 11;
     string target_scheme = 12;
+    repeated UserAttrIcon show_icon_list = 13;
 }

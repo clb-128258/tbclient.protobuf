@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "LayoutManageInfo.proto";
+
+message FeedAnswerBoxComponent {
+    string box_text = 1;
+    string botton_text = 2;
+    string schema = 3;
+    repeated LayoutManageInfo manage_list = 4;
+}

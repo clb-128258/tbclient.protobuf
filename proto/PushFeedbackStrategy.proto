@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message PushFeedbackStrategy {
+    int32 times = 1;
+    int32 interval = 2;
+    int32 start_time = 3;
+}

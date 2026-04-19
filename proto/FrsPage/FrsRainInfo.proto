@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FrsPage/FrsRanPopupInfo.proto";
+
+message FrsRainInfo {
+    string resource = 1;
+    string popup_url = 2;
+    FrsRanPopupInfo popup_info = 3;
+    string business_id = 4;
+    string report_info = 5;
+    string popup_info_str = 6;
+}

@@ -6,4 +6,7 @@ message GroupFeedCard {
     string card_title = 1;
     uint32 index = 2;
     repeated FeedGroupInfo group_list = 3;
+    string topbar_icon = 4;
+    string topbar_title = 5;
+    string topbar_icon_dark = 6;
 }

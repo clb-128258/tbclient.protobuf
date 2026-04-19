@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message VipBannerThemeColorInfo {
+    ThemeColorInfo title_theme = 1;
+    ThemeColorInfo sub_title_theme = 2;
+    ThemeColorInfo button_theme = 3;
+}

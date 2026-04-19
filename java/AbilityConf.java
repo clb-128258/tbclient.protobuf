@@ -2,58 +2,59 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class AbilityConf extends Message {
-    public static final String DEFAULT_BOT_UK = "";
-    public static final Integer DEFAULT_SKILL_ID = 0;
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String bot_uk;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer skill_id;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<AbilityConf> {
-        public String bot_uk;
-        public Integer skill_id;
-
-        public Builder() {
-        }
-
-        public Builder(AbilityConf abilityConf) {
-            super(abilityConf);
-            if (abilityConf == null) {
-                return;
-            }
-            this.bot_uk = abilityConf.bot_uk;
-            this.skill_id = abilityConf.skill_id;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public AbilityConf build(boolean z) {
-            return new AbilityConf(this, z);
-        }
+  public static final String DEFAULT_BOT_UK = "";
+  
+  public static final Integer DEFAULT_SKILL_ID = Integer.valueOf(0);
+  
+  @ProtoField(tag = 1, type = Message.Datatype.STRING)
+  public final String bot_uk;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.INT32)
+  public final Integer skill_id;
+  
+  public AbilityConf(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    Integer integer;
+    if (paramBoolean == true) {
+      String str = paramBuilder.bot_uk;
+      if (str == null) {
+        this.bot_uk = "";
+      } else {
+        this.bot_uk = str;
+      } 
+      integer = paramBuilder.skill_id;
+      if (integer == null) {
+        this.skill_id = DEFAULT_SKILL_ID;
+      } else {
+        this.skill_id = integer;
+      } 
+    } else {
+      this.bot_uk = ((Builder)integer).bot_uk;
+      this.skill_id = ((Builder)integer).skill_id;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<AbilityConf> {
+    public String bot_uk;
+    
+    public Integer skill_id;
+    
+    public Builder() {}
+    
+    public Builder(AbilityConf param1AbilityConf) {
+      super(param1AbilityConf);
+      if (param1AbilityConf == null)
+        return; 
+      this.bot_uk = param1AbilityConf.bot_uk;
+      this.skill_id = param1AbilityConf.skill_id;
     }
-
-    public AbilityConf(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            String str = builder.bot_uk;
-            if (str == null) {
-                this.bot_uk = "";
-            } else {
-                this.bot_uk = str;
-            }
-            Integer num = builder.skill_id;
-            if (num == null) {
-                this.skill_id = DEFAULT_SKILL_ID;
-                return;
-            } else {
-                this.skill_id = num;
-                return;
-            }
-        }
-        this.bot_uk = builder.bot_uk;
-        this.skill_id = builder.skill_id;
+    
+    public AbilityConf build(boolean param1Boolean) {
+      return new AbilityConf(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

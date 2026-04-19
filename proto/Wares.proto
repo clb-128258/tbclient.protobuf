@@ -7,4 +7,5 @@ message Wares {
     string wars_name = 4;
     string wars_item = 5;
     string new_props_id = 6;
+    uint32 quantity = 7;
 }

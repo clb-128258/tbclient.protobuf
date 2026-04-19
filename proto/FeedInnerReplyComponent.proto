@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "Agree.proto";
+import "FeedHeadImg.proto";
+import "FeedHeadSymbol.proto";
+import "FeedKV.proto";
+
+message FeedInnerReplyComponent {
+    FeedHeadImg avatar = 1;
+    repeated FeedHeadSymbol main_data = 2;
+    Agree agree = 3;
+    string content = 4;
+    string schema = 5;
+    repeated FeedKV business_info = 6;
+}

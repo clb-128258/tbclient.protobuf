@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ForumNaviIcon {
+    string day = 1;
+    string night = 2;
+}

@@ -1,6 +1,10 @@
 syntax = "proto3";
 
+import "FeedKV.proto";
+import "GameAd.proto";
 import "GoodsInfo.proto";
+import "LiveAdData.proto";
+import "VipAd.proto";
 
 message App {
     int32 type = 1;
@@ -35,4 +39,12 @@ message App {
     repeated GoodsInfo goods_info = 30;
     string loc_code = 31;
     string deep_url = 32;
+    string business_type = 33;
+    VipAd vip_ad = 34;
+    GameAd game_ad = 35;
+    repeated FeedKV log_param = 36;
+    int32 touch_level = 37;
+    LiveAdData live_ad = 38;
+    string platform_type = 39;
+    string touch_type = 40;
 }

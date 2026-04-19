@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "ConfigurableHeadTitle.proto";
+import "FeedContentResource.proto";
+import "FeedHeadImg.proto";
+
+message FeedScoreItem {
+    FeedHeadImg image_data = 1;
+    ConfigurableHeadTitle main_data = 2;
+    ConfigurableHeadTitle extra_data = 3;
+    FeedContentResource score = 4;
+    FeedContentResource user_count = 5;
+    uint64 score_item_id = 6;
+}

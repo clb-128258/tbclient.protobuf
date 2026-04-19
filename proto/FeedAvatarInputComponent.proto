@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "IconUrlInfo.proto";
+import "LayoutManageInfo.proto";
+
+message FeedAvatarInputComponent {
+    string avatar = 1;
+    string tip_text = 2;
+    IconUrlInfo send_icon = 3;
+    repeated LayoutManageInfo manage_list = 4;
+    string schema = 5;
+}

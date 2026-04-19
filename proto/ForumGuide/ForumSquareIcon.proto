@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ForumSquareIcon {
+    string name = 1;
+    string icon = 2;
+}

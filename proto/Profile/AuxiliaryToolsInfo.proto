@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message AuxiliaryToolsInfo {
+    string name = 1;
+    string icon = 2;
+    string schema = 3;
+    string _class = 4;
+    int64 red_point_version = 5;
+    string dark_icon = 6;
+    ThemeColorInfo theme_color_info = 7;
+    int32 need_filter = 8;
+    string ios_schema = 9;
+}

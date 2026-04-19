@@ -2,58 +2,59 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class ChooseThreadList extends Message {
-    public static final Long DEFAULT_TID = 0L;
-    public static final String DEFAULT_TITLE = "";
-    @ProtoField(tag = 1, type = Message.Datatype.INT64)
-    public final Long tid;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String title;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<ChooseThreadList> {
-        public Long tid;
-        public String title;
-
-        public Builder() {
-        }
-
-        public Builder(ChooseThreadList chooseThreadList) {
-            super(chooseThreadList);
-            if (chooseThreadList == null) {
-                return;
-            }
-            this.tid = chooseThreadList.tid;
-            this.title = chooseThreadList.title;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public ChooseThreadList build(boolean z) {
-            return new ChooseThreadList(this, z);
-        }
+  public static final Long DEFAULT_TID = Long.valueOf(0L);
+  
+  public static final String DEFAULT_TITLE = "";
+  
+  @ProtoField(tag = 1, type = Message.Datatype.INT64)
+  public final Long tid;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.STRING)
+  public final String title;
+  
+  public ChooseThreadList(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    String str;
+    if (paramBoolean == true) {
+      Long long_ = paramBuilder.tid;
+      if (long_ == null) {
+        this.tid = DEFAULT_TID;
+      } else {
+        this.tid = long_;
+      } 
+      str = paramBuilder.title;
+      if (str == null) {
+        this.title = "";
+      } else {
+        this.title = str;
+      } 
+    } else {
+      this.tid = ((Builder)str).tid;
+      this.title = ((Builder)str).title;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<ChooseThreadList> {
+    public Long tid;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(ChooseThreadList param1ChooseThreadList) {
+      super(param1ChooseThreadList);
+      if (param1ChooseThreadList == null)
+        return; 
+      this.tid = param1ChooseThreadList.tid;
+      this.title = param1ChooseThreadList.title;
     }
-
-    public ChooseThreadList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            Long l = builder.tid;
-            if (l == null) {
-                this.tid = DEFAULT_TID;
-            } else {
-                this.tid = l;
-            }
-            String str = builder.title;
-            if (str == null) {
-                this.title = "";
-                return;
-            } else {
-                this.title = str;
-                return;
-            }
-        }
-        this.tid = builder.tid;
-        this.title = builder.title;
+    
+    public ChooseThreadList build(boolean param1Boolean) {
+      return new ChooseThreadList(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message BusinessPromotBannerMedia {
+    uint32 type = 1;
+    string resource_url = 2;
+}

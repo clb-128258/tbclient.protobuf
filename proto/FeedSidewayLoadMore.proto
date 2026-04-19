@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentText.proto";
+
+message FeedSidewayLoadMore {
+    FeedContentText text = 1;
+    FeedContentIcon icon = 2;
+    string schema = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message CommonFunc {
+    string type = 1;
+    string name = 2;
+    string icon = 3;
+    string schema = 4;
+    int64 level_id = 5;
+    int64 score = 6;
+    int64 target_score = 7;
+    string slogan = 8;
+    int64 tmoney = 9;
+    int64 red_point_version = 10;
+    int32 need_filter = 11;
+    string ios_schema = 12;
+    int32 task_page_sign_status = 13;
+}

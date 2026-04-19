@@ -34,4 +34,5 @@ message GoodsInfo {
     string brand_icon = 27;
     string brand_icon_wh = 28;
     AdCloseInfo close_info = 29;
+    int32 lego_card_version = 30;
 }

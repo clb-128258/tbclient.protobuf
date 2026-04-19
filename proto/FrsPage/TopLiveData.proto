@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FrsPage/TopLiveDataAnchorUserInfo.proto";
 import "FrsPage/TopLiveDataPostList.proto";
 import "YyExt.proto";
 
@@ -14,4 +15,5 @@ message TopLiveData {
     string hls = 8;
     YyExt yy_ext = 9;
     repeated TopLiveDataPostList post_list = 10;
+    TopLiveDataAnchorUserInfo anchor_user_info = 11;
 }

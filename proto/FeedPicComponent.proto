@@ -5,4 +5,6 @@ import "PicInfo.proto";
 message FeedPicComponent {
     repeated PicInfo pics = 1;
     string schema = 2;
+    int32 preload = 3;
+    int32 is_slide = 4;
 }

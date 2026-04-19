@@ -118,4 +118,9 @@ message ForumInfo {
     int64 be_top_limit_time = 88;
     int32 msg_bubble_guide_frequency_unread = 89;
     int32 msg_bubble_guide_frequency_special = 90;
+    int32 avatar_fuzzy_status = 91;
+    string level_schema = 92;
+    bool is_hub = 95;
+    int64 hot_num = 96;
+    string hub_icon = 97;
 }

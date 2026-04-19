@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "ChatSug.proto";
+
+message ChatPrivate {
+    string url = 1;
+    string url_res = 2;
+    int64 height = 3;
+    int64 bot_id = 4;
+    ChatSug chat_sug = 5;
+    int64 plot_id = 6;
+    int32 no_msg = 7;
+    int32 can_show = 8;
+}

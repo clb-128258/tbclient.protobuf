@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message ForumShopRoleInfo {
+    string user_name = 1;
+    string portrait = 2;
+    string role_tag = 3;
+    uint64 user_id = 4;
+    uint32 forum_level = 5;
+    string level_name = 6;
+    ThemeColorInfo icon_info = 7;
+    string card_title = 8;
+    string default_text = 9;
+}

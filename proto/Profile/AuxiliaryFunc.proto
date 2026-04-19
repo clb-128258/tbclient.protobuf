@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+import "Profile/AuxiliaryAllTools.proto";
+import "Profile/AuxiliaryToolsInfo.proto";
+
+message AuxiliaryFunc {
+    repeated AuxiliaryToolsInfo outside_tools = 1;
+    repeated AuxiliaryAllTools all_tools = 2;
+    repeated FeedKV log_param = 3;
+}

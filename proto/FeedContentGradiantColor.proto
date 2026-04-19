@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "FeedContentGradiantColorSymbol.proto";
+
+message FeedContentGradiantColor {
+    repeated FeedContentGradiantColorSymbol colors = 1;
+}

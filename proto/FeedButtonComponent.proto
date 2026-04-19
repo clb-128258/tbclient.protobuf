@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedContentColor.proto";
+import "FeedContentResource.proto";
+
+message FeedButtonComponent {
+    repeated FeedContentResource data = 1;
+    FeedContentColor background = 2;
+    string schema = 3;
+}

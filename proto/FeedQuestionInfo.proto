@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedButton.proto";
+import "QuestionContent.proto";
+import "TitleComponent.proto";
+
+message FeedQuestionInfo {
+    TitleComponent feed_title = 1;
+    QuestionContent question_content = 2;
+    FeedButton feed_button = 3;
+}

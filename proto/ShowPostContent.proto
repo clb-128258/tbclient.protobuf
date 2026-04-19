@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "PbContent.proto";
+
+message ShowPostContent {
+    uint64 post_id = 1;
+    int32 type = 2;
+    repeated PbContent text = 3;
+    uint64 user_id = 4;
+    string user_show_name = 5;
+    uint32 ptype = 6;
+}

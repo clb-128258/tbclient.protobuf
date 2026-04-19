@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GameDetail.proto";
+
+message GameAd {
+    GameDetail game_detail = 1;
+    string most_num = 2;
+    string step_num = 3;
+}

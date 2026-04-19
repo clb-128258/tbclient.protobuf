@@ -2,58 +2,65 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class TaskProgress extends Message {
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer current;
-    @ProtoField(tag = 1, type = Message.Datatype.INT32)
-    public final Integer total;
-    public static final Integer DEFAULT_TOTAL = 0;
-    public static final Integer DEFAULT_CURRENT = 0;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<TaskProgress> {
-        public Integer current;
-        public Integer total;
-
-        public Builder() {
-        }
-
-        public Builder(TaskProgress taskProgress) {
-            super(taskProgress);
-            if (taskProgress == null) {
-                return;
-            }
-            this.total = taskProgress.total;
-            this.current = taskProgress.current;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public TaskProgress build(boolean z) {
-            return new TaskProgress(this, z);
-        }
+  public static final Integer DEFAULT_CURRENT;
+  
+  public static final Integer DEFAULT_TOTAL;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.INT32)
+  public final Integer current;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.INT32)
+  public final Integer total;
+  
+  static {
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_TOTAL = integer;
+    DEFAULT_CURRENT = integer;
+  }
+  
+  public TaskProgress(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    Integer integer;
+    if (paramBoolean == true) {
+      Integer integer1 = paramBuilder.total;
+      if (integer1 == null) {
+        this.total = DEFAULT_TOTAL;
+      } else {
+        this.total = integer1;
+      } 
+      integer = paramBuilder.current;
+      if (integer == null) {
+        this.current = DEFAULT_CURRENT;
+      } else {
+        this.current = integer;
+      } 
+    } else {
+      this.total = ((Builder)integer).total;
+      this.current = ((Builder)integer).current;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<TaskProgress> {
+    public Integer current;
+    
+    public Integer total;
+    
+    public Builder() {}
+    
+    public Builder(TaskProgress param1TaskProgress) {
+      super(param1TaskProgress);
+      if (param1TaskProgress == null)
+        return; 
+      this.total = param1TaskProgress.total;
+      this.current = param1TaskProgress.current;
     }
-
-    public TaskProgress(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            Integer num = builder.total;
-            if (num == null) {
-                this.total = DEFAULT_TOTAL;
-            } else {
-                this.total = num;
-            }
-            Integer num2 = builder.current;
-            if (num2 == null) {
-                this.current = DEFAULT_CURRENT;
-                return;
-            } else {
-                this.current = num2;
-                return;
-            }
-        }
-        this.total = builder.total;
-        this.current = builder.current;
+    
+    public TaskProgress build(boolean param1Boolean) {
+      return new TaskProgress(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

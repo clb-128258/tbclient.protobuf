@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message QueryBase {
+    string query = 1;
+    string jump_url = 2;
+    string icon_url = 3;
+}

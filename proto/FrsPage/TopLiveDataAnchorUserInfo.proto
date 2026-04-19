@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message TopLiveDataAnchorUserInfo {
+    uint64 user_id = 1;
+    string name_show = 2;
+    string portrait = 3;
+    string user_icon = 4;
+}

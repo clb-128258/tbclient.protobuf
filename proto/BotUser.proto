@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "BotTags.proto";
+
+message BotUser {
+    int32 online_status = 1;
+    string bot_avatar = 2;
+    uint32 pa_type = 3;
+    int32 dialogue_user_num = 4;
+    double rate = 5;
+    string role_type = 6;
+    repeated BotTags tags = 7;
+    uint32 robot_version = 8;
+}

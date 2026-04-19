@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Danmaku.proto";
+import "FeedContentResource.proto";
+
+message FeedDanmaku {
+    repeated Danmaku danmaku = 1;
+    repeated FeedContentResource title = 2;
+    string scheme = 3;
+    int32 lines = 4;
+}

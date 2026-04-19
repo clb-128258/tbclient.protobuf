@@ -2,58 +2,59 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class ChooseTimeList extends Message {
-    public static final Long DEFAULT_TIME = 0L;
-    public static final String DEFAULT_TITLE = "";
-    @ProtoField(tag = 1, type = Message.Datatype.INT64)
-    public final Long time;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String title;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<ChooseTimeList> {
-        public Long time;
-        public String title;
-
-        public Builder() {
-        }
-
-        public Builder(ChooseTimeList chooseTimeList) {
-            super(chooseTimeList);
-            if (chooseTimeList == null) {
-                return;
-            }
-            this.time = chooseTimeList.time;
-            this.title = chooseTimeList.title;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public ChooseTimeList build(boolean z) {
-            return new ChooseTimeList(this, z);
-        }
+  public static final Long DEFAULT_TIME = Long.valueOf(0L);
+  
+  public static final String DEFAULT_TITLE = "";
+  
+  @ProtoField(tag = 1, type = Message.Datatype.INT64)
+  public final Long time;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.STRING)
+  public final String title;
+  
+  public ChooseTimeList(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    String str;
+    if (paramBoolean == true) {
+      Long long_ = paramBuilder.time;
+      if (long_ == null) {
+        this.time = DEFAULT_TIME;
+      } else {
+        this.time = long_;
+      } 
+      str = paramBuilder.title;
+      if (str == null) {
+        this.title = "";
+      } else {
+        this.title = str;
+      } 
+    } else {
+      this.time = ((Builder)str).time;
+      this.title = ((Builder)str).title;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<ChooseTimeList> {
+    public Long time;
+    
+    public String title;
+    
+    public Builder() {}
+    
+    public Builder(ChooseTimeList param1ChooseTimeList) {
+      super(param1ChooseTimeList);
+      if (param1ChooseTimeList == null)
+        return; 
+      this.time = param1ChooseTimeList.time;
+      this.title = param1ChooseTimeList.title;
     }
-
-    public ChooseTimeList(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            Long l = builder.time;
-            if (l == null) {
-                this.time = DEFAULT_TIME;
-            } else {
-                this.time = l;
-            }
-            String str = builder.title;
-            if (str == null) {
-                this.title = "";
-                return;
-            } else {
-                this.title = str;
-                return;
-            }
-        }
-        this.time = builder.time;
-        this.title = builder.title;
+    
+    public ChooseTimeList build(boolean param1Boolean) {
+      return new ChooseTimeList(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

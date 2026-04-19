@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Post.proto";
+
+message ThreadVideoOtherInfo {
+    Post hot_post = 1;
+}

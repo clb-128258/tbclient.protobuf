@@ -4,4 +4,9 @@ message PubCardFreq {
     int64 start_time = 1;
     int64 end_time = 2;
     int64 show_times = 3;
+    int32 show_interval = 4;
+    int32 continue_no_click_exit = 5;
+    string not_show_times = 6;
+    int32 continuous_not_click_times = 7;
+    string close_day = 8;
 }

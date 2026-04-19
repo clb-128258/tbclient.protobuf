@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message ToolBaseInfo {
+    string title = 1;
+    string action_uri = 2;
+    string action_type = 3;
+    string icon = 4;
+    string class_name = 5;
+    string tips = 6;
+}

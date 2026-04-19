@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "BotTagInfo.proto";
+
+message BotTags {
+    repeated BotTagInfo tag_info = 1;
+}

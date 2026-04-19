@@ -6,4 +6,5 @@ message Offpack {
     string md5 = 3;
     string webview_version = 4;
     int32 is_use = 5;
+    int32 force_replace = 6;
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "SugList.proto";
+
+message ChatSug {
+    string icon = 1;
+    repeated SugList sug_list = 2;
+}

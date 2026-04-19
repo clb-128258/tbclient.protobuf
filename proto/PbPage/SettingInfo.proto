@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "PbPage/SettingInfoIcon.proto";
+
+message SettingInfo {
+    repeated SettingInfoIcon icon_list = 1;
+    int32 need_font_slicer = 2;
+}

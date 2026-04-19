@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message BubbleV2 {
+    string color_day_start = 1;
+    string color_night_start = 2;
+    string main_element_icon = 3;
+    string main_element_video = 4;
+    string color_day_end = 5;
+    string color_night_end = 6;
+    string sub_element_icon = 7;
+    string sub_element_video = 8;
+    string comment_color_day_start = 9;
+    string comment_color_night_start = 10;
+    string comment_color_day_end = 11;
+    string comment_color_night_end = 12;
+}

@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "ComponentFactory.proto";
+import "FeedContentIcon.proto";
 import "FeedFeedback.proto";
 import "FeedKV.proto";
 
@@ -11,4 +12,8 @@ message FeedLayout {
     FeedFeedback feedback = 4;
     repeated FeedKV business_info = 5;
     repeated FeedKV appendix = 6;
+    repeated FeedKV log_param = 7;
+    repeated string prefetch_schema = 8;
+    FeedContentIcon background = 9;
+    repeated ComponentFactory components_new_style = 11;
 }

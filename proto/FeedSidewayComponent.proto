@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FeedSidewayItem.proto";
+import "FeedSidewayLoadMore.proto";
+
+message FeedSidewayComponent {
+    repeated FeedSidewayItem items = 1;
+    FeedSidewayLoadMore load_more = 2;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message PushFeedBackButton {
+    string button_name = 1;
+    int32 feedback_type = 2;
+}

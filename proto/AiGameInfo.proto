@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message AiGameInfo {
+    string game_id = 1;
+    string origin_game_id = 2;
+    uint32 status = 3;
+    string title = 4;
+    string summary = 5;
+    string short_desc = 6;
+    string long_desc = 7;
+    uint32 tag_option = 8;
+    uint32 invite_limit = 9;
+    string recom_text = 10;
+    string recom_icon = 11;
+    string image_url = 12;
+    string icon_url = 13;
+    string game_type = 14;
+    string jump_url = 15;
+    uint32 orientation = 16;
+    uint64 creator_id = 17;
+    string h_image_url = 18;
+    string answer = 19;
+    uint64 forum_id = 20;
+    uint64 thread_id = 21;
+    int64 answer_filter_time = 22;
+}

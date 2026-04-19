@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message ShoubaiUserExt {
+    int32 bjh_status = 1;
+    string shuobai_nickname = 2;
+    uint64 tb_combine_status = 3;
+    string third_id = 4;
+    string type = 5;
+    uint64 tb_combine_time = 6;
+    uint32 v_type = 7;
+}

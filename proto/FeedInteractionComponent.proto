@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FeedInteractionLeft.proto";
+import "FeedInteractionRight.proto";
+
+message FeedInteractionComponent {
+    FeedInteractionLeft left = 1;
+    FeedInteractionRight right = 2;
+}

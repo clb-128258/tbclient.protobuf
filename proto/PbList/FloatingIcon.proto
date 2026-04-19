@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PbList/FloatingIconItem.proto";
+
+message FloatingIcon {
+    FloatingIconItem pbpage = 1;
+}

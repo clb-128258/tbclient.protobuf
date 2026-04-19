@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message SugList {
+    string content = 1;
+    string schema = 2;
+}

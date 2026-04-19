@@ -1,13 +1,17 @@
 syntax = "proto3";
 
 import "AlaLiveInfo.proto";
+import "Loop/BookPopupData.proto";
 import "Loop/ChatroomFrsRes.proto";
 import "Loop/ChatroomMessageTabData.proto";
+import "Loop/CommonPopupData.proto";
 import "Loop/FestivalInfo.proto";
 import "Loop/IconRes.proto";
 import "Loop/LevelRes.proto";
 import "Loop/LiveRes.proto";
 import "Loop/MemberBroadcastInfo.proto";
+import "Loop/SidebarMsg.proto";
+import "Toast.proto";
 
 message DataRes {
     LiveRes live = 1;
@@ -22,4 +26,8 @@ message DataRes {
     MemberBroadcastInfo member_broadcast = 10;
     FestivalInfo festival_info = 11;
     MemberBroadcastInfo activity_broadcast = 12;
+    SidebarMsg sidebar_msg = 13;
+    BookPopupData book_popup_data = 14;
+    Toast toast = 15;
+    repeated CommonPopupData common_popup_list = 16;
 }

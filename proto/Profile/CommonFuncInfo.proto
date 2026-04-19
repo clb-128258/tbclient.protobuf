@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+import "Profile/CommonFunc.proto";
+
+message CommonFuncInfo {
+    repeated CommonFunc common_func_noraml = 1;
+    repeated CommonFunc common_func_other = 2;
+    repeated FeedKV log_param = 3;
+}

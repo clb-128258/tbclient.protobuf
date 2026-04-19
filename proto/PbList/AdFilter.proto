@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message AdFilter {
+    int32 banner_ad_filter = 1;
+    int32 comment_ad_filter = 2;
+    int32 tab_ad_filter = 3;
+}

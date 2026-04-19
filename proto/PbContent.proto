@@ -4,6 +4,8 @@ import "GraffitiInfo.proto";
 import "Item.proto";
 import "MemeInfo.proto";
 import "NativeApp.proto";
+import "TextPlugin.proto";
+import "ThemeColorInfo.proto";
 import "TiebaPlusInfo.proto";
 import "TogetherHi.proto";
 
@@ -52,4 +54,12 @@ message PbContent {
     int64 pic_id = 42;
     int32 link_type = 43;
     string target_scheme = 44;
+    TextPlugin text_plugin = 45;
+    string query_text = 46;
+    string query_prefix = 47;
+    string icon = 48;
+    string portrait = 49;
+    ThemeColorInfo theme_color = 50;
+    int32 search_type = 51;
+    int32 is_bot = 52;
 }

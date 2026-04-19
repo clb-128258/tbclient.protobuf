@@ -6,4 +6,6 @@ message SpriteMemeInfo {
     string icon = 3;
     string use_same_guide = 4;
     string use_same_text = 5;
+    string meme_package_scheme = 6;
+    uint32 meme_type = 7;
 }

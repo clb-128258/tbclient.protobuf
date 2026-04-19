@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message SidebarMsg {
+    bool member_has_expired = 1;
+    string vipbanner_bubble = 2;
+    int64 member_expired_time = 3;
+    int32 task_page_sign_status = 4;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message ShopGoodsChannelInfo {
+    uint32 id = 1;
+    string icon = 2;
+    string name = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "ComponentFactory.proto";
+import "FeedContentIcon.proto";
+import "FeedKV.proto";
+
+message DiscussLayout {
+    repeated ComponentFactory components = 1;
+    repeated FeedKV log_param = 2;
+    repeated FeedKV business_info = 3;
+    string schema = 4;
+    FeedContentIcon background = 5;
+    repeated FeedKV log_info = 6;
+}

@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "MaskColor.proto";
 import "PicDecoration.proto";
 
 message PicInfo {
@@ -14,4 +15,10 @@ message PicInfo {
     repeated PicDecoration decoration = 9;
     string scheme = 10;
     string pic_type = 11;
+    MaskColor mask_color = 12;
+    uint32 is_full = 13;
+    uint64 pic_id = 14;
+    string id = 15;
+    uint64 height_ratio = 16;
+    uint64 width_ratio = 17;
 }

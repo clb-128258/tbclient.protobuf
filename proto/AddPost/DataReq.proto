@@ -3,6 +3,7 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
+    CommonReq common = 1;
     string authsid = 2;
     string sig = 3;
     string tbs = 4;
@@ -72,4 +73,12 @@ message DataReq {
     string bot_conf = 68;
     string sprite_meme_id = 69;
     string sprite_meme_query = 70;
+    int64 activity_product_id = 71;
+    int64 activity_business_id = 72;
+    uint64 score_id = 73;
+    string score_name = 74;
+    uint32 score = 75;
+    uint32 with_tail = 76;
+    string tag_info = 77;
+    uint64 goods_id = 78;
 }

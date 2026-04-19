@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Error.proto";
+import "GetFeedAd/DataRes.proto";
+
+message GetFeedAdResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

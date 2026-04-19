@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DrawThreadPopUp {
+    int32 is_match_level = 1;
+    int32 need_forum_level = 2;
+}

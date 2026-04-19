@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "OfficialRewardInfo.proto";
+
+message OfficialActivityInfo {
+    uint32 type = 1;
+    uint64 id = 2;
+    string desc = 3;
+    string scheme = 4;
+    repeated OfficialRewardInfo rewards = 5;
+    uint64 start_time = 6;
+    uint64 end_time = 7;
+}

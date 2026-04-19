@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedShareShowCardItem.proto";
+import "FeedShareShowFeedItem.proto";
+
+message FeedShareShowFullImageData {
+    string type = 1;
+    FeedShareShowCardItem card = 2;
+    FeedShareShowFeedItem feed = 3;
+}

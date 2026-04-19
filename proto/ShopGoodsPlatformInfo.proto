@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "ShopGoodsGameSKUInfo.proto";
+
+message ShopGoodsPlatformInfo {
+    uint32 id = 1;
+    string icon = 2;
+    string name = 3;
+    repeated ShopGoodsGameSKUInfo sku_list = 4;
+    string icon_dark = 5;
+}

@@ -9,4 +9,5 @@ message UserVipInfo {
     int32 a_score = 6;
     uint32 n_score = 7;
     string icon_url = 8;
+    uint32 stay_day = 9;
 }

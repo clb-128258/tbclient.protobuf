@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FeedHeadImg.proto";
+import "FeedHeadSymbol.proto";
+
+message Danmaku {
+    FeedHeadImg image_data = 1;
+    repeated FeedHeadSymbol main_data = 2;
+}

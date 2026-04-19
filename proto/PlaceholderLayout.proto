@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+
+message PlaceholderLayout {
+    repeated FeedKV log_param = 1;
+    repeated FeedKV business_info = 2;
+}

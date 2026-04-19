@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "FeedContentColor.proto";
+import "FeedContentIcon.proto";
+
+message InteractItem {
+    FeedContentIcon default_icon_resource = 1;
+    int64 num = 3;
+    string scheme = 4;
+    FeedContentIcon selected_icon_resource = 5;
+    int32 is_selected = 8;
+    FeedContentColor text_color = 10;
+    FeedContentColor selected_text_color = 11;
+    string default_text = 12;
+}

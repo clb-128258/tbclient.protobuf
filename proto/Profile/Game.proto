@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message Game {
+    string name = 1;
+    string icon = 2;
+    string schema = 3;
+    string slogan = 4;
+    int64 red_point_version = 5;
+    int32 need_filter = 6;
+    string ios_schema = 7;
+}

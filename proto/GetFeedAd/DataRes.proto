@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "App.proto";
+
+message DataRes {
+    repeated App recom = 1;
+    repeated App frs = 2;
+    repeated App pb_banner = 3;
+    repeated App pb_comment = 4;
+}

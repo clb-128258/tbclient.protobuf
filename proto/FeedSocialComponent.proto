@@ -1,6 +1,9 @@
 syntax = "proto3";
 
 import "Agree.proto";
+import "FeedContentColor.proto";
+import "FeedContentIcon.proto";
+import "FeedShareShowData.proto";
 import "LayoutManageInfo.proto";
 
 message FeedSocialComponent {
@@ -10,4 +13,16 @@ message FeedSocialComponent {
     uint64 tid = 4;
     uint64 fid = 5;
     repeated LayoutManageInfo manage_list = 6;
+    int32 is_grayreply = 7;
+    int32 is_grayshare = 8;
+    int32 is_store = 9;
+    int64 first_post_id = 10;
+    string comment_scheme = 11;
+    FeedContentIcon agree_resource = 15;
+    FeedContentColor agree_selected_color = 16;
+    FeedContentIcon agree_animation = 17;
+    int32 agree_long_click = 18;
+    string etype = 19;
+    uint64 eid = 20;
+    FeedShareShowData share_show_data = 21;
 }

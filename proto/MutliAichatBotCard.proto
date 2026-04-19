@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "AichatBotCard.proto";
+import "InvalidInfo.proto";
+
+message MutliAichatBotCard {
+    repeated AichatBotCard aichat_bot_card_list = 1;
+    uint32 has_invalid_bot = 2;
+    InvalidInfo invalid_info = 3;
+}

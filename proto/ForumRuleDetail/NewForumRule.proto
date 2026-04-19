@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ForumRuleDetail/NewRuleContent.proto";
+
+message NewForumRule {
+    string title = 1;
+    repeated NewRuleContent content_list = 2;
+}

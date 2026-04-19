@@ -14,4 +14,14 @@ message RecomTopicList {
     string author = 9;
     repeated Media media = 10;
     int32 is_video_topic = 11;
+    uint64 interaction_num_page = 12;
+    uint64 publisher_num = 13;
+    uint64 browse_num = 14;
+    int32 come_from = 15;
+    int32 content_source = 16;
+    int32 is_porn = 17;
+    string head_color = 18;
+    int32 idx_num = 19;
+    string share_title = 20;
+    string key_word = 21;
 }

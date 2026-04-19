@@ -9,4 +9,8 @@ message SidewayLayout {
     ComponentFactory title = 3;
     FeedFeedback feedback = 4;
     repeated FeedKV business_info = 5;
+    repeated FeedKV appendix = 6;
+    repeated FeedKV log_param = 7;
+    repeated string prefetch_schema = 8;
+    repeated FeedKV log_info = 10;
 }

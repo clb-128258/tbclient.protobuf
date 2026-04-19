@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Personalized/ClassList.proto";
+
+message InterestClass {
+    repeated ClassList class_list = 1;
+    int64 floor = 2;
+    string icon = 3;
+    string icon_text = 4;
+    string icon_schema = 5;
+}

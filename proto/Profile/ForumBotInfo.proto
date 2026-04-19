@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message ForumBotInfo {
+    int32 is_forum_bot = 1;
+    string brief = 2;
+    string forum_name = 3;
+    uint64 fid = 4;
+    uint64 bot_uid = 5;
+    uint64 create_uid = 6;
+    string create_username = 7;
+    string uk = 8;
+    uint64 pa = 9;
+    string greeting = 10;
+    string bot_background = 11;
+    uint32 bot_type = 12;
+    uint64 chat_num = 13;
+    uint64 like_num = 14;
+    uint64 follow_num = 15;
+    string forum_icon = 16;
+    uint32 is_like = 17;
+    string theme_color = 18;
+    string bubble_bg_color = 19;
+    uint32 is_follow = 20;
+}

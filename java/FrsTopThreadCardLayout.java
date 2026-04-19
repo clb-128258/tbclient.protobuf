@@ -4,46 +4,93 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+
 public final class FrsTopThreadCardLayout extends Message {
-    public static final List<ComponentFactory> DEFAULT_COMPONENTS = Collections.emptyList();
-    @ProtoField(label = Message.Label.REPEATED, tag = 1)
-    public final List<ComponentFactory> components;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FrsTopThreadCardLayout> {
-        public List<ComponentFactory> components;
-
-        public Builder() {
-        }
-
-        public Builder(FrsTopThreadCardLayout frsTopThreadCardLayout) {
-            super(frsTopThreadCardLayout);
-            if (frsTopThreadCardLayout == null) {
-                return;
-            }
-            this.components = Message.copyOf(frsTopThreadCardLayout.components);
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FrsTopThreadCardLayout build(boolean z) {
-            return new FrsTopThreadCardLayout(this, z);
-        }
+  public static final List<ComponentFactory> DEFAULT_COMPONENTS = Collections.emptyList();
+  
+  public static final Integer DEFAULT_INIT_STATE;
+  
+  public static final List<FeedKV> DEFAULT_LOG_PARAM = Collections.emptyList();
+  
+  public static final List<String> DEFAULT_PREFETCH_SCHEMA = Collections.emptyList();
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 1)
+  public final List<ComponentFactory> components;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.INT32)
+  public final Integer init_state;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 2)
+  public final List<FeedKV> log_param;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
+  public final List<String> prefetch_schema;
+  
+  static {
+    DEFAULT_INIT_STATE = Integer.valueOf(0);
+  }
+  
+  public FrsTopThreadCardLayout(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    Integer integer;
+    if (paramBoolean == true) {
+      List<ComponentFactory> list2 = paramBuilder.components;
+      if (list2 == null) {
+        this.components = DEFAULT_COMPONENTS;
+      } else {
+        this.components = Message.immutableCopyOf(list2);
+      } 
+      List<FeedKV> list1 = paramBuilder.log_param;
+      if (list1 == null) {
+        this.log_param = DEFAULT_LOG_PARAM;
+      } else {
+        this.log_param = Message.immutableCopyOf(list1);
+      } 
+      List<String> list = paramBuilder.prefetch_schema;
+      if (list == null) {
+        this.prefetch_schema = DEFAULT_PREFETCH_SCHEMA;
+      } else {
+        this.prefetch_schema = Message.immutableCopyOf(list);
+      } 
+      integer = paramBuilder.init_state;
+      if (integer == null) {
+        this.init_state = DEFAULT_INIT_STATE;
+      } else {
+        this.init_state = integer;
+      } 
+    } else {
+      this.components = Message.immutableCopyOf(((Builder)integer).components);
+      this.log_param = Message.immutableCopyOf(((Builder)integer).log_param);
+      this.prefetch_schema = Message.immutableCopyOf(((Builder)integer).prefetch_schema);
+      this.init_state = ((Builder)integer).init_state;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FrsTopThreadCardLayout> {
+    public List<ComponentFactory> components;
+    
+    public Integer init_state;
+    
+    public List<FeedKV> log_param;
+    
+    public List<String> prefetch_schema;
+    
+    public Builder() {}
+    
+    public Builder(FrsTopThreadCardLayout param1FrsTopThreadCardLayout) {
+      super(param1FrsTopThreadCardLayout);
+      if (param1FrsTopThreadCardLayout == null)
+        return; 
+      this.components = Message.copyOf(param1FrsTopThreadCardLayout.components);
+      this.log_param = Message.copyOf(param1FrsTopThreadCardLayout.log_param);
+      this.prefetch_schema = Message.copyOf(param1FrsTopThreadCardLayout.prefetch_schema);
+      this.init_state = param1FrsTopThreadCardLayout.init_state;
     }
-
-    public FrsTopThreadCardLayout(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            List<ComponentFactory> list = builder.components;
-            if (list == null) {
-                this.components = DEFAULT_COMPONENTS;
-                return;
-            } else {
-                this.components = Message.immutableCopyOf(list);
-                return;
-            }
-        }
-        this.components = Message.immutableCopyOf(builder.components);
+    
+    public FrsTopThreadCardLayout build(boolean param1Boolean) {
+      return new FrsTopThreadCardLayout(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

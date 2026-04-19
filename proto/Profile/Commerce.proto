@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message Commerce {
+    string content = 1;
+    string name = 2;
+    string icon = 3;
+    string schema = 4;
+    string slogan = 5;
+    int64 red_point_version = 6;
+    bool is_num_smart = 7;
+    int32 need_filter = 8;
+    string ios_schema = 9;
+    string icon_url = 10;
+}

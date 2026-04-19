@@ -2,4 +2,5 @@ syntax = "proto3";
 
 message FeedContentEmoji {
     string name = 1;
+    string c = 2;
 }

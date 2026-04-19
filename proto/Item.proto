@@ -18,4 +18,7 @@ message Item {
     string apk_name = 13;
     string forum_name = 14;
     ApkDetail apk_detail = 15;
+    string game_id = 16;
+    string err_toast = 17;
+    int32 able_cancel_subscribe = 18;
 }

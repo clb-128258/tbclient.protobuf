@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "AlaLiveInfo.proto";
+import "BannerList.proto";
+import "User.proto";
+
+message DataRes {
+    BannerList banner_list = 1;
+    AlaLiveInfo recom_ala_info = 2;
+    repeated User user_list = 3;
+}

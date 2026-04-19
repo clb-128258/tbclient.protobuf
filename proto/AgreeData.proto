@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "FeedContentColor.proto";
+import "FeedContentIcon.proto";
+
+message AgreeData {
+    int32 is_selected = 1;
+    int64 num = 2;
+    string default_text = 3;
+    FeedContentColor text_color = 4;
+    FeedContentColor selected_text_color = 5;
+    FeedContentIcon agree_animation = 6;
+    FeedContentIcon agree_assist_animation = 7;
+    int32 support_long_click = 8;
+    string scheme = 9;
+}

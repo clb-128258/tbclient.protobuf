@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "GameDetail.proto";
+
+message BreadcrumbNavigation {
+    string title = 1;
+    string icon = 2;
+    string jump_url = 3;
+    string type = 4;
+    GameDetail game_detail = 5;
+}

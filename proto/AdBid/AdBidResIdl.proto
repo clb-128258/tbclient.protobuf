@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "AdBid/DataRes.proto";
+import "Error.proto";
+
+message AdBidResIdl {
+    Error error = 1;
+    DataRes data = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "FeedButton.proto";
+import "FeedContentText.proto";
+import "FeedFeedback.proto";
+import "FeedHeadImg.proto";
+import "FeedHeadSymbol.proto";
+
+message FeedMixComponent {
+    FeedHeadImg image_data = 1;
+    FeedContentText title = 2;
+    repeated FeedHeadSymbol desc = 3;
+    FeedFeedback feedback = 4;
+    FeedButton button = 5;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "AbstractComponent.proto";
+import "FeedPicComponent.proto";
+import "ThreadExtShowComponent.proto";
+import "TitleComponent.proto";
+
+message FeedPicContentComponent {
+    TitleComponent title = 1;
+    AbstractComponent _abstract = 2;
+    FeedPicComponent pic = 3;
+    ThreadExtShowComponent thread_ext_show = 4;
+}

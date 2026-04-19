@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "PollInfo.proto";
+
+message FeedPkComponent {
+    PollInfo poll_info = 1;
+}

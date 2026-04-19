@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "MaterialAuditStatus.proto";
+
+message AdAuditInfo {
+    repeated MaterialAuditStatus materials = 1;
+}

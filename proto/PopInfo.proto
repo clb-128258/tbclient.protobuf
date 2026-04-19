@@ -7,4 +7,5 @@ message PopInfo {
     string ahead_info = 4;
     string ahead_url = 5;
     string ok_info = 6;
+    string name = 7;
 }

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "ConfigurableHeadTitle.proto";
+import "FeedContentIcon.proto";
+import "Feedback.proto";
+import "RightBoxInfo.proto";
+
+message FeedConfigurableHeadComponent {
+    FeedContentIcon icon = 1;
+    ConfigurableHeadTitle title = 2;
+    RightBoxInfo right_box = 3;
+    string schema = 4;
+    Feedback feedback = 5;
+}

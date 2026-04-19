@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "MaskColor.proto";
+
 message Media {
     int32 type = 1;
     string small_pic = 2;
@@ -27,4 +29,8 @@ message Media {
     string jump_url = 24;
     string guide_text = 25;
     int32 lottie_type = 26;
+    MaskColor mask_color = 27;
+    int32 is_full = 28;
+    uint64 pic_id = 29;
+    string id = 30;
 }

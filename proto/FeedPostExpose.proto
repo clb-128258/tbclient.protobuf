@@ -13,4 +13,5 @@ message FeedPostExpose {
     repeated FeedKV business_info = 5;
     string head_text = 6;
     Agree head_agree = 7;
+    int32 content_max_lines = 8;
 }

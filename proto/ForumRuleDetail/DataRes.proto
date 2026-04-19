@@ -3,6 +3,8 @@ syntax = "proto3";
 import "BawuRoleInfoPub.proto";
 import "ForumInfo.proto";
 import "ForumRule.proto";
+import "ForumRuleDetail/ForumRuleConf.proto";
+import "ForumRuleDetail/NewForumRule.proto";
 
 message DataRes {
     ForumInfo forum = 2;
@@ -16,4 +18,7 @@ message DataRes {
     string publish_time = 10;
     BawuRoleInfoPub bazhu = 11;
     string cur_time = 12;
+    repeated NewForumRule default_rules = 13;
+    repeated NewForumRule new_rules = 14;
+    ForumRuleConf forum_rule_conf = 15;
 }

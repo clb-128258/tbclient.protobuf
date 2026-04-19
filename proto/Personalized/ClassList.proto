@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message ClassList {
+    int32 class_id = 1;
+    string name = 2;
+    int32 has_choose = 3;
+}

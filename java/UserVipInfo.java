@@ -2,130 +2,176 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class UserVipInfo extends Message {
-    public static final String DEFAULT_ICON_URL = "";
-    @ProtoField(tag = 6, type = Message.Datatype.INT32)
-    public final Integer a_score;
-    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-    public final Integer e_time;
-    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-    public final Integer ext_score;
-    @ProtoField(tag = 8, type = Message.Datatype.STRING)
-    public final String icon_url;
-    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-    public final Integer n_score;
-    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer s_time;
-    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-    public final Integer v_level;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-    public final Integer v_status;
-    public static final Integer DEFAULT_V_STATUS = 0;
-    public static final Integer DEFAULT_S_TIME = 0;
-    public static final Integer DEFAULT_E_TIME = 0;
-    public static final Integer DEFAULT_EXT_SCORE = 0;
-    public static final Integer DEFAULT_V_LEVEL = 0;
-    public static final Integer DEFAULT_A_SCORE = 0;
-    public static final Integer DEFAULT_N_SCORE = 0;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<UserVipInfo> {
-        public Integer a_score;
-        public Integer e_time;
-        public Integer ext_score;
-        public String icon_url;
-        public Integer n_score;
-        public Integer s_time;
-        public Integer v_level;
-        public Integer v_status;
-
-        public Builder() {
-        }
-
-        public Builder(UserVipInfo userVipInfo) {
-            super(userVipInfo);
-            if (userVipInfo == null) {
-                return;
-            }
-            this.v_status = userVipInfo.v_status;
-            this.s_time = userVipInfo.s_time;
-            this.e_time = userVipInfo.e_time;
-            this.ext_score = userVipInfo.ext_score;
-            this.v_level = userVipInfo.v_level;
-            this.a_score = userVipInfo.a_score;
-            this.n_score = userVipInfo.n_score;
-            this.icon_url = userVipInfo.icon_url;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public UserVipInfo build(boolean z) {
-            return new UserVipInfo(this, z);
-        }
+  public static final Integer DEFAULT_A_SCORE;
+  
+  public static final Integer DEFAULT_EXT_SCORE;
+  
+  public static final Integer DEFAULT_E_TIME;
+  
+  public static final String DEFAULT_ICON_URL = "";
+  
+  public static final Integer DEFAULT_N_SCORE;
+  
+  public static final Integer DEFAULT_STAY_DAY;
+  
+  public static final Integer DEFAULT_S_TIME;
+  
+  public static final Integer DEFAULT_V_LEVEL;
+  
+  public static final Integer DEFAULT_V_STATUS;
+  
+  @ProtoField(tag = 6, type = Message.Datatype.INT32)
+  public final Integer a_score;
+  
+  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+  public final Integer e_time;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+  public final Integer ext_score;
+  
+  @ProtoField(tag = 8, type = Message.Datatype.STRING)
+  public final String icon_url;
+  
+  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+  public final Integer n_score;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+  public final Integer s_time;
+  
+  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+  public final Integer stay_day;
+  
+  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+  public final Integer v_level;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+  public final Integer v_status;
+  
+  static {
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_V_STATUS = integer;
+    DEFAULT_S_TIME = integer;
+    DEFAULT_E_TIME = integer;
+    DEFAULT_EXT_SCORE = integer;
+    DEFAULT_V_LEVEL = integer;
+    DEFAULT_A_SCORE = integer;
+    DEFAULT_N_SCORE = integer;
+    DEFAULT_STAY_DAY = integer;
+  }
+  
+  public UserVipInfo(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    Integer integer;
+    if (paramBoolean == true) {
+      Integer integer1 = paramBuilder.v_status;
+      if (integer1 == null) {
+        this.v_status = DEFAULT_V_STATUS;
+      } else {
+        this.v_status = integer1;
+      } 
+      integer1 = paramBuilder.s_time;
+      if (integer1 == null) {
+        this.s_time = DEFAULT_S_TIME;
+      } else {
+        this.s_time = integer1;
+      } 
+      integer1 = paramBuilder.e_time;
+      if (integer1 == null) {
+        this.e_time = DEFAULT_E_TIME;
+      } else {
+        this.e_time = integer1;
+      } 
+      integer1 = paramBuilder.ext_score;
+      if (integer1 == null) {
+        this.ext_score = DEFAULT_EXT_SCORE;
+      } else {
+        this.ext_score = integer1;
+      } 
+      integer1 = paramBuilder.v_level;
+      if (integer1 == null) {
+        this.v_level = DEFAULT_V_LEVEL;
+      } else {
+        this.v_level = integer1;
+      } 
+      integer1 = paramBuilder.a_score;
+      if (integer1 == null) {
+        this.a_score = DEFAULT_A_SCORE;
+      } else {
+        this.a_score = integer1;
+      } 
+      integer1 = paramBuilder.n_score;
+      if (integer1 == null) {
+        this.n_score = DEFAULT_N_SCORE;
+      } else {
+        this.n_score = integer1;
+      } 
+      String str = paramBuilder.icon_url;
+      if (str == null) {
+        this.icon_url = "";
+      } else {
+        this.icon_url = str;
+      } 
+      integer = paramBuilder.stay_day;
+      if (integer == null) {
+        this.stay_day = DEFAULT_STAY_DAY;
+      } else {
+        this.stay_day = integer;
+      } 
+    } else {
+      this.v_status = ((Builder)integer).v_status;
+      this.s_time = ((Builder)integer).s_time;
+      this.e_time = ((Builder)integer).e_time;
+      this.ext_score = ((Builder)integer).ext_score;
+      this.v_level = ((Builder)integer).v_level;
+      this.a_score = ((Builder)integer).a_score;
+      this.n_score = ((Builder)integer).n_score;
+      this.icon_url = ((Builder)integer).icon_url;
+      this.stay_day = ((Builder)integer).stay_day;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<UserVipInfo> {
+    public Integer a_score;
+    
+    public Integer e_time;
+    
+    public Integer ext_score;
+    
+    public String icon_url;
+    
+    public Integer n_score;
+    
+    public Integer s_time;
+    
+    public Integer stay_day;
+    
+    public Integer v_level;
+    
+    public Integer v_status;
+    
+    public Builder() {}
+    
+    public Builder(UserVipInfo param1UserVipInfo) {
+      super(param1UserVipInfo);
+      if (param1UserVipInfo == null)
+        return; 
+      this.v_status = param1UserVipInfo.v_status;
+      this.s_time = param1UserVipInfo.s_time;
+      this.e_time = param1UserVipInfo.e_time;
+      this.ext_score = param1UserVipInfo.ext_score;
+      this.v_level = param1UserVipInfo.v_level;
+      this.a_score = param1UserVipInfo.a_score;
+      this.n_score = param1UserVipInfo.n_score;
+      this.icon_url = param1UserVipInfo.icon_url;
+      this.stay_day = param1UserVipInfo.stay_day;
     }
-
-    public UserVipInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            Integer num = builder.v_status;
-            if (num == null) {
-                this.v_status = DEFAULT_V_STATUS;
-            } else {
-                this.v_status = num;
-            }
-            Integer num2 = builder.s_time;
-            if (num2 == null) {
-                this.s_time = DEFAULT_S_TIME;
-            } else {
-                this.s_time = num2;
-            }
-            Integer num3 = builder.e_time;
-            if (num3 == null) {
-                this.e_time = DEFAULT_E_TIME;
-            } else {
-                this.e_time = num3;
-            }
-            Integer num4 = builder.ext_score;
-            if (num4 == null) {
-                this.ext_score = DEFAULT_EXT_SCORE;
-            } else {
-                this.ext_score = num4;
-            }
-            Integer num5 = builder.v_level;
-            if (num5 == null) {
-                this.v_level = DEFAULT_V_LEVEL;
-            } else {
-                this.v_level = num5;
-            }
-            Integer num6 = builder.a_score;
-            if (num6 == null) {
-                this.a_score = DEFAULT_A_SCORE;
-            } else {
-                this.a_score = num6;
-            }
-            Integer num7 = builder.n_score;
-            if (num7 == null) {
-                this.n_score = DEFAULT_N_SCORE;
-            } else {
-                this.n_score = num7;
-            }
-            String str = builder.icon_url;
-            if (str == null) {
-                this.icon_url = "";
-                return;
-            } else {
-                this.icon_url = str;
-                return;
-            }
-        }
-        this.v_status = builder.v_status;
-        this.s_time = builder.s_time;
-        this.e_time = builder.e_time;
-        this.ext_score = builder.ext_score;
-        this.v_level = builder.v_level;
-        this.a_score = builder.a_score;
-        this.n_score = builder.n_score;
-        this.icon_url = builder.icon_url;
+    
+    public UserVipInfo build(boolean param1Boolean) {
+      return new UserVipInfo(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

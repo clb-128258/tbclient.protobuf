@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "IconUrlInfo.proto";
+
+message InteractInfo {
+    IconUrlInfo agree = 1;
+    IconUrlInfo post = 2;
+    IconUrlInfo share = 3;
+}

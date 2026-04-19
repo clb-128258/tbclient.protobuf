@@ -4,4 +4,7 @@ import "FeedContentResource.proto";
 
 message TitleComponent {
     repeated FeedContentResource data = 1;
+    string font_size = 2;
+    int32 max_lines = 3;
+    string schema = 4;
 }

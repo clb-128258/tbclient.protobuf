@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "IconUrlInfo.proto";
+
+message ButtonConf {
+    IconUrlInfo left_icon = 1;
+    string text = 2;
+    IconUrlInfo right_icon = 3;
+}

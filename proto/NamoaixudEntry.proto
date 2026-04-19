@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "FeedKV.proto";
+
 message NamoaixudEntry {
     string tip = 1;
     string amount = 2;
@@ -14,4 +16,5 @@ message NamoaixudEntry {
     string activity_link_addr = 11;
     string layout_type = 12;
     string encourage_icon_dark = 13;
+    repeated FeedKV log_param = 14;
 }

@@ -4,4 +4,17 @@ message AppTransmitData {
     string wise_sample_id = 1;
     string yy_hdid = 2;
     string yy_version = 3;
+    string ismi = 4;
+    int32 orientation = 5;
+    int32 carrier = 6;
+    string carrier_name = 7;
+    string idfv = 8;
+    string startup_time = 9;
+    string country_code = 10;
+    string mb_time = 11;
+    string disk_total = 12;
+    string mem_total = 13;
+    string device_type = 14;
+    string local_tz_name = 15;
+    string sha1 = 16;
 }

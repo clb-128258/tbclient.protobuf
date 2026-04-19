@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message BotTagInfo {
+    uint32 sub_type = 1;
+    string content = 2;
+    string img_url = 3;
+    string width = 4;
+    string height = 5;
+}

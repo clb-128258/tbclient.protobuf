@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message ForumBotInfo {
+    int32 is_forum_bot = 1;
+    string brief = 2;
+    string forum_name = 3;
+    uint32 fid = 4;
+    int64 bot_uid = 5;
+    int64 create_uid = 6;
+    string create_username = 7;
+    string uk = 8;
+    int64 pa = 9;
+    string greeting = 10;
+}

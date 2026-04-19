@@ -4,6 +4,7 @@ import "CommonReq.proto";
 import "Wares.proto";
 
 message DataReq {
+    CommonReq common = 1;
     uint32 pay_type = 2;
     uint32 is_left = 3;
     string order_url = 4;
@@ -15,4 +16,8 @@ message DataReq {
     string click_zone = 10;
     string wallet_sdk_ua = 12;
     int64 from_scene = 13;
+    int32 good_id = 14;
+    int32 scene_id = 15;
+    int32 dialog_type = 16;
+    string payment_extra = 17;
 }

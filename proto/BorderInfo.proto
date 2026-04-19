@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FeedContentColor.proto";
+
+message BorderInfo {
+    string border_width = 1;
+    FeedContentColor border_color = 2;
+}

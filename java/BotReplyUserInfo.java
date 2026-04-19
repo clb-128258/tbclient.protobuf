@@ -2,70 +2,74 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class BotReplyUserInfo extends Message {
-    public static final String DEFAULT_ICON_URL = "";
-    public static final String DEFAULT_NAME = "";
-    public static final String DEFAULT_PORTRAIT_URL = "";
-    @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String icon_url;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String name;
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String portrait_url;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<BotReplyUserInfo> {
-        public String icon_url;
-        public String name;
-        public String portrait_url;
-
-        public Builder() {
-        }
-
-        public Builder(BotReplyUserInfo botReplyUserInfo) {
-            super(botReplyUserInfo);
-            if (botReplyUserInfo == null) {
-                return;
-            }
-            this.portrait_url = botReplyUserInfo.portrait_url;
-            this.name = botReplyUserInfo.name;
-            this.icon_url = botReplyUserInfo.icon_url;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public BotReplyUserInfo build(boolean z) {
-            return new BotReplyUserInfo(this, z);
-        }
+  public static final String DEFAULT_ICON_URL = "";
+  
+  public static final String DEFAULT_NAME = "";
+  
+  public static final String DEFAULT_PORTRAIT_URL = "";
+  
+  @ProtoField(tag = 3, type = Message.Datatype.STRING)
+  public final String icon_url;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.STRING)
+  public final String name;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.STRING)
+  public final String portrait_url;
+  
+  public BotReplyUserInfo(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    String str;
+    if (paramBoolean == true) {
+      String str1 = paramBuilder.portrait_url;
+      if (str1 == null) {
+        this.portrait_url = "";
+      } else {
+        this.portrait_url = str1;
+      } 
+      str1 = paramBuilder.name;
+      if (str1 == null) {
+        this.name = "";
+      } else {
+        this.name = str1;
+      } 
+      str = paramBuilder.icon_url;
+      if (str == null) {
+        this.icon_url = "";
+      } else {
+        this.icon_url = str;
+      } 
+    } else {
+      this.portrait_url = ((Builder)str).portrait_url;
+      this.name = ((Builder)str).name;
+      this.icon_url = ((Builder)str).icon_url;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<BotReplyUserInfo> {
+    public String icon_url;
+    
+    public String name;
+    
+    public String portrait_url;
+    
+    public Builder() {}
+    
+    public Builder(BotReplyUserInfo param1BotReplyUserInfo) {
+      super(param1BotReplyUserInfo);
+      if (param1BotReplyUserInfo == null)
+        return; 
+      this.portrait_url = param1BotReplyUserInfo.portrait_url;
+      this.name = param1BotReplyUserInfo.name;
+      this.icon_url = param1BotReplyUserInfo.icon_url;
     }
-
-    public BotReplyUserInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            String str = builder.portrait_url;
-            if (str == null) {
-                this.portrait_url = "";
-            } else {
-                this.portrait_url = str;
-            }
-            String str2 = builder.name;
-            if (str2 == null) {
-                this.name = "";
-            } else {
-                this.name = str2;
-            }
-            String str3 = builder.icon_url;
-            if (str3 == null) {
-                this.icon_url = "";
-                return;
-            } else {
-                this.icon_url = str3;
-                return;
-            }
-        }
-        this.portrait_url = builder.portrait_url;
-        this.name = builder.name;
-        this.icon_url = builder.icon_url;
+    
+    public BotReplyUserInfo build(boolean param1Boolean) {
+      return new BotReplyUserInfo(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

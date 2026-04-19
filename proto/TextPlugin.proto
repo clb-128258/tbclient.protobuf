@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "GameDetail.proto";
+
+message TextPlugin {
+    string plugins_txt = 1;
+    string plugins_type = 2;
+    GameDetail game_detail = 3;
+}

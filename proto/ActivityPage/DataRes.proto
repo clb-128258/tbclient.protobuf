@@ -5,6 +5,7 @@ import "ActivityPage/RecommendForumList.proto";
 import "ActivityPage/RecommendUserList.proto";
 import "ActivityPage/SpecialColumnList.proto";
 import "BannerImage.proto";
+import "FeedKV.proto";
 import "Page.proto";
 import "ThreadInfo.proto";
 
@@ -17,4 +18,5 @@ message DataRes {
     RecommendForumList recommend_forum = 6;
     RecommendUserList recommend_user = 7;
     Page page_info = 8;
+    repeated FeedKV log_param = 9;
 }

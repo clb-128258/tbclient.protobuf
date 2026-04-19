@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+
+message FeedDynamicTag {
+    string type = 1;
+    repeated FeedContentResource negative_text = 2;
+    repeated FeedContentResource positive_text = 3;
+    bool is_positive = 4;
+    string negative_schema = 5;
+    string positive_schema = 6;
+}

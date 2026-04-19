@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message MaskColor {
+    ThemeColorInfo begin_color = 1;
+    ThemeColorInfo end_color = 2;
+}

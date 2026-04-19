@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+
+message CommonPopupData {
+    string popup_type = 1;
+    string title = 2;
+    string desc = 3;
+    string icon_url = 4;
+    string btn_text = 5;
+    string btn_schema = 6;
+    repeated FeedKV log_param = 7;
+}

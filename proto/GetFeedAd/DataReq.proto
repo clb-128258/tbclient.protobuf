@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "AppTransmitData.proto";
+import "CommonReq.proto";
+
+message DataReq {
+    CommonReq common = 1;
+    AppTransmitData app_transmit_data = 2;
+    string ad_place = 3;
+    string ad_ext_params = 4;
+    string ad_context_list = 5;
+}

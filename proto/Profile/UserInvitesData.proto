@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message UserInvitesData {
+    string activity_name = 1;
+    string activity_rule = 2;
+    repeated string activity_desc = 3;
+}

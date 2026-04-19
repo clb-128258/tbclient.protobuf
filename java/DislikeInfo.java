@@ -2,70 +2,96 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class DislikeInfo extends Message {
-    public static final Integer DEFAULT_DISLIKE_ID = 0;
-    public static final String DEFAULT_DISLIKE_REASON = "";
-    public static final String DEFAULT_EXTRA = "";
-    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer dislike_id;
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String dislike_reason;
-    @ProtoField(tag = 3, type = Message.Datatype.STRING)
-    public final String extra;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<DislikeInfo> {
-        public Integer dislike_id;
-        public String dislike_reason;
-        public String extra;
-
-        public Builder() {
-        }
-
-        public Builder(DislikeInfo dislikeInfo) {
-            super(dislikeInfo);
-            if (dislikeInfo == null) {
-                return;
-            }
-            this.dislike_reason = dislikeInfo.dislike_reason;
-            this.dislike_id = dislikeInfo.dislike_id;
-            this.extra = dislikeInfo.extra;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public DislikeInfo build(boolean z) {
-            return new DislikeInfo(this, z);
-        }
+  public static final Integer DEFAULT_DISLIKE_ID = Integer.valueOf(0);
+  
+  public static final String DEFAULT_DISLIKE_REASON = "";
+  
+  public static final String DEFAULT_EXTRA = "";
+  
+  public static final String DEFAULT_SCHEMA = "";
+  
+  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+  public final Integer dislike_id;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.STRING)
+  public final String dislike_reason;
+  
+  @ProtoField(tag = 3, type = Message.Datatype.STRING)
+  public final String extra;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.STRING)
+  public final String schema;
+  
+  @ProtoField(tag = 5)
+  public final Toast toast;
+  
+  public DislikeInfo(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    if (paramBoolean == true) {
+      String str2 = paramBuilder.dislike_reason;
+      if (str2 == null) {
+        this.dislike_reason = "";
+      } else {
+        this.dislike_reason = str2;
+      } 
+      Integer integer = paramBuilder.dislike_id;
+      if (integer == null) {
+        this.dislike_id = DEFAULT_DISLIKE_ID;
+      } else {
+        this.dislike_id = integer;
+      } 
+      String str1 = paramBuilder.extra;
+      if (str1 == null) {
+        this.extra = "";
+      } else {
+        this.extra = str1;
+      } 
+      str1 = paramBuilder.schema;
+      if (str1 == null) {
+        this.schema = "";
+      } else {
+        this.schema = str1;
+      } 
+      this.toast = paramBuilder.toast;
+    } else {
+      this.dislike_reason = paramBuilder.dislike_reason;
+      this.dislike_id = paramBuilder.dislike_id;
+      this.extra = paramBuilder.extra;
+      this.schema = paramBuilder.schema;
+      this.toast = paramBuilder.toast;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<DislikeInfo> {
+    public Integer dislike_id;
+    
+    public String dislike_reason;
+    
+    public String extra;
+    
+    public String schema;
+    
+    public Toast toast;
+    
+    public Builder() {}
+    
+    public Builder(DislikeInfo param1DislikeInfo) {
+      super(param1DislikeInfo);
+      if (param1DislikeInfo == null)
+        return; 
+      this.dislike_reason = param1DislikeInfo.dislike_reason;
+      this.dislike_id = param1DislikeInfo.dislike_id;
+      this.extra = param1DislikeInfo.extra;
+      this.schema = param1DislikeInfo.schema;
+      this.toast = param1DislikeInfo.toast;
     }
-
-    public DislikeInfo(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            String str = builder.dislike_reason;
-            if (str == null) {
-                this.dislike_reason = "";
-            } else {
-                this.dislike_reason = str;
-            }
-            Integer num = builder.dislike_id;
-            if (num == null) {
-                this.dislike_id = DEFAULT_DISLIKE_ID;
-            } else {
-                this.dislike_id = num;
-            }
-            String str2 = builder.extra;
-            if (str2 == null) {
-                this.extra = "";
-                return;
-            } else {
-                this.extra = str2;
-                return;
-            }
-        }
-        this.dislike_reason = builder.dislike_reason;
-        this.dislike_id = builder.dislike_id;
-        this.extra = builder.extra;
+    
+    public DislikeInfo build(boolean param1Boolean) {
+      return new DislikeInfo(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

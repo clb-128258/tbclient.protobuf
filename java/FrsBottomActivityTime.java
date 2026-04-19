@@ -2,58 +2,65 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class FrsBottomActivityTime extends Message {
-    @ProtoField(tag = 2, type = Message.Datatype.INT64)
-    public final Long end_time;
-    @ProtoField(tag = 1, type = Message.Datatype.INT64)
-    public final Long start_time;
-    public static final Long DEFAULT_START_TIME = 0L;
-    public static final Long DEFAULT_END_TIME = 0L;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<FrsBottomActivityTime> {
-        public Long end_time;
-        public Long start_time;
-
-        public Builder() {
-        }
-
-        public Builder(FrsBottomActivityTime frsBottomActivityTime) {
-            super(frsBottomActivityTime);
-            if (frsBottomActivityTime == null) {
-                return;
-            }
-            this.start_time = frsBottomActivityTime.start_time;
-            this.end_time = frsBottomActivityTime.end_time;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public FrsBottomActivityTime build(boolean z) {
-            return new FrsBottomActivityTime(this, z);
-        }
+  public static final Long DEFAULT_END_TIME;
+  
+  public static final Long DEFAULT_START_TIME;
+  
+  @ProtoField(tag = 2, type = Message.Datatype.INT64)
+  public final Long end_time;
+  
+  @ProtoField(tag = 1, type = Message.Datatype.INT64)
+  public final Long start_time;
+  
+  static {
+    Long long_ = Long.valueOf(0L);
+    DEFAULT_START_TIME = long_;
+    DEFAULT_END_TIME = long_;
+  }
+  
+  public FrsBottomActivityTime(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    Long long_;
+    if (paramBoolean == true) {
+      Long long_1 = paramBuilder.start_time;
+      if (long_1 == null) {
+        this.start_time = DEFAULT_START_TIME;
+      } else {
+        this.start_time = long_1;
+      } 
+      long_ = paramBuilder.end_time;
+      if (long_ == null) {
+        this.end_time = DEFAULT_END_TIME;
+      } else {
+        this.end_time = long_;
+      } 
+    } else {
+      this.start_time = ((Builder)long_).start_time;
+      this.end_time = ((Builder)long_).end_time;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<FrsBottomActivityTime> {
+    public Long end_time;
+    
+    public Long start_time;
+    
+    public Builder() {}
+    
+    public Builder(FrsBottomActivityTime param1FrsBottomActivityTime) {
+      super(param1FrsBottomActivityTime);
+      if (param1FrsBottomActivityTime == null)
+        return; 
+      this.start_time = param1FrsBottomActivityTime.start_time;
+      this.end_time = param1FrsBottomActivityTime.end_time;
     }
-
-    public FrsBottomActivityTime(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            Long l = builder.start_time;
-            if (l == null) {
-                this.start_time = DEFAULT_START_TIME;
-            } else {
-                this.start_time = l;
-            }
-            Long l2 = builder.end_time;
-            if (l2 == null) {
-                this.end_time = DEFAULT_END_TIME;
-                return;
-            } else {
-                this.end_time = l2;
-                return;
-            }
-        }
-        this.start_time = builder.start_time;
-        this.end_time = builder.end_time;
+    
+    public FrsBottomActivityTime build(boolean param1Boolean) {
+      return new FrsBottomActivityTime(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

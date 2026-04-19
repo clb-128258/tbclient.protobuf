@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "PicInfo.proto";
+import "ThreadRecommendInfo.proto";
+
+message FeedHorizontalPicComponent {
+    repeated PicInfo pics = 1;
+    string schema = 2;
+    ThreadRecommendInfo act_countdown_info = 3;
+}

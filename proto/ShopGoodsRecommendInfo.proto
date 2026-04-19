@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "ShopGoodsRecommendUserInfo.proto";
+
+message ShopGoodsRecommendInfo {
+    uint32 count = 1;
+    uint32 recommend_status = 2;
+    repeated ShopGoodsRecommendUserInfo user_info = 3;
+    string sub_title = 4;
+}

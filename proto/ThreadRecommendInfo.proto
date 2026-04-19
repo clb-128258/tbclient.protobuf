@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "FeedCountdown.proto";
+import "FeedKV.proto";
 import "ThemeColorInfo.proto";
 
 message ThreadRecommendInfo {
@@ -24,4 +26,19 @@ message ThreadRecommendInfo {
     ThemeColorInfo jump_text_color = 19;
     ThemeColorInfo dot_color = 20;
     ThemeColorInfo tail_color = 21;
+    int32 style_type = 22;
+    string topic_tag = 23;
+    FeedCountdown countdown = 24;
+    repeated FeedKV business_info = 25;
+    string recommend_icon_background = 26;
+    string button_text = 27;
+    ThemeColorInfo button_text_color = 28;
+    ThemeColorInfo button_color = 29;
+    string button_link = 30;
+    repeated FeedKV log_param = 31;
+    string price = 33;
+    ThemeColorInfo icon_info = 34;
+    string price2 = 35;
+    string button_text2 = 36;
+    string button_link2 = 37;
 }

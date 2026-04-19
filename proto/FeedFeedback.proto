@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FeedKV.proto";
 import "FeedbackReason.proto";
 
 message FeedFeedback {
@@ -8,4 +9,6 @@ message FeedFeedback {
     string button_text = 3;
     string common_id = 4;
     repeated FeedbackReason dislike = 5;
+    string action_type = 6;
+    repeated FeedKV business_info = 7;
 }

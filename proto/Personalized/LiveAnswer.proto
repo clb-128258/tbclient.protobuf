@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "AppDownloadInfo.proto";
+
 message LiveAnswer {
     string banner_url = 1;
     int32 banner_width = 2;
@@ -8,4 +10,7 @@ message LiveAnswer {
     int64 activity_id = 5;
     repeated string show_statistics_urls = 6;
     repeated string click_statistics_urls = 7;
+    string scheme = 8;
+    string package_name = 9;
+    AppDownloadInfo download_info = 10;
 }

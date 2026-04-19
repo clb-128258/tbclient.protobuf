@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "ComponentFactory.proto";
+import "FeedContentIcon.proto";
+import "FeedKV.proto";
+
+message MultiThreadCardLayout {
+    repeated ComponentFactory components = 1;
+    ComponentFactory title = 2;
+    repeated FeedKV business_info = 3;
+    repeated FeedKV log_param = 4;
+    FeedContentIcon background = 5;
+    string schema = 6;
+    repeated string prefetch_schema = 7;
+    repeated FeedKV log_info = 9;
+}

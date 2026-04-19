@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FeedContentIcon.proto";
+import "FeedContentText.proto";
+import "FeedHeadImg.proto";
+
+message FeedHeadLoopComponent {
+    repeated FeedHeadImg image_list = 1;
+    FeedContentText text_info = 2;
+    FeedContentIcon icon_info = 3;
+    string schema = 4;
+}

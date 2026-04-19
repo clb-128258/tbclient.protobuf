@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message SpriteShowStrategy {
+    int32 alter_seconds = 1;
+    int32 alter_times = 2;
+}

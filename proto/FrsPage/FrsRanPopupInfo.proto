@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FrsPage/PopupPostInfo.proto";
+
+message FrsRanPopupInfo {
+    string pic_url = 1;
+    double item_score = 2;
+    repeated PopupPostInfo post_list = 3;
+    int64 tid = 4;
+    string business_id = 5;
+}

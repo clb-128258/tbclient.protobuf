@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "QueryBase.proto";
+
+message QueryInfo {
+    repeated QueryBase querys = 1;
+    uint32 insert_pos = 2;
+}

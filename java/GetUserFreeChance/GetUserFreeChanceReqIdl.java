@@ -2,39 +2,36 @@ package tbclient.GetUserFreeChance;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes2.dex */
+
 public final class GetUserFreeChanceReqIdl extends Message {
-    @ProtoField(tag = 1)
-    public final DataReq data;
-
-    /* loaded from: classes2.dex */
-    public static final class Builder extends Message.Builder<GetUserFreeChanceReqIdl> {
-        public DataReq data;
-
-        public Builder() {
-        }
-
-        public Builder(GetUserFreeChanceReqIdl getUserFreeChanceReqIdl) {
-            super(getUserFreeChanceReqIdl);
-            if (getUserFreeChanceReqIdl == null) {
-                return;
-            }
-            this.data = getUserFreeChanceReqIdl.data;
-        }
-
-        /* JADX DEBUG: Method merged with bridge method */
-        @Override // com.squareup.wire.Message.Builder
-        public GetUserFreeChanceReqIdl build(boolean z) {
-            return new GetUserFreeChanceReqIdl(this, z);
-        }
+  @ProtoField(tag = 1)
+  public final DataReq data;
+  
+  public GetUserFreeChanceReqIdl(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    if (paramBoolean == true) {
+      this.data = paramBuilder.data;
+    } else {
+      this.data = paramBuilder.data;
+    } 
+  }
+  
+  public static final class Builder extends Message.Builder<GetUserFreeChanceReqIdl> {
+    public DataReq data;
+    
+    public Builder() {}
+    
+    public Builder(GetUserFreeChanceReqIdl param1GetUserFreeChanceReqIdl) {
+      super(param1GetUserFreeChanceReqIdl);
+      if (param1GetUserFreeChanceReqIdl == null)
+        return; 
+      this.data = param1GetUserFreeChanceReqIdl.data;
     }
-
-    public GetUserFreeChanceReqIdl(Builder builder, boolean z) {
-        super(builder);
-        if (z) {
-            this.data = builder.data;
-        } else {
-            this.data = builder.data;
-        }
+    
+    public GetUserFreeChanceReqIdl build(boolean param1Boolean) {
+      return new GetUserFreeChanceReqIdl(this, param1Boolean, null);
     }
+  }
+  
+  public static class a {}
 }

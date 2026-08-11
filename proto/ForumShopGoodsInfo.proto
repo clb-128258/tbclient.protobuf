@@ -1,9 +1,11 @@
 syntax = "proto3";
 
 import "ForumShopRoleInfo.proto";
+import "KjsAccountInfo.proto";
 import "ShopGoodsInfo.proto";
 
 message ForumShopGoodsInfo {
     ShopGoodsInfo goods_info = 1;
     ForumShopRoleInfo role_info = 2;
+    KjsAccountInfo kjs_account_info = 3;
 }

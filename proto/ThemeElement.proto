@@ -14,4 +14,9 @@ message ThemeElement {
     string pattern_image_select = 11;
     string pattern_image_not_selected = 12;
     int32 cover_type = 13;
+    string animation_url = 14;
+    string assist_animation_url = 15;
+    int32 support_long_click = 16;
+    repeated string long_click_animation_urls = 17;
+    string schema = 18;
 }

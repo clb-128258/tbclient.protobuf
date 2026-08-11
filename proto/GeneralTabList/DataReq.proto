@@ -37,4 +37,5 @@ message DataReq {
     string ad_external_info = 35;
     int32 user_read_style = 36;
     string simplify_field = 37;
+    int64 hot_thread_id = 38;
 }

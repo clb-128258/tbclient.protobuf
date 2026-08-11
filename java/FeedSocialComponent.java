@@ -8,6 +8,8 @@ import java.util.List;
 public final class FeedSocialComponent extends Message {
   public static final Integer DEFAULT_AGREE_LONG_CLICK;
   
+  public static final List<FeedContentIcon> DEFAULT_AGREE_LONG_CLICK_ANIMATION;
+  
   public static final Integer DEFAULT_COMMENT_NUM;
   
   public static final String DEFAULT_COMMENT_SCHEME = "";
@@ -40,6 +42,9 @@ public final class FeedSocialComponent extends Message {
   
   @ProtoField(tag = 18, type = Message.Datatype.INT32)
   public final Integer agree_long_click;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 22)
+  public final List<FeedContentIcon> agree_long_click_animation;
   
   @ProtoField(tag = 15)
   public final FeedContentIcon agree_resource;
@@ -100,10 +105,12 @@ public final class FeedSocialComponent extends Message {
     DEFAULT_FIRST_POST_ID = long_;
     DEFAULT_AGREE_LONG_CLICK = integer;
     DEFAULT_EID = long_;
+    DEFAULT_AGREE_LONG_CLICK_ANIMATION = Collections.emptyList();
   }
   
   public FeedSocialComponent(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    List<FeedContentIcon> list;
     if (paramBoolean == true) {
       this.agree = paramBuilder.agree;
       Integer integer3 = paramBuilder.comment_num;
@@ -130,11 +137,11 @@ public final class FeedSocialComponent extends Message {
       } else {
         this.fid = long_3;
       } 
-      List<LayoutManageInfo> list = paramBuilder.manage_list;
-      if (list == null) {
+      List<LayoutManageInfo> list1 = paramBuilder.manage_list;
+      if (list1 == null) {
         this.manage_list = DEFAULT_MANAGE_LIST;
       } else {
-        this.manage_list = Message.immutableCopyOf(list);
+        this.manage_list = Message.immutableCopyOf(list1);
       } 
       Integer integer2 = paramBuilder.is_grayreply;
       if (integer2 == null) {
@@ -188,25 +195,32 @@ public final class FeedSocialComponent extends Message {
         this.eid = long_1;
       } 
       this.share_show_data = paramBuilder.share_show_data;
+      list = paramBuilder.agree_long_click_animation;
+      if (list == null) {
+        this.agree_long_click_animation = DEFAULT_AGREE_LONG_CLICK_ANIMATION;
+      } else {
+        this.agree_long_click_animation = Message.immutableCopyOf(list);
+      } 
     } else {
-      this.agree = paramBuilder.agree;
-      this.comment_num = paramBuilder.comment_num;
-      this.share_num = paramBuilder.share_num;
-      this.tid = paramBuilder.tid;
-      this.fid = paramBuilder.fid;
-      this.manage_list = Message.immutableCopyOf(paramBuilder.manage_list);
-      this.is_grayreply = paramBuilder.is_grayreply;
-      this.is_grayshare = paramBuilder.is_grayshare;
-      this.is_store = paramBuilder.is_store;
-      this.first_post_id = paramBuilder.first_post_id;
-      this.comment_scheme = paramBuilder.comment_scheme;
-      this.agree_resource = paramBuilder.agree_resource;
-      this.agree_selected_color = paramBuilder.agree_selected_color;
-      this.agree_animation = paramBuilder.agree_animation;
-      this.agree_long_click = paramBuilder.agree_long_click;
-      this.etype = paramBuilder.etype;
-      this.eid = paramBuilder.eid;
-      this.share_show_data = paramBuilder.share_show_data;
+      this.agree = ((Builder)list).agree;
+      this.comment_num = ((Builder)list).comment_num;
+      this.share_num = ((Builder)list).share_num;
+      this.tid = ((Builder)list).tid;
+      this.fid = ((Builder)list).fid;
+      this.manage_list = Message.immutableCopyOf(((Builder)list).manage_list);
+      this.is_grayreply = ((Builder)list).is_grayreply;
+      this.is_grayshare = ((Builder)list).is_grayshare;
+      this.is_store = ((Builder)list).is_store;
+      this.first_post_id = ((Builder)list).first_post_id;
+      this.comment_scheme = ((Builder)list).comment_scheme;
+      this.agree_resource = ((Builder)list).agree_resource;
+      this.agree_selected_color = ((Builder)list).agree_selected_color;
+      this.agree_animation = ((Builder)list).agree_animation;
+      this.agree_long_click = ((Builder)list).agree_long_click;
+      this.etype = ((Builder)list).etype;
+      this.eid = ((Builder)list).eid;
+      this.share_show_data = ((Builder)list).share_show_data;
+      this.agree_long_click_animation = Message.immutableCopyOf(((Builder)list).agree_long_click_animation);
     } 
   }
   
@@ -216,6 +230,8 @@ public final class FeedSocialComponent extends Message {
     public FeedContentIcon agree_animation;
     
     public Integer agree_long_click;
+    
+    public List<FeedContentIcon> agree_long_click_animation;
     
     public FeedContentIcon agree_resource;
     
@@ -271,6 +287,7 @@ public final class FeedSocialComponent extends Message {
       this.etype = param1FeedSocialComponent.etype;
       this.eid = param1FeedSocialComponent.eid;
       this.share_show_data = param1FeedSocialComponent.share_show_data;
+      this.agree_long_click_animation = Message.copyOf(param1FeedSocialComponent.agree_long_click_animation);
     }
     
     public FeedSocialComponent build(boolean param1Boolean) {

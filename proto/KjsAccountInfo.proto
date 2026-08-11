@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "KjsAccountDetail.proto";
+import "KjsTradeFlow.proto";
+
+message KjsAccountInfo {
+    KjsTradeFlow trade_flow = 1;
+    KjsAccountDetail account_info = 2;
+}

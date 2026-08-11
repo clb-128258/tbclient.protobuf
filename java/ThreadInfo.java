@@ -278,6 +278,8 @@ public final class ThreadInfo extends Message {
   
   public static final String DEFAULT_RECOM_WEIGHT = "";
   
+  public static final List<HelpStatusTag> DEFAULT_REPLY_AUTHOR_STATUS_TAG;
+  
   public static final Integer DEFAULT_REPLY_NUM;
   
   public static final List<ReportInfo> DEFAULT_REPORT_INFO;
@@ -305,6 +307,8 @@ public final class ThreadInfo extends Message {
   public static final List<UserAttrIcon> DEFAULT_SHOW_ICON_LIST;
   
   public static final Integer DEFAULT_SHOW_NEW_QUESTION_STYLE;
+  
+  public static final Integer DEFAULT_SHOW_REPLY_STATUS_BAR;
   
   public static final List<User> DEFAULT_SHOW_USER_LIST;
   
@@ -441,6 +445,9 @@ public final class ThreadInfo extends Message {
   @ProtoField(tag = 56, type = Message.Datatype.INT64)
   public final Long author_id;
   
+  @ProtoField(tag = 273)
+  public final HelpStatusTag author_status_tag;
+  
   @ProtoField(tag = 169)
   public final Baijiahao baijiahao;
   
@@ -561,6 +568,9 @@ public final class ThreadInfo extends Message {
   @ProtoField(tag = 155)
   public final SimpleForum forum_info;
   
+  @ProtoField(tag = 272)
+  public final FeedContentColor forum_info_bg_color;
+  
   @ProtoField(tag = 187, type = Message.Datatype.STRING)
   public final String forum_user_live_msg;
   
@@ -584,6 +594,9 @@ public final class ThreadInfo extends Message {
   
   @ProtoField(tag = 227, type = Message.Datatype.STRING)
   public final String head_type;
+  
+  @ProtoField(tag = 271)
+  public final ThreadHeaderColor header_bg_color;
   
   @ProtoField(tag = 95)
   public final TogetherHi high_together;
@@ -924,6 +937,9 @@ public final class ThreadInfo extends Message {
   @ProtoField(tag = 202)
   public final RecommendTip recommend_tip;
   
+  @ProtoField(label = Message.Label.REPEATED, tag = 275)
+  public final List<HelpStatusTag> reply_author_status_tag;
+  
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer reply_num;
   
@@ -977,6 +993,9 @@ public final class ThreadInfo extends Message {
   
   @ProtoField(tag = 242)
   public final ShowPostContent show_post_content;
+  
+  @ProtoField(tag = 274, type = Message.Datatype.UINT32)
+  public final Integer show_reply_status_bar;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 243)
   public final List<User> show_user_list;
@@ -1295,10 +1314,13 @@ public final class ThreadInfo extends Message {
     DEFAULT_IS_STAR_THREAD = integer;
     DEFAULT_LINK_SHOP_GOODS_INFO = Collections.emptyList();
     DEFAULT_VOICE_ROOM_LINK_INFO = Collections.emptyList();
+    DEFAULT_SHOW_REPLY_STATUS_BAR = integer;
+    DEFAULT_REPLY_AUTHOR_STATUS_TAG = Collections.emptyList();
   }
   
   public ThreadInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    List<HelpStatusTag> list;
     if (paramBoolean == true) {
       Long long_14 = paramBuilder.id;
       if (long_14 == null) {
@@ -1318,17 +1340,17 @@ public final class ThreadInfo extends Message {
       } else {
         this.title = str34;
       } 
-      Integer integer38 = paramBuilder.reply_num;
-      if (integer38 == null) {
+      Integer integer39 = paramBuilder.reply_num;
+      if (integer39 == null) {
         this.reply_num = DEFAULT_REPLY_NUM;
       } else {
-        this.reply_num = integer38;
+        this.reply_num = integer39;
       } 
-      integer38 = paramBuilder.view_num;
-      if (integer38 == null) {
+      integer39 = paramBuilder.view_num;
+      if (integer39 == null) {
         this.view_num = DEFAULT_VIEW_NUM;
       } else {
-        this.view_num = integer38;
+        this.view_num = integer39;
       } 
       String str33 = paramBuilder.last_time;
       if (str33 == null) {
@@ -1336,97 +1358,97 @@ public final class ThreadInfo extends Message {
       } else {
         this.last_time = str33;
       } 
-      Integer integer37 = paramBuilder.last_time_int;
-      if (integer37 == null) {
+      Integer integer38 = paramBuilder.last_time_int;
+      if (integer38 == null) {
         this.last_time_int = DEFAULT_LAST_TIME_INT;
       } else {
-        this.last_time_int = integer37;
+        this.last_time_int = integer38;
       } 
-      integer37 = paramBuilder.thread_types;
-      if (integer37 == null) {
+      integer38 = paramBuilder.thread_types;
+      if (integer38 == null) {
         this.thread_types = DEFAULT_THREAD_TYPES;
       } else {
-        this.thread_types = integer37;
+        this.thread_types = integer38;
       } 
-      integer37 = paramBuilder.is_top;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_top;
+      if (integer38 == null) {
         this.is_top = DEFAULT_IS_TOP;
       } else {
-        this.is_top = integer37;
+        this.is_top = integer38;
       } 
-      integer37 = paramBuilder.is_good;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_good;
+      if (integer38 == null) {
         this.is_good = DEFAULT_IS_GOOD;
       } else {
-        this.is_good = integer37;
+        this.is_good = integer38;
       } 
-      integer37 = paramBuilder.is_vote;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_vote;
+      if (integer38 == null) {
         this.is_vote = DEFAULT_IS_VOTE;
       } else {
-        this.is_vote = integer37;
+        this.is_vote = integer38;
       } 
-      integer37 = paramBuilder.is_bakan;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_bakan;
+      if (integer38 == null) {
         this.is_bakan = DEFAULT_IS_BAKAN;
       } else {
-        this.is_bakan = integer37;
+        this.is_bakan = integer38;
       } 
-      integer37 = paramBuilder.is_protal;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_protal;
+      if (integer38 == null) {
         this.is_protal = DEFAULT_IS_PROTAL;
       } else {
-        this.is_protal = integer37;
+        this.is_protal = integer38;
       } 
-      integer37 = paramBuilder.is_meizhi;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_meizhi;
+      if (integer38 == null) {
         this.is_meizhi = DEFAULT_IS_MEIZHI;
       } else {
-        this.is_meizhi = integer37;
+        this.is_meizhi = integer38;
       } 
-      integer37 = paramBuilder.is_voice_thread;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_voice_thread;
+      if (integer38 == null) {
         this.is_voice_thread = DEFAULT_IS_VOICE_THREAD;
       } else {
-        this.is_voice_thread = integer37;
+        this.is_voice_thread = integer38;
       } 
-      integer37 = paramBuilder.is_activity;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_activity;
+      if (integer38 == null) {
         this.is_activity = DEFAULT_IS_ACTIVITY;
       } else {
-        this.is_activity = integer37;
+        this.is_activity = integer38;
       } 
-      integer37 = paramBuilder.is_notice;
-      if (integer37 == null) {
+      integer38 = paramBuilder.is_notice;
+      if (integer38 == null) {
         this.is_notice = DEFAULT_IS_NOTICE;
       } else {
-        this.is_notice = integer37;
+        this.is_notice = integer38;
       } 
       this.author = paramBuilder.author;
       this.last_replyer = paramBuilder.last_replyer;
-      integer37 = paramBuilder.comment_num;
-      if (integer37 == null) {
+      integer38 = paramBuilder.comment_num;
+      if (integer38 == null) {
         this.comment_num = DEFAULT_COMMENT_NUM;
       } else {
-        this.comment_num = integer37;
+        this.comment_num = integer38;
       } 
-      List<Abstract> list24 = paramBuilder._abstract;
-      if (list24 == null) {
+      List<Abstract> list25 = paramBuilder._abstract;
+      if (list25 == null) {
         this._abstract = DEFAULT_ABSTRACT;
       } else {
-        this._abstract = Message.immutableCopyOf(list24);
+        this._abstract = Message.immutableCopyOf(list25);
       } 
-      List<Media> list23 = paramBuilder.media;
-      if (list23 == null) {
+      List<Media> list24 = paramBuilder.media;
+      if (list24 == null) {
         this.media = DEFAULT_MEDIA;
       } else {
-        this.media = Message.immutableCopyOf(list23);
+        this.media = Message.immutableCopyOf(list24);
       } 
-      List<Voice> list22 = paramBuilder.voice_info;
-      if (list22 == null) {
+      List<Voice> list23 = paramBuilder.voice_info;
+      if (list23 == null) {
         this.voice_info = DEFAULT_VOICE_INFO;
       } else {
-        this.voice_info = Message.immutableCopyOf(list22);
+        this.voice_info = Message.immutableCopyOf(list23);
       } 
       String str32 = paramBuilder.meizhi_pic;
       if (str32 == null) {
@@ -1434,17 +1456,17 @@ public final class ThreadInfo extends Message {
       } else {
         this.meizhi_pic = str32;
       } 
-      List<MediaNum> list21 = paramBuilder.media_num;
-      if (list21 == null) {
+      List<MediaNum> list22 = paramBuilder.media_num;
+      if (list22 == null) {
         this.media_num = DEFAULT_MEDIA_NUM;
       } else {
-        this.media_num = Message.immutableCopyOf(list21);
+        this.media_num = Message.immutableCopyOf(list22);
       } 
-      Integer integer36 = paramBuilder.thread_type;
-      if (integer36 == null) {
+      Integer integer37 = paramBuilder.thread_type;
+      if (integer37 == null) {
         this.thread_type = DEFAULT_THREAD_TYPE;
       } else {
-        this.thread_type = integer36;
+        this.thread_type = integer37;
       } 
       Long long_13 = paramBuilder.fid;
       if (long_13 == null) {
@@ -1464,17 +1486,17 @@ public final class ThreadInfo extends Message {
       } else {
         this.live_post_type = str31;
       } 
-      Integer integer35 = paramBuilder.is_livepost;
-      if (integer35 == null) {
+      Integer integer36 = paramBuilder.is_livepost;
+      if (integer36 == null) {
         this.is_livepost = DEFAULT_IS_LIVEPOST;
       } else {
-        this.is_livepost = integer35;
+        this.is_livepost = integer36;
       } 
-      integer35 = paramBuilder.show_commented;
-      if (integer35 == null) {
+      integer36 = paramBuilder.show_commented;
+      if (integer36 == null) {
         this.show_commented = DEFAULT_SHOW_COMMENTED;
       } else {
-        this.show_commented = integer35;
+        this.show_commented = integer36;
       } 
       String str30 = paramBuilder.click_url;
       if (str30 == null) {
@@ -1512,17 +1534,17 @@ public final class ThreadInfo extends Message {
       } else {
         this.video_mobile_url = str30;
       } 
-      Integer integer34 = paramBuilder.is_ntitle;
-      if (integer34 == null) {
+      Integer integer35 = paramBuilder.is_ntitle;
+      if (integer35 == null) {
         this.is_ntitle = DEFAULT_IS_NTITLE;
       } else {
-        this.is_ntitle = integer34;
+        this.is_ntitle = integer35;
       } 
-      integer34 = paramBuilder.is_bub;
-      if (integer34 == null) {
+      integer35 = paramBuilder.is_bub;
+      if (integer35 == null) {
         this.is_bub = DEFAULT_IS_BUB;
       } else {
-        this.is_bub = integer34;
+        this.is_bub = integer35;
       } 
       Long long_12 = paramBuilder.first_post_id;
       if (long_12 == null) {
@@ -1531,42 +1553,42 @@ public final class ThreadInfo extends Message {
         this.first_post_id = long_12;
       } 
       this.zan = paramBuilder.zan;
-      Integer integer33 = paramBuilder.is_global_top;
-      if (integer33 == null) {
+      Integer integer34 = paramBuilder.is_global_top;
+      if (integer34 == null) {
         this.is_global_top = DEFAULT_IS_GLOBAL_TOP;
       } else {
-        this.is_global_top = integer33;
+        this.is_global_top = integer34;
       } 
-      integer33 = paramBuilder.is_pic;
-      if (integer33 == null) {
+      integer34 = paramBuilder.is_pic;
+      if (integer34 == null) {
         this.is_pic = DEFAULT_IS_PIC;
       } else {
-        this.is_pic = integer33;
+        this.is_pic = integer34;
       } 
-      List<PostList> list20 = paramBuilder.post_list;
-      if (list20 == null) {
+      List<PostList> list21 = paramBuilder.post_list;
+      if (list21 == null) {
         this.post_list = DEFAULT_POST_LIST;
       } else {
-        this.post_list = Message.immutableCopyOf(list20);
+        this.post_list = Message.immutableCopyOf(list21);
       } 
-      Integer integer32 = paramBuilder.create_time;
-      if (integer32 == null) {
+      Integer integer33 = paramBuilder.create_time;
+      if (integer33 == null) {
         this.create_time = DEFAULT_CREATE_TIME;
       } else {
-        this.create_time = integer32;
+        this.create_time = integer33;
       } 
-      integer32 = paramBuilder.repost_num;
-      if (integer32 == null) {
+      integer33 = paramBuilder.repost_num;
+      if (integer33 == null) {
         this.repost_num = DEFAULT_REPOST_NUM;
       } else {
-        this.repost_num = integer32;
+        this.repost_num = integer33;
       } 
       this.topic = paramBuilder.topic;
-      integer32 = paramBuilder.has_commented;
-      if (integer32 == null) {
+      integer33 = paramBuilder.has_commented;
+      if (integer33 == null) {
         this.has_commented = DEFAULT_HAS_COMMENTED;
       } else {
-        this.has_commented = integer32;
+        this.has_commented = integer33;
       } 
       String str29 = paramBuilder.from;
       if (str29 == null) {
@@ -1574,11 +1596,11 @@ public final class ThreadInfo extends Message {
       } else {
         this.from = str29;
       } 
-      Integer integer31 = paramBuilder.collect_status;
-      if (integer31 == null) {
+      Integer integer32 = paramBuilder.collect_status;
+      if (integer32 == null) {
         this.collect_status = DEFAULT_COLLECT_STATUS;
       } else {
-        this.collect_status = integer31;
+        this.collect_status = integer32;
       } 
       String str28 = paramBuilder.collect_mark_pid;
       if (str28 == null) {
@@ -1592,17 +1614,17 @@ public final class ThreadInfo extends Message {
       } else {
         this.post_id = long_11;
       } 
-      Integer integer30 = paramBuilder.time;
-      if (integer30 == null) {
+      Integer integer31 = paramBuilder.time;
+      if (integer31 == null) {
         this.time = DEFAULT_TIME;
       } else {
-        this.time = integer30;
+        this.time = integer31;
       } 
-      integer30 = paramBuilder.is_membertop;
-      if (integer30 == null) {
+      integer31 = paramBuilder.is_membertop;
+      if (integer31 == null) {
         this.is_membertop = DEFAULT_IS_MEMBERTOP;
       } else {
-        this.is_membertop = integer30;
+        this.is_membertop = integer31;
       } 
       this.anchor_info = paramBuilder.anchor_info;
       Long long_10 = paramBuilder.author_id;
@@ -1611,23 +1633,23 @@ public final class ThreadInfo extends Message {
       } else {
         this.author_id = long_10;
       } 
-      Integer integer29 = paramBuilder.valid_post_num;
-      if (integer29 == null) {
+      Integer integer30 = paramBuilder.valid_post_num;
+      if (integer30 == null) {
         this.valid_post_num = DEFAULT_VALID_POST_NUM;
       } else {
-        this.valid_post_num = integer29;
+        this.valid_post_num = integer30;
       } 
-      integer29 = paramBuilder.isLzDeleteAll;
-      if (integer29 == null) {
+      integer30 = paramBuilder.isLzDeleteAll;
+      if (integer30 == null) {
         this.isLzDeleteAll = DEFAULT_ISLZDELETEALL;
       } else {
-        this.isLzDeleteAll = integer29;
+        this.isLzDeleteAll = integer30;
       } 
-      integer29 = paramBuilder.is_ad;
-      if (integer29 == null) {
+      integer30 = paramBuilder.is_ad;
+      if (integer30 == null) {
         this.is_ad = DEFAULT_IS_AD;
       } else {
-        this.is_ad = integer29;
+        this.is_ad = integer30;
       } 
       String str27 = paramBuilder.ecom;
       if (str27 == null) {
@@ -1643,23 +1665,23 @@ public final class ThreadInfo extends Message {
       } 
       this.location = paramBuilder.location;
       this.guess = paramBuilder.guess;
-      Integer integer28 = paramBuilder.timeline;
-      if (integer28 == null) {
+      Integer integer29 = paramBuilder.timeline;
+      if (integer29 == null) {
         this.timeline = DEFAULT_TIMELINE;
       } else {
-        this.timeline = integer28;
+        this.timeline = integer29;
       } 
-      List<ActInfo> list19 = paramBuilder.act_info;
-      if (list19 == null) {
+      List<ActInfo> list20 = paramBuilder.act_info;
+      if (list20 == null) {
         this.act_info = DEFAULT_ACT_INFO;
       } else {
-        this.act_info = Message.immutableCopyOf(list19);
+        this.act_info = Message.immutableCopyOf(list20);
       } 
-      Integer integer27 = paramBuilder.hot_weight;
-      if (integer27 == null) {
+      Integer integer28 = paramBuilder.hot_weight;
+      if (integer28 == null) {
         this.hot_weight = DEFAULT_HOT_WEIGHT;
       } else {
-        this.hot_weight = integer27;
+        this.hot_weight = integer28;
       } 
       String str26 = paramBuilder.livecover_src;
       if (str26 == null) {
@@ -1667,17 +1689,17 @@ public final class ThreadInfo extends Message {
       } else {
         this.livecover_src = str26;
       } 
-      Integer integer26 = paramBuilder.storecount;
-      if (integer26 == null) {
+      Integer integer27 = paramBuilder.storecount;
+      if (integer27 == null) {
         this.storecount = DEFAULT_STORECOUNT;
       } else {
-        this.storecount = integer26;
+        this.storecount = integer27;
       } 
-      integer26 = paramBuilder.post_num;
-      if (integer26 == null) {
+      integer27 = paramBuilder.post_num;
+      if (integer27 == null) {
         this.post_num = DEFAULT_POST_NUM;
       } else {
-        this.post_num = integer26;
+        this.post_num = integer27;
       } 
       this.hotTWInfo = paramBuilder.hotTWInfo;
       this.twzhibo_info = paramBuilder.twzhibo_info;
@@ -1689,63 +1711,63 @@ public final class ThreadInfo extends Message {
       } 
       this.poll_info = paramBuilder.poll_info;
       this.jid = paramBuilder.jid;
-      Integer integer25 = paramBuilder.is_novel;
-      if (integer25 == null) {
+      Integer integer26 = paramBuilder.is_novel;
+      if (integer26 == null) {
         this.is_novel = DEFAULT_IS_NOVEL;
       } else {
-        this.is_novel = integer25;
+        this.is_novel = integer26;
       } 
-      integer25 = paramBuilder.is_novel_thank;
-      if (integer25 == null) {
+      integer26 = paramBuilder.is_novel_thank;
+      if (integer26 == null) {
         this.is_novel_thank = DEFAULT_IS_NOVEL_THANK;
       } else {
-        this.is_novel_thank = integer25;
+        this.is_novel_thank = integer26;
       } 
-      integer25 = paramBuilder.is_novel_reward;
-      if (integer25 == null) {
+      integer26 = paramBuilder.is_novel_reward;
+      if (integer26 == null) {
         this.is_novel_reward = DEFAULT_IS_NOVEL_REWARD;
       } else {
-        this.is_novel_reward = integer25;
+        this.is_novel_reward = integer26;
       } 
       this.video_info = paramBuilder.video_info;
-      integer25 = paramBuilder.push_end_time;
-      if (integer25 == null) {
+      integer26 = paramBuilder.push_end_time;
+      if (integer26 == null) {
         this.push_end_time = DEFAULT_PUSH_END_TIME;
       } else {
-        this.push_end_time = integer25;
+        this.push_end_time = integer26;
       } 
-      integer25 = paramBuilder.is_copythread;
-      if (integer25 == null) {
+      integer26 = paramBuilder.is_copythread;
+      if (integer26 == null) {
         this.is_copythread = DEFAULT_IS_COPYTHREAD;
       } else {
-        this.is_copythread = integer25;
+        this.is_copythread = integer26;
       } 
-      integer25 = paramBuilder.operator_flag;
-      if (integer25 == null) {
+      integer26 = paramBuilder.operator_flag;
+      if (integer26 == null) {
         this.operator_flag = DEFAULT_OPERATOR_FLAG;
       } else {
-        this.operator_flag = integer25;
+        this.operator_flag = integer26;
       } 
       this.task_info = paramBuilder.task_info;
-      integer25 = paramBuilder.pic_num;
-      if (integer25 == null) {
+      integer26 = paramBuilder.pic_num;
+      if (integer26 == null) {
         this.pic_num = DEFAULT_PIC_NUM;
       } else {
-        this.pic_num = integer25;
+        this.pic_num = integer26;
       } 
-      integer25 = paramBuilder.is_godthread_recommend;
-      if (integer25 == null) {
+      integer26 = paramBuilder.is_godthread_recommend;
+      if (integer26 == null) {
         this.is_godthread_recommend = DEFAULT_IS_GODTHREAD_RECOMMEND;
       } else {
-        this.is_godthread_recommend = integer25;
+        this.is_godthread_recommend = integer26;
       } 
       this.yule_post_activity = paramBuilder.yule_post_activity;
       this.app_code = paramBuilder.app_code;
-      List<TailInfo> list18 = paramBuilder.ext_tails;
-      if (list18 == null) {
+      List<TailInfo> list19 = paramBuilder.ext_tails;
+      if (list19 == null) {
         this.ext_tails = DEFAULT_EXT_TAILS;
       } else {
-        this.ext_tails = Message.immutableCopyOf(list18);
+        this.ext_tails = Message.immutableCopyOf(list19);
       } 
       this.push_status = paramBuilder.push_status;
       this.cartoon_info = paramBuilder.cartoon_info;
@@ -1757,22 +1779,22 @@ public final class ThreadInfo extends Message {
       } 
       this.high_together = paramBuilder.high_together;
       this.videoactive_info = paramBuilder.videoactive_info;
-      Integer integer24 = paramBuilder.is_deal;
-      if (integer24 == null) {
+      Integer integer25 = paramBuilder.is_deal;
+      if (integer25 == null) {
         this.is_deal = DEFAULT_IS_DEAL;
       } else {
-        this.is_deal = integer24;
+        this.is_deal = integer25;
       } 
       this.deal_info = paramBuilder.deal_info;
       this.animation_info = paramBuilder.animation_info;
       this.skin_info = paramBuilder.skin_info;
       this.ps_info = paramBuilder.ps_info;
       this.book_chapter = paramBuilder.book_chapter;
-      integer24 = paramBuilder.is_book_chapter;
-      if (integer24 == null) {
+      integer25 = paramBuilder.is_book_chapter;
+      if (integer25 == null) {
         this.is_book_chapter = DEFAULT_IS_BOOK_CHAPTER;
       } else {
-        this.is_book_chapter = integer24;
+        this.is_book_chapter = integer25;
       } 
       String str23 = paramBuilder.recom_source;
       if (str23 == null) {
@@ -1792,11 +1814,11 @@ public final class ThreadInfo extends Message {
       } else {
         this.last_read_pid = long_9;
       } 
-      Integer integer23 = paramBuilder.cheak_repeat;
-      if (integer23 == null) {
+      Integer integer24 = paramBuilder.cheak_repeat;
+      if (integer24 == null) {
         this.cheak_repeat = DEFAULT_CHEAK_REPEAT;
       } else {
-        this.cheak_repeat = integer23;
+        this.cheak_repeat = integer24;
       } 
       String str22 = paramBuilder.ab_tag;
       if (str22 == null) {
@@ -1811,83 +1833,83 @@ public final class ThreadInfo extends Message {
         this.recom_reason = str22;
       } 
       this.video_ad_info = paramBuilder.video_ad_info;
-      List<PbContent> list17 = paramBuilder.rich_title;
-      if (list17 == null) {
+      List<PbContent> list18 = paramBuilder.rich_title;
+      if (list18 == null) {
         this.rich_title = DEFAULT_RICH_TITLE;
       } else {
-        this.rich_title = Message.immutableCopyOf(list17);
+        this.rich_title = Message.immutableCopyOf(list18);
       } 
-      list17 = paramBuilder.rich_abstract;
-      if (list17 == null) {
+      list18 = paramBuilder.rich_abstract;
+      if (list18 == null) {
         this.rich_abstract = DEFAULT_RICH_ABSTRACT;
       } else {
-        this.rich_abstract = Message.immutableCopyOf(list17);
+        this.rich_abstract = Message.immutableCopyOf(list18);
       } 
       this.ala_info = paramBuilder.ala_info;
-      Integer integer22 = paramBuilder.is_operate_thread;
-      if (integer22 == null) {
+      Integer integer23 = paramBuilder.is_operate_thread;
+      if (integer23 == null) {
         this.is_operate_thread = DEFAULT_IS_OPERATE_THREAD;
       } else {
-        this.is_operate_thread = integer22;
+        this.is_operate_thread = integer23;
       } 
-      integer22 = paramBuilder.is_tbread_dispatch;
-      if (integer22 == null) {
+      integer23 = paramBuilder.is_tbread_dispatch;
+      if (integer23 == null) {
         this.is_tbread_dispatch = DEFAULT_IS_TBREAD_DISPATCH;
       } else {
-        this.is_tbread_dispatch = integer22;
+        this.is_tbread_dispatch = integer23;
       } 
       this.tbread_dispatch_info = paramBuilder.tbread_dispatch_info;
       this.app_info = paramBuilder.app_info;
-      List<ReportInfo> list16 = paramBuilder.report_info;
-      if (list16 == null) {
+      List<ReportInfo> list17 = paramBuilder.report_info;
+      if (list17 == null) {
         this.report_info = DEFAULT_REPORT_INFO;
       } else {
-        this.report_info = Message.immutableCopyOf(list16);
+        this.report_info = Message.immutableCopyOf(list17);
       } 
       this.video_channel_info = paramBuilder.video_channel_info;
-      List<DislikeInfo> list15 = paramBuilder.dislike_info;
-      if (list15 == null) {
+      List<DislikeInfo> list16 = paramBuilder.dislike_info;
+      if (list16 == null) {
         this.dislike_info = DEFAULT_DISLIKE_INFO;
       } else {
-        this.dislike_info = Message.immutableCopyOf(list15);
+        this.dislike_info = Message.immutableCopyOf(list16);
       } 
-      List<DeclareInfo> list14 = paramBuilder.declare_list;
-      if (list14 == null) {
+      List<DeclareInfo> list15 = paramBuilder.declare_list;
+      if (list15 == null) {
         this.declare_list = DEFAULT_DECLARE_LIST;
       } else {
-        this.declare_list = Message.immutableCopyOf(list14);
+        this.declare_list = Message.immutableCopyOf(list15);
       } 
-      List<MultipleForum> list13 = paramBuilder.multiple_forum_list;
-      if (list13 == null) {
+      List<MultipleForum> list14 = paramBuilder.multiple_forum_list;
+      if (list14 == null) {
         this.multiple_forum_list = DEFAULT_MULTIPLE_FORUM_LIST;
       } else {
-        this.multiple_forum_list = Message.immutableCopyOf(list13);
+        this.multiple_forum_list = Message.immutableCopyOf(list14);
       } 
-      Integer integer21 = paramBuilder.is_multiforum_thread;
-      if (integer21 == null) {
+      Integer integer22 = paramBuilder.is_multiforum_thread;
+      if (integer22 == null) {
         this.is_multiforum_thread = DEFAULT_IS_MULTIFORUM_THREAD;
       } else {
-        this.is_multiforum_thread = integer21;
+        this.is_multiforum_thread = integer22;
       } 
-      integer21 = paramBuilder.agree_num;
-      if (integer21 == null) {
+      integer22 = paramBuilder.agree_num;
+      if (integer22 == null) {
         this.agree_num = DEFAULT_AGREE_NUM;
       } else {
-        this.agree_num = integer21;
+        this.agree_num = integer22;
       } 
       this.top_agree_post = paramBuilder.top_agree_post;
       this.agree = paramBuilder.agree;
-      integer21 = paramBuilder.is_partial_visible;
-      if (integer21 == null) {
+      integer22 = paramBuilder.is_partial_visible;
+      if (integer22 == null) {
         this.is_partial_visible = DEFAULT_IS_PARTIAL_VISIBLE;
       } else {
-        this.is_partial_visible = integer21;
+        this.is_partial_visible = integer22;
       } 
-      integer21 = paramBuilder.is_link_thread;
-      if (integer21 == null) {
+      integer22 = paramBuilder.is_link_thread;
+      if (integer22 == null) {
         this.is_link_thread = DEFAULT_IS_LINK_THREAD;
       } else {
-        this.is_link_thread = integer21;
+        this.is_link_thread = integer22;
       } 
       this.link_info = paramBuilder.link_info;
       Long long_8 = paramBuilder.freq_num;
@@ -1896,19 +1918,19 @@ public final class ThreadInfo extends Message {
       } else {
         this.freq_num = long_8;
       } 
-      Integer integer20 = paramBuilder.is_god;
-      if (integer20 == null) {
+      Integer integer21 = paramBuilder.is_god;
+      if (integer21 == null) {
         this.is_god = DEFAULT_IS_GOD;
       } else {
-        this.is_god = integer20;
+        this.is_god = integer21;
       } 
       this.activity_info = paramBuilder.activity_info;
       this.pic_info = paramBuilder.pic_info;
-      integer20 = paramBuilder.is_story_audit;
-      if (integer20 == null) {
+      integer21 = paramBuilder.is_story_audit;
+      if (integer21 == null) {
         this.is_story_audit = DEFAULT_IS_STORY_AUDIT;
       } else {
-        this.is_story_audit = integer20;
+        this.is_story_audit = integer21;
       } 
       Long long_7 = paramBuilder.share_num;
       if (long_7 == null) {
@@ -1916,11 +1938,11 @@ public final class ThreadInfo extends Message {
       } else {
         this.share_num = long_7;
       } 
-      Integer integer19 = paramBuilder.is_called;
-      if (integer19 == null) {
+      Integer integer20 = paramBuilder.is_called;
+      if (integer20 == null) {
         this.is_called = DEFAULT_IS_CALLED;
       } else {
-        this.is_called = integer19;
+        this.is_called = integer20;
       } 
       String str21 = paramBuilder.tieba_game_information_source;
       if (str21 == null) {
@@ -1934,30 +1956,30 @@ public final class ThreadInfo extends Message {
       } else {
         this.audit_time = long_6;
       } 
-      Integer integer18 = paramBuilder.middle_page_num;
-      if (integer18 == null) {
+      Integer integer19 = paramBuilder.middle_page_num;
+      if (integer19 == null) {
         this.middle_page_num = DEFAULT_MIDDLE_PAGE_NUM;
       } else {
-        this.middle_page_num = integer18;
+        this.middle_page_num = integer19;
       } 
-      integer18 = paramBuilder.middle_page_pass_flag;
-      if (integer18 == null) {
+      integer19 = paramBuilder.middle_page_pass_flag;
+      if (integer19 == null) {
         this.middle_page_pass_flag = DEFAULT_MIDDLE_PAGE_PASS_FLAG;
       } else {
-        this.middle_page_pass_flag = integer18;
+        this.middle_page_pass_flag = integer19;
       } 
       this.origin_thread_info = paramBuilder.origin_thread_info;
-      List<PbContent> list12 = paramBuilder.first_post_content;
-      if (list12 == null) {
+      List<PbContent> list13 = paramBuilder.first_post_content;
+      if (list13 == null) {
         this.first_post_content = DEFAULT_FIRST_POST_CONTENT;
       } else {
-        this.first_post_content = Message.immutableCopyOf(list12);
+        this.first_post_content = Message.immutableCopyOf(list13);
       } 
-      Integer integer17 = paramBuilder.is_share_thread;
-      if (integer17 == null) {
+      Integer integer18 = paramBuilder.is_share_thread;
+      if (integer18 == null) {
         this.is_share_thread = DEFAULT_IS_SHARE_THREAD;
       } else {
-        this.is_share_thread = integer17;
+        this.is_share_thread = integer18;
       } 
       String str20 = paramBuilder.recom_extra;
       if (str20 == null) {
@@ -1978,11 +2000,11 @@ public final class ThreadInfo extends Message {
         this.multi_forum_text = str19;
       } 
       this.star_rank_icon = paramBuilder.star_rank_icon;
-      Integer integer16 = paramBuilder.is_topic;
-      if (integer16 == null) {
+      Integer integer17 = paramBuilder.is_topic;
+      if (integer17 == null) {
         this.is_topic = DEFAULT_IS_TOPIC;
       } else {
-        this.is_topic = integer16;
+        this.is_topic = integer17;
       } 
       String str18 = paramBuilder.topic_user_name;
       if (str18 == null) {
@@ -2003,11 +2025,11 @@ public final class ThreadInfo extends Message {
         this.presentation_style = str18;
       } 
       this.ori_forum_info = paramBuilder.ori_forum_info;
-      Integer integer15 = paramBuilder.is_videobiggie_recomthread;
-      if (integer15 == null) {
+      Integer integer16 = paramBuilder.is_videobiggie_recomthread;
+      if (integer16 == null) {
         this.is_videobiggie_recomthread = DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD;
       } else {
-        this.is_videobiggie_recomthread = integer15;
+        this.is_videobiggie_recomthread = integer16;
       } 
       String str17 = paramBuilder.daily_paper_time;
       if (str17 == null) {
@@ -2031,11 +2053,11 @@ public final class ThreadInfo extends Message {
         this.t_share_img = str17;
       } 
       this.topic_module = paramBuilder.topic_module;
-      Integer integer14 = paramBuilder.is_bjh;
-      if (integer14 == null) {
+      Integer integer15 = paramBuilder.is_bjh;
+      if (integer15 == null) {
         this.is_bjh = DEFAULT_IS_BJH;
       } else {
-        this.is_bjh = integer14;
+        this.is_bjh = integer15;
       } 
       String str16 = paramBuilder.article_cover;
       if (str16 == null) {
@@ -2043,11 +2065,11 @@ public final class ThreadInfo extends Message {
       } else {
         this.article_cover = str16;
       } 
-      Integer integer13 = paramBuilder.bjh_content_tag;
-      if (integer13 == null) {
+      Integer integer14 = paramBuilder.bjh_content_tag;
+      if (integer14 == null) {
         this.bjh_content_tag = DEFAULT_BJH_CONTENT_TAG;
       } else {
-        this.bjh_content_tag = integer13;
+        this.bjh_content_tag = integer14;
       } 
       String str15 = paramBuilder.nid;
       if (str15 == null) {
@@ -2055,18 +2077,18 @@ public final class ThreadInfo extends Message {
       } else {
         this.nid = str15;
       } 
-      Integer integer12 = paramBuilder.is_headlinepost;
-      if (integer12 == null) {
+      Integer integer13 = paramBuilder.is_headlinepost;
+      if (integer13 == null) {
         this.is_headlinepost = DEFAULT_IS_HEADLINEPOST;
       } else {
-        this.is_headlinepost = integer12;
+        this.is_headlinepost = integer13;
       } 
       this.baijiahao = paramBuilder.baijiahao;
-      integer12 = paramBuilder.is_s_card;
-      if (integer12 == null) {
+      integer13 = paramBuilder.is_s_card;
+      if (integer13 == null) {
         this.is_s_card = DEFAULT_IS_S_CARD;
       } else {
-        this.is_s_card = integer12;
+        this.is_s_card = integer13;
       } 
       String str14 = paramBuilder.scard_packet_id;
       if (str14 == null) {
@@ -2080,11 +2102,11 @@ public final class ThreadInfo extends Message {
       } else {
         this.thread_share_link = str14;
       } 
-      Integer integer11 = paramBuilder.if_comment;
-      if (integer11 == null) {
+      Integer integer12 = paramBuilder.if_comment;
+      if (integer12 == null) {
         this.if_comment = DEFAULT_IF_COMMENT;
       } else {
-        this.if_comment = integer11;
+        this.if_comment = integer12;
       } 
       String str13 = paramBuilder.if_comment_info;
       if (str13 == null) {
@@ -2092,11 +2114,11 @@ public final class ThreadInfo extends Message {
       } else {
         this.if_comment_info = str13;
       } 
-      Integer integer10 = paramBuilder.tab_id;
-      if (integer10 == null) {
+      Integer integer11 = paramBuilder.tab_id;
+      if (integer11 == null) {
         this.tab_id = DEFAULT_TAB_ID;
       } else {
-        this.tab_id = integer10;
+        this.tab_id = integer11;
       } 
       String str12 = paramBuilder.tab_name;
       if (str12 == null) {
@@ -2110,54 +2132,54 @@ public final class ThreadInfo extends Message {
       } else {
         this.wonderful_post_info = str12;
       } 
-      List<PbLinkInfo> list11 = paramBuilder.pb_link_info;
-      if (list11 == null) {
+      List<PbLinkInfo> list12 = paramBuilder.pb_link_info;
+      if (list12 == null) {
         this.pb_link_info = DEFAULT_PB_LINK_INFO;
       } else {
-        this.pb_link_info = Message.immutableCopyOf(list11);
+        this.pb_link_info = Message.immutableCopyOf(list12);
       } 
       this.item = paramBuilder.item;
-      List<HeadItem> list10 = paramBuilder.item_star;
-      if (list10 == null) {
+      List<HeadItem> list11 = paramBuilder.item_star;
+      if (list11 == null) {
         this.item_star = DEFAULT_ITEM_STAR;
       } else {
-        this.item_star = Message.immutableCopyOf(list10);
+        this.item_star = Message.immutableCopyOf(list11);
       } 
-      Integer integer9 = paramBuilder.is_deleted;
-      if (integer9 == null) {
+      Integer integer10 = paramBuilder.is_deleted;
+      if (integer10 == null) {
         this.is_deleted = DEFAULT_IS_DELETED;
       } else {
-        this.is_deleted = integer9;
+        this.is_deleted = integer10;
       } 
-      integer9 = paramBuilder.hot_num;
-      if (integer9 == null) {
+      integer10 = paramBuilder.hot_num;
+      if (integer10 == null) {
         this.hot_num = DEFAULT_HOT_NUM;
       } else {
-        this.hot_num = integer9;
+        this.hot_num = integer10;
       } 
-      List<PbGoodsInfo> list9 = paramBuilder.pb_goods_info;
-      if (list9 == null) {
+      List<PbGoodsInfo> list10 = paramBuilder.pb_goods_info;
+      if (list10 == null) {
         this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
       } else {
-        this.pb_goods_info = Message.immutableCopyOf(list9);
+        this.pb_goods_info = Message.immutableCopyOf(list10);
       } 
-      Integer integer8 = paramBuilder.is_local;
-      if (integer8 == null) {
+      Integer integer9 = paramBuilder.is_local;
+      if (integer9 == null) {
         this.is_local = DEFAULT_IS_LOCAL;
       } else {
-        this.is_local = integer8;
+        this.is_local = integer9;
       } 
-      integer8 = paramBuilder.pb_entry;
-      if (integer8 == null) {
+      integer9 = paramBuilder.pb_entry;
+      if (integer9 == null) {
         this.pb_entry = DEFAULT_PB_ENTRY;
       } else {
-        this.pb_entry = integer8;
+        this.pb_entry = integer9;
       } 
-      integer8 = paramBuilder.is_author_view;
-      if (integer8 == null) {
+      integer9 = paramBuilder.is_author_view;
+      if (integer9 == null) {
         this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
       } else {
-        this.is_author_view = integer8;
+        this.is_author_view = integer9;
       } 
       String str11 = paramBuilder.forum_user_live_msg;
       if (str11 == null) {
@@ -2167,17 +2189,17 @@ public final class ThreadInfo extends Message {
       } 
       this.forum_friend_watching_info = paramBuilder.forum_friend_watching_info;
       this.works_info = paramBuilder.works_info;
-      Integer integer7 = paramBuilder.collect_num;
-      if (integer7 == null) {
+      Integer integer8 = paramBuilder.collect_num;
+      if (integer8 == null) {
         this.collect_num = DEFAULT_COLLECT_NUM;
       } else {
-        this.collect_num = integer7;
+        this.collect_num = integer8;
       } 
-      List<ThreadRecommendInfo> list8 = paramBuilder.thread_recommend_infos;
-      if (list8 == null) {
+      List<ThreadRecommendInfo> list9 = paramBuilder.thread_recommend_infos;
+      if (list9 == null) {
         this.thread_recommend_infos = DEFAULT_THREAD_RECOMMEND_INFOS;
       } else {
-        this.thread_recommend_infos = Message.immutableCopyOf(list8);
+        this.thread_recommend_infos = Message.immutableCopyOf(list9);
       } 
       String str10 = paramBuilder.recom_tag_icon;
       if (str10 == null) {
@@ -2209,33 +2231,33 @@ public final class ThreadInfo extends Message {
       } else {
         this.tiebaplus_extra_param = str10;
       } 
-      Integer integer6 = paramBuilder.tiebaplus_cant_delete;
-      if (integer6 == null) {
+      Integer integer7 = paramBuilder.tiebaplus_cant_delete;
+      if (integer7 == null) {
         this.tiebaplus_cant_delete = DEFAULT_TIEBAPLUS_CANT_DELETE;
       } else {
-        this.tiebaplus_cant_delete = integer6;
+        this.tiebaplus_cant_delete = integer7;
       } 
-      integer6 = paramBuilder.is_frs_mask;
-      if (integer6 == null) {
+      integer7 = paramBuilder.is_frs_mask;
+      if (integer7 == null) {
         this.is_frs_mask = DEFAULT_IS_FRS_MASK;
       } else {
-        this.is_frs_mask = integer6;
+        this.is_frs_mask = integer7;
       } 
       this.voice_room = paramBuilder.voice_room;
-      integer6 = paramBuilder.tab_show_mode;
-      if (integer6 == null) {
+      integer7 = paramBuilder.tab_show_mode;
+      if (integer7 == null) {
         this.tab_show_mode = DEFAULT_TAB_SHOW_MODE;
       } else {
-        this.tab_show_mode = integer6;
+        this.tab_show_mode = integer7;
       } 
       this.tiebaplus_ad = paramBuilder.tiebaplus_ad;
       this.recommend_tip = paramBuilder.recommend_tip;
       this.edit_info = paramBuilder.edit_info;
-      integer6 = paramBuilder.is_pictxt;
-      if (integer6 == null) {
+      integer7 = paramBuilder.is_pictxt;
+      if (integer7 == null) {
         this.is_pictxt = DEFAULT_IS_PICTXT;
       } else {
-        this.is_pictxt = integer6;
+        this.is_pictxt = integer7;
       } 
       String str9 = paramBuilder.exposure_monitor_url;
       if (str9 == null) {
@@ -2249,33 +2271,33 @@ public final class ThreadInfo extends Message {
       } else {
         this.click_monitor_url = str9;
       } 
-      Integer integer5 = paramBuilder.readonly;
-      if (integer5 == null) {
+      Integer integer6 = paramBuilder.readonly;
+      if (integer6 == null) {
         this.readonly = DEFAULT_READONLY;
       } else {
-        this.readonly = integer5;
+        this.readonly = integer6;
       } 
       this.thread_recommend_tag = paramBuilder.thread_recommend_tag;
       this.custom_figure = paramBuilder.custom_figure;
       this.custom_state = paramBuilder.custom_state;
-      integer5 = paramBuilder.is_highlight;
-      if (integer5 == null) {
+      integer6 = paramBuilder.is_highlight;
+      if (integer6 == null) {
         this.is_highlight = DEFAULT_IS_HIGHLIGHT;
       } else {
-        this.is_highlight = integer5;
+        this.is_highlight = integer6;
       } 
-      integer5 = paramBuilder.is_xiuxiu_thread;
-      if (integer5 == null) {
+      integer6 = paramBuilder.is_xiuxiu_thread;
+      if (integer6 == null) {
         this.is_xiuxiu_thread = DEFAULT_IS_XIUXIU_THREAD;
       } else {
-        this.is_xiuxiu_thread = integer5;
+        this.is_xiuxiu_thread = integer6;
       } 
       this.ablum_info = paramBuilder.ablum_info;
-      integer5 = paramBuilder.show_ad_subscript;
-      if (integer5 == null) {
+      integer6 = paramBuilder.show_ad_subscript;
+      if (integer6 == null) {
         this.show_ad_subscript = DEFAULT_SHOW_AD_SUBSCRIPT;
       } else {
-        this.show_ad_subscript = integer5;
+        this.show_ad_subscript = integer6;
       } 
       String str8 = paramBuilder.target_scheme;
       if (str8 == null) {
@@ -2289,23 +2311,23 @@ public final class ThreadInfo extends Message {
       } else {
         this.convert_btn_type = str8;
       } 
-      Integer integer4 = paramBuilder.is_excellent_thread;
-      if (integer4 == null) {
+      Integer integer5 = paramBuilder.is_excellent_thread;
+      if (integer5 == null) {
         this.is_excellent_thread = DEFAULT_IS_EXCELLENT_THREAD;
       } else {
-        this.is_excellent_thread = integer4;
+        this.is_excellent_thread = integer5;
       } 
-      integer4 = paramBuilder.literature_flag;
-      if (integer4 == null) {
+      integer5 = paramBuilder.literature_flag;
+      if (integer5 == null) {
         this.literature_flag = DEFAULT_LITERATURE_FLAG;
       } else {
-        this.literature_flag = integer4;
+        this.literature_flag = integer5;
       } 
-      List<Post> list7 = paramBuilder.hot_post_list;
-      if (list7 == null) {
+      List<Post> list8 = paramBuilder.hot_post_list;
+      if (list8 == null) {
         this.hot_post_list = DEFAULT_HOT_POST_LIST;
       } else {
-        this.hot_post_list = Message.immutableCopyOf(list7);
+        this.hot_post_list = Message.immutableCopyOf(list8);
       } 
       this.robot_entrance = paramBuilder.robot_entrance;
       this.click_back_card = paramBuilder.click_back_card;
@@ -2354,18 +2376,18 @@ public final class ThreadInfo extends Message {
       } 
       this.business_mix = paramBuilder.business_mix;
       this.chat_private = paramBuilder.chat_private;
-      List<FeedKV> list6 = paramBuilder.log_param;
-      if (list6 == null) {
+      List<FeedKV> list7 = paramBuilder.log_param;
+      if (list7 == null) {
         this.log_param = DEFAULT_LOG_PARAM;
       } else {
-        this.log_param = Message.immutableCopyOf(list6);
+        this.log_param = Message.immutableCopyOf(list7);
       } 
       this.aichat_bot_card = paramBuilder.aichat_bot_card;
-      List<IconMark> list5 = paramBuilder.icon_mark;
-      if (list5 == null) {
+      List<IconMark> list6 = paramBuilder.icon_mark;
+      if (list6 == null) {
         this.icon_mark = DEFAULT_ICON_MARK;
       } else {
-        this.icon_mark = Message.immutableCopyOf(list5);
+        this.icon_mark = Message.immutableCopyOf(list6);
       } 
       String str5 = paramBuilder.game_ext;
       if (str5 == null) {
@@ -2393,11 +2415,11 @@ public final class ThreadInfo extends Message {
       } 
       this.score_info = paramBuilder.score_info;
       this.show_post_content = paramBuilder.show_post_content;
-      List<User> list4 = paramBuilder.show_user_list;
-      if (list4 == null) {
+      List<User> list5 = paramBuilder.show_user_list;
+      if (list5 == null) {
         this.show_user_list = DEFAULT_SHOW_USER_LIST;
       } else {
-        this.show_user_list = Message.immutableCopyOf(list4);
+        this.show_user_list = Message.immutableCopyOf(list5);
       } 
       String str4 = paramBuilder.show_ext_str;
       if (str4 == null) {
@@ -2405,11 +2427,11 @@ public final class ThreadInfo extends Message {
       } else {
         this.show_ext_str = str4;
       } 
-      Integer integer3 = paramBuilder.show_new_question_style;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.show_new_question_style;
+      if (integer4 == null) {
         this.show_new_question_style = DEFAULT_SHOW_NEW_QUESTION_STYLE;
       } else {
-        this.show_new_question_style = integer3;
+        this.show_new_question_style = integer4;
       } 
       String str3 = paramBuilder.title_ai;
       if (str3 == null) {
@@ -2417,45 +2439,45 @@ public final class ThreadInfo extends Message {
       } else {
         this.title_ai = str3;
       } 
-      List<Post> list3 = paramBuilder.full_post_list;
-      if (list3 == null) {
+      List<Post> list4 = paramBuilder.full_post_list;
+      if (list4 == null) {
         this.full_post_list = DEFAULT_FULL_POST_LIST;
       } else {
-        this.full_post_list = Message.immutableCopyOf(list3);
+        this.full_post_list = Message.immutableCopyOf(list4);
       } 
-      Integer integer2 = paramBuilder.thread_album_id;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.thread_album_id;
+      if (integer3 == null) {
         this.thread_album_id = DEFAULT_THREAD_ALBUM_ID;
       } else {
-        this.thread_album_id = integer2;
+        this.thread_album_id = integer3;
       } 
       this.draw_info = paramBuilder.draw_info;
       this.hotest_post = paramBuilder.hotest_post;
-      integer2 = paramBuilder.thread_album_status;
-      if (integer2 == null) {
+      integer3 = paramBuilder.thread_album_status;
+      if (integer3 == null) {
         this.thread_album_status = DEFAULT_THREAD_ALBUM_STATUS;
       } else {
-        this.thread_album_status = integer2;
+        this.thread_album_status = integer3;
       } 
       this.question_bonus = paramBuilder.question_bonus;
-      integer2 = paramBuilder.tiebaplus_da_type;
-      if (integer2 == null) {
+      integer3 = paramBuilder.tiebaplus_da_type;
+      if (integer3 == null) {
         this.tiebaplus_da_type = DEFAULT_TIEBAPLUS_DA_TYPE;
       } else {
-        this.tiebaplus_da_type = integer2;
+        this.tiebaplus_da_type = integer3;
       } 
-      integer2 = paramBuilder.tiebaplus_da_type_click;
-      if (integer2 == null) {
+      integer3 = paramBuilder.tiebaplus_da_type_click;
+      if (integer3 == null) {
         this.tiebaplus_da_type_click = DEFAULT_TIEBAPLUS_DA_TYPE_CLICK;
       } else {
-        this.tiebaplus_da_type_click = integer2;
+        this.tiebaplus_da_type_click = integer3;
       } 
       this.video_card = paramBuilder.video_card;
-      integer2 = paramBuilder.poll_style;
-      if (integer2 == null) {
+      integer3 = paramBuilder.poll_style;
+      if (integer3 == null) {
         this.poll_style = DEFAULT_POLL_STYLE;
       } else {
-        this.poll_style = integer2;
+        this.poll_style = integer3;
       } 
       String str2 = paramBuilder.feed_nid;
       if (str2 == null) {
@@ -2464,24 +2486,24 @@ public final class ThreadInfo extends Message {
         this.feed_nid = str2;
       } 
       this.video_other_info = paramBuilder.video_other_info;
-      List<UserAttrIcon> list2 = paramBuilder.show_icon_list;
-      if (list2 == null) {
+      List<UserAttrIcon> list3 = paramBuilder.show_icon_list;
+      if (list3 == null) {
         this.show_icon_list = DEFAULT_SHOW_ICON_LIST;
       } else {
-        this.show_icon_list = Message.immutableCopyOf(list2);
+        this.show_icon_list = Message.immutableCopyOf(list3);
       } 
-      Integer integer1 = paramBuilder.is_star_thread;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.is_star_thread;
+      if (integer2 == null) {
         this.is_star_thread = DEFAULT_IS_STAR_THREAD;
       } else {
-        this.is_star_thread = integer1;
+        this.is_star_thread = integer2;
       } 
       this.shop_goods_info = paramBuilder.shop_goods_info;
-      List<ShopGoodsInfo> list = paramBuilder.link_shop_goods_info;
-      if (list == null) {
+      List<ShopGoodsInfo> list2 = paramBuilder.link_shop_goods_info;
+      if (list2 == null) {
         this.link_shop_goods_info = DEFAULT_LINK_SHOP_GOODS_INFO;
       } else {
-        this.link_shop_goods_info = Message.immutableCopyOf(list);
+        this.link_shop_goods_info = Message.immutableCopyOf(list2);
       } 
       this.task_horizontal = paramBuilder.task_horizontal;
       String str1 = paramBuilder.content_statement;
@@ -2504,266 +2526,286 @@ public final class ThreadInfo extends Message {
       } 
       this.ai_game_info = paramBuilder.ai_game_info;
       this.next_pic = paramBuilder.next_pic;
+      this.header_bg_color = paramBuilder.header_bg_color;
+      this.forum_info_bg_color = paramBuilder.forum_info_bg_color;
+      this.author_status_tag = paramBuilder.author_status_tag;
+      Integer integer1 = paramBuilder.show_reply_status_bar;
+      if (integer1 == null) {
+        this.show_reply_status_bar = DEFAULT_SHOW_REPLY_STATUS_BAR;
+      } else {
+        this.show_reply_status_bar = integer1;
+      } 
+      list = paramBuilder.reply_author_status_tag;
+      if (list == null) {
+        this.reply_author_status_tag = DEFAULT_REPLY_AUTHOR_STATUS_TAG;
+      } else {
+        this.reply_author_status_tag = Message.immutableCopyOf(list);
+      } 
     } else {
-      this.id = paramBuilder.id;
-      this.tid = paramBuilder.tid;
-      this.title = paramBuilder.title;
-      this.reply_num = paramBuilder.reply_num;
-      this.view_num = paramBuilder.view_num;
-      this.last_time = paramBuilder.last_time;
-      this.last_time_int = paramBuilder.last_time_int;
-      this.thread_types = paramBuilder.thread_types;
-      this.is_top = paramBuilder.is_top;
-      this.is_good = paramBuilder.is_good;
-      this.is_vote = paramBuilder.is_vote;
-      this.is_bakan = paramBuilder.is_bakan;
-      this.is_protal = paramBuilder.is_protal;
-      this.is_meizhi = paramBuilder.is_meizhi;
-      this.is_voice_thread = paramBuilder.is_voice_thread;
-      this.is_activity = paramBuilder.is_activity;
-      this.is_notice = paramBuilder.is_notice;
-      this.author = paramBuilder.author;
-      this.last_replyer = paramBuilder.last_replyer;
-      this.comment_num = paramBuilder.comment_num;
-      this._abstract = Message.immutableCopyOf(paramBuilder._abstract);
-      this.media = Message.immutableCopyOf(paramBuilder.media);
-      this.voice_info = Message.immutableCopyOf(paramBuilder.voice_info);
-      this.meizhi_pic = paramBuilder.meizhi_pic;
-      this.media_num = Message.immutableCopyOf(paramBuilder.media_num);
-      this.thread_type = paramBuilder.thread_type;
-      this.fid = paramBuilder.fid;
-      this.fname = paramBuilder.fname;
-      this.live_post_type = paramBuilder.live_post_type;
-      this.is_livepost = paramBuilder.is_livepost;
-      this.show_commented = paramBuilder.show_commented;
-      this.click_url = paramBuilder.click_url;
-      this.video = paramBuilder.video;
-      this.video_swf = paramBuilder.video_swf;
-      this.video_cover = paramBuilder.video_cover;
-      this.video_id = paramBuilder.video_id;
-      this.video_mobile_url = paramBuilder.video_mobile_url;
-      this.is_ntitle = paramBuilder.is_ntitle;
-      this.is_bub = paramBuilder.is_bub;
-      this.first_post_id = paramBuilder.first_post_id;
-      this.zan = paramBuilder.zan;
-      this.is_global_top = paramBuilder.is_global_top;
-      this.is_pic = paramBuilder.is_pic;
-      this.post_list = Message.immutableCopyOf(paramBuilder.post_list);
-      this.create_time = paramBuilder.create_time;
-      this.repost_num = paramBuilder.repost_num;
-      this.topic = paramBuilder.topic;
-      this.has_commented = paramBuilder.has_commented;
-      this.from = paramBuilder.from;
-      this.collect_status = paramBuilder.collect_status;
-      this.collect_mark_pid = paramBuilder.collect_mark_pid;
-      this.post_id = paramBuilder.post_id;
-      this.time = paramBuilder.time;
-      this.is_membertop = paramBuilder.is_membertop;
-      this.anchor_info = paramBuilder.anchor_info;
-      this.author_id = paramBuilder.author_id;
-      this.valid_post_num = paramBuilder.valid_post_num;
-      this.isLzDeleteAll = paramBuilder.isLzDeleteAll;
-      this.is_ad = paramBuilder.is_ad;
-      this.ecom = paramBuilder.ecom;
-      this.pids = paramBuilder.pids;
-      this.location = paramBuilder.location;
-      this.guess = paramBuilder.guess;
-      this.timeline = paramBuilder.timeline;
-      this.act_info = Message.immutableCopyOf(paramBuilder.act_info);
-      this.hot_weight = paramBuilder.hot_weight;
-      this.livecover_src = paramBuilder.livecover_src;
-      this.storecount = paramBuilder.storecount;
-      this.post_num = paramBuilder.post_num;
-      this.hotTWInfo = paramBuilder.hotTWInfo;
-      this.twzhibo_info = paramBuilder.twzhibo_info;
-      this.category_name = paramBuilder.category_name;
-      this.poll_info = paramBuilder.poll_info;
-      this.jid = paramBuilder.jid;
-      this.is_novel = paramBuilder.is_novel;
-      this.is_novel_thank = paramBuilder.is_novel_thank;
-      this.is_novel_reward = paramBuilder.is_novel_reward;
-      this.video_info = paramBuilder.video_info;
-      this.push_end_time = paramBuilder.push_end_time;
-      this.is_copythread = paramBuilder.is_copythread;
-      this.operator_flag = paramBuilder.operator_flag;
-      this.task_info = paramBuilder.task_info;
-      this.pic_num = paramBuilder.pic_num;
-      this.is_godthread_recommend = paramBuilder.is_godthread_recommend;
-      this.yule_post_activity = paramBuilder.yule_post_activity;
-      this.app_code = paramBuilder.app_code;
-      this.ext_tails = Message.immutableCopyOf(paramBuilder.ext_tails);
-      this.push_status = paramBuilder.push_status;
-      this.cartoon_info = paramBuilder.cartoon_info;
-      this.lego_card = paramBuilder.lego_card;
-      this.high_together = paramBuilder.high_together;
-      this.videoactive_info = paramBuilder.videoactive_info;
-      this.is_deal = paramBuilder.is_deal;
-      this.deal_info = paramBuilder.deal_info;
-      this.animation_info = paramBuilder.animation_info;
-      this.skin_info = paramBuilder.skin_info;
-      this.ps_info = paramBuilder.ps_info;
-      this.book_chapter = paramBuilder.book_chapter;
-      this.is_book_chapter = paramBuilder.is_book_chapter;
-      this.recom_source = paramBuilder.recom_source;
-      this.recom_weight = paramBuilder.recom_weight;
-      this.last_read_pid = paramBuilder.last_read_pid;
-      this.cheak_repeat = paramBuilder.cheak_repeat;
-      this.ab_tag = paramBuilder.ab_tag;
-      this.recom_reason = paramBuilder.recom_reason;
-      this.video_ad_info = paramBuilder.video_ad_info;
-      this.rich_title = Message.immutableCopyOf(paramBuilder.rich_title);
-      this.rich_abstract = Message.immutableCopyOf(paramBuilder.rich_abstract);
-      this.ala_info = paramBuilder.ala_info;
-      this.is_operate_thread = paramBuilder.is_operate_thread;
-      this.is_tbread_dispatch = paramBuilder.is_tbread_dispatch;
-      this.tbread_dispatch_info = paramBuilder.tbread_dispatch_info;
-      this.app_info = paramBuilder.app_info;
-      this.report_info = Message.immutableCopyOf(paramBuilder.report_info);
-      this.video_channel_info = paramBuilder.video_channel_info;
-      this.dislike_info = Message.immutableCopyOf(paramBuilder.dislike_info);
-      this.declare_list = Message.immutableCopyOf(paramBuilder.declare_list);
-      this.multiple_forum_list = Message.immutableCopyOf(paramBuilder.multiple_forum_list);
-      this.is_multiforum_thread = paramBuilder.is_multiforum_thread;
-      this.agree_num = paramBuilder.agree_num;
-      this.top_agree_post = paramBuilder.top_agree_post;
-      this.agree = paramBuilder.agree;
-      this.is_partial_visible = paramBuilder.is_partial_visible;
-      this.is_link_thread = paramBuilder.is_link_thread;
-      this.link_info = paramBuilder.link_info;
-      this.freq_num = paramBuilder.freq_num;
-      this.is_god = paramBuilder.is_god;
-      this.activity_info = paramBuilder.activity_info;
-      this.pic_info = paramBuilder.pic_info;
-      this.is_story_audit = paramBuilder.is_story_audit;
-      this.share_num = paramBuilder.share_num;
-      this.is_called = paramBuilder.is_called;
-      this.tieba_game_information_source = paramBuilder.tieba_game_information_source;
-      this.audit_time = paramBuilder.audit_time;
-      this.middle_page_num = paramBuilder.middle_page_num;
-      this.middle_page_pass_flag = paramBuilder.middle_page_pass_flag;
-      this.origin_thread_info = paramBuilder.origin_thread_info;
-      this.first_post_content = Message.immutableCopyOf(paramBuilder.first_post_content);
-      this.is_share_thread = paramBuilder.is_share_thread;
-      this.recom_extra = paramBuilder.recom_extra;
-      this.trans_num = paramBuilder.trans_num;
-      this.multi_forum_text = paramBuilder.multi_forum_text;
-      this.star_rank_icon = paramBuilder.star_rank_icon;
-      this.is_topic = paramBuilder.is_topic;
-      this.topic_user_name = paramBuilder.topic_user_name;
-      this.topic_h5_url = paramBuilder.topic_h5_url;
-      this.presentation_style = paramBuilder.presentation_style;
-      this.ori_forum_info = paramBuilder.ori_forum_info;
-      this.is_videobiggie_recomthread = paramBuilder.is_videobiggie_recomthread;
-      this.daily_paper_time = paramBuilder.daily_paper_time;
-      this.forum_info = paramBuilder.forum_info;
-      this.naws_info = paramBuilder.naws_info;
-      this.video_segment = paramBuilder.video_segment;
-      this.is_top_img = paramBuilder.is_top_img;
-      this.t_share_img = paramBuilder.t_share_img;
-      this.topic_module = paramBuilder.topic_module;
-      this.is_bjh = paramBuilder.is_bjh;
-      this.article_cover = paramBuilder.article_cover;
-      this.bjh_content_tag = paramBuilder.bjh_content_tag;
-      this.nid = paramBuilder.nid;
-      this.is_headlinepost = paramBuilder.is_headlinepost;
-      this.baijiahao = paramBuilder.baijiahao;
-      this.is_s_card = paramBuilder.is_s_card;
-      this.scard_packet_id = paramBuilder.scard_packet_id;
-      this.thread_share_link = paramBuilder.thread_share_link;
-      this.if_comment = paramBuilder.if_comment;
-      this.if_comment_info = paramBuilder.if_comment_info;
-      this.tab_id = paramBuilder.tab_id;
-      this.tab_name = paramBuilder.tab_name;
-      this.wonderful_post_info = paramBuilder.wonderful_post_info;
-      this.pb_link_info = Message.immutableCopyOf(paramBuilder.pb_link_info);
-      this.item = paramBuilder.item;
-      this.item_star = Message.immutableCopyOf(paramBuilder.item_star);
-      this.is_deleted = paramBuilder.is_deleted;
-      this.hot_num = paramBuilder.hot_num;
-      this.pb_goods_info = Message.immutableCopyOf(paramBuilder.pb_goods_info);
-      this.is_local = paramBuilder.is_local;
-      this.pb_entry = paramBuilder.pb_entry;
-      this.is_author_view = paramBuilder.is_author_view;
-      this.forum_user_live_msg = paramBuilder.forum_user_live_msg;
-      this.forum_friend_watching_info = paramBuilder.forum_friend_watching_info;
-      this.works_info = paramBuilder.works_info;
-      this.collect_num = paramBuilder.collect_num;
-      this.thread_recommend_infos = Message.immutableCopyOf(paramBuilder.thread_recommend_infos);
-      this.recom_tag_icon = paramBuilder.recom_tag_icon;
-      this.is_tiebaplus_ad = paramBuilder.is_tiebaplus_ad;
-      this.tiebaplus_order_id = paramBuilder.tiebaplus_order_id;
-      this.tiebaplus_token = paramBuilder.tiebaplus_token;
-      this.tiebaplus_extra_param = paramBuilder.tiebaplus_extra_param;
-      this.tiebaplus_cant_delete = paramBuilder.tiebaplus_cant_delete;
-      this.is_frs_mask = paramBuilder.is_frs_mask;
-      this.voice_room = paramBuilder.voice_room;
-      this.tab_show_mode = paramBuilder.tab_show_mode;
-      this.tiebaplus_ad = paramBuilder.tiebaplus_ad;
-      this.recommend_tip = paramBuilder.recommend_tip;
-      this.edit_info = paramBuilder.edit_info;
-      this.is_pictxt = paramBuilder.is_pictxt;
-      this.exposure_monitor_url = paramBuilder.exposure_monitor_url;
-      this.click_monitor_url = paramBuilder.click_monitor_url;
-      this.readonly = paramBuilder.readonly;
-      this.thread_recommend_tag = paramBuilder.thread_recommend_tag;
-      this.custom_figure = paramBuilder.custom_figure;
-      this.custom_state = paramBuilder.custom_state;
-      this.is_highlight = paramBuilder.is_highlight;
-      this.is_xiuxiu_thread = paramBuilder.is_xiuxiu_thread;
-      this.ablum_info = paramBuilder.ablum_info;
-      this.show_ad_subscript = paramBuilder.show_ad_subscript;
-      this.target_scheme = paramBuilder.target_scheme;
-      this.convert_btn_type = paramBuilder.convert_btn_type;
-      this.is_excellent_thread = paramBuilder.is_excellent_thread;
-      this.literature_flag = paramBuilder.literature_flag;
-      this.hot_post_list = Message.immutableCopyOf(paramBuilder.hot_post_list);
-      this.robot_entrance = paramBuilder.robot_entrance;
-      this.click_back_card = paramBuilder.click_back_card;
-      this.peiwan_info = paramBuilder.peiwan_info;
-      this.robot_thread_type = paramBuilder.robot_thread_type;
-      this.book_id = paramBuilder.book_id;
-      this.head_type = paramBuilder.head_type;
-      this.disable_share = paramBuilder.disable_share;
-      this.disable_share_toast = paramBuilder.disable_share_toast;
-      this.share_url = paramBuilder.share_url;
-      this.top_thread_set_time = paramBuilder.top_thread_set_time;
-      this.business_mix = paramBuilder.business_mix;
-      this.chat_private = paramBuilder.chat_private;
-      this.log_param = Message.immutableCopyOf(paramBuilder.log_param);
-      this.aichat_bot_card = paramBuilder.aichat_bot_card;
-      this.icon_mark = Message.immutableCopyOf(paramBuilder.icon_mark);
-      this.game_ext = paramBuilder.game_ext;
-      this.placeholder_card_id = paramBuilder.placeholder_card_id;
-      this.is_hottop_thread = paramBuilder.is_hottop_thread;
-      this.disable_reply = paramBuilder.disable_reply;
-      this.score_info = paramBuilder.score_info;
-      this.show_post_content = paramBuilder.show_post_content;
-      this.show_user_list = Message.immutableCopyOf(paramBuilder.show_user_list);
-      this.show_ext_str = paramBuilder.show_ext_str;
-      this.show_new_question_style = paramBuilder.show_new_question_style;
-      this.title_ai = paramBuilder.title_ai;
-      this.full_post_list = Message.immutableCopyOf(paramBuilder.full_post_list);
-      this.thread_album_id = paramBuilder.thread_album_id;
-      this.draw_info = paramBuilder.draw_info;
-      this.hotest_post = paramBuilder.hotest_post;
-      this.thread_album_status = paramBuilder.thread_album_status;
-      this.question_bonus = paramBuilder.question_bonus;
-      this.tiebaplus_da_type = paramBuilder.tiebaplus_da_type;
-      this.tiebaplus_da_type_click = paramBuilder.tiebaplus_da_type_click;
-      this.video_card = paramBuilder.video_card;
-      this.poll_style = paramBuilder.poll_style;
-      this.feed_nid = paramBuilder.feed_nid;
-      this.video_other_info = paramBuilder.video_other_info;
-      this.show_icon_list = Message.immutableCopyOf(paramBuilder.show_icon_list);
-      this.is_star_thread = paramBuilder.is_star_thread;
-      this.shop_goods_info = paramBuilder.shop_goods_info;
-      this.link_shop_goods_info = Message.immutableCopyOf(paramBuilder.link_shop_goods_info);
-      this.task_horizontal = paramBuilder.task_horizontal;
-      this.content_statement = paramBuilder.content_statement;
-      this.ad_info = paramBuilder.ad_info;
-      this.voice_room_link_info = Message.immutableCopyOf(paramBuilder.voice_room_link_info);
-      this.ai_game_info = paramBuilder.ai_game_info;
-      this.next_pic = paramBuilder.next_pic;
+      this.id = ((Builder)list).id;
+      this.tid = ((Builder)list).tid;
+      this.title = ((Builder)list).title;
+      this.reply_num = ((Builder)list).reply_num;
+      this.view_num = ((Builder)list).view_num;
+      this.last_time = ((Builder)list).last_time;
+      this.last_time_int = ((Builder)list).last_time_int;
+      this.thread_types = ((Builder)list).thread_types;
+      this.is_top = ((Builder)list).is_top;
+      this.is_good = ((Builder)list).is_good;
+      this.is_vote = ((Builder)list).is_vote;
+      this.is_bakan = ((Builder)list).is_bakan;
+      this.is_protal = ((Builder)list).is_protal;
+      this.is_meizhi = ((Builder)list).is_meizhi;
+      this.is_voice_thread = ((Builder)list).is_voice_thread;
+      this.is_activity = ((Builder)list).is_activity;
+      this.is_notice = ((Builder)list).is_notice;
+      this.author = ((Builder)list).author;
+      this.last_replyer = ((Builder)list).last_replyer;
+      this.comment_num = ((Builder)list).comment_num;
+      this._abstract = Message.immutableCopyOf(((Builder)list)._abstract);
+      this.media = Message.immutableCopyOf(((Builder)list).media);
+      this.voice_info = Message.immutableCopyOf(((Builder)list).voice_info);
+      this.meizhi_pic = ((Builder)list).meizhi_pic;
+      this.media_num = Message.immutableCopyOf(((Builder)list).media_num);
+      this.thread_type = ((Builder)list).thread_type;
+      this.fid = ((Builder)list).fid;
+      this.fname = ((Builder)list).fname;
+      this.live_post_type = ((Builder)list).live_post_type;
+      this.is_livepost = ((Builder)list).is_livepost;
+      this.show_commented = ((Builder)list).show_commented;
+      this.click_url = ((Builder)list).click_url;
+      this.video = ((Builder)list).video;
+      this.video_swf = ((Builder)list).video_swf;
+      this.video_cover = ((Builder)list).video_cover;
+      this.video_id = ((Builder)list).video_id;
+      this.video_mobile_url = ((Builder)list).video_mobile_url;
+      this.is_ntitle = ((Builder)list).is_ntitle;
+      this.is_bub = ((Builder)list).is_bub;
+      this.first_post_id = ((Builder)list).first_post_id;
+      this.zan = ((Builder)list).zan;
+      this.is_global_top = ((Builder)list).is_global_top;
+      this.is_pic = ((Builder)list).is_pic;
+      this.post_list = Message.immutableCopyOf(((Builder)list).post_list);
+      this.create_time = ((Builder)list).create_time;
+      this.repost_num = ((Builder)list).repost_num;
+      this.topic = ((Builder)list).topic;
+      this.has_commented = ((Builder)list).has_commented;
+      this.from = ((Builder)list).from;
+      this.collect_status = ((Builder)list).collect_status;
+      this.collect_mark_pid = ((Builder)list).collect_mark_pid;
+      this.post_id = ((Builder)list).post_id;
+      this.time = ((Builder)list).time;
+      this.is_membertop = ((Builder)list).is_membertop;
+      this.anchor_info = ((Builder)list).anchor_info;
+      this.author_id = ((Builder)list).author_id;
+      this.valid_post_num = ((Builder)list).valid_post_num;
+      this.isLzDeleteAll = ((Builder)list).isLzDeleteAll;
+      this.is_ad = ((Builder)list).is_ad;
+      this.ecom = ((Builder)list).ecom;
+      this.pids = ((Builder)list).pids;
+      this.location = ((Builder)list).location;
+      this.guess = ((Builder)list).guess;
+      this.timeline = ((Builder)list).timeline;
+      this.act_info = Message.immutableCopyOf(((Builder)list).act_info);
+      this.hot_weight = ((Builder)list).hot_weight;
+      this.livecover_src = ((Builder)list).livecover_src;
+      this.storecount = ((Builder)list).storecount;
+      this.post_num = ((Builder)list).post_num;
+      this.hotTWInfo = ((Builder)list).hotTWInfo;
+      this.twzhibo_info = ((Builder)list).twzhibo_info;
+      this.category_name = ((Builder)list).category_name;
+      this.poll_info = ((Builder)list).poll_info;
+      this.jid = ((Builder)list).jid;
+      this.is_novel = ((Builder)list).is_novel;
+      this.is_novel_thank = ((Builder)list).is_novel_thank;
+      this.is_novel_reward = ((Builder)list).is_novel_reward;
+      this.video_info = ((Builder)list).video_info;
+      this.push_end_time = ((Builder)list).push_end_time;
+      this.is_copythread = ((Builder)list).is_copythread;
+      this.operator_flag = ((Builder)list).operator_flag;
+      this.task_info = ((Builder)list).task_info;
+      this.pic_num = ((Builder)list).pic_num;
+      this.is_godthread_recommend = ((Builder)list).is_godthread_recommend;
+      this.yule_post_activity = ((Builder)list).yule_post_activity;
+      this.app_code = ((Builder)list).app_code;
+      this.ext_tails = Message.immutableCopyOf(((Builder)list).ext_tails);
+      this.push_status = ((Builder)list).push_status;
+      this.cartoon_info = ((Builder)list).cartoon_info;
+      this.lego_card = ((Builder)list).lego_card;
+      this.high_together = ((Builder)list).high_together;
+      this.videoactive_info = ((Builder)list).videoactive_info;
+      this.is_deal = ((Builder)list).is_deal;
+      this.deal_info = ((Builder)list).deal_info;
+      this.animation_info = ((Builder)list).animation_info;
+      this.skin_info = ((Builder)list).skin_info;
+      this.ps_info = ((Builder)list).ps_info;
+      this.book_chapter = ((Builder)list).book_chapter;
+      this.is_book_chapter = ((Builder)list).is_book_chapter;
+      this.recom_source = ((Builder)list).recom_source;
+      this.recom_weight = ((Builder)list).recom_weight;
+      this.last_read_pid = ((Builder)list).last_read_pid;
+      this.cheak_repeat = ((Builder)list).cheak_repeat;
+      this.ab_tag = ((Builder)list).ab_tag;
+      this.recom_reason = ((Builder)list).recom_reason;
+      this.video_ad_info = ((Builder)list).video_ad_info;
+      this.rich_title = Message.immutableCopyOf(((Builder)list).rich_title);
+      this.rich_abstract = Message.immutableCopyOf(((Builder)list).rich_abstract);
+      this.ala_info = ((Builder)list).ala_info;
+      this.is_operate_thread = ((Builder)list).is_operate_thread;
+      this.is_tbread_dispatch = ((Builder)list).is_tbread_dispatch;
+      this.tbread_dispatch_info = ((Builder)list).tbread_dispatch_info;
+      this.app_info = ((Builder)list).app_info;
+      this.report_info = Message.immutableCopyOf(((Builder)list).report_info);
+      this.video_channel_info = ((Builder)list).video_channel_info;
+      this.dislike_info = Message.immutableCopyOf(((Builder)list).dislike_info);
+      this.declare_list = Message.immutableCopyOf(((Builder)list).declare_list);
+      this.multiple_forum_list = Message.immutableCopyOf(((Builder)list).multiple_forum_list);
+      this.is_multiforum_thread = ((Builder)list).is_multiforum_thread;
+      this.agree_num = ((Builder)list).agree_num;
+      this.top_agree_post = ((Builder)list).top_agree_post;
+      this.agree = ((Builder)list).agree;
+      this.is_partial_visible = ((Builder)list).is_partial_visible;
+      this.is_link_thread = ((Builder)list).is_link_thread;
+      this.link_info = ((Builder)list).link_info;
+      this.freq_num = ((Builder)list).freq_num;
+      this.is_god = ((Builder)list).is_god;
+      this.activity_info = ((Builder)list).activity_info;
+      this.pic_info = ((Builder)list).pic_info;
+      this.is_story_audit = ((Builder)list).is_story_audit;
+      this.share_num = ((Builder)list).share_num;
+      this.is_called = ((Builder)list).is_called;
+      this.tieba_game_information_source = ((Builder)list).tieba_game_information_source;
+      this.audit_time = ((Builder)list).audit_time;
+      this.middle_page_num = ((Builder)list).middle_page_num;
+      this.middle_page_pass_flag = ((Builder)list).middle_page_pass_flag;
+      this.origin_thread_info = ((Builder)list).origin_thread_info;
+      this.first_post_content = Message.immutableCopyOf(((Builder)list).first_post_content);
+      this.is_share_thread = ((Builder)list).is_share_thread;
+      this.recom_extra = ((Builder)list).recom_extra;
+      this.trans_num = ((Builder)list).trans_num;
+      this.multi_forum_text = ((Builder)list).multi_forum_text;
+      this.star_rank_icon = ((Builder)list).star_rank_icon;
+      this.is_topic = ((Builder)list).is_topic;
+      this.topic_user_name = ((Builder)list).topic_user_name;
+      this.topic_h5_url = ((Builder)list).topic_h5_url;
+      this.presentation_style = ((Builder)list).presentation_style;
+      this.ori_forum_info = ((Builder)list).ori_forum_info;
+      this.is_videobiggie_recomthread = ((Builder)list).is_videobiggie_recomthread;
+      this.daily_paper_time = ((Builder)list).daily_paper_time;
+      this.forum_info = ((Builder)list).forum_info;
+      this.naws_info = ((Builder)list).naws_info;
+      this.video_segment = ((Builder)list).video_segment;
+      this.is_top_img = ((Builder)list).is_top_img;
+      this.t_share_img = ((Builder)list).t_share_img;
+      this.topic_module = ((Builder)list).topic_module;
+      this.is_bjh = ((Builder)list).is_bjh;
+      this.article_cover = ((Builder)list).article_cover;
+      this.bjh_content_tag = ((Builder)list).bjh_content_tag;
+      this.nid = ((Builder)list).nid;
+      this.is_headlinepost = ((Builder)list).is_headlinepost;
+      this.baijiahao = ((Builder)list).baijiahao;
+      this.is_s_card = ((Builder)list).is_s_card;
+      this.scard_packet_id = ((Builder)list).scard_packet_id;
+      this.thread_share_link = ((Builder)list).thread_share_link;
+      this.if_comment = ((Builder)list).if_comment;
+      this.if_comment_info = ((Builder)list).if_comment_info;
+      this.tab_id = ((Builder)list).tab_id;
+      this.tab_name = ((Builder)list).tab_name;
+      this.wonderful_post_info = ((Builder)list).wonderful_post_info;
+      this.pb_link_info = Message.immutableCopyOf(((Builder)list).pb_link_info);
+      this.item = ((Builder)list).item;
+      this.item_star = Message.immutableCopyOf(((Builder)list).item_star);
+      this.is_deleted = ((Builder)list).is_deleted;
+      this.hot_num = ((Builder)list).hot_num;
+      this.pb_goods_info = Message.immutableCopyOf(((Builder)list).pb_goods_info);
+      this.is_local = ((Builder)list).is_local;
+      this.pb_entry = ((Builder)list).pb_entry;
+      this.is_author_view = ((Builder)list).is_author_view;
+      this.forum_user_live_msg = ((Builder)list).forum_user_live_msg;
+      this.forum_friend_watching_info = ((Builder)list).forum_friend_watching_info;
+      this.works_info = ((Builder)list).works_info;
+      this.collect_num = ((Builder)list).collect_num;
+      this.thread_recommend_infos = Message.immutableCopyOf(((Builder)list).thread_recommend_infos);
+      this.recom_tag_icon = ((Builder)list).recom_tag_icon;
+      this.is_tiebaplus_ad = ((Builder)list).is_tiebaplus_ad;
+      this.tiebaplus_order_id = ((Builder)list).tiebaplus_order_id;
+      this.tiebaplus_token = ((Builder)list).tiebaplus_token;
+      this.tiebaplus_extra_param = ((Builder)list).tiebaplus_extra_param;
+      this.tiebaplus_cant_delete = ((Builder)list).tiebaplus_cant_delete;
+      this.is_frs_mask = ((Builder)list).is_frs_mask;
+      this.voice_room = ((Builder)list).voice_room;
+      this.tab_show_mode = ((Builder)list).tab_show_mode;
+      this.tiebaplus_ad = ((Builder)list).tiebaplus_ad;
+      this.recommend_tip = ((Builder)list).recommend_tip;
+      this.edit_info = ((Builder)list).edit_info;
+      this.is_pictxt = ((Builder)list).is_pictxt;
+      this.exposure_monitor_url = ((Builder)list).exposure_monitor_url;
+      this.click_monitor_url = ((Builder)list).click_monitor_url;
+      this.readonly = ((Builder)list).readonly;
+      this.thread_recommend_tag = ((Builder)list).thread_recommend_tag;
+      this.custom_figure = ((Builder)list).custom_figure;
+      this.custom_state = ((Builder)list).custom_state;
+      this.is_highlight = ((Builder)list).is_highlight;
+      this.is_xiuxiu_thread = ((Builder)list).is_xiuxiu_thread;
+      this.ablum_info = ((Builder)list).ablum_info;
+      this.show_ad_subscript = ((Builder)list).show_ad_subscript;
+      this.target_scheme = ((Builder)list).target_scheme;
+      this.convert_btn_type = ((Builder)list).convert_btn_type;
+      this.is_excellent_thread = ((Builder)list).is_excellent_thread;
+      this.literature_flag = ((Builder)list).literature_flag;
+      this.hot_post_list = Message.immutableCopyOf(((Builder)list).hot_post_list);
+      this.robot_entrance = ((Builder)list).robot_entrance;
+      this.click_back_card = ((Builder)list).click_back_card;
+      this.peiwan_info = ((Builder)list).peiwan_info;
+      this.robot_thread_type = ((Builder)list).robot_thread_type;
+      this.book_id = ((Builder)list).book_id;
+      this.head_type = ((Builder)list).head_type;
+      this.disable_share = ((Builder)list).disable_share;
+      this.disable_share_toast = ((Builder)list).disable_share_toast;
+      this.share_url = ((Builder)list).share_url;
+      this.top_thread_set_time = ((Builder)list).top_thread_set_time;
+      this.business_mix = ((Builder)list).business_mix;
+      this.chat_private = ((Builder)list).chat_private;
+      this.log_param = Message.immutableCopyOf(((Builder)list).log_param);
+      this.aichat_bot_card = ((Builder)list).aichat_bot_card;
+      this.icon_mark = Message.immutableCopyOf(((Builder)list).icon_mark);
+      this.game_ext = ((Builder)list).game_ext;
+      this.placeholder_card_id = ((Builder)list).placeholder_card_id;
+      this.is_hottop_thread = ((Builder)list).is_hottop_thread;
+      this.disable_reply = ((Builder)list).disable_reply;
+      this.score_info = ((Builder)list).score_info;
+      this.show_post_content = ((Builder)list).show_post_content;
+      this.show_user_list = Message.immutableCopyOf(((Builder)list).show_user_list);
+      this.show_ext_str = ((Builder)list).show_ext_str;
+      this.show_new_question_style = ((Builder)list).show_new_question_style;
+      this.title_ai = ((Builder)list).title_ai;
+      this.full_post_list = Message.immutableCopyOf(((Builder)list).full_post_list);
+      this.thread_album_id = ((Builder)list).thread_album_id;
+      this.draw_info = ((Builder)list).draw_info;
+      this.hotest_post = ((Builder)list).hotest_post;
+      this.thread_album_status = ((Builder)list).thread_album_status;
+      this.question_bonus = ((Builder)list).question_bonus;
+      this.tiebaplus_da_type = ((Builder)list).tiebaplus_da_type;
+      this.tiebaplus_da_type_click = ((Builder)list).tiebaplus_da_type_click;
+      this.video_card = ((Builder)list).video_card;
+      this.poll_style = ((Builder)list).poll_style;
+      this.feed_nid = ((Builder)list).feed_nid;
+      this.video_other_info = ((Builder)list).video_other_info;
+      this.show_icon_list = Message.immutableCopyOf(((Builder)list).show_icon_list);
+      this.is_star_thread = ((Builder)list).is_star_thread;
+      this.shop_goods_info = ((Builder)list).shop_goods_info;
+      this.link_shop_goods_info = Message.immutableCopyOf(((Builder)list).link_shop_goods_info);
+      this.task_horizontal = ((Builder)list).task_horizontal;
+      this.content_statement = ((Builder)list).content_statement;
+      this.ad_info = ((Builder)list).ad_info;
+      this.voice_room_link_info = Message.immutableCopyOf(((Builder)list).voice_room_link_info);
+      this.ai_game_info = ((Builder)list).ai_game_info;
+      this.next_pic = ((Builder)list).next_pic;
+      this.header_bg_color = ((Builder)list).header_bg_color;
+      this.forum_info_bg_color = ((Builder)list).forum_info_bg_color;
+      this.author_status_tag = ((Builder)list).author_status_tag;
+      this.show_reply_status_bar = ((Builder)list).show_reply_status_bar;
+      this.reply_author_status_tag = Message.immutableCopyOf(((Builder)list).reply_author_status_tag);
     } 
   }
   
@@ -2805,6 +2847,8 @@ public final class ThreadInfo extends Message {
     public User author;
     
     public Long author_id;
+    
+    public HelpStatusTag author_status_tag;
     
     public Baijiahao baijiahao;
     
@@ -2886,6 +2930,8 @@ public final class ThreadInfo extends Message {
     
     public SimpleForum forum_info;
     
+    public FeedContentColor forum_info_bg_color;
+    
     public String forum_user_live_msg;
     
     public Long freq_num;
@@ -2901,6 +2947,8 @@ public final class ThreadInfo extends Message {
     public Integer has_commented;
     
     public String head_type;
+    
+    public ThreadHeaderColor header_bg_color;
     
     public TogetherHi high_together;
     
@@ -3128,6 +3176,8 @@ public final class ThreadInfo extends Message {
     
     public RecommendTip recommend_tip;
     
+    public List<HelpStatusTag> reply_author_status_tag;
+    
     public Integer reply_num;
     
     public List<ReportInfo> report_info;
@@ -3163,6 +3213,8 @@ public final class ThreadInfo extends Message {
     public Integer show_new_question_style;
     
     public ShowPostContent show_post_content;
+    
+    public Integer show_reply_status_bar;
     
     public List<User> show_user_list;
     
@@ -3551,6 +3603,11 @@ public final class ThreadInfo extends Message {
       this.voice_room_link_info = Message.copyOf(param1ThreadInfo.voice_room_link_info);
       this.ai_game_info = param1ThreadInfo.ai_game_info;
       this.next_pic = param1ThreadInfo.next_pic;
+      this.header_bg_color = param1ThreadInfo.header_bg_color;
+      this.forum_info_bg_color = param1ThreadInfo.forum_info_bg_color;
+      this.author_status_tag = param1ThreadInfo.author_status_tag;
+      this.show_reply_status_bar = param1ThreadInfo.show_reply_status_bar;
+      this.reply_author_status_tag = Message.copyOf(param1ThreadInfo.reply_author_status_tag);
     }
     
     public ThreadInfo build(boolean param1Boolean) {

@@ -13,4 +13,5 @@ message AgreeData {
     FeedContentIcon agree_assist_animation = 7;
     int32 support_long_click = 8;
     string scheme = 9;
+    repeated FeedContentIcon agree_long_click_animation = 10;
 }

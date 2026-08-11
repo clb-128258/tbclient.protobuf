@@ -4,6 +4,8 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CommonReq extends Message {
+  public static final String DEFAULT_ABTEST_CONFIG_INTERVENTION = "";
+  
   public static final Long DEFAULT_ACTIVE_TIMESTAMP;
   
   public static final String DEFAULT_AFDI = "";
@@ -197,6 +199,9 @@ public final class CommonReq extends Message {
   
   @ProtoField(tag = 8, type = Message.Datatype.INT64)
   public final Long _timestamp;
+  
+  @ProtoField(tag = 89, type = Message.Datatype.STRING)
+  public final String abtest_config_intervention;
   
   @ProtoField(tag = 49, type = Message.Datatype.INT64)
   public final Long active_timestamp;
@@ -960,11 +965,17 @@ public final class CommonReq extends Message {
       } else {
         this.support_image = str1;
       } 
-      str = paramBuilder.package_version;
-      if (str == null) {
+      str1 = paramBuilder.package_version;
+      if (str1 == null) {
         this.package_version = "";
       } else {
-        this.package_version = str;
+        this.package_version = str1;
+      } 
+      str = paramBuilder.abtest_config_intervention;
+      if (str == null) {
+        this.abtest_config_intervention = "";
+      } else {
+        this.abtest_config_intervention = str;
       } 
     } else {
       this._client_type = ((Builder)str)._client_type;
@@ -1052,6 +1063,7 @@ public final class CommonReq extends Message {
       this.hm_needmp = ((Builder)str).hm_needmp;
       this.support_image = ((Builder)str).support_image;
       this.package_version = ((Builder)str).package_version;
+      this.abtest_config_intervention = ((Builder)str).abtest_config_intervention;
     } 
   }
   
@@ -1071,6 +1083,8 @@ public final class CommonReq extends Message {
     public String _phone_newimei;
     
     public Long _timestamp;
+    
+    public String abtest_config_intervention;
     
     public Long active_timestamp;
     
@@ -1317,6 +1331,7 @@ public final class CommonReq extends Message {
       this.hm_needmp = param1CommonReq.hm_needmp;
       this.support_image = param1CommonReq.support_image;
       this.package_version = param1CommonReq.package_version;
+      this.abtest_config_intervention = param1CommonReq.abtest_config_intervention;
     }
     
     public CommonReq build(boolean param1Boolean) {

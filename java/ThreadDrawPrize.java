@@ -12,6 +12,8 @@ public final class ThreadDrawPrize extends Message {
   
   public static final String DEFAULT_PIC = "";
   
+  public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String asset;
   
@@ -24,21 +26,24 @@ public final class ThreadDrawPrize extends Message {
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String pic;
   
+  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+  public final Integer type;
+  
   public ThreadDrawPrize(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
-      String str1 = paramBuilder.name;
-      if (str1 == null) {
+      String str2 = paramBuilder.name;
+      if (str2 == null) {
         this.name = "";
       } else {
-        this.name = str1;
+        this.name = str2;
       } 
-      str1 = paramBuilder.pic;
-      if (str1 == null) {
+      str2 = paramBuilder.pic;
+      if (str2 == null) {
         this.pic = "";
       } else {
-        this.pic = str1;
+        this.pic = str2;
       } 
       Long long_ = paramBuilder.count;
       if (long_ == null) {
@@ -46,17 +51,24 @@ public final class ThreadDrawPrize extends Message {
       } else {
         this.count = long_;
       } 
-      str = paramBuilder.asset;
-      if (str == null) {
+      String str1 = paramBuilder.asset;
+      if (str1 == null) {
         this.asset = "";
       } else {
-        this.asset = str;
+        this.asset = str1;
+      } 
+      integer = paramBuilder.type;
+      if (integer == null) {
+        this.type = DEFAULT_TYPE;
+      } else {
+        this.type = integer;
       } 
     } else {
-      this.name = ((Builder)str).name;
-      this.pic = ((Builder)str).pic;
-      this.count = ((Builder)str).count;
-      this.asset = ((Builder)str).asset;
+      this.name = ((Builder)integer).name;
+      this.pic = ((Builder)integer).pic;
+      this.count = ((Builder)integer).count;
+      this.asset = ((Builder)integer).asset;
+      this.type = ((Builder)integer).type;
     } 
   }
   
@@ -69,6 +81,8 @@ public final class ThreadDrawPrize extends Message {
     
     public String pic;
     
+    public Integer type;
+    
     public Builder() {}
     
     public Builder(ThreadDrawPrize param1ThreadDrawPrize) {
@@ -79,6 +93,7 @@ public final class ThreadDrawPrize extends Message {
       this.pic = param1ThreadDrawPrize.pic;
       this.count = param1ThreadDrawPrize.count;
       this.asset = param1ThreadDrawPrize.asset;
+      this.type = param1ThreadDrawPrize.type;
     }
     
     public ThreadDrawPrize build(boolean param1Boolean) {

@@ -19,6 +19,8 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_ORI_UGC_VID = "";
   
+  public static final String DEFAULT_OUT_FLOOR_POST_IDS = "";
+  
   public static final Long DEFAULT_PID;
   
   public static final Integer DEFAULT_PN;
@@ -30,6 +32,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_SCR_H;
   
   public static final Integer DEFAULT_SCR_W;
+  
+  public static final Integer DEFAULT_SORT;
   
   public static final Long DEFAULT_SPID;
   
@@ -61,6 +65,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 16, type = Message.Datatype.STRING)
   public final String ori_ugc_vid;
   
+  @ProtoField(tag = 20, type = Message.Datatype.STRING)
+  public final String out_floor_post_ids;
+  
   @ProtoField(tag = 2, type = Message.Datatype.INT64)
   public final Long pid;
   
@@ -78,6 +85,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer scr_w;
+  
+  @ProtoField(tag = 19, type = Message.Datatype.INT32)
+  public final Integer sort;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT64)
   public final Long spid;
@@ -102,11 +112,12 @@ public final class DataReq extends Message {
     DEFAULT_FORUM_ID = long_;
     DEFAULT_ORI_UGC_TYPE = integer;
     DEFAULT_REQUEST_TIMES = integer;
+    DEFAULT_SORT = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.kz;
       if (long_2 == null) {
@@ -126,23 +137,23 @@ public final class DataReq extends Message {
       } else {
         this.spid = long_2;
       } 
-      Integer integer3 = paramBuilder.pn;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.pn;
+      if (integer4 == null) {
         this.pn = DEFAULT_PN;
       } else {
-        this.pn = integer3;
+        this.pn = integer4;
       } 
-      integer3 = paramBuilder.scr_w;
-      if (integer3 == null) {
+      integer4 = paramBuilder.scr_w;
+      if (integer4 == null) {
         this.scr_w = DEFAULT_SCR_W;
       } else {
-        this.scr_w = integer3;
+        this.scr_w = integer4;
       } 
-      integer3 = paramBuilder.scr_h;
-      if (integer3 == null) {
+      integer4 = paramBuilder.scr_h;
+      if (integer4 == null) {
         this.scr_h = DEFAULT_SCR_H;
       } else {
-        this.scr_h = integer3;
+        this.scr_h = integer4;
       } 
       Double double_ = paramBuilder.scr_dip;
       if (double_ == null) {
@@ -157,11 +168,11 @@ public final class DataReq extends Message {
         this.st_type = str3;
       } 
       this.common = paramBuilder.common;
-      Integer integer2 = paramBuilder.is_comm_reverse;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.is_comm_reverse;
+      if (integer3 == null) {
         this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
       } else {
-        this.is_comm_reverse = integer2;
+        this.is_comm_reverse = integer3;
       } 
       Long long_1 = paramBuilder.forum_id;
       if (long_1 == null) {
@@ -181,11 +192,11 @@ public final class DataReq extends Message {
       } else {
         this.ori_ugc_tid = str2;
       } 
-      Integer integer1 = paramBuilder.ori_ugc_type;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.ori_ugc_type;
+      if (integer2 == null) {
         this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
       } else {
-        this.ori_ugc_type = integer1;
+        this.ori_ugc_type = integer2;
       } 
       String str1 = paramBuilder.ori_ugc_vid;
       if (str1 == null) {
@@ -199,30 +210,44 @@ public final class DataReq extends Message {
       } else {
         this.top_ugc_pid = str1;
       } 
-      integer = paramBuilder.request_times;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.request_times;
+      if (integer1 == null) {
         this.request_times = DEFAULT_REQUEST_TIMES;
       } else {
-        this.request_times = integer;
+        this.request_times = integer1;
+      } 
+      integer1 = paramBuilder.sort;
+      if (integer1 == null) {
+        this.sort = DEFAULT_SORT;
+      } else {
+        this.sort = integer1;
+      } 
+      str = paramBuilder.out_floor_post_ids;
+      if (str == null) {
+        this.out_floor_post_ids = "";
+      } else {
+        this.out_floor_post_ids = str;
       } 
     } else {
-      this.kz = ((Builder)integer).kz;
-      this.pid = ((Builder)integer).pid;
-      this.spid = ((Builder)integer).spid;
-      this.pn = ((Builder)integer).pn;
-      this.scr_w = ((Builder)integer).scr_w;
-      this.scr_h = ((Builder)integer).scr_h;
-      this.scr_dip = ((Builder)integer).scr_dip;
-      this.st_type = ((Builder)integer).st_type;
-      this.common = ((Builder)integer).common;
-      this.is_comm_reverse = ((Builder)integer).is_comm_reverse;
-      this.forum_id = ((Builder)integer).forum_id;
-      this.ori_ugc_nid = ((Builder)integer).ori_ugc_nid;
-      this.ori_ugc_tid = ((Builder)integer).ori_ugc_tid;
-      this.ori_ugc_type = ((Builder)integer).ori_ugc_type;
-      this.ori_ugc_vid = ((Builder)integer).ori_ugc_vid;
-      this.top_ugc_pid = ((Builder)integer).top_ugc_pid;
-      this.request_times = ((Builder)integer).request_times;
+      this.kz = ((Builder)str).kz;
+      this.pid = ((Builder)str).pid;
+      this.spid = ((Builder)str).spid;
+      this.pn = ((Builder)str).pn;
+      this.scr_w = ((Builder)str).scr_w;
+      this.scr_h = ((Builder)str).scr_h;
+      this.scr_dip = ((Builder)str).scr_dip;
+      this.st_type = ((Builder)str).st_type;
+      this.common = ((Builder)str).common;
+      this.is_comm_reverse = ((Builder)str).is_comm_reverse;
+      this.forum_id = ((Builder)str).forum_id;
+      this.ori_ugc_nid = ((Builder)str).ori_ugc_nid;
+      this.ori_ugc_tid = ((Builder)str).ori_ugc_tid;
+      this.ori_ugc_type = ((Builder)str).ori_ugc_type;
+      this.ori_ugc_vid = ((Builder)str).ori_ugc_vid;
+      this.top_ugc_pid = ((Builder)str).top_ugc_pid;
+      this.request_times = ((Builder)str).request_times;
+      this.sort = ((Builder)str).sort;
+      this.out_floor_post_ids = ((Builder)str).out_floor_post_ids;
     } 
   }
   
@@ -243,6 +268,8 @@ public final class DataReq extends Message {
     
     public String ori_ugc_vid;
     
+    public String out_floor_post_ids;
+    
     public Long pid;
     
     public Integer pn;
@@ -254,6 +281,8 @@ public final class DataReq extends Message {
     public Integer scr_h;
     
     public Integer scr_w;
+    
+    public Integer sort;
     
     public Long spid;
     
@@ -284,6 +313,8 @@ public final class DataReq extends Message {
       this.ori_ugc_vid = param1DataReq.ori_ugc_vid;
       this.top_ugc_pid = param1DataReq.top_ugc_pid;
       this.request_times = param1DataReq.request_times;
+      this.sort = param1DataReq.sort;
+      this.out_floor_post_ids = param1DataReq.out_floor_post_ids;
     }
     
     public DataReq build(boolean param1Boolean) {

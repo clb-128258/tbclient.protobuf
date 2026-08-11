@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message SignProgress {
+    int32 checkin_day = 1;
+    int32 total_days = 2;
+    int32 today_done = 3;
+    int32 today_total = 4;
+    int32 today_complete = 5;
+    int32 extra_reward = 6;
+    int32 is_interrupted = 7;
+    int32 interrupt_remain_days = 8;
+    string interrupt_tips = 9;
+    int32 reward_qualify = 10;
+    int32 reward_expire_days = 11;
+    string reward_tips = 12;
+    string reward_guide_text = 13;
+    int64 reward_guide_start_time = 14;
+    string reward_image = 15;
+}

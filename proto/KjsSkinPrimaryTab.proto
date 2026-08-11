@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "KjsSkinSecondaryTab.proto";
+
+message KjsSkinPrimaryTab {
+    string name = 1;
+    repeated KjsSkinSecondaryTab secondary_tabs = 2;
+    uint32 id = 3;
+}

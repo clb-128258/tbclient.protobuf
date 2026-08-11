@@ -12,7 +12,10 @@ import tbclient.BannerList;
 import tbclient.BdtSearchInfo;
 import tbclient.BottomBar;
 import tbclient.BottomGameBar;
+import tbclient.CommentOverlayInfo;
+import tbclient.CommentPublisherConfig;
 import tbclient.FeedKV;
+import tbclient.FloorFoldInfo;
 import tbclient.ForumBotInfo;
 import tbclient.ForumRuleStatus;
 import tbclient.ForumShopGoodsInfo;
@@ -31,6 +34,7 @@ import tbclient.RecomTopicList;
 import tbclient.SimpleForum;
 import tbclient.SpriteShowStrategy;
 import tbclient.TabInfo;
+import tbclient.TailRecommendInfo;
 import tbclient.ThemeColorInfo;
 import tbclient.ThreadAlbumManage;
 import tbclient.ThreadInfo;
@@ -45,6 +49,8 @@ public final class DataRes extends Message {
   public static final List<ThemeColorInfo> DEFAULT_BOTTOM_RESOURCE;
   
   public static final Long DEFAULT_FOLD_COMMENT_NUM;
+  
+  public static final String DEFAULT_FOLD_COMMENT_SHOW_TEXT = "";
   
   public static final String DEFAULT_FOLD_TIP = "";
   
@@ -69,6 +75,8 @@ public final class DataRes extends Message {
   public static final List<FeedKV> DEFAULT_LOG_PARAM;
   
   public static final String DEFAULT_MULTI_FORUM_TEXT = "";
+  
+  public static final String DEFAULT_NO_MORE_SHOW_TEXT = "";
   
   public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
   
@@ -138,6 +146,12 @@ public final class DataRes extends Message {
   @ProtoField(tag = 29)
   public final BreadcrumbNavigation breadcrumb_navigation;
   
+  @ProtoField(tag = 66)
+  public final CommentOverlayInfo comment_overlay_info;
+  
+  @ProtoField(tag = 71)
+  public final CommentPublisherConfig comment_publisher_config;
+  
   @ProtoField(tag = 12)
   public final TabInfo current_tab;
   
@@ -150,8 +164,14 @@ public final class DataRes extends Message {
   @ProtoField(tag = 42)
   public final FloatingIcon floating_icon;
   
+  @ProtoField(tag = 67)
+  public final FloorFoldInfo floor_fold_info;
+  
   @ProtoField(tag = 19, type = Message.Datatype.INT64)
   public final Long fold_comment_num;
+  
+  @ProtoField(tag = 70, type = Message.Datatype.STRING)
+  public final String fold_comment_show_text;
   
   @ProtoField(tag = 14, type = Message.Datatype.STRING)
   public final String fold_tip;
@@ -213,6 +233,9 @@ public final class DataRes extends Message {
   @ProtoField(tag = 53)
   public final MutliAichatBotCard mutli_aichat_bot_card;
   
+  @ProtoField(tag = 69, type = Message.Datatype.STRING)
+  public final String no_more_show_text;
+  
   @ProtoField(tag = 8)
   public final Page page;
   
@@ -266,6 +289,9 @@ public final class DataRes extends Message {
   
   @ProtoField(label = Message.Label.REPEATED, tag = 11)
   public final List<TabInfo> tab_info;
+  
+  @ProtoField(tag = 68)
+  public final TailRecommendInfo tail_recommend_info;
   
   @ProtoField(tag = 1)
   public final ThreadInfo thread;
@@ -359,17 +385,17 @@ public final class DataRes extends Message {
         this.tab_info = Message.immutableCopyOf(list8);
       } 
       this.current_tab = paramBuilder.current_tab;
-      String str4 = paramBuilder.partial_visible_toast;
-      if (str4 == null) {
+      String str5 = paramBuilder.partial_visible_toast;
+      if (str5 == null) {
         this.partial_visible_toast = "";
       } else {
-        this.partial_visible_toast = str4;
+        this.partial_visible_toast = str5;
       } 
-      str4 = paramBuilder.fold_tip;
-      if (str4 == null) {
+      str5 = paramBuilder.fold_tip;
+      if (str5 == null) {
         this.fold_tip = "";
       } else {
-        this.fold_tip = str4;
+        this.fold_tip = str5;
       } 
       Integer integer5 = paramBuilder.is_black_white;
       if (integer5 == null) {
@@ -383,11 +409,11 @@ public final class DataRes extends Message {
       } else {
         this.pb_notice_type = integer5;
       } 
-      String str3 = paramBuilder.pb_notice;
-      if (str3 == null) {
+      String str4 = paramBuilder.pb_notice;
+      if (str4 == null) {
         this.pb_notice = "";
       } else {
-        this.pb_notice = str3;
+        this.pb_notice = str4;
       } 
       Integer integer4 = paramBuilder.has_fold_comment;
       if (integer4 == null) {
@@ -414,11 +440,11 @@ public final class DataRes extends Message {
         this.thread_freq_num = long_1;
       } 
       this.display_forum = paramBuilder.display_forum;
-      String str2 = paramBuilder.multi_forum_text;
-      if (str2 == null) {
+      String str3 = paramBuilder.multi_forum_text;
+      if (str3 == null) {
         this.multi_forum_text = "";
       } else {
-        this.multi_forum_text = str2;
+        this.multi_forum_text = str3;
       } 
       this.banner_list = paramBuilder.banner_list;
       Integer integer3 = paramBuilder.show_adsense;
@@ -457,11 +483,11 @@ public final class DataRes extends Message {
       } 
       this.aichat_bot_card = paramBuilder.aichat_bot_card;
       this.push_feedback_info = paramBuilder.push_feedback_info;
-      String str1 = paramBuilder.return_page;
-      if (str1 == null) {
+      String str2 = paramBuilder.return_page;
+      if (str2 == null) {
         this.return_page = "";
       } else {
-        this.return_page = str1;
+        this.return_page = str2;
       } 
       this.floating_icon = paramBuilder.floating_icon;
       List<RecomTopicList> list5 = paramBuilder.thread_topic;
@@ -532,6 +558,22 @@ public final class DataRes extends Message {
       } 
       this.bottom_game_bar = paramBuilder.bottom_game_bar;
       this.page_guid_tips = paramBuilder.page_guid_tips;
+      this.comment_overlay_info = paramBuilder.comment_overlay_info;
+      this.floor_fold_info = paramBuilder.floor_fold_info;
+      this.tail_recommend_info = paramBuilder.tail_recommend_info;
+      String str1 = paramBuilder.no_more_show_text;
+      if (str1 == null) {
+        this.no_more_show_text = "";
+      } else {
+        this.no_more_show_text = str1;
+      } 
+      str1 = paramBuilder.fold_comment_show_text;
+      if (str1 == null) {
+        this.fold_comment_show_text = "";
+      } else {
+        this.fold_comment_show_text = str1;
+      } 
+      this.comment_publisher_config = paramBuilder.comment_publisher_config;
     } else {
       this.thread = paramBuilder.thread;
       this.forum = paramBuilder.forum;
@@ -598,6 +640,12 @@ public final class DataRes extends Message {
       this.is_exclusive = paramBuilder.is_exclusive;
       this.bottom_game_bar = paramBuilder.bottom_game_bar;
       this.page_guid_tips = paramBuilder.page_guid_tips;
+      this.comment_overlay_info = paramBuilder.comment_overlay_info;
+      this.floor_fold_info = paramBuilder.floor_fold_info;
+      this.tail_recommend_info = paramBuilder.tail_recommend_info;
+      this.no_more_show_text = paramBuilder.no_more_show_text;
+      this.fold_comment_show_text = paramBuilder.fold_comment_show_text;
+      this.comment_publisher_config = paramBuilder.comment_publisher_config;
     } 
   }
   
@@ -630,6 +678,10 @@ public final class DataRes extends Message {
     
     public BreadcrumbNavigation breadcrumb_navigation;
     
+    public CommentOverlayInfo comment_overlay_info;
+    
+    public CommentPublisherConfig comment_publisher_config;
+    
     public TabInfo current_tab;
     
     public SimpleForum display_forum;
@@ -638,7 +690,11 @@ public final class DataRes extends Message {
     
     public FloatingIcon floating_icon;
     
+    public FloorFoldInfo floor_fold_info;
+    
     public Long fold_comment_num;
+    
+    public String fold_comment_show_text;
     
     public String fold_tip;
     
@@ -680,6 +736,8 @@ public final class DataRes extends Message {
     
     public MutliAichatBotCard mutli_aichat_bot_card;
     
+    public String no_more_show_text;
+    
     public Page page;
     
     public PageGuidTips page_guid_tips;
@@ -715,6 +773,8 @@ public final class DataRes extends Message {
     public SpriteShowStrategy sprite_show_strategy;
     
     public List<TabInfo> tab_info;
+    
+    public TailRecommendInfo tail_recommend_info;
     
     public ThreadInfo thread;
     
@@ -803,6 +863,12 @@ public final class DataRes extends Message {
       this.is_exclusive = param1DataRes.is_exclusive;
       this.bottom_game_bar = param1DataRes.bottom_game_bar;
       this.page_guid_tips = param1DataRes.page_guid_tips;
+      this.comment_overlay_info = param1DataRes.comment_overlay_info;
+      this.floor_fold_info = param1DataRes.floor_fold_info;
+      this.tail_recommend_info = param1DataRes.tail_recommend_info;
+      this.no_more_show_text = param1DataRes.no_more_show_text;
+      this.fold_comment_show_text = param1DataRes.fold_comment_show_text;
+      this.comment_publisher_config = param1DataRes.comment_publisher_config;
     }
     
     public DataRes build(boolean param1Boolean) {

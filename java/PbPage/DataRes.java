@@ -13,10 +13,13 @@ import tbclient.BdtSearchInfo;
 import tbclient.BottomBar;
 import tbclient.BottomGameBar;
 import tbclient.BusinessAccountInfo;
+import tbclient.CommentOverlayInfo;
+import tbclient.CommentPublisherConfig;
 import tbclient.EditConfig;
 import tbclient.EditInfo;
 import tbclient.FeedKV;
 import tbclient.FineBannerPb;
+import tbclient.FloorFoldInfo;
 import tbclient.ForumBotInfo;
 import tbclient.ForumRuleStatus;
 import tbclient.ForumShopGoodsInfo;
@@ -49,6 +52,7 @@ import tbclient.SimpleUser;
 import tbclient.SpriteShowStrategy;
 import tbclient.SuggestQuery;
 import tbclient.TabInfo;
+import tbclient.TailRecommendInfo;
 import tbclient.ThemeColorInfo;
 import tbclient.ThreadAlbumManage;
 import tbclient.ThreadInfo;
@@ -78,6 +82,8 @@ public final class DataRes extends Message {
   public static final List<FineBannerPb> DEFAULT_FINE_BANNER;
   
   public static final Long DEFAULT_FOLD_COMMENT_NUM;
+  
+  public static final String DEFAULT_FOLD_COMMENT_SHOW_TEXT = "";
   
   public static final String DEFAULT_FOLD_TIP = "";
   
@@ -114,6 +120,8 @@ public final class DataRes extends Message {
   public static final String DEFAULT_MULTI_FORUM_TEXT = "";
   
   public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER;
+  
+  public static final String DEFAULT_NO_MORE_SHOW_TEXT = "";
   
   public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
   
@@ -225,6 +233,12 @@ public final class DataRes extends Message {
   @ProtoField(tag = 53)
   public final BusinessPromotInfo business_promot_info;
   
+  @ProtoField(tag = 120)
+  public final CommentOverlayInfo comment_overlay_info;
+  
+  @ProtoField(tag = 126)
+  public final CommentPublisherConfig comment_publisher_config;
+  
   @ProtoField(tag = 91)
   public final TabInfo current_tab;
   
@@ -261,8 +275,14 @@ public final class DataRes extends Message {
   @ProtoField(tag = 64)
   public final FloatingIcon floating_icon;
   
+  @ProtoField(tag = 121)
+  public final FloorFoldInfo floor_fold_info;
+  
   @ProtoField(tag = 70, type = Message.Datatype.INT64)
   public final Long fold_comment_num;
+  
+  @ProtoField(tag = 124, type = Message.Datatype.STRING)
+  public final String fold_comment_show_text;
   
   @ProtoField(tag = 44, type = Message.Datatype.STRING)
   public final String fold_tip;
@@ -369,6 +389,9 @@ public final class DataRes extends Message {
   @ProtoField(tag = 15)
   public final NewsInfo news_info;
   
+  @ProtoField(tag = 123, type = Message.Datatype.STRING)
+  public final String no_more_show_text;
+  
   @ProtoField(tag = 3)
   public final Page page;
   
@@ -470,6 +493,9 @@ public final class DataRes extends Message {
   
   @ProtoField(label = Message.Label.REPEATED, tag = 90)
   public final List<TabInfo> tab_info;
+  
+  @ProtoField(tag = 122)
+  public final TailRecommendInfo tail_recommend_info;
   
   @ProtoField(tag = 8)
   public final ThreadInfo thread;
@@ -923,6 +949,22 @@ public final class DataRes extends Message {
       this.ai_game_info = paramBuilder.ai_game_info;
       this.bottom_game_bar = paramBuilder.bottom_game_bar;
       this.page_guid_tips = paramBuilder.page_guid_tips;
+      this.comment_overlay_info = paramBuilder.comment_overlay_info;
+      this.floor_fold_info = paramBuilder.floor_fold_info;
+      this.tail_recommend_info = paramBuilder.tail_recommend_info;
+      str1 = paramBuilder.no_more_show_text;
+      if (str1 == null) {
+        this.no_more_show_text = "";
+      } else {
+        this.no_more_show_text = str1;
+      } 
+      str1 = paramBuilder.fold_comment_show_text;
+      if (str1 == null) {
+        this.fold_comment_show_text = "";
+      } else {
+        this.fold_comment_show_text = str1;
+      } 
+      this.comment_publisher_config = paramBuilder.comment_publisher_config;
     } else {
       this.user = paramBuilder.user;
       this.forum = paramBuilder.forum;
@@ -1039,6 +1081,12 @@ public final class DataRes extends Message {
       this.ai_game_info = paramBuilder.ai_game_info;
       this.bottom_game_bar = paramBuilder.bottom_game_bar;
       this.page_guid_tips = paramBuilder.page_guid_tips;
+      this.comment_overlay_info = paramBuilder.comment_overlay_info;
+      this.floor_fold_info = paramBuilder.floor_fold_info;
+      this.tail_recommend_info = paramBuilder.tail_recommend_info;
+      this.no_more_show_text = paramBuilder.no_more_show_text;
+      this.fold_comment_show_text = paramBuilder.fold_comment_show_text;
+      this.comment_publisher_config = paramBuilder.comment_publisher_config;
     } 
   }
   
@@ -1087,6 +1135,10 @@ public final class DataRes extends Message {
     
     public BusinessPromotInfo business_promot_info;
     
+    public CommentOverlayInfo comment_overlay_info;
+    
+    public CommentPublisherConfig comment_publisher_config;
+    
     public TabInfo current_tab;
     
     public SimpleForum display_forum;
@@ -1111,7 +1163,11 @@ public final class DataRes extends Message {
     
     public FloatingIcon floating_icon;
     
+    public FloorFoldInfo floor_fold_info;
+    
     public Long fold_comment_num;
+    
+    public String fold_comment_show_text;
     
     public String fold_tip;
     
@@ -1183,6 +1239,8 @@ public final class DataRes extends Message {
     
     public NewsInfo news_info;
     
+    public String no_more_show_text;
+    
     public Page page;
     
     public PageGuidTips page_guid_tips;
@@ -1250,6 +1308,8 @@ public final class DataRes extends Message {
     public Integer switch_read_open;
     
     public List<TabInfo> tab_info;
+    
+    public TailRecommendInfo tail_recommend_info;
     
     public ThreadInfo thread;
     
@@ -1394,6 +1454,12 @@ public final class DataRes extends Message {
       this.ai_game_info = param1DataRes.ai_game_info;
       this.bottom_game_bar = param1DataRes.bottom_game_bar;
       this.page_guid_tips = param1DataRes.page_guid_tips;
+      this.comment_overlay_info = param1DataRes.comment_overlay_info;
+      this.floor_fold_info = param1DataRes.floor_fold_info;
+      this.tail_recommend_info = param1DataRes.tail_recommend_info;
+      this.no_more_show_text = param1DataRes.no_more_show_text;
+      this.fold_comment_show_text = param1DataRes.fold_comment_show_text;
+      this.comment_publisher_config = param1DataRes.comment_publisher_config;
     }
     
     public DataRes build(boolean param1Boolean) {

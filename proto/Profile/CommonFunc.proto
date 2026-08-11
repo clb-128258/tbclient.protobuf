@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "Profile/SignProgress.proto";
+import "Profile/UserTask.proto";
+
 message CommonFunc {
     string type = 1;
     string name = 2;
@@ -14,4 +17,8 @@ message CommonFunc {
     int32 need_filter = 11;
     string ios_schema = 12;
     int32 task_page_sign_status = 13;
+    UserTask user_task = 14;
+    string short_name = 15;
+    string short_slogan = 16;
+    SignProgress sign_progress = 17;
 }

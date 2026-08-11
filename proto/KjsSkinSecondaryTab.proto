@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "KjsSkinGroup.proto";
+
+message KjsSkinSecondaryTab {
+    string name = 1;
+    uint32 has_more = 2;
+    repeated KjsSkinGroup skin_groups = 3;
+    uint32 id = 4;
+}

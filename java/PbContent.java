@@ -22,6 +22,8 @@ public final class PbContent extends Message {
   
   public static final Integer DEFAULT_COUNT;
   
+  public static final Integer DEFAULT_CROP_MODE;
+  
   public static final Integer DEFAULT_DURING_TIME;
   
   public static final String DEFAULT_DYNAMIC = "";
@@ -67,6 +69,8 @@ public final class PbContent extends Message {
   public static final String DEFAULT_QUERY_PREFIX = "";
   
   public static final String DEFAULT_QUERY_TEXT = "";
+  
+  public static final String DEFAULT_SCHEME = "";
   
   public static final Integer DEFAULT_SEARCH_TYPE;
   
@@ -121,6 +125,9 @@ public final class PbContent extends Message {
   
   @ProtoField(tag = 28, type = Message.Datatype.INT32)
   public final Integer count;
+  
+  @ProtoField(tag = 53, type = Message.Datatype.UINT32)
+  public final Integer crop_mode;
   
   @ProtoField(tag = 13, type = Message.Datatype.UINT32)
   public final Integer during_time;
@@ -206,6 +213,9 @@ public final class PbContent extends Message {
   @ProtoField(tag = 46, type = Message.Datatype.STRING)
   public final String query_text;
   
+  @ProtoField(tag = 54, type = Message.Datatype.STRING)
+  public final String scheme;
+  
   @ProtoField(tag = 51, type = Message.Datatype.INT32)
   public final Integer search_type;
   
@@ -270,11 +280,12 @@ public final class PbContent extends Message {
     DEFAULT_LINK_TYPE = integer;
     DEFAULT_SEARCH_TYPE = integer;
     DEFAULT_IS_BOT = integer;
+    DEFAULT_CROP_MODE = integer;
   }
   
   public PbContent(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       Integer integer8 = paramBuilder.type;
       if (integer8 == null) {
@@ -542,65 +553,79 @@ public final class PbContent extends Message {
       } else {
         this.search_type = integer1;
       } 
-      integer = paramBuilder.is_bot;
-      if (integer == null) {
+      integer1 = paramBuilder.is_bot;
+      if (integer1 == null) {
         this.is_bot = DEFAULT_IS_BOT;
       } else {
-        this.is_bot = integer;
+        this.is_bot = integer1;
+      } 
+      integer1 = paramBuilder.crop_mode;
+      if (integer1 == null) {
+        this.crop_mode = DEFAULT_CROP_MODE;
+      } else {
+        this.crop_mode = integer1;
+      } 
+      str = paramBuilder.scheme;
+      if (str == null) {
+        this.scheme = "";
+      } else {
+        this.scheme = str;
       } 
     } else {
-      this.type = ((Builder)integer).type;
-      this.text = ((Builder)integer).text;
-      this.link = ((Builder)integer).link;
-      this.src = ((Builder)integer).src;
-      this.bsize = ((Builder)integer).bsize;
-      this.big_src = ((Builder)integer).big_src;
-      this.big_size = ((Builder)integer).big_size;
-      this.cdn_src = ((Builder)integer).cdn_src;
-      this.big_cdn_src = ((Builder)integer).big_cdn_src;
-      this.imgtype = ((Builder)integer).imgtype;
-      this.c = ((Builder)integer).c;
-      this.voice_md5 = ((Builder)integer).voice_md5;
-      this.during_time = ((Builder)integer).during_time;
-      this.is_sub = ((Builder)integer).is_sub;
-      this.uid = ((Builder)integer).uid;
-      this.dynamic = ((Builder)integer).dynamic;
-      this._static = ((Builder)integer)._static;
-      this.width = ((Builder)integer).width;
-      this.height = ((Builder)integer).height;
-      this.packet_name = ((Builder)integer).packet_name;
-      this.phonetype = ((Builder)integer).phonetype;
-      this.is_native_app = ((Builder)integer).is_native_app;
-      this.native_app = ((Builder)integer).native_app;
-      this.e_type = ((Builder)integer).e_type;
-      this.origin_src = ((Builder)integer).origin_src;
-      this.btn_type = ((Builder)integer).btn_type;
-      this.origin_size = ((Builder)integer).origin_size;
-      this.count = ((Builder)integer).count;
-      this.graffiti_info = ((Builder)integer).graffiti_info;
-      this.high_together = ((Builder)integer).high_together;
-      this.media_subtitle = ((Builder)integer).media_subtitle;
-      this.url_type = ((Builder)integer).url_type;
-      this.meme_info = ((Builder)integer).meme_info;
-      this.is_long_pic = ((Builder)integer).is_long_pic;
-      this.show_original_btn = ((Builder)integer).show_original_btn;
-      this.cdn_src_active = ((Builder)integer).cdn_src_active;
-      this.topic_special_icon = ((Builder)integer).topic_special_icon;
-      this.item_id = ((Builder)integer).item_id;
-      this.item_forum_name = ((Builder)integer).item_forum_name;
-      this.tiebaplus_info = ((Builder)integer).tiebaplus_info;
-      this.item = ((Builder)integer).item;
-      this.pic_id = ((Builder)integer).pic_id;
-      this.link_type = ((Builder)integer).link_type;
-      this.target_scheme = ((Builder)integer).target_scheme;
-      this.text_plugin = ((Builder)integer).text_plugin;
-      this.query_text = ((Builder)integer).query_text;
-      this.query_prefix = ((Builder)integer).query_prefix;
-      this.icon = ((Builder)integer).icon;
-      this.portrait = ((Builder)integer).portrait;
-      this.theme_color = ((Builder)integer).theme_color;
-      this.search_type = ((Builder)integer).search_type;
-      this.is_bot = ((Builder)integer).is_bot;
+      this.type = ((Builder)str).type;
+      this.text = ((Builder)str).text;
+      this.link = ((Builder)str).link;
+      this.src = ((Builder)str).src;
+      this.bsize = ((Builder)str).bsize;
+      this.big_src = ((Builder)str).big_src;
+      this.big_size = ((Builder)str).big_size;
+      this.cdn_src = ((Builder)str).cdn_src;
+      this.big_cdn_src = ((Builder)str).big_cdn_src;
+      this.imgtype = ((Builder)str).imgtype;
+      this.c = ((Builder)str).c;
+      this.voice_md5 = ((Builder)str).voice_md5;
+      this.during_time = ((Builder)str).during_time;
+      this.is_sub = ((Builder)str).is_sub;
+      this.uid = ((Builder)str).uid;
+      this.dynamic = ((Builder)str).dynamic;
+      this._static = ((Builder)str)._static;
+      this.width = ((Builder)str).width;
+      this.height = ((Builder)str).height;
+      this.packet_name = ((Builder)str).packet_name;
+      this.phonetype = ((Builder)str).phonetype;
+      this.is_native_app = ((Builder)str).is_native_app;
+      this.native_app = ((Builder)str).native_app;
+      this.e_type = ((Builder)str).e_type;
+      this.origin_src = ((Builder)str).origin_src;
+      this.btn_type = ((Builder)str).btn_type;
+      this.origin_size = ((Builder)str).origin_size;
+      this.count = ((Builder)str).count;
+      this.graffiti_info = ((Builder)str).graffiti_info;
+      this.high_together = ((Builder)str).high_together;
+      this.media_subtitle = ((Builder)str).media_subtitle;
+      this.url_type = ((Builder)str).url_type;
+      this.meme_info = ((Builder)str).meme_info;
+      this.is_long_pic = ((Builder)str).is_long_pic;
+      this.show_original_btn = ((Builder)str).show_original_btn;
+      this.cdn_src_active = ((Builder)str).cdn_src_active;
+      this.topic_special_icon = ((Builder)str).topic_special_icon;
+      this.item_id = ((Builder)str).item_id;
+      this.item_forum_name = ((Builder)str).item_forum_name;
+      this.tiebaplus_info = ((Builder)str).tiebaplus_info;
+      this.item = ((Builder)str).item;
+      this.pic_id = ((Builder)str).pic_id;
+      this.link_type = ((Builder)str).link_type;
+      this.target_scheme = ((Builder)str).target_scheme;
+      this.text_plugin = ((Builder)str).text_plugin;
+      this.query_text = ((Builder)str).query_text;
+      this.query_prefix = ((Builder)str).query_prefix;
+      this.icon = ((Builder)str).icon;
+      this.portrait = ((Builder)str).portrait;
+      this.theme_color = ((Builder)str).theme_color;
+      this.search_type = ((Builder)str).search_type;
+      this.is_bot = ((Builder)str).is_bot;
+      this.crop_mode = ((Builder)str).crop_mode;
+      this.scheme = ((Builder)str).scheme;
     } 
   }
   
@@ -624,6 +649,8 @@ public final class PbContent extends Message {
     public String cdn_src_active;
     
     public Integer count;
+    
+    public Integer crop_mode;
     
     public Integer during_time;
     
@@ -680,6 +707,8 @@ public final class PbContent extends Message {
     public String query_prefix;
     
     public String query_text;
+    
+    public String scheme;
     
     public Integer search_type;
     
@@ -767,6 +796,8 @@ public final class PbContent extends Message {
       this.theme_color = param1PbContent.theme_color;
       this.search_type = param1PbContent.search_type;
       this.is_bot = param1PbContent.is_bot;
+      this.crop_mode = param1PbContent.crop_mode;
+      this.scheme = param1PbContent.scheme;
     }
     
     public PbContent build(boolean param1Boolean) {

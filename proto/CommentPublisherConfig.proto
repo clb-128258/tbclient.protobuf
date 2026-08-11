@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "PbPublisherBtnsConfig.proto";
+
+message CommentPublisherConfig {
+    repeated PbPublisherBtnsConfig bottom_btns = 1;
+    repeated PbPublisherBtnsConfig comment_btns = 2;
+}

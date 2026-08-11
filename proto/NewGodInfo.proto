@@ -1,9 +1,14 @@
 syntax = "proto3";
 
+import "ForumInfo.proto";
+
 message NewGodInfo {
     int32 status = 1;
     uint32 field_id = 2;
     string field_name = 3;
     uint32 type = 4;
     string type_name = 5;
+    string corner_url = 6;
+    repeated ForumInfo forum_list = 7;
+    uint32 new_god_type = 8;
 }

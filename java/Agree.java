@@ -19,6 +19,9 @@ public final class Agree extends Message {
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long agree_num;
   
+  @ProtoField(tag = 7)
+  public final ThemeColorInfo agree_resource;
+  
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer agree_type;
   
@@ -47,7 +50,6 @@ public final class Agree extends Message {
   
   public Agree(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.agree_num;
       if (long_2 == null) {
@@ -55,17 +57,17 @@ public final class Agree extends Message {
       } else {
         this.agree_num = long_2;
       } 
-      Integer integer1 = paramBuilder.has_agree;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.has_agree;
+      if (integer2 == null) {
         this.has_agree = DEFAULT_HAS_AGREE;
       } else {
-        this.has_agree = integer1;
+        this.has_agree = integer2;
       } 
-      integer1 = paramBuilder.agree_type;
-      if (integer1 == null) {
+      integer2 = paramBuilder.agree_type;
+      if (integer2 == null) {
         this.agree_type = DEFAULT_AGREE_TYPE;
       } else {
-        this.agree_type = integer1;
+        this.agree_type = integer2;
       } 
       Long long_1 = paramBuilder.disagree_num;
       if (long_1 == null) {
@@ -79,24 +81,28 @@ public final class Agree extends Message {
       } else {
         this.diff_agree_num = long_1;
       } 
-      integer = paramBuilder.lz_agree;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.lz_agree;
+      if (integer1 == null) {
         this.lz_agree = DEFAULT_LZ_AGREE;
       } else {
-        this.lz_agree = integer;
+        this.lz_agree = integer1;
       } 
+      this.agree_resource = paramBuilder.agree_resource;
     } else {
-      this.agree_num = ((Builder)integer).agree_num;
-      this.has_agree = ((Builder)integer).has_agree;
-      this.agree_type = ((Builder)integer).agree_type;
-      this.disagree_num = ((Builder)integer).disagree_num;
-      this.diff_agree_num = ((Builder)integer).diff_agree_num;
-      this.lz_agree = ((Builder)integer).lz_agree;
+      this.agree_num = paramBuilder.agree_num;
+      this.has_agree = paramBuilder.has_agree;
+      this.agree_type = paramBuilder.agree_type;
+      this.disagree_num = paramBuilder.disagree_num;
+      this.diff_agree_num = paramBuilder.diff_agree_num;
+      this.lz_agree = paramBuilder.lz_agree;
+      this.agree_resource = paramBuilder.agree_resource;
     } 
   }
   
   public static final class Builder extends Message.Builder<Agree> {
     public Long agree_num;
+    
+    public ThemeColorInfo agree_resource;
     
     public Integer agree_type;
     
@@ -120,6 +126,7 @@ public final class Agree extends Message {
       this.disagree_num = param1Agree.disagree_num;
       this.diff_agree_num = param1Agree.diff_agree_num;
       this.lz_agree = param1Agree.lz_agree;
+      this.agree_resource = param1Agree.agree_resource;
     }
     
     public Agree build(boolean param1Boolean) {

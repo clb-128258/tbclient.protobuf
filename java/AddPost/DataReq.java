@@ -99,6 +99,8 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_REAL_LNG = "";
   
+  public static final Long DEFAULT_REPLY_AUTHOR_STATUS_TAG_ID;
+  
   public static final String DEFAULT_REPLY_UID = "";
   
   public static final String DEFAULT_REPOSTID = "";
@@ -303,6 +305,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 57, type = Message.Datatype.STRING)
   public final String real_lng;
   
+  @ProtoField(tag = 79, type = Message.Datatype.UINT64)
+  public final Long reply_author_status_tag_id;
+  
   @ProtoField(tag = 20, type = Message.Datatype.STRING)
   public final String reply_uid;
   
@@ -404,6 +409,7 @@ public final class DataReq extends Message {
     DEFAULT_SCORE = integer;
     DEFAULT_WITH_TAIL = integer;
     DEFAULT_GOODS_ID = long_;
+    DEFAULT_REPLY_AUTHOR_STATUS_TAG_ID = long_;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
@@ -825,23 +831,23 @@ public final class DataReq extends Message {
       } else {
         this.sprite_meme_query = str3;
       } 
-      Long long_1 = paramBuilder.activity_product_id;
-      if (long_1 == null) {
+      Long long_2 = paramBuilder.activity_product_id;
+      if (long_2 == null) {
         this.activity_product_id = DEFAULT_ACTIVITY_PRODUCT_ID;
       } else {
-        this.activity_product_id = long_1;
+        this.activity_product_id = long_2;
       } 
-      long_1 = paramBuilder.activity_business_id;
-      if (long_1 == null) {
+      long_2 = paramBuilder.activity_business_id;
+      if (long_2 == null) {
         this.activity_business_id = DEFAULT_ACTIVITY_BUSINESS_ID;
       } else {
-        this.activity_business_id = long_1;
+        this.activity_business_id = long_2;
       } 
-      long_1 = paramBuilder.score_id;
-      if (long_1 == null) {
+      long_2 = paramBuilder.score_id;
+      if (long_2 == null) {
         this.score_id = DEFAULT_SCORE_ID;
       } else {
-        this.score_id = long_1;
+        this.score_id = long_2;
       } 
       String str2 = paramBuilder.score_name;
       if (str2 == null) {
@@ -867,11 +873,17 @@ public final class DataReq extends Message {
       } else {
         this.tag_info = str1;
       } 
-      long_ = paramBuilder.goods_id;
-      if (long_ == null) {
+      Long long_1 = paramBuilder.goods_id;
+      if (long_1 == null) {
         this.goods_id = DEFAULT_GOODS_ID;
       } else {
-        this.goods_id = long_;
+        this.goods_id = long_1;
+      } 
+      long_ = paramBuilder.reply_author_status_tag_id;
+      if (long_ == null) {
+        this.reply_author_status_tag_id = DEFAULT_REPLY_AUTHOR_STATUS_TAG_ID;
+      } else {
+        this.reply_author_status_tag_id = long_;
       } 
     } else {
       this.common = ((Builder)long_).common;
@@ -952,6 +964,7 @@ public final class DataReq extends Message {
       this.with_tail = ((Builder)long_).with_tail;
       this.tag_info = ((Builder)long_).tag_info;
       this.goods_id = ((Builder)long_).goods_id;
+      this.reply_author_status_tag_id = ((Builder)long_).reply_author_status_tag_id;
     } 
   }
   
@@ -1051,6 +1064,8 @@ public final class DataReq extends Message {
     public String real_lat;
     
     public String real_lng;
+    
+    public Long reply_author_status_tag_id;
     
     public String reply_uid;
     
@@ -1196,6 +1211,7 @@ public final class DataReq extends Message {
       this.with_tail = param1DataReq.with_tail;
       this.tag_info = param1DataReq.tag_info;
       this.goods_id = param1DataReq.goods_id;
+      this.reply_author_status_tag_id = param1DataReq.reply_author_status_tag_id;
     }
     
     public DataReq build(boolean param1Boolean) {

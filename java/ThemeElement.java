@@ -2,8 +2,14 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 
 public final class ThemeElement extends Message {
+  public static final String DEFAULT_ANIMATION_URL = "";
+  
+  public static final String DEFAULT_ASSIST_ANIMATION_URL = "";
+  
   public static final String DEFAULT_COMMON_COLOR = "";
   
   public static final Integer DEFAULT_COVER_TYPE;
@@ -13,6 +19,8 @@ public final class ThemeElement extends Message {
   public static final String DEFAULT_FONT_COLOR = "";
   
   public static final String DEFAULT_LIGHT_COLOR = "";
+  
+  public static final List<String> DEFAULT_LONG_CLICK_ANIMATION_URLS;
   
   public static final String DEFAULT_PATTERN_IMAGE = "";
   
@@ -28,7 +36,17 @@ public final class ThemeElement extends Message {
   
   public static final String DEFAULT_PATTERN_TEXT = "";
   
+  public static final String DEFAULT_SCHEMA = "";
+  
+  public static final Integer DEFAULT_SUPPORT_LONG_CLICK;
+  
   public static final Integer DEFAULT_TYPE;
+  
+  @ProtoField(tag = 14, type = Message.Datatype.STRING)
+  public final String animation_url;
+  
+  @ProtoField(tag = 15, type = Message.Datatype.STRING)
+  public final String assist_animation_url;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String common_color;
@@ -44,6 +62,9 @@ public final class ThemeElement extends Message {
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String light_color;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 17, type = Message.Datatype.STRING)
+  public final List<String> long_click_animation_urls;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String pattern_image;
@@ -66,6 +87,12 @@ public final class ThemeElement extends Message {
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String pattern_text;
   
+  @ProtoField(tag = 18, type = Message.Datatype.STRING)
+  public final String schema;
+  
+  @ProtoField(tag = 16, type = Message.Datatype.INT32)
+  public final Integer support_long_click;
+  
   @ProtoField(tag = 9, type = Message.Datatype.INT32)
   public final Integer type;
   
@@ -77,41 +104,43 @@ public final class ThemeElement extends Message {
     DEFAULT_TYPE = integer;
     DEFAULT_PATTERN_NUM = integer;
     DEFAULT_COVER_TYPE = integer;
+    DEFAULT_SUPPORT_LONG_CLICK = integer;
+    DEFAULT_LONG_CLICK_ANIMATION_URLS = Collections.emptyList();
   }
   
   public ThemeElement(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
-      String str3 = paramBuilder.common_color;
-      if (str3 == null) {
+      String str4 = paramBuilder.common_color;
+      if (str4 == null) {
         this.common_color = "";
       } else {
-        this.common_color = str3;
+        this.common_color = str4;
       } 
-      str3 = paramBuilder.dark_color;
-      if (str3 == null) {
+      str4 = paramBuilder.dark_color;
+      if (str4 == null) {
         this.dark_color = "";
       } else {
-        this.dark_color = str3;
+        this.dark_color = str4;
       } 
-      str3 = paramBuilder.light_color;
-      if (str3 == null) {
+      str4 = paramBuilder.light_color;
+      if (str4 == null) {
         this.light_color = "";
       } else {
-        this.light_color = str3;
+        this.light_color = str4;
       } 
-      str3 = paramBuilder.pattern_image;
-      if (str3 == null) {
+      str4 = paramBuilder.pattern_image;
+      if (str4 == null) {
         this.pattern_image = "";
       } else {
-        this.pattern_image = str3;
+        this.pattern_image = str4;
       } 
-      str3 = paramBuilder.font_color;
-      if (str3 == null) {
+      str4 = paramBuilder.font_color;
+      if (str4 == null) {
         this.font_color = "";
       } else {
-        this.font_color = str3;
+        this.font_color = str4;
       } 
       Long long_ = paramBuilder.pattern_image_height;
       if (long_ == null) {
@@ -125,60 +154,99 @@ public final class ThemeElement extends Message {
       } else {
         this.pattern_image_width = long_;
       } 
-      String str2 = paramBuilder.pattern_text;
-      if (str2 == null) {
+      String str3 = paramBuilder.pattern_text;
+      if (str3 == null) {
         this.pattern_text = "";
       } else {
-        this.pattern_text = str2;
+        this.pattern_text = str3;
       } 
-      Integer integer1 = paramBuilder.type;
-      if (integer1 == null) {
+      Integer integer3 = paramBuilder.type;
+      if (integer3 == null) {
         this.type = DEFAULT_TYPE;
       } else {
-        this.type = integer1;
+        this.type = integer3;
       } 
-      integer1 = paramBuilder.pattern_num;
-      if (integer1 == null) {
+      integer3 = paramBuilder.pattern_num;
+      if (integer3 == null) {
         this.pattern_num = DEFAULT_PATTERN_NUM;
       } else {
-        this.pattern_num = integer1;
+        this.pattern_num = integer3;
       } 
-      String str1 = paramBuilder.pattern_image_select;
-      if (str1 == null) {
+      String str2 = paramBuilder.pattern_image_select;
+      if (str2 == null) {
         this.pattern_image_select = "";
       } else {
-        this.pattern_image_select = str1;
+        this.pattern_image_select = str2;
       } 
-      str1 = paramBuilder.pattern_image_not_selected;
-      if (str1 == null) {
+      str2 = paramBuilder.pattern_image_not_selected;
+      if (str2 == null) {
         this.pattern_image_not_selected = "";
       } else {
-        this.pattern_image_not_selected = str1;
+        this.pattern_image_not_selected = str2;
       } 
-      integer = paramBuilder.cover_type;
-      if (integer == null) {
+      Integer integer2 = paramBuilder.cover_type;
+      if (integer2 == null) {
         this.cover_type = DEFAULT_COVER_TYPE;
       } else {
-        this.cover_type = integer;
+        this.cover_type = integer2;
+      } 
+      String str1 = paramBuilder.animation_url;
+      if (str1 == null) {
+        this.animation_url = "";
+      } else {
+        this.animation_url = str1;
+      } 
+      str1 = paramBuilder.assist_animation_url;
+      if (str1 == null) {
+        this.assist_animation_url = "";
+      } else {
+        this.assist_animation_url = str1;
+      } 
+      Integer integer1 = paramBuilder.support_long_click;
+      if (integer1 == null) {
+        this.support_long_click = DEFAULT_SUPPORT_LONG_CLICK;
+      } else {
+        this.support_long_click = integer1;
+      } 
+      List<String> list = paramBuilder.long_click_animation_urls;
+      if (list == null) {
+        this.long_click_animation_urls = DEFAULT_LONG_CLICK_ANIMATION_URLS;
+      } else {
+        this.long_click_animation_urls = Message.immutableCopyOf(list);
+      } 
+      str = paramBuilder.schema;
+      if (str == null) {
+        this.schema = "";
+      } else {
+        this.schema = str;
       } 
     } else {
-      this.common_color = ((Builder)integer).common_color;
-      this.dark_color = ((Builder)integer).dark_color;
-      this.light_color = ((Builder)integer).light_color;
-      this.pattern_image = ((Builder)integer).pattern_image;
-      this.font_color = ((Builder)integer).font_color;
-      this.pattern_image_height = ((Builder)integer).pattern_image_height;
-      this.pattern_image_width = ((Builder)integer).pattern_image_width;
-      this.pattern_text = ((Builder)integer).pattern_text;
-      this.type = ((Builder)integer).type;
-      this.pattern_num = ((Builder)integer).pattern_num;
-      this.pattern_image_select = ((Builder)integer).pattern_image_select;
-      this.pattern_image_not_selected = ((Builder)integer).pattern_image_not_selected;
-      this.cover_type = ((Builder)integer).cover_type;
+      this.common_color = ((Builder)str).common_color;
+      this.dark_color = ((Builder)str).dark_color;
+      this.light_color = ((Builder)str).light_color;
+      this.pattern_image = ((Builder)str).pattern_image;
+      this.font_color = ((Builder)str).font_color;
+      this.pattern_image_height = ((Builder)str).pattern_image_height;
+      this.pattern_image_width = ((Builder)str).pattern_image_width;
+      this.pattern_text = ((Builder)str).pattern_text;
+      this.type = ((Builder)str).type;
+      this.pattern_num = ((Builder)str).pattern_num;
+      this.pattern_image_select = ((Builder)str).pattern_image_select;
+      this.pattern_image_not_selected = ((Builder)str).pattern_image_not_selected;
+      this.cover_type = ((Builder)str).cover_type;
+      this.animation_url = ((Builder)str).animation_url;
+      this.assist_animation_url = ((Builder)str).assist_animation_url;
+      this.support_long_click = ((Builder)str).support_long_click;
+      this.long_click_animation_urls = Message.immutableCopyOf(((Builder)str).long_click_animation_urls);
+      this.schema = ((Builder)str).schema;
     } 
   }
   
   public static final class Builder extends Message.Builder<ThemeElement> {
+    public String animation_url;
+    
+    public String assist_animation_url;
+    
     public String common_color;
     
     public Integer cover_type;
@@ -188,6 +256,8 @@ public final class ThemeElement extends Message {
     public String font_color;
     
     public String light_color;
+    
+    public List<String> long_click_animation_urls;
     
     public String pattern_image;
     
@@ -202,6 +272,10 @@ public final class ThemeElement extends Message {
     public Integer pattern_num;
     
     public String pattern_text;
+    
+    public String schema;
+    
+    public Integer support_long_click;
     
     public Integer type;
     
@@ -224,6 +298,11 @@ public final class ThemeElement extends Message {
       this.pattern_image_select = param1ThemeElement.pattern_image_select;
       this.pattern_image_not_selected = param1ThemeElement.pattern_image_not_selected;
       this.cover_type = param1ThemeElement.cover_type;
+      this.animation_url = param1ThemeElement.animation_url;
+      this.assist_animation_url = param1ThemeElement.assist_animation_url;
+      this.support_long_click = param1ThemeElement.support_long_click;
+      this.long_click_animation_urls = Message.copyOf(param1ThemeElement.long_click_animation_urls);
+      this.schema = param1ThemeElement.schema;
     }
     
     public ThemeElement build(boolean param1Boolean) {

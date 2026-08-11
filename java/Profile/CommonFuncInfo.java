@@ -11,6 +11,8 @@ public final class CommonFuncInfo extends Message {
   
   public static final List<CommonFunc> DEFAULT_COMMON_FUNC_OTHER = Collections.emptyList();
   
+  public static final List<CommonFunc> DEFAULT_COMMON_FUNC_OTHER_NEW;
+  
   public static final List<FeedKV> DEFAULT_LOG_PARAM = Collections.emptyList();
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -19,35 +21,49 @@ public final class CommonFuncInfo extends Message {
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<CommonFunc> common_func_other;
   
+  @ProtoField(label = Message.Label.REPEATED, tag = 4)
+  public final List<CommonFunc> common_func_other_new;
+  
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<FeedKV> log_param;
   
+  static {
+    DEFAULT_COMMON_FUNC_OTHER_NEW = Collections.emptyList();
+  }
+  
   public CommonFuncInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    List<FeedKV> list;
+    List<CommonFunc> list;
     if (paramBoolean == true) {
-      List<CommonFunc> list1 = paramBuilder.common_func_noraml;
-      if (list1 == null) {
+      List<CommonFunc> list2 = paramBuilder.common_func_noraml;
+      if (list2 == null) {
         this.common_func_noraml = DEFAULT_COMMON_FUNC_NORAML;
       } else {
-        this.common_func_noraml = Message.immutableCopyOf(list1);
+        this.common_func_noraml = Message.immutableCopyOf(list2);
       } 
-      list1 = paramBuilder.common_func_other;
-      if (list1 == null) {
+      list2 = paramBuilder.common_func_other;
+      if (list2 == null) {
         this.common_func_other = DEFAULT_COMMON_FUNC_OTHER;
       } else {
-        this.common_func_other = Message.immutableCopyOf(list1);
+        this.common_func_other = Message.immutableCopyOf(list2);
       } 
-      list = paramBuilder.log_param;
-      if (list == null) {
+      List<FeedKV> list1 = paramBuilder.log_param;
+      if (list1 == null) {
         this.log_param = DEFAULT_LOG_PARAM;
       } else {
-        this.log_param = Message.immutableCopyOf(list);
+        this.log_param = Message.immutableCopyOf(list1);
+      } 
+      list = paramBuilder.common_func_other_new;
+      if (list == null) {
+        this.common_func_other_new = DEFAULT_COMMON_FUNC_OTHER_NEW;
+      } else {
+        this.common_func_other_new = Message.immutableCopyOf(list);
       } 
     } else {
       this.common_func_noraml = Message.immutableCopyOf(((Builder)list).common_func_noraml);
       this.common_func_other = Message.immutableCopyOf(((Builder)list).common_func_other);
       this.log_param = Message.immutableCopyOf(((Builder)list).log_param);
+      this.common_func_other_new = Message.immutableCopyOf(((Builder)list).common_func_other_new);
     } 
   }
   
@@ -55,6 +71,8 @@ public final class CommonFuncInfo extends Message {
     public List<CommonFunc> common_func_noraml;
     
     public List<CommonFunc> common_func_other;
+    
+    public List<CommonFunc> common_func_other_new;
     
     public List<FeedKV> log_param;
     
@@ -67,6 +85,7 @@ public final class CommonFuncInfo extends Message {
       this.common_func_noraml = Message.copyOf(param1CommonFuncInfo.common_func_noraml);
       this.common_func_other = Message.copyOf(param1CommonFuncInfo.common_func_other);
       this.log_param = Message.copyOf(param1CommonFuncInfo.log_param);
+      this.common_func_other_new = Message.copyOf(param1CommonFuncInfo.common_func_other_new);
     }
     
     public CommonFuncInfo build(boolean param1Boolean) {

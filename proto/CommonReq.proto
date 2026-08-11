@@ -86,4 +86,5 @@ message CommonReq {
     string hm_needmp = 86;
     string support_image = 87;
     string package_version = 88;
+    string abtest_config_intervention = 89;
 }

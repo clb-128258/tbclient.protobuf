@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message GuideInfo {
+    string default_text = 1;
+    string poll_pros_text = 2;
+    string poll_cons_text = 3;
+}

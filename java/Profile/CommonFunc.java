@@ -20,6 +20,10 @@ public final class CommonFunc extends Message {
   
   public static final Long DEFAULT_SCORE;
   
+  public static final String DEFAULT_SHORT_NAME = "";
+  
+  public static final String DEFAULT_SHORT_SLOGAN = "";
+  
   public static final String DEFAULT_SLOGAN = "";
   
   public static final Long DEFAULT_TARGET_SCORE;
@@ -54,6 +58,15 @@ public final class CommonFunc extends Message {
   @ProtoField(tag = 6, type = Message.Datatype.INT64)
   public final Long score;
   
+  @ProtoField(tag = 15, type = Message.Datatype.STRING)
+  public final String short_name;
+  
+  @ProtoField(tag = 16, type = Message.Datatype.STRING)
+  public final String short_slogan;
+  
+  @ProtoField(tag = 17)
+  public final SignProgress sign_progress;
+  
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String slogan;
   
@@ -69,6 +82,9 @@ public final class CommonFunc extends Message {
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String type;
   
+  @ProtoField(tag = 14)
+  public final UserTask user_task;
+  
   static {
     Long long_ = Long.valueOf(0L);
     DEFAULT_LEVEL_ID = long_;
@@ -83,31 +99,30 @@ public final class CommonFunc extends Message {
   
   public CommonFunc(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
     if (paramBoolean == true) {
-      String str3 = paramBuilder.type;
-      if (str3 == null) {
+      String str4 = paramBuilder.type;
+      if (str4 == null) {
         this.type = "";
       } else {
-        this.type = str3;
+        this.type = str4;
       } 
-      str3 = paramBuilder.name;
-      if (str3 == null) {
+      str4 = paramBuilder.name;
+      if (str4 == null) {
         this.name = "";
       } else {
-        this.name = str3;
+        this.name = str4;
       } 
-      str3 = paramBuilder.icon;
-      if (str3 == null) {
+      str4 = paramBuilder.icon;
+      if (str4 == null) {
         this.icon = "";
       } else {
-        this.icon = str3;
+        this.icon = str4;
       } 
-      str3 = paramBuilder.schema;
-      if (str3 == null) {
+      str4 = paramBuilder.schema;
+      if (str4 == null) {
         this.schema = "";
       } else {
-        this.schema = str3;
+        this.schema = str4;
       } 
       Long long_2 = paramBuilder.level_id;
       if (long_2 == null) {
@@ -127,11 +142,11 @@ public final class CommonFunc extends Message {
       } else {
         this.target_score = long_2;
       } 
-      String str2 = paramBuilder.slogan;
-      if (str2 == null) {
+      String str3 = paramBuilder.slogan;
+      if (str3 == null) {
         this.slogan = "";
       } else {
-        this.slogan = str2;
+        this.slogan = str3;
       } 
       Long long_1 = paramBuilder.tmoney;
       if (long_1 == null) {
@@ -145,38 +160,56 @@ public final class CommonFunc extends Message {
       } else {
         this.red_point_version = long_1;
       } 
-      Integer integer1 = paramBuilder.need_filter;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.need_filter;
+      if (integer2 == null) {
         this.need_filter = DEFAULT_NEED_FILTER;
       } else {
-        this.need_filter = integer1;
+        this.need_filter = integer2;
       } 
-      String str1 = paramBuilder.ios_schema;
-      if (str1 == null) {
+      String str2 = paramBuilder.ios_schema;
+      if (str2 == null) {
         this.ios_schema = "";
       } else {
-        this.ios_schema = str1;
+        this.ios_schema = str2;
       } 
-      integer = paramBuilder.task_page_sign_status;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.task_page_sign_status;
+      if (integer1 == null) {
         this.task_page_sign_status = DEFAULT_TASK_PAGE_SIGN_STATUS;
       } else {
-        this.task_page_sign_status = integer;
+        this.task_page_sign_status = integer1;
       } 
+      this.user_task = paramBuilder.user_task;
+      String str1 = paramBuilder.short_name;
+      if (str1 == null) {
+        this.short_name = "";
+      } else {
+        this.short_name = str1;
+      } 
+      str1 = paramBuilder.short_slogan;
+      if (str1 == null) {
+        this.short_slogan = "";
+      } else {
+        this.short_slogan = str1;
+      } 
+      this.sign_progress = paramBuilder.sign_progress;
     } else {
-      this.type = ((Builder)integer).type;
-      this.name = ((Builder)integer).name;
-      this.icon = ((Builder)integer).icon;
-      this.schema = ((Builder)integer).schema;
-      this.level_id = ((Builder)integer).level_id;
-      this.score = ((Builder)integer).score;
-      this.target_score = ((Builder)integer).target_score;
-      this.slogan = ((Builder)integer).slogan;
-      this.tmoney = ((Builder)integer).tmoney;
-      this.red_point_version = ((Builder)integer).red_point_version;
-      this.need_filter = ((Builder)integer).need_filter;
-      this.ios_schema = ((Builder)integer).ios_schema;
-      this.task_page_sign_status = ((Builder)integer).task_page_sign_status;
+      this.type = paramBuilder.type;
+      this.name = paramBuilder.name;
+      this.icon = paramBuilder.icon;
+      this.schema = paramBuilder.schema;
+      this.level_id = paramBuilder.level_id;
+      this.score = paramBuilder.score;
+      this.target_score = paramBuilder.target_score;
+      this.slogan = paramBuilder.slogan;
+      this.tmoney = paramBuilder.tmoney;
+      this.red_point_version = paramBuilder.red_point_version;
+      this.need_filter = paramBuilder.need_filter;
+      this.ios_schema = paramBuilder.ios_schema;
+      this.task_page_sign_status = paramBuilder.task_page_sign_status;
+      this.user_task = paramBuilder.user_task;
+      this.short_name = paramBuilder.short_name;
+      this.short_slogan = paramBuilder.short_slogan;
+      this.sign_progress = paramBuilder.sign_progress;
     } 
   }
   
@@ -197,6 +230,12 @@ public final class CommonFunc extends Message {
     
     public Long score;
     
+    public String short_name;
+    
+    public String short_slogan;
+    
+    public SignProgress sign_progress;
+    
     public String slogan;
     
     public Long target_score;
@@ -206,6 +245,8 @@ public final class CommonFunc extends Message {
     public Long tmoney;
     
     public String type;
+    
+    public UserTask user_task;
     
     public Builder() {}
     
@@ -226,6 +267,10 @@ public final class CommonFunc extends Message {
       this.need_filter = param1CommonFunc.need_filter;
       this.ios_schema = param1CommonFunc.ios_schema;
       this.task_page_sign_status = param1CommonFunc.task_page_sign_status;
+      this.user_task = param1CommonFunc.user_task;
+      this.short_name = param1CommonFunc.short_name;
+      this.short_slogan = param1CommonFunc.short_slogan;
+      this.sign_progress = param1CommonFunc.sign_progress;
     }
     
     public CommonFunc build(boolean param1Boolean) {

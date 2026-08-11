@@ -5,4 +5,10 @@ message SidebarMsg {
     string vipbanner_bubble = 2;
     int64 member_expired_time = 3;
     int32 task_page_sign_status = 4;
+    string multi_task_sign_progress_text = 5;
+    string multi_task_sign_interval_sec = 6;
+    string multi_task_sign_default_text = 7;
+    int32 multi_task_sign_status = 8;
+    int32 multi_task_sign_switch = 9;
+    int32 multi_task_sign_refresh_time = 10;
 }

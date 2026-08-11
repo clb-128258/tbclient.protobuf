@@ -21,4 +21,5 @@ message SubPostList {
     int32 is_author_view = 12;
     string footer = 13;
     repeated FeedKV log_param = 14;
+    string floor_schema = 15;
 }

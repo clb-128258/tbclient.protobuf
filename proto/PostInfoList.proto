@@ -10,6 +10,7 @@ import "DealInfo.proto";
 import "EditInfo.proto";
 import "FeedKV.proto";
 import "HeadItem.proto";
+import "HelpStatusTag.proto";
 import "Item.proto";
 import "LbsInfo.proto";
 import "Media.proto";
@@ -105,4 +106,5 @@ message PostInfoList {
     int32 audit_status = 70;
     ThreadAblum ablum_info = 71;
     ThreadDrawInfo draw_info = 72;
+    HelpStatusTag author_status_tag = 73;
 }

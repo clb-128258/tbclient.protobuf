@@ -2,8 +2,12 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 
 public final class AgreeData extends Message {
+  public static final List<FeedContentIcon> DEFAULT_AGREE_LONG_CLICK_ANIMATION;
+  
   public static final String DEFAULT_DEFAULT_TEXT = "";
   
   public static final Integer DEFAULT_IS_SELECTED;
@@ -19,6 +23,9 @@ public final class AgreeData extends Message {
   
   @ProtoField(tag = 7)
   public final FeedContentIcon agree_assist_animation;
+  
+  @ProtoField(label = Message.Label.REPEATED, tag = 10)
+  public final List<FeedContentIcon> agree_long_click_animation;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String default_text;
@@ -43,11 +50,12 @@ public final class AgreeData extends Message {
   
   static {
     DEFAULT_SUPPORT_LONG_CLICK = integer;
+    DEFAULT_AGREE_LONG_CLICK_ANIMATION = Collections.emptyList();
   }
   
   public AgreeData(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    List<FeedContentIcon> list;
     if (paramBoolean == true) {
       Integer integer2 = paramBuilder.is_selected;
       if (integer2 == null) {
@@ -61,11 +69,11 @@ public final class AgreeData extends Message {
       } else {
         this.num = long_;
       } 
-      String str1 = paramBuilder.default_text;
-      if (str1 == null) {
+      String str2 = paramBuilder.default_text;
+      if (str2 == null) {
         this.default_text = "";
       } else {
-        this.default_text = str1;
+        this.default_text = str2;
       } 
       this.text_color = paramBuilder.text_color;
       this.selected_text_color = paramBuilder.selected_text_color;
@@ -77,22 +85,29 @@ public final class AgreeData extends Message {
       } else {
         this.support_long_click = integer1;
       } 
-      str = paramBuilder.scheme;
-      if (str == null) {
+      String str1 = paramBuilder.scheme;
+      if (str1 == null) {
         this.scheme = "";
       } else {
-        this.scheme = str;
+        this.scheme = str1;
+      } 
+      list = paramBuilder.agree_long_click_animation;
+      if (list == null) {
+        this.agree_long_click_animation = DEFAULT_AGREE_LONG_CLICK_ANIMATION;
+      } else {
+        this.agree_long_click_animation = Message.immutableCopyOf(list);
       } 
     } else {
-      this.is_selected = ((Builder)str).is_selected;
-      this.num = ((Builder)str).num;
-      this.default_text = ((Builder)str).default_text;
-      this.text_color = ((Builder)str).text_color;
-      this.selected_text_color = ((Builder)str).selected_text_color;
-      this.agree_animation = ((Builder)str).agree_animation;
-      this.agree_assist_animation = ((Builder)str).agree_assist_animation;
-      this.support_long_click = ((Builder)str).support_long_click;
-      this.scheme = ((Builder)str).scheme;
+      this.is_selected = ((Builder)list).is_selected;
+      this.num = ((Builder)list).num;
+      this.default_text = ((Builder)list).default_text;
+      this.text_color = ((Builder)list).text_color;
+      this.selected_text_color = ((Builder)list).selected_text_color;
+      this.agree_animation = ((Builder)list).agree_animation;
+      this.agree_assist_animation = ((Builder)list).agree_assist_animation;
+      this.support_long_click = ((Builder)list).support_long_click;
+      this.scheme = ((Builder)list).scheme;
+      this.agree_long_click_animation = Message.immutableCopyOf(((Builder)list).agree_long_click_animation);
     } 
   }
   
@@ -105,6 +120,8 @@ public final class AgreeData extends Message {
     public FeedContentIcon agree_animation;
     
     public FeedContentIcon agree_assist_animation;
+    
+    public List<FeedContentIcon> agree_long_click_animation;
     
     public String default_text;
     
@@ -135,6 +152,7 @@ public final class AgreeData extends Message {
       this.agree_assist_animation = param1AgreeData.agree_assist_animation;
       this.support_long_click = param1AgreeData.support_long_click;
       this.scheme = param1AgreeData.scheme;
+      this.agree_long_click_animation = Message.copyOf(param1AgreeData.agree_long_click_animation);
     }
     
     public AgreeData build(boolean param1Boolean) {

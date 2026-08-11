@@ -99,6 +99,9 @@ public final class ComponentFactory extends Message {
   @ProtoField(tag = 15)
   public final FeedItem feed_item;
   
+  @ProtoField(tag = 81)
+  public final FeedLandmineGoodsComponent feed_landmine_goods;
+  
   @ProtoField(tag = 64)
   public final FeedLeftPost feed_left_post;
   
@@ -330,6 +333,7 @@ public final class ComponentFactory extends Message {
       this.feed_download = paramBuilder.feed_download;
       this.feed_dynamic_tag = paramBuilder.feed_dynamic_tag;
       this.feed_mount_book = paramBuilder.feed_mount_book;
+      this.feed_landmine_goods = paramBuilder.feed_landmine_goods;
     } else {
       this.component = paramBuilder.component;
       this.feed_title = paramBuilder.feed_title;
@@ -406,6 +410,7 @@ public final class ComponentFactory extends Message {
       this.feed_download = paramBuilder.feed_download;
       this.feed_dynamic_tag = paramBuilder.feed_dynamic_tag;
       this.feed_mount_book = paramBuilder.feed_mount_book;
+      this.feed_landmine_goods = paramBuilder.feed_landmine_goods;
     } 
   }
   
@@ -467,6 +472,8 @@ public final class ComponentFactory extends Message {
     public FeedInteractionComponent feed_interaction;
     
     public FeedItem feed_item;
+    
+    public FeedLandmineGoodsComponent feed_landmine_goods;
     
     public FeedLeftPost feed_left_post;
     
@@ -641,6 +648,7 @@ public final class ComponentFactory extends Message {
       this.feed_download = param1ComponentFactory.feed_download;
       this.feed_dynamic_tag = param1ComponentFactory.feed_dynamic_tag;
       this.feed_mount_book = param1ComponentFactory.feed_mount_book;
+      this.feed_landmine_goods = param1ComponentFactory.feed_landmine_goods;
     }
     
     public ComponentFactory build(boolean param1Boolean) {

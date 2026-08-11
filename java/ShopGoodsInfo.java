@@ -12,6 +12,8 @@ public final class ShopGoodsInfo extends Message {
   
   public static final Integer DEFAULT_CARD_STYLE;
   
+  public static final Integer DEFAULT_CHANNEL_ID;
+  
   public static final Integer DEFAULT_COUPON_TYPE;
   
   public static final String DEFAULT_COVER_IMG = "";
@@ -43,6 +45,10 @@ public final class ShopGoodsInfo extends Message {
   public static final Integer DEFAULT_HAS_ORDER;
   
   public static final List<String> DEFAULT_IMG_LIST;
+  
+  public static final Integer DEFAULT_IS_FRS_MASK;
+  
+  public static final Integer DEFAULT_IS_LANDMINE;
   
   public static final String DEFAULT_NEED_NOTICE = "";
   
@@ -78,6 +84,9 @@ public final class ShopGoodsInfo extends Message {
   
   @ProtoField(tag = 5, type = Message.Datatype.UINT32)
   public final Integer card_style;
+  
+  @ProtoField(tag = 42, type = Message.Datatype.UINT32)
+  public final Integer channel_id;
   
   @ProtoField(tag = 6)
   public final ShopGoodsChannelInfo channel_info;
@@ -136,11 +145,23 @@ public final class ShopGoodsInfo extends Message {
   @ProtoField(label = Message.Label.REPEATED, tag = 17, type = Message.Datatype.STRING)
   public final List<String> img_list;
   
+  @ProtoField(tag = 41, type = Message.Datatype.UINT32)
+  public final Integer is_frs_mask;
+  
+  @ProtoField(tag = 39, type = Message.Datatype.UINT32)
+  public final Integer is_landmine;
+  
+  @ProtoField(tag = 43)
+  public final KjsAccountDetail kjs_account_detail;
+  
   @ProtoField(tag = 10)
   public final ListingReason listing_reason;
   
   @ProtoField(tag = 28, type = Message.Datatype.STRING)
   public final String need_notice;
+  
+  @ProtoField(tag = 40)
+  public final PollInfo poll_info;
   
   @ProtoField(tag = 34, type = Message.Datatype.UINT64)
   public final Long post_id;
@@ -205,11 +226,13 @@ public final class ShopGoodsInfo extends Message {
     DEFAULT_DISCOUNT_PRICE = integer;
     DEFAULT_HAS_ORDER = integer;
     DEFAULT_GOODS_TYPE = integer;
+    DEFAULT_IS_LANDMINE = integer;
+    DEFAULT_IS_FRS_MASK = integer;
+    DEFAULT_CHANNEL_ID = integer;
   }
   
   public ShopGoodsInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
     if (paramBoolean == true) {
       String str8 = paramBuilder.goods_name;
       if (str8 == null) {
@@ -403,51 +426,76 @@ public final class ShopGoodsInfo extends Message {
       } else {
         this.has_order = integer1;
       } 
-      integer = paramBuilder.goods_type;
-      if (integer == null) {
+      integer1 = paramBuilder.goods_type;
+      if (integer1 == null) {
         this.goods_type = DEFAULT_GOODS_TYPE;
       } else {
-        this.goods_type = integer;
+        this.goods_type = integer1;
       } 
+      integer1 = paramBuilder.is_landmine;
+      if (integer1 == null) {
+        this.is_landmine = DEFAULT_IS_LANDMINE;
+      } else {
+        this.is_landmine = integer1;
+      } 
+      this.poll_info = paramBuilder.poll_info;
+      integer1 = paramBuilder.is_frs_mask;
+      if (integer1 == null) {
+        this.is_frs_mask = DEFAULT_IS_FRS_MASK;
+      } else {
+        this.is_frs_mask = integer1;
+      } 
+      integer1 = paramBuilder.channel_id;
+      if (integer1 == null) {
+        this.channel_id = DEFAULT_CHANNEL_ID;
+      } else {
+        this.channel_id = integer1;
+      } 
+      this.kjs_account_detail = paramBuilder.kjs_account_detail;
     } else {
-      this.goods_name = ((Builder)integer).goods_name;
-      this.price = ((Builder)integer).price;
-      this.sales = ((Builder)integer).sales;
-      this.recommend_info = ((Builder)integer).recommend_info;
-      this.card_style = ((Builder)integer).card_style;
-      this.channel_info = ((Builder)integer).channel_info;
-      this.cover_img = ((Builder)integer).cover_img;
-      this.url = ((Builder)integer).url;
-      this.thread_id = ((Builder)integer).thread_id;
-      this.listing_reason = ((Builder)integer).listing_reason;
-      this.comment_info = ((Builder)integer).comment_info;
-      this.scheme = ((Builder)integer).scheme;
-      this.goods_desc = ((Builder)integer).goods_desc;
-      this.goods_id = ((Builder)integer).goods_id;
-      this.estimated_earnings = ((Builder)integer).estimated_earnings;
-      this.audit_reason = ((Builder)integer).audit_reason;
-      this.img_list = Message.immutableCopyOf(((Builder)integer).img_list);
-      this.forum_id = ((Builder)integer).forum_id;
-      this.goods_status = ((Builder)integer).goods_status;
-      this.source_url = ((Builder)integer).source_url;
-      this.view_info = ((Builder)integer).view_info;
-      this.agree_count = ((Builder)integer).agree_count;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.forum_avatar = ((Builder)integer).forum_avatar;
-      this.shop_desc = ((Builder)integer).shop_desc;
-      this.discount_type = ((Builder)integer).discount_type;
-      this.pv = ((Builder)integer).pv;
-      this.need_notice = ((Builder)integer).need_notice;
-      this.goods_label = ((Builder)integer).goods_label;
-      this.preferential_price = ((Builder)integer).preferential_price;
-      this.second_scheme = ((Builder)integer).second_scheme;
-      this.coupon_type = ((Builder)integer).coupon_type;
-      this.tag_list = Message.immutableCopyOf(((Builder)integer).tag_list);
-      this.post_id = ((Builder)integer).post_id;
-      this.game_info = ((Builder)integer).game_info;
-      this.discount_price = ((Builder)integer).discount_price;
-      this.has_order = ((Builder)integer).has_order;
-      this.goods_type = ((Builder)integer).goods_type;
+      this.goods_name = paramBuilder.goods_name;
+      this.price = paramBuilder.price;
+      this.sales = paramBuilder.sales;
+      this.recommend_info = paramBuilder.recommend_info;
+      this.card_style = paramBuilder.card_style;
+      this.channel_info = paramBuilder.channel_info;
+      this.cover_img = paramBuilder.cover_img;
+      this.url = paramBuilder.url;
+      this.thread_id = paramBuilder.thread_id;
+      this.listing_reason = paramBuilder.listing_reason;
+      this.comment_info = paramBuilder.comment_info;
+      this.scheme = paramBuilder.scheme;
+      this.goods_desc = paramBuilder.goods_desc;
+      this.goods_id = paramBuilder.goods_id;
+      this.estimated_earnings = paramBuilder.estimated_earnings;
+      this.audit_reason = paramBuilder.audit_reason;
+      this.img_list = Message.immutableCopyOf(paramBuilder.img_list);
+      this.forum_id = paramBuilder.forum_id;
+      this.goods_status = paramBuilder.goods_status;
+      this.source_url = paramBuilder.source_url;
+      this.view_info = paramBuilder.view_info;
+      this.agree_count = paramBuilder.agree_count;
+      this.forum_name = paramBuilder.forum_name;
+      this.forum_avatar = paramBuilder.forum_avatar;
+      this.shop_desc = paramBuilder.shop_desc;
+      this.discount_type = paramBuilder.discount_type;
+      this.pv = paramBuilder.pv;
+      this.need_notice = paramBuilder.need_notice;
+      this.goods_label = paramBuilder.goods_label;
+      this.preferential_price = paramBuilder.preferential_price;
+      this.second_scheme = paramBuilder.second_scheme;
+      this.coupon_type = paramBuilder.coupon_type;
+      this.tag_list = Message.immutableCopyOf(paramBuilder.tag_list);
+      this.post_id = paramBuilder.post_id;
+      this.game_info = paramBuilder.game_info;
+      this.discount_price = paramBuilder.discount_price;
+      this.has_order = paramBuilder.has_order;
+      this.goods_type = paramBuilder.goods_type;
+      this.is_landmine = paramBuilder.is_landmine;
+      this.poll_info = paramBuilder.poll_info;
+      this.is_frs_mask = paramBuilder.is_frs_mask;
+      this.channel_id = paramBuilder.channel_id;
+      this.kjs_account_detail = paramBuilder.kjs_account_detail;
     } 
   }
   
@@ -457,6 +505,8 @@ public final class ShopGoodsInfo extends Message {
     public String audit_reason;
     
     public Integer card_style;
+    
+    public Integer channel_id;
     
     public ShopGoodsChannelInfo channel_info;
     
@@ -496,9 +546,17 @@ public final class ShopGoodsInfo extends Message {
     
     public List<String> img_list;
     
+    public Integer is_frs_mask;
+    
+    public Integer is_landmine;
+    
+    public KjsAccountDetail kjs_account_detail;
+    
     public ListingReason listing_reason;
     
     public String need_notice;
+    
+    public PollInfo poll_info;
     
     public Long post_id;
     
@@ -572,6 +630,11 @@ public final class ShopGoodsInfo extends Message {
       this.discount_price = param1ShopGoodsInfo.discount_price;
       this.has_order = param1ShopGoodsInfo.has_order;
       this.goods_type = param1ShopGoodsInfo.goods_type;
+      this.is_landmine = param1ShopGoodsInfo.is_landmine;
+      this.poll_info = param1ShopGoodsInfo.poll_info;
+      this.is_frs_mask = param1ShopGoodsInfo.is_frs_mask;
+      this.channel_id = param1ShopGoodsInfo.channel_id;
+      this.kjs_account_detail = param1ShopGoodsInfo.kjs_account_detail;
     }
     
     public ShopGoodsInfo build(boolean param1Boolean) {

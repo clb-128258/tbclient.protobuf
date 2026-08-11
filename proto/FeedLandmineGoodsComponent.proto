@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FeedContentResource.proto";
+import "PollInfo.proto";
+
+message FeedLandmineGoodsComponent {
+    string image_url = 1;
+    string price = 2;
+    repeated FeedContentResource title = 3;
+    PollInfo poll_info = 4;
+    string schema = 5;
+}

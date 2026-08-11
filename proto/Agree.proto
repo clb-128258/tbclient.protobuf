@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "ThemeColorInfo.proto";
+
 message Agree {
     int64 agree_num = 1;
     int32 has_agree = 2;
@@ -7,4 +9,5 @@ message Agree {
     int64 disagree_num = 4;
     int64 diff_agree_num = 5;
     int32 lz_agree = 6;
+    ThemeColorInfo agree_resource = 7;
 }

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message ZoneBubbleInfo {
+    string item_name = 1;
+    string item_text = 2;
+    string schema = 3;
+    int64 task_id = 4;
+    int32 task_type = 5;
+}

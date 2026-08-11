@@ -19,6 +19,8 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_AD_EXT_PARAMS = "";
   
+  public static final Long DEFAULT_ALADDIN_SRC_ID;
+  
   public static final Integer DEFAULT_BACK;
   
   public static final Long DEFAULT_BROADCAST_ID;
@@ -26,6 +28,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_CID = "";
   
   public static final String DEFAULT_DA_IDFA = "";
+  
+  public static final Integer DEFAULT_FLOOR_NUM;
   
   public static final String DEFAULT_FR = "";
   
@@ -102,6 +106,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 18)
   public final AdParam ad_param;
   
+  @ProtoField(tag = 43, type = Message.Datatype.INT64)
+  public final Long aladdin_src_id;
+  
   @ProtoField(tag = 21)
   public final AppTransmitData app_transmit_data;
   
@@ -119,6 +126,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 17, type = Message.Datatype.STRING)
   public final String da_idfa;
+  
+  @ProtoField(tag = 42, type = Message.Datatype.UINT32)
+  public final Integer floor_num;
   
   @ProtoField(tag = 38, type = Message.Datatype.STRING)
   public final String fr;
@@ -223,11 +233,13 @@ public final class DataReq extends Message {
     DEFAULT_BROADCAST_ID = long_;
     DEFAULT_SESSION_REQUEST_TIMES = integer;
     DEFAULT_FROM_FORUM_ID = integer;
+    DEFAULT_FLOOR_NUM = integer;
+    DEFAULT_ALADDIN_SRC_ID = long_;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    Long long_;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
       Long long_5 = paramBuilder.kz;
@@ -236,11 +248,11 @@ public final class DataReq extends Message {
       } else {
         this.kz = long_5;
       } 
-      Integer integer5 = paramBuilder.pn;
-      if (integer5 == null) {
+      Integer integer6 = paramBuilder.pn;
+      if (integer6 == null) {
         this.pn = DEFAULT_PN;
       } else {
-        this.pn = integer5;
+        this.pn = integer6;
       } 
       Long long_4 = paramBuilder.last_pid;
       if (long_4 == null) {
@@ -248,29 +260,29 @@ public final class DataReq extends Message {
       } else {
         this.last_pid = long_4;
       } 
-      Integer integer4 = paramBuilder.r;
-      if (integer4 == null) {
+      Integer integer5 = paramBuilder.r;
+      if (integer5 == null) {
         this.r = DEFAULT_R;
       } else {
-        this.r = integer4;
+        this.r = integer5;
       } 
-      integer4 = paramBuilder.back;
-      if (integer4 == null) {
+      integer5 = paramBuilder.back;
+      if (integer5 == null) {
         this.back = DEFAULT_BACK;
       } else {
-        this.back = integer4;
+        this.back = integer5;
       } 
-      integer4 = paramBuilder.lz;
-      if (integer4 == null) {
+      integer5 = paramBuilder.lz;
+      if (integer5 == null) {
         this.lz = DEFAULT_LZ;
       } else {
-        this.lz = integer4;
+        this.lz = integer5;
       } 
-      integer4 = paramBuilder.mark_type;
-      if (integer4 == null) {
+      integer5 = paramBuilder.mark_type;
+      if (integer5 == null) {
         this.mark_type = DEFAULT_MARK_TYPE;
       } else {
-        this.mark_type = integer4;
+        this.mark_type = integer5;
       } 
       String str6 = paramBuilder.tab_type;
       if (str6 == null) {
@@ -376,11 +388,11 @@ public final class DataReq extends Message {
       } else {
         this.cid = str5;
       } 
-      Integer integer3 = paramBuilder.position;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.position;
+      if (integer4 == null) {
         this.position = DEFAULT_POSITION;
       } else {
-        this.position = integer3;
+        this.position = integer4;
       } 
       String str4 = paramBuilder.game_fid;
       if (str4 == null) {
@@ -419,11 +431,11 @@ public final class DataReq extends Message {
       } else {
         this.mount_bot_uk = str3;
       } 
-      Integer integer2 = paramBuilder.request_times;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.request_times;
+      if (integer3 == null) {
         this.request_times = DEFAULT_REQUEST_TIMES;
       } else {
-        this.request_times = integer2;
+        this.request_times = integer3;
       } 
       Long long_1 = paramBuilder.broadcast_id;
       if (long_1 == null) {
@@ -437,11 +449,11 @@ public final class DataReq extends Message {
       } else {
         this.fr = str2;
       } 
-      Integer integer1 = paramBuilder.session_request_times;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.session_request_times;
+      if (integer2 == null) {
         this.session_request_times = DEFAULT_SESSION_REQUEST_TIMES;
       } else {
-        this.session_request_times = integer1;
+        this.session_request_times = integer2;
       } 
       String str1 = paramBuilder.shoubai_cuid;
       if (str1 == null) {
@@ -449,54 +461,68 @@ public final class DataReq extends Message {
       } else {
         this.shoubai_cuid = str1;
       } 
-      integer = paramBuilder.from_forum_id;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.from_forum_id;
+      if (integer1 == null) {
         this.from_forum_id = DEFAULT_FROM_FORUM_ID;
       } else {
-        this.from_forum_id = integer;
+        this.from_forum_id = integer1;
+      } 
+      integer1 = paramBuilder.floor_num;
+      if (integer1 == null) {
+        this.floor_num = DEFAULT_FLOOR_NUM;
+      } else {
+        this.floor_num = integer1;
+      } 
+      long_ = paramBuilder.aladdin_src_id;
+      if (long_ == null) {
+        this.aladdin_src_id = DEFAULT_ALADDIN_SRC_ID;
+      } else {
+        this.aladdin_src_id = long_;
       } 
     } else {
-      this.common = ((Builder)integer).common;
-      this.kz = ((Builder)integer).kz;
-      this.pn = ((Builder)integer).pn;
-      this.last_pid = ((Builder)integer).last_pid;
-      this.r = ((Builder)integer).r;
-      this.back = ((Builder)integer).back;
-      this.lz = ((Builder)integer).lz;
-      this.mark_type = ((Builder)integer).mark_type;
-      this.tab_type = ((Builder)integer).tab_type;
-      this.tab_id = ((Builder)integer).tab_id;
-      this.top_pid = ((Builder)integer).top_pid;
-      this.st_type = ((Builder)integer).st_type;
-      this.up_schema = ((Builder)integer).up_schema;
-      this.log_params = ((Builder)integer).log_params;
-      this.yuelaou_locate = ((Builder)integer).yuelaou_locate;
-      this.query_word = ((Builder)integer).query_word;
-      this.da_idfa = ((Builder)integer).da_idfa;
-      this.ad_param = ((Builder)integer).ad_param;
-      this.ad_context_list = ((Builder)integer).ad_context_list;
-      this.ad_ext_params = ((Builder)integer).ad_ext_params;
-      this.app_transmit_data = ((Builder)integer).app_transmit_data;
-      this.ad_bear_pb_banner = ((Builder)integer).ad_bear_pb_banner;
-      this.ad_bear_pb_comment = ((Builder)integer).ad_bear_pb_comment;
-      this.ad_external_banner_info = ((Builder)integer).ad_external_banner_info;
-      this.ad_external_info = ((Builder)integer).ad_external_info;
-      this.game_id = ((Builder)integer).game_id;
-      this.cid = ((Builder)integer).cid;
-      this.position = ((Builder)integer).position;
-      this.game_fid = ((Builder)integer).game_fid;
-      this.game_fname = ((Builder)integer).game_fname;
-      this.search_query = ((Builder)integer).search_query;
-      this.push_info = ((Builder)integer).push_info;
-      this.topic_id = ((Builder)integer).topic_id;
-      this.topic_fid = ((Builder)integer).topic_fid;
-      this.mount_bot_uk = ((Builder)integer).mount_bot_uk;
-      this.request_times = ((Builder)integer).request_times;
-      this.broadcast_id = ((Builder)integer).broadcast_id;
-      this.fr = ((Builder)integer).fr;
-      this.session_request_times = ((Builder)integer).session_request_times;
-      this.shoubai_cuid = ((Builder)integer).shoubai_cuid;
-      this.from_forum_id = ((Builder)integer).from_forum_id;
+      this.common = ((Builder)long_).common;
+      this.kz = ((Builder)long_).kz;
+      this.pn = ((Builder)long_).pn;
+      this.last_pid = ((Builder)long_).last_pid;
+      this.r = ((Builder)long_).r;
+      this.back = ((Builder)long_).back;
+      this.lz = ((Builder)long_).lz;
+      this.mark_type = ((Builder)long_).mark_type;
+      this.tab_type = ((Builder)long_).tab_type;
+      this.tab_id = ((Builder)long_).tab_id;
+      this.top_pid = ((Builder)long_).top_pid;
+      this.st_type = ((Builder)long_).st_type;
+      this.up_schema = ((Builder)long_).up_schema;
+      this.log_params = ((Builder)long_).log_params;
+      this.yuelaou_locate = ((Builder)long_).yuelaou_locate;
+      this.query_word = ((Builder)long_).query_word;
+      this.da_idfa = ((Builder)long_).da_idfa;
+      this.ad_param = ((Builder)long_).ad_param;
+      this.ad_context_list = ((Builder)long_).ad_context_list;
+      this.ad_ext_params = ((Builder)long_).ad_ext_params;
+      this.app_transmit_data = ((Builder)long_).app_transmit_data;
+      this.ad_bear_pb_banner = ((Builder)long_).ad_bear_pb_banner;
+      this.ad_bear_pb_comment = ((Builder)long_).ad_bear_pb_comment;
+      this.ad_external_banner_info = ((Builder)long_).ad_external_banner_info;
+      this.ad_external_info = ((Builder)long_).ad_external_info;
+      this.game_id = ((Builder)long_).game_id;
+      this.cid = ((Builder)long_).cid;
+      this.position = ((Builder)long_).position;
+      this.game_fid = ((Builder)long_).game_fid;
+      this.game_fname = ((Builder)long_).game_fname;
+      this.search_query = ((Builder)long_).search_query;
+      this.push_info = ((Builder)long_).push_info;
+      this.topic_id = ((Builder)long_).topic_id;
+      this.topic_fid = ((Builder)long_).topic_fid;
+      this.mount_bot_uk = ((Builder)long_).mount_bot_uk;
+      this.request_times = ((Builder)long_).request_times;
+      this.broadcast_id = ((Builder)long_).broadcast_id;
+      this.fr = ((Builder)long_).fr;
+      this.session_request_times = ((Builder)long_).session_request_times;
+      this.shoubai_cuid = ((Builder)long_).shoubai_cuid;
+      this.from_forum_id = ((Builder)long_).from_forum_id;
+      this.floor_num = ((Builder)long_).floor_num;
+      this.aladdin_src_id = ((Builder)long_).aladdin_src_id;
     } 
   }
   
@@ -515,6 +541,8 @@ public final class DataReq extends Message {
     
     public AdParam ad_param;
     
+    public Long aladdin_src_id;
+    
     public AppTransmitData app_transmit_data;
     
     public Integer back;
@@ -526,6 +554,8 @@ public final class DataReq extends Message {
     public CommonReq common;
     
     public String da_idfa;
+    
+    public Integer floor_num;
     
     public String fr;
     
@@ -630,6 +660,8 @@ public final class DataReq extends Message {
       this.session_request_times = param1DataReq.session_request_times;
       this.shoubai_cuid = param1DataReq.shoubai_cuid;
       this.from_forum_id = param1DataReq.from_forum_id;
+      this.floor_num = param1DataReq.floor_num;
+      this.aladdin_src_id = param1DataReq.aladdin_src_id;
     }
     
     public DataReq build(boolean param1Boolean) {

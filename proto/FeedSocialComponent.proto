@@ -25,4 +25,5 @@ message FeedSocialComponent {
     string etype = 19;
     uint64 eid = 20;
     FeedShareShowData share_show_data = 21;
+    repeated FeedContentIcon agree_long_click_animation = 22;
 }

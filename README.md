@@ -3,13 +3,13 @@
 | repo                                                                     | branch                                                                      | 意义                                                                                                           |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | [`tbclient.protobuf`](https://github.com/clb-128258/tbclient.protobuf)➡️ | [`main`](https://github.com/clb-128258/tbclient.protobuf/tree/main)🏠➡️     | 作为仓库默认分支，<br>存储此前遗留的几个版本的`.java/.proto`文件<br>以及[tbm](https://github.com/n0099/open-tbm)中所使用的部分`.proto`文件及其字段 |
-| [`tbclient.protobuf`](https://github.com/clb-128258/tbclient.protobuf)   | [`tbclient`](https://github.com/clb-128258/tbclient.protobuf/tree/tbclient) | 245 个历史版本中提取的`.java/.proto`文件                                                                                |
+| [`tbclient.protobuf`](https://github.com/clb-128258/tbclient.protobuf)   | [`tbclient`](https://github.com/clb-128258/tbclient.protobuf/tree/tbclient) | 246 个历史版本中提取的`.java/.proto`文件                                                                                |
 | [`open-tbclient`](https://github.com/n0099/open-tbclient)                | [`main`](https://github.com/n0099/open-tbclient/tree/main)🏠                | 作为`repo default branch`                                                                                      |
 | [`open-tbclient`](https://github.com/n0099/open-tbclient)                | [`src`](https://github.com/n0099/open-tbclient/tree/src)                    | 293 个历史版本中的所有`.java`文件                                                                                       |
 
-# [`branch/main`](https://github.com/n0099/tbclient.protobuf/tree/main)
+# [`branch/main`](https://github.com/clb-128258/tbclient.protobuf/tree/main)
 
-## 从百度贴吧客户端`22.5.3.0`中提取出的所有 protoBuf 定义文件`.proto`
+## 从百度贴吧客户端`22.9.1.0`中提取出的所有 protoBuf 定义文件`.proto`
 
 | 路径                                  | 其文件用途                                                                                                                                                                                        |
 |-------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -19,13 +19,13 @@
 | tbm                                 | 用于项目 https://github.com/n0099/open-tbm 而从 `interested` 中遴选出的部分 .proto 文件                                                                                                                     |
 | `protoc.sh <proto path> <langs...>` | 将 `<proto path>/**/*.proto` 文件codegen为用于 `<lang>` 语言环境的类文件<br>置于 `<proto path>_<lang>` 下并打包为 `<proto path>_<lang>.zip`<br>依赖于 [protoc](https://github.com/protocolbuffers/protobuf/releases) |
 
-# [`branch/tbclient`](https://github.com/n0099/tbclient.protobuf/tree/tbclient)
+# [`branch/tbclient`](https://github.com/clb-128258/tbclient.protobuf/tree/tbclient)
 
 ## 从 245 个历史版本百度贴吧客户端中提取出的所有 Protocol Buffers 定义文件`.proto`
 
-版本跨度`6.1.0`\~`22.5.3.0`
+版本跨度`6.1.0`\~`22.9.1.0`
 
-时间跨度`14-05-19`\~`26-04-17`
+时间跨度`14-05-19`\~`26-07-24`
 
 ## 列名表
 
@@ -345,3 +345,4 @@
 | 12.51.5.1 | 23-12-02 18:03:08 | 1576 | 217 | ✔️ | 🔴 | 🔴 | 🔴 |
 | 12.51.7.1 | 23-12-10 21:23:42 | 1576 | 217 | ✔️ | 🔴 | 🔴 | 🔴 |
 | 22.5.3.0  | 26-04-16 21:29:22 | 1721 | 208 | ✔️ | 🔴 | 🔴 | 🔴 |
+| 22.9.1.0  | 26-07-24 16:30:54 | 1851 | 221 | ✔️ | 🔴 | 🔴 | 🔴 |

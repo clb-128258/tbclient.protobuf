@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Profile/ZoneBubbleInfo.proto";
+
+message UserTask {
+    repeated ZoneBubbleInfo task_list = 1;
+    string default_background = 2;
+    int64 earnable_tmoney = 3;
+    string dark_default_background = 4;
+}

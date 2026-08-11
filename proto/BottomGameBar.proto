@@ -13,4 +13,5 @@ message BottomGameBar {
     string schema = 5;
     FeedContentIcon icon = 6;
     repeated FeedKV log_param = 7;
+    int32 action_type = 8;
 }

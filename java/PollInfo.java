@@ -73,6 +73,9 @@ public final class PollInfo extends Message {
   @ProtoField(tag = 11, type = Message.Datatype.INT64)
   public final Long total_poll;
   
+  @ProtoField(tag = 16)
+  public final ProsAndConsInfo two_options;
+  
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer type;
   
@@ -94,7 +97,6 @@ public final class PollInfo extends Message {
   
   public PollInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    List<FeedKV> list;
     if (paramBoolean == true) {
       Integer integer5 = paramBuilder.type;
       if (integer5 == null) {
@@ -174,27 +176,29 @@ public final class PollInfo extends Message {
       } else {
         this.last_time = integer1;
       } 
-      list = paramBuilder.business_info;
+      List<FeedKV> list = paramBuilder.business_info;
       if (list == null) {
         this.business_info = DEFAULT_BUSINESS_INFO;
       } else {
         this.business_info = Message.immutableCopyOf(list);
       } 
+      this.two_options = paramBuilder.two_options;
     } else {
-      this.type = ((Builder)list).type;
-      this.is_multi = ((Builder)list).is_multi;
-      this.total_num = ((Builder)list).total_num;
-      this.options_count = ((Builder)list).options_count;
-      this.is_polled = ((Builder)list).is_polled;
-      this.polled_value = ((Builder)list).polled_value;
-      this.tips = ((Builder)list).tips;
-      this.end_time = ((Builder)list).end_time;
-      this.options = Message.immutableCopyOf(((Builder)list).options);
-      this.status = ((Builder)list).status;
-      this.total_poll = ((Builder)list).total_poll;
-      this.title = ((Builder)list).title;
-      this.last_time = ((Builder)list).last_time;
-      this.business_info = Message.immutableCopyOf(((Builder)list).business_info);
+      this.type = paramBuilder.type;
+      this.is_multi = paramBuilder.is_multi;
+      this.total_num = paramBuilder.total_num;
+      this.options_count = paramBuilder.options_count;
+      this.is_polled = paramBuilder.is_polled;
+      this.polled_value = paramBuilder.polled_value;
+      this.tips = paramBuilder.tips;
+      this.end_time = paramBuilder.end_time;
+      this.options = Message.immutableCopyOf(paramBuilder.options);
+      this.status = paramBuilder.status;
+      this.total_poll = paramBuilder.total_poll;
+      this.title = paramBuilder.title;
+      this.last_time = paramBuilder.last_time;
+      this.business_info = Message.immutableCopyOf(paramBuilder.business_info);
+      this.two_options = paramBuilder.two_options;
     } 
   }
   
@@ -225,6 +229,8 @@ public final class PollInfo extends Message {
     
     public Long total_poll;
     
+    public ProsAndConsInfo two_options;
+    
     public Integer type;
     
     public Builder() {}
@@ -247,6 +253,7 @@ public final class PollInfo extends Message {
       this.title = param1PollInfo.title;
       this.last_time = param1PollInfo.last_time;
       this.business_info = Message.copyOf(param1PollInfo.business_info);
+      this.two_options = param1PollInfo.two_options;
     }
     
     public PollInfo build(boolean param1Boolean) {

@@ -10,4 +10,5 @@ message ThreadScoreInfo {
     uint32 show_index = 4;
     ScoreLevelLimit score_level_limit = 5;
     repeated uint64 score_item_ids = 6;
+    uint32 audit_status = 7;
 }

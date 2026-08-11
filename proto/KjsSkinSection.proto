@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "KjsSkinPrimaryTab.proto";
+
+message KjsSkinSection {
+    repeated KjsSkinPrimaryTab primary_tabs = 1;
+}

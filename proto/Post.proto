@@ -143,4 +143,6 @@ message Post {
     MountedCard mounted_card = 95;
     int32 is_ad_thread_post = 96;
     string content_statement = 97;
+    int64 fold_type = 99;
+    string floor_schema = 100;
 }

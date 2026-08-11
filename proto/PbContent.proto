@@ -62,4 +62,6 @@ message PbContent {
     ThemeColorInfo theme_color = 50;
     int32 search_type = 51;
     int32 is_bot = 52;
+    uint32 crop_mode = 53;
+    string scheme = 54;
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "FeedKV.proto";
+
+message KjsBasicInfo {
+    string title = 1;
+    repeated FeedKV items = 2;
+}

@@ -20,4 +20,6 @@ message DataReq {
     string ori_ugc_vid = 16;
     string top_ugc_pid = 17;
     int32 request_times = 18;
+    int32 sort = 19;
+    string out_floor_post_ids = 20;
 }

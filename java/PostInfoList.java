@@ -137,6 +137,9 @@ public final class PostInfoList extends Message {
   @ProtoField(tag = 70, type = Message.Datatype.INT32)
   public final Integer audit_status;
   
+  @ProtoField(tag = 73)
+  public final HelpStatusTag author_status_tag;
+  
   @ProtoField(tag = 50)
   public final BaijiahaoInfo baijiahao_info;
   
@@ -705,6 +708,7 @@ public final class PostInfoList extends Message {
       } 
       this.ablum_info = paramBuilder.ablum_info;
       this.draw_info = paramBuilder.draw_info;
+      this.author_status_tag = paramBuilder.author_status_tag;
     } else {
       this.forum_id = paramBuilder.forum_id;
       this.thread_id = paramBuilder.thread_id;
@@ -778,6 +782,7 @@ public final class PostInfoList extends Message {
       this.audit_status = paramBuilder.audit_status;
       this.ablum_info = paramBuilder.ablum_info;
       this.draw_info = paramBuilder.draw_info;
+      this.author_status_tag = paramBuilder.author_status_tag;
     } 
   }
   
@@ -799,6 +804,8 @@ public final class PostInfoList extends Message {
     public String article_cover;
     
     public Integer audit_status;
+    
+    public HelpStatusTag author_status_tag;
     
     public BaijiahaoInfo baijiahao_info;
     
@@ -1004,6 +1011,7 @@ public final class PostInfoList extends Message {
       this.audit_status = param1PostInfoList.audit_status;
       this.ablum_info = param1PostInfoList.ablum_info;
       this.draw_info = param1PostInfoList.draw_info;
+      this.author_status_tag = param1PostInfoList.author_status_tag;
     }
     
     public PostInfoList build(boolean param1Boolean) {

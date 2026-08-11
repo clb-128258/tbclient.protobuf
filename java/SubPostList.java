@@ -12,6 +12,8 @@ public final class SubPostList extends Message {
   
   public static final Integer DEFAULT_FLOOR;
   
+  public static final String DEFAULT_FLOOR_SCHEMA = "";
+  
   public static final String DEFAULT_FOOTER = "";
   
   public static final Long DEFAULT_ID;
@@ -42,6 +44,9 @@ public final class SubPostList extends Message {
   
   @ProtoField(tag = 6, type = Message.Datatype.UINT32)
   public final Integer floor;
+  
+  @ProtoField(tag = 15, type = Message.Datatype.STRING)
+  public final String floor_schema;
   
   @ProtoField(tag = 13, type = Message.Datatype.STRING)
   public final String footer;
@@ -86,7 +91,7 @@ public final class SubPostList extends Message {
   
   public SubPostList(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    List<FeedKV> list;
+    String str;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.id;
       if (long_2 == null) {
@@ -151,27 +156,34 @@ public final class SubPostList extends Message {
       } else {
         this.footer = str1;
       } 
-      list = paramBuilder.log_param;
+      List<FeedKV> list = paramBuilder.log_param;
       if (list == null) {
         this.log_param = DEFAULT_LOG_PARAM;
       } else {
         this.log_param = Message.immutableCopyOf(list);
       } 
+      str = paramBuilder.floor_schema;
+      if (str == null) {
+        this.floor_schema = "";
+      } else {
+        this.floor_schema = str;
+      } 
     } else {
-      this.id = ((Builder)list).id;
-      this.content = Message.immutableCopyOf(((Builder)list).content);
-      this.time = ((Builder)list).time;
-      this.author_id = ((Builder)list).author_id;
-      this.title = ((Builder)list).title;
-      this.floor = ((Builder)list).floor;
-      this.author = ((Builder)list).author;
-      this.is_giftpost = ((Builder)list).is_giftpost;
-      this.agree = ((Builder)list).agree;
-      this.location = ((Builder)list).location;
-      this.is_fake_top = ((Builder)list).is_fake_top;
-      this.is_author_view = ((Builder)list).is_author_view;
-      this.footer = ((Builder)list).footer;
-      this.log_param = Message.immutableCopyOf(((Builder)list).log_param);
+      this.id = ((Builder)str).id;
+      this.content = Message.immutableCopyOf(((Builder)str).content);
+      this.time = ((Builder)str).time;
+      this.author_id = ((Builder)str).author_id;
+      this.title = ((Builder)str).title;
+      this.floor = ((Builder)str).floor;
+      this.author = ((Builder)str).author;
+      this.is_giftpost = ((Builder)str).is_giftpost;
+      this.agree = ((Builder)str).agree;
+      this.location = ((Builder)str).location;
+      this.is_fake_top = ((Builder)str).is_fake_top;
+      this.is_author_view = ((Builder)str).is_author_view;
+      this.footer = ((Builder)str).footer;
+      this.log_param = Message.immutableCopyOf(((Builder)str).log_param);
+      this.floor_schema = ((Builder)str).floor_schema;
     } 
   }
   
@@ -185,6 +197,8 @@ public final class SubPostList extends Message {
     public List<PbContent> content;
     
     public Integer floor;
+    
+    public String floor_schema;
     
     public String footer;
     
@@ -224,6 +238,7 @@ public final class SubPostList extends Message {
       this.is_author_view = param1SubPostList.is_author_view;
       this.footer = param1SubPostList.footer;
       this.log_param = Message.copyOf(param1SubPostList.log_param);
+      this.floor_schema = param1SubPostList.floor_schema;
     }
     
     public SubPostList build(boolean param1Boolean) {

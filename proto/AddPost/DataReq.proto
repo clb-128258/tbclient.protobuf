@@ -81,4 +81,5 @@ message DataReq {
     uint32 with_tail = 76;
     string tag_info = 77;
     uint64 goods_id = 78;
+    uint64 reply_author_status_tag_id = 79;
 }

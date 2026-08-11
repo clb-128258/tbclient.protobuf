@@ -1,11 +1,13 @@
 syntax = "proto3";
 
 import "Anti.proto";
+import "CommentPublisherConfig.proto";
 import "FeedKV.proto";
 import "Page.proto";
 import "Post.proto";
 import "SimpleForum.proto";
 import "SubPostList.proto";
+import "TabInfo.proto";
 import "ThreadInfo.proto";
 
 message DataRes {
@@ -19,4 +21,8 @@ message DataRes {
     SimpleForum display_forum = 8;
     int32 is_black_white = 9;
     repeated FeedKV log_param = 10;
+    CommentPublisherConfig comment_publisher_config = 12;
+    int32 subpost_num = 13;
+    repeated TabInfo tab_info = 14;
+    uint32 current_tab = 15;
 }

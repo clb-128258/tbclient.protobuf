@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "FeedKV.proto";
 import "PollOption.proto";
+import "ProsAndConsInfo.proto";
 
 message PollInfo {
     int32 type = 1;
@@ -18,4 +19,5 @@ message PollInfo {
     string title = 12;
     uint32 last_time = 13;
     repeated FeedKV business_info = 14;
+    ProsAndConsInfo two_options = 16;
 }

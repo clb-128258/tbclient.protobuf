@@ -36,11 +36,15 @@ public final class Post extends Message {
   
   public static final Integer DEFAULT_FLOOR;
   
+  public static final String DEFAULT_FLOOR_SCHEMA = "";
+  
   public static final String DEFAULT_FOLD_COMMENT_APPLY_URL = "";
   
   public static final Integer DEFAULT_FOLD_COMMENT_STATUS;
   
   public static final String DEFAULT_FOLD_TIP = "";
+  
+  public static final Long DEFAULT_FOLD_TYPE;
   
   public static final String DEFAULT_FOOTER = "";
   
@@ -209,6 +213,9 @@ public final class Post extends Message {
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer floor;
   
+  @ProtoField(tag = 100, type = Message.Datatype.STRING)
+  public final String floor_schema;
+  
   @ProtoField(tag = 57, type = Message.Datatype.STRING)
   public final String fold_comment_apply_url;
   
@@ -217,6 +224,9 @@ public final class Post extends Message {
   
   @ProtoField(tag = 44, type = Message.Datatype.STRING)
   public final String fold_tip;
+  
+  @ProtoField(tag = 99, type = Message.Datatype.INT64)
+  public final Long fold_type;
   
   @ProtoField(tag = 89, type = Message.Datatype.STRING)
   public final String footer;
@@ -452,23 +462,24 @@ public final class Post extends Message {
     DEFAULT_ADOPT_STATUS = integer;
     DEFAULT_COMPONENTS = Collections.emptyList();
     DEFAULT_IS_AD_THREAD_POST = integer;
+    DEFAULT_FOLD_TYPE = long_;
   }
   
   public Post(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
     String str;
     if (paramBoolean == true) {
-      Long long_3 = paramBuilder.id;
-      if (long_3 == null) {
+      Long long_4 = paramBuilder.id;
+      if (long_4 == null) {
         this.id = DEFAULT_ID;
       } else {
-        this.id = long_3;
+        this.id = long_4;
       } 
-      String str12 = paramBuilder.title;
-      if (str12 == null) {
+      String str13 = paramBuilder.title;
+      if (str13 == null) {
         this.title = "";
       } else {
-        this.title = str12;
+        this.title = str13;
       } 
       Integer integer14 = paramBuilder.floor;
       if (integer14 == null) {
@@ -519,11 +530,11 @@ public final class Post extends Message {
       } else {
         this.is_bub = integer13;
       } 
-      String str11 = paramBuilder.vote_crypt;
-      if (str11 == null) {
+      String str12 = paramBuilder.vote_crypt;
+      if (str12 == null) {
         this.vote_crypt = "";
       } else {
-        this.vote_crypt = str11;
+        this.vote_crypt = str12;
       } 
       Integer integer12 = paramBuilder.sub_post_number;
       if (integer12 == null) {
@@ -531,31 +542,31 @@ public final class Post extends Message {
       } else {
         this.sub_post_number = integer12;
       } 
-      String str10 = paramBuilder.time_ex;
-      if (str10 == null) {
+      String str11 = paramBuilder.time_ex;
+      if (str11 == null) {
         this.time_ex = "";
       } else {
-        this.time_ex = str10;
+        this.time_ex = str11;
       } 
       this.sub_post_list = paramBuilder.sub_post_list;
       this.add_post_list = paramBuilder.add_post_list;
-      str10 = paramBuilder.bimg_url;
-      if (str10 == null) {
+      str11 = paramBuilder.bimg_url;
+      if (str11 == null) {
         this.bimg_url = "";
       } else {
-        this.bimg_url = str10;
+        this.bimg_url = str11;
       } 
-      str10 = paramBuilder.ios_bimg_format;
-      if (str10 == null) {
+      str11 = paramBuilder.ios_bimg_format;
+      if (str11 == null) {
         this.ios_bimg_format = "";
       } else {
-        this.ios_bimg_format = str10;
+        this.ios_bimg_format = str11;
       } 
-      Long long_2 = paramBuilder.author_id;
-      if (long_2 == null) {
+      Long long_3 = paramBuilder.author_id;
+      if (long_3 == null) {
         this.author_id = DEFAULT_AUTHOR_ID;
       } else {
-        this.author_id = long_2;
+        this.author_id = long_3;
       } 
       Integer integer11 = paramBuilder.add_post_number;
       if (integer11 == null) {
@@ -593,11 +604,11 @@ public final class Post extends Message {
       this.high_together = paramBuilder.high_together;
       this.skin_info = paramBuilder.skin_info;
       this.pb_deal_info = paramBuilder.pb_deal_info;
-      String str9 = paramBuilder.lego_card;
-      if (str9 == null) {
+      String str10 = paramBuilder.lego_card;
+      if (str10 == null) {
         this.lego_card = "";
       } else {
-        this.lego_card = str9;
+        this.lego_card = str10;
       } 
       this.agree = paramBuilder.agree;
       this.from_forum = paramBuilder.from_forum;
@@ -626,11 +637,11 @@ public final class Post extends Message {
       } else {
         this.is_fold = integer10;
       } 
-      String str8 = paramBuilder.fold_tip;
-      if (str8 == null) {
+      String str9 = paramBuilder.fold_tip;
+      if (str9 == null) {
         this.fold_tip = "";
       } else {
-        this.fold_tip = str8;
+        this.fold_tip = str9;
       } 
       Integer integer9 = paramBuilder.is_top_agree_post;
       if (integer9 == null) {
@@ -638,11 +649,11 @@ public final class Post extends Message {
       } else {
         this.is_top_agree_post = integer9;
       } 
-      Long long_1 = paramBuilder.tid;
-      if (long_1 == null) {
+      Long long_2 = paramBuilder.tid;
+      if (long_2 == null) {
         this.tid = DEFAULT_TID;
       } else {
-        this.tid = long_1;
+        this.tid = long_2;
       } 
       Integer integer8 = paramBuilder.show_squared;
       if (integer8 == null) {
@@ -656,11 +667,11 @@ public final class Post extends Message {
       } else {
         this.is_bjh = integer8;
       } 
-      String str7 = paramBuilder.quote_id;
-      if (str7 == null) {
+      String str8 = paramBuilder.quote_id;
+      if (str8 == null) {
         this.quote_id = "";
       } else {
-        this.quote_id = str7;
+        this.quote_id = str8;
       } 
       Integer integer7 = paramBuilder.is_wonderful_post;
       if (integer7 == null) {
@@ -683,11 +694,11 @@ public final class Post extends Message {
       } else {
         this.fold_comment_status = integer6;
       } 
-      String str6 = paramBuilder.fold_comment_apply_url;
-      if (str6 == null) {
+      String str7 = paramBuilder.fold_comment_apply_url;
+      if (str7 == null) {
         this.fold_comment_apply_url = "";
       } else {
-        this.fold_comment_apply_url = str6;
+        this.fold_comment_apply_url = str7;
       } 
       this.novel_info = paramBuilder.novel_info;
       List<CardLinkInfo> list6 = paramBuilder.card_link_info;
@@ -699,18 +710,18 @@ public final class Post extends Message {
       this.custom_figure = paramBuilder.custom_figure;
       this.custom_state = paramBuilder.custom_state;
       this.full_length_novel = paramBuilder.full_length_novel;
-      String str5 = paramBuilder.dynamic_url;
-      if (str5 == null) {
+      String str6 = paramBuilder.dynamic_url;
+      if (str6 == null) {
         this.dynamic_url = "";
       } else {
-        this.dynamic_url = str5;
+        this.dynamic_url = str6;
       } 
       this.bubble_info = paramBuilder.bubble_info;
-      str5 = paramBuilder.rumor_source_img;
-      if (str5 == null) {
+      str6 = paramBuilder.rumor_source_img;
+      if (str6 == null) {
         this.rumor_source_img = "";
       } else {
-        this.rumor_source_img = str5;
+        this.rumor_source_img = str6;
       } 
       this.festival_tip_data = paramBuilder.festival_tip_data;
       this.novel_recom_card = paramBuilder.novel_recom_card;
@@ -720,23 +731,23 @@ public final class Post extends Message {
       } else {
         this.shield_icon = integer5;
       } 
-      String str4 = paramBuilder.icon_url;
-      if (str4 == null) {
+      String str5 = paramBuilder.icon_url;
+      if (str5 == null) {
         this.icon_url = "";
       } else {
-        this.icon_url = str4;
+        this.icon_url = str5;
       } 
-      str4 = paramBuilder.toutiao_card_tag;
-      if (str4 == null) {
+      str5 = paramBuilder.toutiao_card_tag;
+      if (str5 == null) {
         this.toutiao_card_tag = "";
       } else {
-        this.toutiao_card_tag = str4;
+        this.toutiao_card_tag = str5;
       } 
-      str4 = paramBuilder.toutiao_card_tag_color;
-      if (str4 == null) {
+      str5 = paramBuilder.toutiao_card_tag_color;
+      if (str5 == null) {
         this.toutiao_card_tag_color = "";
       } else {
-        this.toutiao_card_tag_color = str4;
+        this.toutiao_card_tag_color = str5;
       } 
       this.call_robot_entrance = paramBuilder.call_robot_entrance;
       Integer integer4 = paramBuilder.is_bot_reply;
@@ -745,11 +756,11 @@ public final class Post extends Message {
       } else {
         this.is_bot_reply = integer4;
       } 
-      String str3 = paramBuilder.bot_reply_content;
-      if (str3 == null) {
+      String str4 = paramBuilder.bot_reply_content;
+      if (str4 == null) {
         this.bot_reply_content = "";
       } else {
-        this.bot_reply_content = str3;
+        this.bot_reply_content = str4;
       } 
       List<BotReplyContent> list5 = paramBuilder.bot_reply_content_list;
       if (list5 == null) {
@@ -793,18 +804,18 @@ public final class Post extends Message {
         this.no_pic_content = Message.immutableCopyOf(list1);
       } 
       this.tail_style = paramBuilder.tail_style;
-      String str2 = paramBuilder.ios_b_url;
-      if (str2 == null) {
+      String str3 = paramBuilder.ios_b_url;
+      if (str3 == null) {
         this.ios_b_url = "";
       } else {
-        this.ios_b_url = str2;
+        this.ios_b_url = str3;
       } 
       this.special_post = paramBuilder.special_post;
-      str2 = paramBuilder.footer;
-      if (str2 == null) {
+      str3 = paramBuilder.footer;
+      if (str3 == null) {
         this.footer = "";
       } else {
-        this.footer = str2;
+        this.footer = str3;
       } 
       this.bdt_search_info = paramBuilder.bdt_search_info;
       Integer integer3 = paramBuilder.bdt_user_adopt;
@@ -813,11 +824,11 @@ public final class Post extends Message {
       } else {
         this.bdt_user_adopt = integer3;
       } 
-      String str1 = paramBuilder.tmoney;
-      if (str1 == null) {
+      String str2 = paramBuilder.tmoney;
+      if (str2 == null) {
         this.tmoney = "";
       } else {
-        this.tmoney = str1;
+        this.tmoney = str2;
       } 
       Integer integer2 = paramBuilder.adopt_status;
       if (integer2 == null) {
@@ -838,11 +849,23 @@ public final class Post extends Message {
       } else {
         this.is_ad_thread_post = integer1;
       } 
-      str = paramBuilder.content_statement;
-      if (str == null) {
+      String str1 = paramBuilder.content_statement;
+      if (str1 == null) {
         this.content_statement = "";
       } else {
-        this.content_statement = str;
+        this.content_statement = str1;
+      } 
+      Long long_1 = paramBuilder.fold_type;
+      if (long_1 == null) {
+        this.fold_type = DEFAULT_FOLD_TYPE;
+      } else {
+        this.fold_type = long_1;
+      } 
+      str = paramBuilder.floor_schema;
+      if (str == null) {
+        this.floor_schema = "";
+      } else {
+        this.floor_schema = str;
       } 
     } else {
       this.id = ((Builder)str).id;
@@ -941,6 +964,8 @@ public final class Post extends Message {
       this.mounted_card = ((Builder)str).mounted_card;
       this.is_ad_thread_post = ((Builder)str).is_ad_thread_post;
       this.content_statement = ((Builder)str).content_statement;
+      this.fold_type = ((Builder)str).fold_type;
+      this.floor_schema = ((Builder)str).floor_schema;
     } 
   }
   
@@ -1003,11 +1028,15 @@ public final class Post extends Message {
     
     public Integer floor;
     
+    public String floor_schema;
+    
     public String fold_comment_apply_url;
     
     public Integer fold_comment_status;
     
     public String fold_tip;
+    
+    public Long fold_type;
     
     public String footer;
     
@@ -1239,6 +1268,8 @@ public final class Post extends Message {
       this.mounted_card = param1Post.mounted_card;
       this.is_ad_thread_post = param1Post.is_ad_thread_post;
       this.content_statement = param1Post.content_statement;
+      this.fold_type = param1Post.fold_type;
+      this.floor_schema = param1Post.floor_schema;
     }
     
     public Post build(boolean param1Boolean) {

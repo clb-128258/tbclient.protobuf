@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "KjsBasicInfo.proto";
+import "KjsGameScreenshot.proto";
+import "KjsSkinSection.proto";
+
+message KjsAccountDetail {
+    KjsBasicInfo basic_info = 1;
+    KjsSkinSection skin_section = 2;
+    KjsGameScreenshot game_screenshot = 3;
+    string schema = 4;
+    bool is_sold = 5;
+    uint32 price = 6;
+    uint64 kjs_id = 7;
+    string image = 8;
+    string title = 9;
+    string spec = 10;
+}

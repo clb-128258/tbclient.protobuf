@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "GuideInfo.proto";
+
+message CommentOverlayInfo {
+    GuideInfo guide_info = 1;
+}

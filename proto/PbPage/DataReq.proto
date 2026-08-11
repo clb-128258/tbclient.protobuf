@@ -109,4 +109,5 @@ message DataReq {
     int32 biz_type = 109;
     string offset = 110;
     uint32 from_forum_id = 111;
+    uint32 floor_num = 112;
 }

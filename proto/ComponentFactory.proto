@@ -24,6 +24,7 @@ import "FeedInputGuideComponent.proto";
 import "FeedInteractComponent.proto";
 import "FeedInteractionComponent.proto";
 import "FeedItem.proto";
+import "FeedLandmineGoodsComponent.proto";
 import "FeedLeftPost.proto";
 import "FeedLinkComponent.proto";
 import "FeedLinkStoreComponent.proto";
@@ -144,4 +145,5 @@ message ComponentFactory {
     FeedDownloadComponent feed_download = 78;
     FeedDynamicTag feed_dynamic_tag = 79;
     FeedDownloadComponent feed_mount_book = 80;
+    FeedLandmineGoodsComponent feed_landmine_goods = 81;
 }

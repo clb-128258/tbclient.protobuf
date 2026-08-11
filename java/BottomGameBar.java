@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 
 public final class BottomGameBar extends Message {
+  public static final Integer DEFAULT_ACTION_TYPE;
+  
   public static final List<FeedContentResource> DEFAULT_DESC = Collections.emptyList();
   
   public static final List<FeedKV> DEFAULT_LOG_PARAM;
@@ -15,6 +17,9 @@ public final class BottomGameBar extends Message {
   public static final List<FeedContentResource> DEFAULT_SUB_DESC = Collections.emptyList();
   
   public static final List<FeedContentResource> DEFAULT_TITLE = Collections.emptyList();
+  
+  @ProtoField(tag = 8, type = Message.Datatype.INT32)
+  public final Integer action_type;
   
   @ProtoField(tag = 4)
   public final FeedHeadButton button;
@@ -39,11 +44,12 @@ public final class BottomGameBar extends Message {
   
   static {
     DEFAULT_LOG_PARAM = Collections.emptyList();
+    DEFAULT_ACTION_TYPE = Integer.valueOf(0);
   }
   
   public BottomGameBar(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    List<FeedKV> list;
+    Integer integer;
     if (paramBoolean == true) {
       List<FeedContentResource> list1 = paramBuilder.desc;
       if (list1 == null) {
@@ -71,24 +77,33 @@ public final class BottomGameBar extends Message {
         this.schema = str;
       } 
       this.icon = paramBuilder.icon;
-      list = paramBuilder.log_param;
+      List<FeedKV> list = paramBuilder.log_param;
       if (list == null) {
         this.log_param = DEFAULT_LOG_PARAM;
       } else {
         this.log_param = Message.immutableCopyOf(list);
       } 
+      integer = paramBuilder.action_type;
+      if (integer == null) {
+        this.action_type = DEFAULT_ACTION_TYPE;
+      } else {
+        this.action_type = integer;
+      } 
     } else {
-      this.desc = Message.immutableCopyOf(((Builder)list).desc);
-      this.sub_desc = Message.immutableCopyOf(((Builder)list).sub_desc);
-      this.title = Message.immutableCopyOf(((Builder)list).title);
-      this.button = ((Builder)list).button;
-      this.schema = ((Builder)list).schema;
-      this.icon = ((Builder)list).icon;
-      this.log_param = Message.immutableCopyOf(((Builder)list).log_param);
+      this.desc = Message.immutableCopyOf(((Builder)integer).desc);
+      this.sub_desc = Message.immutableCopyOf(((Builder)integer).sub_desc);
+      this.title = Message.immutableCopyOf(((Builder)integer).title);
+      this.button = ((Builder)integer).button;
+      this.schema = ((Builder)integer).schema;
+      this.icon = ((Builder)integer).icon;
+      this.log_param = Message.immutableCopyOf(((Builder)integer).log_param);
+      this.action_type = ((Builder)integer).action_type;
     } 
   }
   
   public static final class Builder extends Message.Builder<BottomGameBar> {
+    public Integer action_type;
+    
     public FeedHeadButton button;
     
     public List<FeedContentResource> desc;
@@ -116,6 +131,7 @@ public final class BottomGameBar extends Message {
       this.schema = param1BottomGameBar.schema;
       this.icon = param1BottomGameBar.icon;
       this.log_param = Message.copyOf(param1BottomGameBar.log_param);
+      this.action_type = param1BottomGameBar.action_type;
     }
     
     public BottomGameBar build(boolean param1Boolean) {

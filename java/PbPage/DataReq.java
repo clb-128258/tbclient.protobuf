@@ -48,6 +48,8 @@ public final class DataReq extends Message {
   
   public static final Long DEFAULT_FID;
   
+  public static final Integer DEFAULT_FLOOR_NUM;
+  
   public static final Integer DEFAULT_FLOOR_RN;
   
   public static final Integer DEFAULT_FLOOR_SORT_TYPE;
@@ -273,6 +275,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 45, type = Message.Datatype.UINT64)
   public final Long fid;
+  
+  @ProtoField(tag = 112, type = Message.Datatype.UINT32)
+  public final Integer floor_num;
   
   @ProtoField(tag = 9, type = Message.Datatype.INT32)
   public final Integer floor_rn;
@@ -569,29 +574,30 @@ public final class DataReq extends Message {
     DEFAULT_SESSION_REQUEST_TIMES = integer;
     DEFAULT_BIZ_TYPE = integer;
     DEFAULT_FROM_FORUM_ID = integer;
+    DEFAULT_FLOOR_NUM = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
     Integer integer;
     if (paramBoolean == true) {
-      Integer integer18 = paramBuilder.pb_rn;
-      if (integer18 == null) {
+      Integer integer19 = paramBuilder.pb_rn;
+      if (integer19 == null) {
         this.pb_rn = DEFAULT_PB_RN;
       } else {
-        this.pb_rn = integer18;
+        this.pb_rn = integer19;
       } 
-      integer18 = paramBuilder.mark;
-      if (integer18 == null) {
+      integer19 = paramBuilder.mark;
+      if (integer19 == null) {
         this.mark = DEFAULT_MARK;
       } else {
-        this.mark = integer18;
+        this.mark = integer19;
       } 
-      integer18 = paramBuilder.back;
-      if (integer18 == null) {
+      integer19 = paramBuilder.back;
+      if (integer19 == null) {
         this.back = DEFAULT_BACK;
       } else {
-        this.back = integer18;
+        this.back = integer19;
       } 
       Long long_10 = paramBuilder.kz;
       if (long_10 == null) {
@@ -599,17 +605,17 @@ public final class DataReq extends Message {
       } else {
         this.kz = long_10;
       } 
-      Integer integer17 = paramBuilder.lz;
-      if (integer17 == null) {
+      Integer integer18 = paramBuilder.lz;
+      if (integer18 == null) {
         this.lz = DEFAULT_LZ;
       } else {
-        this.lz = integer17;
+        this.lz = integer18;
       } 
-      integer17 = paramBuilder.r;
-      if (integer17 == null) {
+      integer18 = paramBuilder.r;
+      if (integer18 == null) {
         this.r = DEFAULT_R;
       } else {
-        this.r = integer17;
+        this.r = integer18;
       } 
       Long long_9 = paramBuilder.pid;
       if (long_9 == null) {
@@ -617,53 +623,53 @@ public final class DataReq extends Message {
       } else {
         this.pid = long_9;
       } 
-      Integer integer16 = paramBuilder.with_floor;
-      if (integer16 == null) {
+      Integer integer17 = paramBuilder.with_floor;
+      if (integer17 == null) {
         this.with_floor = DEFAULT_WITH_FLOOR;
       } else {
-        this.with_floor = integer16;
+        this.with_floor = integer17;
       } 
-      integer16 = paramBuilder.floor_rn;
-      if (integer16 == null) {
+      integer17 = paramBuilder.floor_rn;
+      if (integer17 == null) {
         this.floor_rn = DEFAULT_FLOOR_RN;
       } else {
-        this.floor_rn = integer16;
+        this.floor_rn = integer17;
       } 
-      integer16 = paramBuilder.weipost;
-      if (integer16 == null) {
+      integer17 = paramBuilder.weipost;
+      if (integer17 == null) {
         this.weipost = DEFAULT_WEIPOST;
       } else {
-        this.weipost = integer16;
+        this.weipost = integer17;
       } 
-      integer16 = paramBuilder.message_id;
-      if (integer16 == null) {
+      integer17 = paramBuilder.message_id;
+      if (integer17 == null) {
         this.message_id = DEFAULT_MESSAGE_ID;
       } else {
-        this.message_id = integer16;
+        this.message_id = integer17;
       } 
-      integer16 = paramBuilder.s_model;
-      if (integer16 == null) {
+      integer17 = paramBuilder.s_model;
+      if (integer17 == null) {
         this.s_model = DEFAULT_S_MODEL;
       } else {
-        this.s_model = integer16;
+        this.s_model = integer17;
       } 
-      integer16 = paramBuilder.rn;
-      if (integer16 == null) {
+      integer17 = paramBuilder.rn;
+      if (integer17 == null) {
         this.rn = DEFAULT_RN;
       } else {
-        this.rn = integer16;
+        this.rn = integer17;
       } 
-      integer16 = paramBuilder.scr_w;
-      if (integer16 == null) {
+      integer17 = paramBuilder.scr_w;
+      if (integer17 == null) {
         this.scr_w = DEFAULT_SCR_W;
       } else {
-        this.scr_w = integer16;
+        this.scr_w = integer17;
       } 
-      integer16 = paramBuilder.scr_h;
-      if (integer16 == null) {
+      integer17 = paramBuilder.scr_h;
+      if (integer17 == null) {
         this.scr_h = DEFAULT_SCR_H;
       } else {
-        this.scr_h = integer16;
+        this.scr_h = integer17;
       } 
       Double double_ = paramBuilder.scr_dip;
       if (double_ == null) {
@@ -671,17 +677,17 @@ public final class DataReq extends Message {
       } else {
         this.scr_dip = double_;
       } 
-      Integer integer15 = paramBuilder.q_type;
-      if (integer15 == null) {
+      Integer integer16 = paramBuilder.q_type;
+      if (integer16 == null) {
         this.q_type = DEFAULT_Q_TYPE;
       } else {
-        this.q_type = integer15;
+        this.q_type = integer16;
       } 
-      integer15 = paramBuilder.pn;
-      if (integer15 == null) {
+      integer16 = paramBuilder.pn;
+      if (integer16 == null) {
         this.pn = DEFAULT_PN;
       } else {
-        this.pn = integer15;
+        this.pn = integer16;
       } 
       String str15 = paramBuilder.st_type;
       if (str15 == null) {
@@ -689,29 +695,29 @@ public final class DataReq extends Message {
       } else {
         this.st_type = str15;
       } 
-      Integer integer14 = paramBuilder.thread_type;
-      if (integer14 == null) {
+      Integer integer15 = paramBuilder.thread_type;
+      if (integer15 == null) {
         this.thread_type = DEFAULT_THREAD_TYPE;
       } else {
-        this.thread_type = integer14;
+        this.thread_type = integer15;
       } 
-      integer14 = paramBuilder.banner;
-      if (integer14 == null) {
+      integer15 = paramBuilder.banner;
+      if (integer15 == null) {
         this.banner = DEFAULT_BANNER;
       } else {
-        this.banner = integer14;
+        this.banner = integer15;
       } 
-      integer14 = paramBuilder.arround;
-      if (integer14 == null) {
+      integer15 = paramBuilder.arround;
+      if (integer15 == null) {
         this.arround = DEFAULT_ARROUND;
       } else {
-        this.arround = integer14;
+        this.arround = integer15;
       } 
-      integer14 = paramBuilder.last;
-      if (integer14 == null) {
+      integer15 = paramBuilder.last;
+      if (integer15 == null) {
         this.last = DEFAULT_LAST;
       } else {
-        this.last = integer14;
+        this.last = integer15;
       } 
       String str14 = paramBuilder.msg_click;
       if (str14 == null) {
@@ -738,11 +744,11 @@ public final class DataReq extends Message {
       } else {
         this.st_link = str14;
       } 
-      Integer integer13 = paramBuilder.st_stat;
-      if (integer13 == null) {
+      Integer integer14 = paramBuilder.st_stat;
+      if (integer14 == null) {
         this.st_stat = DEFAULT_ST_STAT;
       } else {
-        this.st_stat = integer13;
+        this.st_stat = integer14;
       } 
       Long long_8 = paramBuilder.st_task;
       if (long_8 == null) {
@@ -750,11 +756,11 @@ public final class DataReq extends Message {
       } else {
         this.st_task = long_8;
       } 
-      Integer integer12 = paramBuilder.issdk;
-      if (integer12 == null) {
+      Integer integer13 = paramBuilder.issdk;
+      if (integer13 == null) {
         this.issdk = DEFAULT_ISSDK;
       } else {
-        this.issdk = integer12;
+        this.issdk = integer13;
       } 
       String str13 = paramBuilder.query_word;
       if (str13 == null) {
@@ -762,23 +768,23 @@ public final class DataReq extends Message {
       } else {
         this.query_word = str13;
       } 
-      Integer integer11 = paramBuilder.is_comm_reverse;
-      if (integer11 == null) {
+      Integer integer12 = paramBuilder.is_comm_reverse;
+      if (integer12 == null) {
         this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
       } else {
-        this.is_comm_reverse = integer11;
+        this.is_comm_reverse = integer12;
       } 
-      integer11 = paramBuilder.is_jumpfloor;
-      if (integer11 == null) {
+      integer12 = paramBuilder.is_jumpfloor;
+      if (integer12 == null) {
         this.is_jumpfloor = DEFAULT_IS_JUMPFLOOR;
       } else {
-        this.is_jumpfloor = integer11;
+        this.is_jumpfloor = integer12;
       } 
-      integer11 = paramBuilder.jumpfloor_num;
-      if (integer11 == null) {
+      integer12 = paramBuilder.jumpfloor_num;
+      if (integer12 == null) {
         this.jumpfloor_num = DEFAULT_JUMPFLOOR_NUM;
       } else {
-        this.jumpfloor_num = integer11;
+        this.jumpfloor_num = integer12;
       } 
       String str12 = paramBuilder.da_idfa;
       if (str12 == null) {
@@ -841,11 +847,11 @@ public final class DataReq extends Message {
         this.obj_param1 = str11;
       } 
       this.app_pos = paramBuilder.app_pos;
-      Integer integer10 = paramBuilder.from_smart_frs;
-      if (integer10 == null) {
+      Integer integer11 = paramBuilder.from_smart_frs;
+      if (integer11 == null) {
         this.from_smart_frs = DEFAULT_FROM_SMART_FRS;
       } else {
-        this.from_smart_frs = integer10;
+        this.from_smart_frs = integer11;
       } 
       String str10 = paramBuilder.feed_nid;
       if (str10 == null) {
@@ -859,18 +865,18 @@ public final class DataReq extends Message {
       } else {
         this.forum_id = long_6;
       } 
-      Integer integer9 = paramBuilder.need_repost_recommend_forum;
-      if (integer9 == null) {
+      Integer integer10 = paramBuilder.need_repost_recommend_forum;
+      if (integer10 == null) {
         this.need_repost_recommend_forum = DEFAULT_NEED_REPOST_RECOMMEND_FORUM;
       } else {
-        this.need_repost_recommend_forum = integer9;
+        this.need_repost_recommend_forum = integer10;
       } 
       this.ad_param = paramBuilder.ad_param;
-      integer9 = paramBuilder.need_log;
-      if (integer9 == null) {
+      integer10 = paramBuilder.need_log;
+      if (integer10 == null) {
         this.need_log = DEFAULT_NEED_LOG;
       } else {
-        this.need_log = integer9;
+        this.need_log = integer10;
       } 
       String str9 = paramBuilder.call_url;
       if (str9 == null) {
@@ -896,11 +902,11 @@ public final class DataReq extends Message {
       } else {
         this.ori_ugc_tid = str9;
       } 
-      Integer integer8 = paramBuilder.ori_ugc_type;
-      if (integer8 == null) {
+      Integer integer9 = paramBuilder.ori_ugc_type;
+      if (integer9 == null) {
         this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
       } else {
-        this.ori_ugc_type = integer8;
+        this.ori_ugc_type = integer9;
       } 
       String str8 = paramBuilder.ori_ugc_vid;
       if (str8 == null) {
@@ -908,11 +914,11 @@ public final class DataReq extends Message {
       } else {
         this.ori_ugc_vid = str8;
       } 
-      Integer integer7 = paramBuilder.after_ad_thread_count;
-      if (integer7 == null) {
+      Integer integer8 = paramBuilder.after_ad_thread_count;
+      if (integer8 == null) {
         this.after_ad_thread_count = DEFAULT_AFTER_AD_THREAD_COUNT;
       } else {
-        this.after_ad_thread_count = integer7;
+        this.after_ad_thread_count = integer8;
       } 
       String str7 = paramBuilder.ad_context_list;
       if (str7 == null) {
@@ -932,11 +938,11 @@ public final class DataReq extends Message {
       } else {
         this.pb_test_info = str7;
       } 
-      Integer integer6 = paramBuilder.from_push;
-      if (integer6 == null) {
+      Integer integer7 = paramBuilder.from_push;
+      if (integer7 == null) {
         this.from_push = DEFAULT_FROM_PUSH;
       } else {
-        this.from_push = integer6;
+        this.from_push = integer7;
       } 
       String str6 = paramBuilder.ad_ext_params;
       if (str6 == null) {
@@ -950,42 +956,42 @@ public final class DataReq extends Message {
       } else {
         this.broadcast_id = long_5;
       } 
-      Integer integer5 = paramBuilder.floor_sort_type;
-      if (integer5 == null) {
+      Integer integer6 = paramBuilder.floor_sort_type;
+      if (integer6 == null) {
         this.floor_sort_type = DEFAULT_FLOOR_SORT_TYPE;
       } else {
-        this.floor_sort_type = integer5;
+        this.floor_sort_type = integer6;
       } 
-      integer5 = paramBuilder.source_type;
-      if (integer5 == null) {
+      integer6 = paramBuilder.source_type;
+      if (integer6 == null) {
         this.source_type = DEFAULT_SOURCE_TYPE;
       } else {
-        this.source_type = integer5;
+        this.source_type = integer6;
       } 
-      integer5 = paramBuilder.immersion_video_comment_source;
-      if (integer5 == null) {
+      integer6 = paramBuilder.immersion_video_comment_source;
+      if (integer6 == null) {
         this.immersion_video_comment_source = DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
       } else {
-        this.immersion_video_comment_source = integer5;
+        this.immersion_video_comment_source = integer6;
       } 
       this.app_transmit_data = paramBuilder.app_transmit_data;
-      integer5 = paramBuilder.is_fold_comment_req;
-      if (integer5 == null) {
+      integer6 = paramBuilder.is_fold_comment_req;
+      if (integer6 == null) {
         this.is_fold_comment_req = DEFAULT_IS_FOLD_COMMENT_REQ;
       } else {
-        this.is_fold_comment_req = integer5;
+        this.is_fold_comment_req = integer6;
       } 
-      integer5 = paramBuilder.is_edit_comment_req;
-      if (integer5 == null) {
+      integer6 = paramBuilder.is_edit_comment_req;
+      if (integer6 == null) {
         this.is_edit_comment_req = DEFAULT_IS_EDIT_COMMENT_REQ;
       } else {
-        this.is_edit_comment_req = integer5;
+        this.is_edit_comment_req = integer6;
       } 
-      integer5 = paramBuilder.request_times;
-      if (integer5 == null) {
+      integer6 = paramBuilder.request_times;
+      if (integer6 == null) {
         this.request_times = DEFAULT_REQUEST_TIMES;
       } else {
-        this.request_times = integer5;
+        this.request_times = integer6;
       } 
       Long long_4 = paramBuilder.last_pid;
       if (long_4 == null) {
@@ -993,11 +999,11 @@ public final class DataReq extends Message {
       } else {
         this.last_pid = long_4;
       } 
-      Integer integer4 = paramBuilder.similar_from;
-      if (integer4 == null) {
+      Integer integer5 = paramBuilder.similar_from;
+      if (integer5 == null) {
         this.similar_from = DEFAULT_SIMILAR_FROM;
       } else {
-        this.similar_from = integer4;
+        this.similar_from = integer5;
       } 
       String str5 = paramBuilder.come_from;
       if (str5 == null) {
@@ -1036,17 +1042,17 @@ public final class DataReq extends Message {
       } else {
         this.cid = str5;
       } 
-      Integer integer3 = paramBuilder.page_from;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.page_from;
+      if (integer4 == null) {
         this.page_from = DEFAULT_PAGE_FROM;
       } else {
-        this.page_from = integer3;
+        this.page_from = integer4;
       } 
-      integer3 = paramBuilder.position;
-      if (integer3 == null) {
+      integer4 = paramBuilder.position;
+      if (integer4 == null) {
         this.position = DEFAULT_POSITION;
       } else {
-        this.position = integer3;
+        this.position = integer4;
       } 
       String str4 = paramBuilder.game_fid;
       if (str4 == null) {
@@ -1090,11 +1096,11 @@ public final class DataReq extends Message {
       } else {
         this.eqid = str3;
       } 
-      Integer integer2 = paramBuilder.is_note;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.is_note;
+      if (integer3 == null) {
         this.is_note = DEFAULT_IS_NOTE;
       } else {
-        this.is_note = integer2;
+        this.is_note = integer3;
       } 
       Long long_2 = paramBuilder.aladdin_src_id;
       if (long_2 == null) {
@@ -1132,23 +1138,23 @@ public final class DataReq extends Message {
       } else {
         this.topic_fid = long_1;
       } 
-      Integer integer1 = paramBuilder.need_data_type;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.need_data_type;
+      if (integer2 == null) {
         this.need_data_type = DEFAULT_NEED_DATA_TYPE;
       } else {
-        this.need_data_type = integer1;
+        this.need_data_type = integer2;
       } 
-      integer1 = paramBuilder.session_request_times;
-      if (integer1 == null) {
+      integer2 = paramBuilder.session_request_times;
+      if (integer2 == null) {
         this.session_request_times = DEFAULT_SESSION_REQUEST_TIMES;
       } else {
-        this.session_request_times = integer1;
+        this.session_request_times = integer2;
       } 
-      integer1 = paramBuilder.biz_type;
-      if (integer1 == null) {
+      integer2 = paramBuilder.biz_type;
+      if (integer2 == null) {
         this.biz_type = DEFAULT_BIZ_TYPE;
       } else {
-        this.biz_type = integer1;
+        this.biz_type = integer2;
       } 
       String str1 = paramBuilder.offset;
       if (str1 == null) {
@@ -1156,11 +1162,17 @@ public final class DataReq extends Message {
       } else {
         this.offset = str1;
       } 
-      integer = paramBuilder.from_forum_id;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.from_forum_id;
+      if (integer1 == null) {
         this.from_forum_id = DEFAULT_FROM_FORUM_ID;
       } else {
-        this.from_forum_id = integer;
+        this.from_forum_id = integer1;
+      } 
+      integer = paramBuilder.floor_num;
+      if (integer == null) {
+        this.floor_num = DEFAULT_FLOOR_NUM;
+      } else {
+        this.floor_num = integer;
       } 
     } else {
       this.pb_rn = ((Builder)integer).pb_rn;
@@ -1265,6 +1277,7 @@ public final class DataReq extends Message {
       this.biz_type = ((Builder)integer).biz_type;
       this.offset = ((Builder)integer).offset;
       this.from_forum_id = ((Builder)integer).from_forum_id;
+      this.floor_num = ((Builder)integer).floor_num;
     } 
   }
   
@@ -1316,6 +1329,8 @@ public final class DataReq extends Message {
     public String feed_nid;
     
     public Long fid;
+    
+    public Integer floor_num;
     
     public Integer floor_rn;
     
@@ -1581,6 +1596,7 @@ public final class DataReq extends Message {
       this.biz_type = param1DataReq.biz_type;
       this.offset = param1DataReq.offset;
       this.from_forum_id = param1DataReq.from_forum_id;
+      this.floor_num = param1DataReq.floor_num;
     }
     
     public DataReq build(boolean param1Boolean) {
